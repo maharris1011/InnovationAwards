@@ -137,6 +137,8 @@
 		4D50192C167547E70031B9F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */,
+				4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,8 +182,6 @@
 				4D501928167547D40031B9F8 /* Assets */,
 				4DCED0021675474000272F0B /* AppDelegate.h */,
 				4DCED0031675474100272F0B /* AppDelegate.m */,
-				4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */,
-				4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */,
 				4DCECFFA1675474000272F0B /* Supporting Files */,
 			);
 			path = InnovationAwards;
@@ -306,6 +306,7 @@
 				4DCED00C1675474100272F0B /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */ = {
@@ -314,6 +315,7 @@
 				4DCED00F1675474100272F0B /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
