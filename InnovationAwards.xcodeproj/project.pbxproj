@@ -45,6 +45,10 @@
 		4DCED0041675474100272F0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED0031675474100272F0B /* AppDelegate.m */; };
 		4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */; };
 		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
+		4DF1DE9C1676011600CB2D9A /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF1DE981676011600CB2D9A /* libTestFlight.a */; };
+		4DF1DE9D1676011600CB2D9A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1DE991676011600CB2D9A /* README.md */; };
+		4DF1DE9E1676011600CB2D9A /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1DE9A1676011600CB2D9A /* release_notes.md */; };
+		4DF1DEA11676013700CB2D9A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF1DEA01676013700CB2D9A /* libz.dylib */; };
 		4DFEF4DD16757D500069E734 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF4DC16757D4F0069E734 /* RegistrationViewController.m */; };
 		4DFEF4E21675829A0069E734 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF4E11675829A0069E734 /* MapViewController.m */; };
 		4DFEF4E41675840A0069E734 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF4E31675840A0069E734 /* CoreLocation.framework */; };
@@ -331,6 +335,11 @@
 		4DCED0031675474100272F0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DCED00C1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4DF1DE981676011600CB2D9A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		4DF1DE991676011600CB2D9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		4DF1DE9A1676011600CB2D9A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		4DF1DE9B1676011600CB2D9A /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		4DF1DEA01676013700CB2D9A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4DFEF4DB16757D4F0069E734 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = InnovationAwards/Controllers/RegistrationViewController.h; sourceTree = SOURCE_ROOT; };
 		4DFEF4DC16757D4F0069E734 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = InnovationAwards/Controllers/RegistrationViewController.m; sourceTree = SOURCE_ROOT; };
 		4DFEF4DF1675809C0069E734 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -584,6 +593,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF1DEA11676013700CB2D9A /* libz.dylib in Frameworks */,
 				4DFEF6F416759E310069E734 /* MessageUI.framework in Frameworks */,
 				4DFEF4E6167584390069E734 /* MapKit.framework in Frameworks */,
 				4DFEF4E41675840A0069E734 /* CoreLocation.framework in Frameworks */,
@@ -592,6 +602,7 @@
 				4DCECFF61675474000272F0B /* Foundation.framework in Frameworks */,
 				4DCECFF81675474000272F0B /* CoreGraphics.framework in Frameworks */,
 				4DFEF6F216759E050069E734 /* Socialize.framework in Frameworks */,
+				4DF1DE9C1676011600CB2D9A /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +685,7 @@
 		4DB8F8811675D8E50017CD64 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4DF1DE971676011600CB2D9A /* TestFlightSDK1-1 */,
 				4DB8F8831675D9050017CD64 /* PullToRefresh */,
 			);
 			name = Vendor;
@@ -695,6 +707,7 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
+				4DF1DEA01676013700CB2D9A /* libz.dylib */,
 				4DFEF6F316759E310069E734 /* MessageUI.framework */,
 				4DFEF4E5167584390069E734 /* MapKit.framework */,
 				4DFEF4E31675840A0069E734 /* CoreLocation.framework */,
@@ -754,6 +767,17 @@
 				4DCED0011675474000272F0B /* InnovationAwards-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DF1DE971676011600CB2D9A /* TestFlightSDK1-1 */ = {
+			isa = PBXGroup;
+			children = (
+				4DF1DE981676011600CB2D9A /* libTestFlight.a */,
+				4DF1DE991676011600CB2D9A /* README.md */,
+				4DF1DE9A1676011600CB2D9A /* release_notes.md */,
+				4DF1DE9B1676011600CB2D9A /* TestFlight.h */,
+			);
+			path = "TestFlightSDK1-1";
 			sourceTree = "<group>";
 		};
 		4DFEF53716759E040069E734 /* Socialize.embeddedframework */ = {
@@ -1296,6 +1320,8 @@
 				4DB8F88B1675D9050017CD64 /* arrow@2x.png in Resources */,
 				4DB8F88C1675D9050017CD64 /* LICENSE in Resources */,
 				4DB8F88E1675D9050017CD64 /* README in Resources */,
+				4DF1DE9D1676011600CB2D9A /* README.md in Resources */,
+				4DF1DE9E1676011600CB2D9A /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1417,6 +1443,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";
 				INFOPLIST_FILE = "InnovationAwards/InnovationAwards-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/InnovationAwards/TestFlightSDK1-1\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1430,6 +1460,7 @@
 		4DCED01B1675474100272F0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sandlot Software, LLC";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
@@ -1437,11 +1468,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";
 				INFOPLIST_FILE = "InnovationAwards/InnovationAwards-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/InnovationAwards/TestFlightSDK1-1\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7C43E141-A02F-4F9A-86A4-0BE92F4E3958";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
 			};

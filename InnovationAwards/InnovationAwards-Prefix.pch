@@ -14,5 +14,6 @@
 #import "Constants.h"
 #import <Socialize/Socialize.h>
 #import "JSONKit.h"
+#import "TestFlight.h"
 
 #endif

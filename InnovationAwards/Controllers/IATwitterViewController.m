@@ -10,6 +10,8 @@
 
 @interface IATwitterViewController ()
 
+- (void)postToTwitter:(NSString *)text;
+
 @property (strong, nonatomic) NSArray *tweets;
 
 @end
@@ -40,10 +42,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // add buttons to the toolbar
-    UIBarButtonItem *tweetButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"210-twitterbird.png"]
-                                                                    style:UIBarButtonItemStyleBordered target:self action:@selector(postToTwitter)];
+    UIBarButtonItem *tweetButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showCommentComposer)];
+
     [self setToolbarItems:[NSArray arrayWithObject:tweetButton]];
-    [self.navigationController.toolbar setTintColor:self.navigationController.navigationBar.tintColor];
+    [self.navigationController.toolbar setTintColor:[UIColor blackColor]];
     
     pull = [[PullToRefreshView alloc] initWithScrollView:(UIScrollView *) self.tableView];
     [pull setDelegate:self];
@@ -54,7 +56,7 @@
                                                  name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
 
-    
+    [self foregroundRefresh:nil];
 }
 
 -(void)foregroundRefresh:(NSNotification *)notification
@@ -105,13 +107,17 @@
         NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
         NSDictionary *user = [tweet objectForKey:@"user"];
         
-        UILabel *nameLabel = (UILabel *)[cell viewWithTag:2];
-        UITextView *textLabel = (UITextView *)[cell viewWithTag:3];
-        UILabel *dateLabel = (UILabel *)[cell viewWithTag:4];
+        cell.textLabel.text = [tweet objectForKey:@"text"];
+        cell.textLabel.adjustsFontSizeToFitWidth = YES;
+        cell.textLabel.font = [UIFont systemFontOfSize:12];
+        cell.textLabel.numberOfLines = 4;
+        cell.detailTextLabel.text = [user objectForKey:@"name"];
         
-        nameLabel.attributedText = [user objectForKey:@"name"];
-        textLabel.text = [tweet objectForKey:@"text"];
-        dateLabel.text = [tweet objectForKey:@"created_at"];
+//        NSURL *url = [NSURL URLWithString:[tweet objectForKey:@"profile_image_url"]];
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        cell.imageView.image = [UIImage imageWithData:data];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     @catch (NSException *exception) {
         NSLog(@"main: Caught %@: %@", [exception name], [exception  reason]);
@@ -161,9 +167,10 @@
     [self reloadFromTwitter];
 }
 
-- (void)postToTwitter {
-    NSString *text = @"The Status";
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:text forKey:@"status"];
+- (void)postToTwitter:(NSString *)text
+{
+    NSString *withTag = [NSString stringWithFormat:@"%@ #ia12", text];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:withTag forKey:@"status"];
     
     [SZTwitterUtils postWithViewController:self path:@"/1/statuses/update.json" params:params success:^(id result) {
         NSLog(@"Posted to Twitter feed: %@", result);
@@ -173,5 +180,17 @@
     }];
     
 }
+
+- (void)showCommentComposer
+{
+    SZEntity *entity = [SZEntity entityWithKey:@"http://www.techcolumbusinnovationawards.com" name:@"IA2012"];
+    [SZCommentUtils showCommentComposerWithViewController:self entity:entity completion:^(id<SZComment> comment) {
+        NSLog(@"Created comment: %@", [comment text]);
+        [self postToTwitter:[comment text]];
+    } cancellation:^{
+        NSLog(@"Cancelled comment create");
+    }];
+}
+
 
 @end

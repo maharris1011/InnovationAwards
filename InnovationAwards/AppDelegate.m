@@ -23,6 +23,10 @@
     [Socialize storeConsumerSecret:@"d4fa492e-a2bf-4865-bcbf-2276b626ac3b"];
     [SZFacebookUtils setAppId:@"394489043966235"];
     [SZTwitterUtils setConsumerKey:@"wzsvqTEIx7W8Jb5bHbAYBA" consumerSecret:@"gdAQS4XSmvdS3pdvY4iqHgGAkB5lcinboVJdJcFJI"];
+    
+    [TestFlight takeOff:@"dc1a72e99768cf81ea352cc2fea4338e_MTQwNTA1MjAxMi0xMS0xMCAxNzowMDo0MS43MzE5NTc"];
+
+    
     return YES;
 }
 							
