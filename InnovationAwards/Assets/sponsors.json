@@ -1,0 +1,81 @@
+{
+    "levels": [
+		{
+			"level": "Presenting Sponsor",
+			"sponsors":[
+				{
+				"name":"Battelle",
+				"url":"http://www.battelle.org",
+				"logo":"",
+				"sponsorship":""
+				}
+			]
+		},
+		{
+			"level":"Diamond",
+			"sponsors":[
+			{
+				"name":"Ohio Health",
+				"url":"http://www.ohiohealth.org",
+				"logo":"",
+				"sponsorship":"Pre-Event Networking Reception Sponsor"
+			},
+			{
+				"name":"Bricker & Eckler",
+				"url": "",
+				"logo":"",
+				"sponsorship":"Student Innovation Awards Sponsor"
+			}]
+		},
+		{
+			"level":"Platinum",
+			"sponsors":[
+			{
+				"name":"CAS",
+				"url":"http://www.cas.com",
+				"logo":"",
+				"sponsorship":""
+			},
+			{
+				"name":"Columbus 2020",
+				"url":"http://www.columbusregion.com",
+				"logo":"",
+				"sponsorship":""
+			},
+			{
+				"name":"CVG",
+				"url":"http://www.cvgrp.com",
+				"logo":"",
+				"sponsorship":""
+			},
+			{
+				"name":"Live! Technologies",
+				"url":"http://www.reallivepros.org",
+				"logo":"",
+				"sponsorship":""
+			}]
+		},
+		{
+			"level":"Gold",
+			"sponsors":
+			[{
+				"name":"Porter Wright",
+				"url":"http://www.porterwright.com",
+				"logo":"",
+				"sponsorship":"Post-Event Networking Reception Sponsor"
+			},
+			{
+				"name":"GBQ Partners",
+				"url":"",
+				"logo":"",
+				"sponsorship":"Verification Sponsor"
+			},
+			{
+				"name":"Fathom",
+				"url":"",
+				"logo":"",
+				"sponsorship":"Social Media Sponsor"
+			}]
+		}		
+     ]
+}

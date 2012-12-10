@@ -34,6 +34,27 @@
 	<string>1.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Open SmartDownloads</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>sz461807</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb394489043966235</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>20</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -66,11 +87,11 @@
 			<key>TintColor</key>
 			<dict>
 				<key>Blue</key>
-				<real>0.3640053272247314</real>
+				<real>0.36400532722473139</real>
 				<key>Green</key>
-				<real>0</real>
+				<real>0.0</real>
 				<key>Red</key>
-				<real>0.3372405171394348</real>
+				<real>0.33724051713943481</real>
 			</dict>
 			<key>Translucent</key>
 			<false/>

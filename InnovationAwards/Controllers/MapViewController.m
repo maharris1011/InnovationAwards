@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import "MapAnnotation.h"
 
 @interface MapViewController ()
 

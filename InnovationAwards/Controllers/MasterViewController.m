@@ -14,6 +14,7 @@
 }
 
 @property (nonatomic, strong) NSArray *pageImages;
+@property (nonatomic, strong) NSArray *pageTransitions; // segues to other views
 @property (nonatomic, strong) NSMutableArray *pageViews;
 
 - (void)loadVisiblePages;
@@ -54,6 +55,13 @@
     }
 }
 
+- (void)handleTap:(id)sender
+{
+    
+    // the array 'pageTransitions' has the names of the segues to go to
+    [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
+}
+
 - (void)loadPage:(NSInteger)page {
     if (page < 0 || page >= self.pageImages.count) {
         // If it's outside the range of what you have to display, then do nothing
@@ -72,6 +80,8 @@
         UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImages objectAtIndex:page]];
         newPageView.contentMode = UIViewContentModeScaleAspectFit;
         newPageView.frame = frame;
+        newPageView.tag = page;
+        
         [self.scrollView addSubview:newPageView];
         // 4
         [self.pageViews replaceObjectAtIndex:page withObject:newPageView];
@@ -144,6 +154,12 @@
                        [UIImage imageNamed:@"ia12_app_callouts_3.png"],
                        [UIImage imageNamed:@"ia12_app_callouts_4.png"],
                        nil];
+    self.pageTransitions = [NSArray arrayWithObjects:
+                            @"showSemifinalists",
+                            @"showTwitter",
+                            @"showFacebook",
+                            @"showAbout"
+                            , nil];
     
     NSInteger pageCount = self.pageImages.count;
     
@@ -156,6 +172,12 @@
     for (NSInteger i = 0; i < pageCount; ++i) {
         [self.pageViews addObject:[NSNull null]];
     }
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    singleTapGestureRecognizer.numberOfTapsRequired = 1;
+    singleTapGestureRecognizer.enabled = YES;
+    singleTapGestureRecognizer.cancelsTouchesInView = NO;
+    [self.scrollView addGestureRecognizer:singleTapGestureRecognizer];
     
 }
 
@@ -181,12 +203,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UINavigationBar *navBar = self.navigationController.navigationBar;
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    NSLog(@"doing segue %@", [segue identifier]);
     
     if ([[segue identifier] isEqualToString:@"showTwitter"]) {
         // show the twitter screen

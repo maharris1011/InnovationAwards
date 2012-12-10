@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  SponsorsViewController.h
 //  InnovationAwards
 //
 //  Created by Mark Harris on 12/9/12.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface SponsorsViewController : UITableViewController
 
+@property (nonatomic, strong) NSDictionary *sponsorshipData;
 
 @end

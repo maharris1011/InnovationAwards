@@ -1,0 +1,188 @@
+{
+    
+  "categories":[
+	{
+	"category":"Student Innovation Awards",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_studentaward_winners_finalists.html",
+	"semifinalists":["To Be Determined"]
+	},
+	{
+	"category":"Corporate Innovator of the Year",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_CIY.html",
+	"semifinalists":["To Be Determined"]
+	},
+	{
+	"category":"Outstanding Startup Business",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OSB.html",
+	"semifinalists":["AboutOurWork", "Acceptd", "Acclaimd, Inc.", "Azoti",
+					 "Bookwithus LLC",
+					 "Churchsys", "Coalesce Software", "COHIE, Inc.", "CUE YOU LTD", "Cuptoopia.com, Inc.",
+					 "DOMedia", 
+					 "EndoSphere Inc.", 
+					 "Fabrisonic, LLC",
+					 "geoAMPS",
+					 "Intelligent ID", "IT Martini",
+					 "LogoMyWay LLC",
+					 "PaneraTech, Inc.", "pH Matter, LLC", 
+					 "RealWeld Systems", "Return On Ingredients LLC", 
+					 "SeeMore Interactive", "SoftSyl Technologies", 
+					 "Terracal LLC", "TheraVasc",
+					 "Updox", 
+					 "Venture Highway", "Venueseen", 
+					 "Zepheira LLC"]
+	},
+	{
+		"category":"Outstanding Product (under 250)",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OPS.html",
+		"semifinalists":["Alpha Resources, LLC", "HR Services Inc.", "Perfect Practice", 
+						"Azoti", "Intelligent ID", "ProcureSafe", 
+						"Capture Education", "LifeBio", "RealWeld Systems, Inc.", 
+						"CUE YOU LTD", "MailTamer", "Sevenex", 
+						"Cupcake Yum.Yum", "Modern Medical, Inc.", "Venture Highway",
+					 	"Environmental Pest Management", "Moncai", "Venueseen",
+					 	"Expesite, LLC.", "NanoBlox, Inc.", "Whouter.com",
+					 	"Global Medical Foam, Inc.", "Nanofiber Solutions", "WilData Healthcare Solutions, LLC",
+					 	"HealthSpot", "Northwoods", "Zia Systems LLC"]
+	},
+	{
+		"category":"Outstanding Product (over 250)",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OPL.html",
+		"semifinalists":["Battelle Memorial Institute", "The Scotts Miracle-Gro Company"]
+	},
+	{
+		"category":"Green Innovation",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_GRN.html",
+		"semifinalists":[
+						"Biobent Polymers, LLC",
+						"The City of Columbus, Mayor's Office of Environmental Stewardship",
+						"Corder Enterprises International (CEI)",
+						"Elytus Ltd.",
+						"G & J Pepsi-Cola Bottling Company of Columbus",
+						"InnovaGreen Systems/GreenBleaf",
+						"Jane's Dough Foods"
+						]
+	},
+	{
+		"category":"Outstanding Service (over 250)",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OSL.html",
+		"semifinalists":[
+						"ICC",
+						"OhioHealth Structural Heart Disease Patient Evaluation and Research Center",
+						"The Research Institute at Nationwide Children's Hospital"
+						]
+	},
+	{
+		"category":"Outstanding Service (under 250)",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OSS.html",
+		"semifinalists":[
+						"AboutOurWork",
+						"Algorithm, Inc.",
+						"Amperand",
+						"ARCOS, Inc.",
+						"Buckeye Interactive",
+						"Contactability.com",
+						"DataCenter.BZ",
+						"Dedicated Tech Services, Inc.",
+						"Elytus Ltd.",
+						"Exacter, Inc.",
+						"Expedient",
+						"Fidelity Voice and Data",
+						"Halcyon Solutions",
+						"IT Martini",
+						"Manifest Solutions",
+						"Manta",
+						"Pluto Networks",
+						"Revolution Group",
+						"Salon Lofts",
+						"The SmarTV Company, LLC",
+						"Updox"
+						]
+	},
+	{
+	"category":"Outstanding Technology Team",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OTT.html",
+	"semifinalists":[
+					"Battelle - Selex LS10 Team",
+					"CareWorks Family of Companies - IT Team",
+					"The City of Columbus - Department of Technology",
+					"DataCenter.BZ",
+					"Fisher College of Business - Educational Technologies Team, The Ohio State University", 
+					"Grange Insurance - Super Easy Quote Team",
+					"InnovaGreen Systems/GreenBleaf - Cigarette Butt Litter Solutions Network",
+					"Navidea Biopharmaceuticals, Inc. - Lymphoseek Development Team",
+					"Northwoods - Product Delivery Team",
+					"OhioHealth - Fibroid Center of Excellence",
+					"Quick Solutions, Inc. (QSI) - Primary Financial Company SimpliCD Development Team",
+					"Riverside Radiology and Interventional Associates - IT Team"
+					]
+	},
+	{
+	"category":"Innovation in Non-Profit Service Delivery",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_NPS.html",
+	"semifinalists":[
+					"Battelle for Kids",
+					"Center for Personalized Health Care, The Ohio State University",
+					"The City of Westerville, WeConnect",
+					"eTech Ohio",
+					"Experience Foundation",
+					"Junior Achievement of Central Ohio",
+					"State of Ohio, Department of Developmental Disabilities",
+					"ThirstRelief"
+					]
+	},
+	{
+	"category":"Executive of the Year (over 250)",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_EYL.html",
+	"semifinalists":[
+					"CVG-Commercial Vehicle Group, Inc. - Jerry Armstrong",
+					"Highlights for Children, Inc. - Kent Johnson",
+					"State of Ohio, Department of Developmental Disabilities - Bryant Young"
+					]
+	},
+	{
+	"category":"Executive of the Year (under 250)",
+	"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_EYS.html",
+	"semifinalists":[
+					"Buckeye Interactive - Brad Griffith",  
+					"The City of Columbus, Department of Technology - Gary R. Cavin",  
+					"Pluto Networks - Larry Chaffin"   
+					]
+	},
+	{
+	"category":"Outstanding Woman in Technology",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_OWT.html",
+	"semifinalists":[
+					"Battelle Memorial Institute - Dr. Carol Sabourin",    
+					"Beagle Bioproducts, Inc. - Dr. Stephanie A. Smith",                     
+					"Core Quantum Technologies, The Ohio State University - Dr. Jessica Winter",
+					"John Glenn School of Public Affairs, The Ohio State University - Victoria Boczkowski",
+					"Life Capsules, LLC/College of Education & Human Ecology, The Ohio State University - Ouliana Ziouzenkova",
+					"LifeCubby - Sue Testaguzza",   
+					"Manta - Pamela Springer",  
+					"Nationwide Children's Hospital - Valerie Hendren",  
+					"Nationwide Insurance - Betsy Radley",         
+					"OhioHealth Research & Innovation Institute - Patricia Eisenhardt",  
+					"Revolution Group - Polly Clavijo",    
+					"TDCI - Rhonda DeMuth",       
+					"Ticket Fire - Tanisha Robinson"
+					]
+	},  
+	{
+		"category":"Inventor of the Year",
+		"URL":"http://www.techcolumbusinnovationawards.org/2011_winners_semifinalists_IOY.html",
+		"semifinalists":[
+						"Biodynamics Laboratory, The Ohio State University - Dr. William S. Marras",
+						"Core Quantum Technologies, The Ohio State University - Dr. Jessica O. Winter",
+						"Davis Heart & Lung Research Institute, The Ohio State University - Dr. Periannan Kuppusamy",
+						"EWI - Matt Short",
+						"MailTamer - Scott Greiff",   
+						"Nanofiber Solutions - Jed Johnson",    
+						"QuTel - Dr. Paul Berger",    
+						"The Research Institute at Nationwide Children's Hospital - Peter White, Ph.D.",       
+						"Senstronics, OSU Department of Biomedical Engineering - Dr. Stephen Lee",    
+						"Tech4Imaging LLC - Qussai Marashdeh PhD MBA",  
+						"Wexner Medical Center Program in Pharmacogenomics - Wolfgang Sadee, Dr.rer.nat."
+						]
+		}		
+	]
+}
