@@ -28,8 +28,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="hvV-p1-l0p">
-                                <rect key="frame" x="0.0" y="328" width="320" height="100"/>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="hvV-p1-l0p">
+                                <rect key="frame" x="0.0" y="404" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="February 7, 2013  7pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uTb-4B-OHA">
@@ -56,8 +56,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.40784317255020142" green="0.0" blue="0.43921571969985962" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y01-lM-YWZ">
-                                <rect key="frame" x="20" y="277" width="280" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y01-lM-YWZ">
+                                <rect key="frame" x="20" y="353" width="120" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Register Now!">
@@ -67,18 +67,40 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonWasPressed:" destination="UOi-q7-hxg" eventType="touchUpInside" id="uYe-Z4-XGK"/>
+                                    <segue destination="aq3-Hg-fuv" kind="push" id="kWd-CR-6tt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cbr-5p-i9v">
+                                <rect key="frame" x="180" y="353" width="120" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Directions">
+                                    <color key="titleColor" red="0.98039221759999995" green="0.98823535439999999" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonWasPressed:" destination="UOi-q7-hxg" eventType="touchUpInside" id="kpi-5V-hnc"/>
+                                    <segue destination="dFk-hx-waR" kind="push" id="bmx-3d-GD3"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="aQx-Pw-oAc">
-                                <rect key="frame" x="0.0" y="233" width="320" height="36"/>
+                                <rect key="frame" x="0.0" y="220" width="320" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="F1R-cw-xWF">
-                                <rect key="frame" x="0.0" y="44" width="320" height="181"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UOi-q7-hxg" id="F84-29-mKu"/>
+                                </connections>
                             </scrollView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Celebrating Local Innovation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="POp-0I-smK">
-                                <rect key="frame" x="0.0" y="15" width="320" height="21"/>
+                                <rect key="frame" x="0.0" y="37" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="0.98039221759999995" green="0.98823535439999999" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
@@ -90,20 +112,98 @@
                     <navigationItem key="navigationItem" id="Bm7-LZ-K7u"/>
                     <connections>
                         <outlet property="backgroundView" destination="sQp-nC-Q2C" id="LTJ-wc-5vp"/>
+                        <outlet property="directionsButton" destination="Cbr-5p-i9v" id="6ci-Z3-aTl"/>
                         <outlet property="locationView" destination="hvV-p1-l0p" id="eGd-fN-Wqj"/>
+                        <outlet property="pageControl" destination="aQx-Pw-oAc" id="JDb-88-Dl8"/>
+                        <outlet property="registerButton" destination="y01-lM-YWZ" id="SGb-Km-t9H"/>
+                        <outlet property="scrollView" destination="F1R-cw-xWF" id="tcG-tq-z0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziQ-XT-2Jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="504" y="64"/>
         </scene>
+        <!--Map View Controller - Directions-->
+        <scene sceneID="2Ce-nt-QJD">
+            <objects>
+                <viewController id="dFk-hx-waR" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xtQ-Ge-rcc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="4UM-Sa-X93">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dFk-hx-waR" id="YZc-e8-mLR"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Directions" id="fM7-lf-LTj">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="trg-we-4d4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="4UM-Sa-X93" id="vLq-Bh-KqY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qu6-E9-uEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231" y="11"/>
+        </scene>
+        <!--Registration View Controller - Register-->
+        <scene sceneID="wUz-9n-1qS">
+            <objects>
+                <viewController id="aq3-Hg-fuv" customClass="RegistrationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Xy-dc-Y97">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="WYl-zs-xrw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register" id="sRn-rG-YBI">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Gvc-da-KBq"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="WYl-zs-xrw" id="c53-Ak-eQd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEF-HK-xaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231" y="745"/>
+        </scene>
     </scenes>
     <classes>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
         <class className="MasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="registerButtonWasPressed:"/>
                 <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="directionsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="locationView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="RegistrationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
     </classes>

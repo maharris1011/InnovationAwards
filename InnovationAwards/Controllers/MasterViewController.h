@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-
-@interface MasterViewController : UIViewController
+@interface MasterViewController : UIViewController<UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
-@property (weak, nonatomic) IBOutlet UIView *locationView;
+@property (strong, nonatomic) IBOutlet UIView *locationView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIButton *registerButton;
+@property (strong, nonatomic) IBOutlet UIButton *directionsButton;
+
+- (IBAction)registerButtonWasPressed:(id)sender;
 
 @end
