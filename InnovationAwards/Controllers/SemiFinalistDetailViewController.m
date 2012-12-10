@@ -7,6 +7,7 @@
 //
 
 #import "SemiFinalistDetailViewController.h"
+#import "PullToRefresh/PullToRefreshView.h"
 
 @interface SemiFinalistDetailViewController ()
 
