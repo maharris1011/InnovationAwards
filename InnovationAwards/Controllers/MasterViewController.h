@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIView *locationView;
 
 @end

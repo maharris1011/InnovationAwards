@@ -17,10 +17,11 @@
 
 @implementation MasterViewController
 
+@synthesize backgroundView = _backgroundView;
+
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
     [super awakeFromNib];
@@ -33,6 +34,13 @@
     UINavigationBar *navBar = [[self navigationController] navigationBar];
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+
+    [self.backgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackground.png"]]];
+
+    NSInteger frameHeight = self.view.bounds.size.height;
+    NSInteger locationViewHeight = 140;
+    [self.locationView setFrame:CGRectMake(0,frameHeight-locationViewHeight, 320, locationViewHeight)];
+    
 }
 
 - (void)didReceiveMemoryWarning
