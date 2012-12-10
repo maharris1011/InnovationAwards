@@ -92,21 +92,37 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 20;
+    return [self.tweets count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"TweetCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
+    @try {
+        
+        // Configure the cell...
+        NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+        NSDictionary *user = [tweet objectForKey:@"user"];
+        
+        UILabel *nameLabel = (UILabel *)[cell viewWithTag:2];
+        UITextView *textLabel = (UITextView *)[cell viewWithTag:3];
+        UILabel *dateLabel = (UILabel *)[cell viewWithTag:4];
+        
+        nameLabel.attributedText = [user objectForKey:@"name"];
+        textLabel.text = [tweet objectForKey:@"text"];
+        dateLabel.text = [tweet objectForKey:@"created_at"];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"main: Caught %@: %@", [exception name], [exception  reason]);
+    }
     
     return cell;
 }
 
 
 #pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -118,13 +134,17 @@
 {
     // call out to Twitter
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"20", @"count",
-                          @"ia12", @"q", @"recent", @"result_type", nil];
+                          @"#ia12", @"q", @"recent", @"result_type", nil];
     
     [SZTwitterUtils getWithViewController:self
-                                     path:@"http://api.twitter.com/1.1/search/tweets.json?q=ia12&count=20&result_type=recent"
-                                   params:nil
-                                  success:^(id result){
+                                     path:@"/1.1/search/tweets.json"
+                                   params:dict
+                                  success:^(NSDictionary * result){
                                       NSLog(@"We succeeded");
+                                      // we have a batch of tweets.  Put those
+                                      // into the tweets array
+                                      self.tweets = [result objectForKey:@"statuses"];
+                                      
                                       [self.tableView reloadData];
                                       [pull finishedLoading];
                                   }
