@@ -28,7 +28,10 @@
 		4D5019A716754D350031B9F8 /* ia12_app_callouts_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5019A116754D350031B9F8 /* ia12_app_callouts_3.png */; };
 		4D5019A916754DEB0031B9F8 /* mainBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5019A816754DEB0031B9F8 /* mainBackground@2x.png */; };
 		4D5CD9CA1675567100ABC2FD /* headerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5CD9C91675567100ABC2FD /* headerBackground.png */; };
-		4D5CD9CE167556FA00ABC2FD /* headerBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5CD9CD167556FA00ABC2FD /* headerBackground@2x.png */; };
+		4DB7475316756FA5004664EC /* ia12_app_callouts_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */; };
+		4DB747561675733A004664EC /* headerBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB747551675733A004664EC /* headerBackground@2x.png */; };
+		4DB7478E1675748A004664EC /* UIButton+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7478D1675748A004664EC /* UIButton+SSGradient.m */; };
+		4DB7479016757703004664EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB7478F16757703004664EC /* QuartzCore.framework */; };
 		4DCECFF41675474000272F0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF31675474000272F0B /* UIKit.framework */; };
 		4DCECFF61675474000272F0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF51675474000272F0B /* Foundation.framework */; };
 		4DCECFF81675474000272F0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF71675474000272F0B /* CoreGraphics.framework */; };
@@ -37,6 +40,11 @@
 		4DCED0041675474100272F0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED0031675474100272F0B /* AppDelegate.m */; };
 		4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */; };
 		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
+		4DFEF4DD16757D500069E734 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF4DC16757D4F0069E734 /* RegistrationViewController.m */; };
+		4DFEF4E21675829A0069E734 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF4E11675829A0069E734 /* MapViewController.m */; };
+		4DFEF4E41675840A0069E734 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF4E31675840A0069E734 /* CoreLocation.framework */; };
+		4DFEF4E6167584390069E734 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF4E5167584390069E734 /* MapKit.framework */; };
+		4DFEF4E91675869F0069E734 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF4E81675869F0069E734 /* MapAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +71,11 @@
 		4D5019A116754D350031B9F8 /* ia12_app_callouts_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_app_callouts_3.png; sourceTree = "<group>"; };
 		4D5019A816754DEB0031B9F8 /* mainBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainBackground@2x.png"; sourceTree = "<group>"; };
 		4D5CD9C91675567100ABC2FD /* headerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackground.png; sourceTree = "<group>"; };
-		4D5CD9CD167556FA00ABC2FD /* headerBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headerBackground@2x.png"; sourceTree = "<group>"; };
+		4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_app_callouts_4.png; sourceTree = "<group>"; };
+		4DB747551675733A004664EC /* headerBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headerBackground@2x.png"; sourceTree = "<group>"; };
+		4DB7478C1675748A004664EC /* UIButton+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSGradient.h"; sourceTree = "<group>"; };
+		4DB7478D1675748A004664EC /* UIButton+SSGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SSGradient.m"; sourceTree = "<group>"; };
+		4DB7478F16757703004664EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4DCECFEF1675474000272F0B /* InnovationAwards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnovationAwards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCECFF31675474000272F0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DCECFF51675474000272F0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +88,15 @@
 		4DCED0031675474100272F0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DCED00C1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4DFEF4DB16757D4F0069E734 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = InnovationAwards/Controllers/RegistrationViewController.h; sourceTree = SOURCE_ROOT; };
+		4DFEF4DC16757D4F0069E734 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = InnovationAwards/Controllers/RegistrationViewController.m; sourceTree = SOURCE_ROOT; };
+		4DFEF4DF1675809C0069E734 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4DFEF4E01675829A0069E734 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = InnovationAwards/Controllers/MapViewController.h; sourceTree = SOURCE_ROOT; };
+		4DFEF4E11675829A0069E734 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = InnovationAwards/Controllers/MapViewController.m; sourceTree = SOURCE_ROOT; };
+		4DFEF4E31675840A0069E734 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4DFEF4E5167584390069E734 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4DFEF4E71675869F0069E734 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = InnovationAwards/Models/MapAnnotation.h; sourceTree = SOURCE_ROOT; };
+		4DFEF4E81675869F0069E734 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = InnovationAwards/Models/MapAnnotation.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFEF4E6167584390069E734 /* MapKit.framework in Frameworks */,
+				4DFEF4E41675840A0069E734 /* CoreLocation.framework in Frameworks */,
+				4DB7479016757703004664EC /* QuartzCore.framework in Frameworks */,
 				4DCECFF41675474000272F0B /* UIKit.framework in Frameworks */,
 				4DCECFF61675474000272F0B /* Foundation.framework in Frameworks */,
 				4DCECFF81675474000272F0B /* CoreGraphics.framework in Frameworks */,
@@ -102,10 +126,11 @@
 				4D50194D167548DA0031B9F8 /* TitilliumText25L 800wt.otf */,
 				4D50194E167548DA0031B9F8 /* TitilliumText25L 999wt.otf */,
 				4D5CD9C91675567100ABC2FD /* headerBackground.png */,
-				4D5CD9CD167556FA00ABC2FD /* headerBackground@2x.png */,
+				4DB747551675733A004664EC /* headerBackground@2x.png */,
 				4D50199F16754D350031B9F8 /* ia12_app_callouts_1.png */,
 				4D5019A016754D350031B9F8 /* ia12_app_callouts_2.png */,
 				4D5019A116754D350031B9F8 /* ia12_app_callouts_3.png */,
+				4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */,
 				4D501943167548A90031B9F8 /* mainBackground.png */,
 				4D5019A816754DEB0031B9F8 /* mainBackground@2x.png */,
 				4D501945167548A90031B9F8 /* mainBackground-568h@2x.png */,
@@ -119,6 +144,10 @@
 		4D50192A167547DB0031B9F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DFEF4E01675829A0069E734 /* MapViewController.h */,
+				4DFEF4E11675829A0069E734 /* MapViewController.m */,
+				4DFEF4DB16757D4F0069E734 /* RegistrationViewController.h */,
+				4DFEF4DC16757D4F0069E734 /* RegistrationViewController.m */,
 				4D50192D167548130031B9F8 /* DetailViewController.h */,
 				4D50192E167548130031B9F8 /* DetailViewController.m */,
 				4D50192F167548130031B9F8 /* MasterViewController.h */,
@@ -130,6 +159,8 @@
 		4D50192B167547E70031B9F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4DFEF4E71675869F0069E734 /* MapAnnotation.h */,
+				4DFEF4E81675869F0069E734 /* MapAnnotation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +177,9 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
+				4DFEF4E5167584390069E734 /* MapKit.framework */,
+				4DFEF4E31675840A0069E734 /* CoreLocation.framework */,
+				4DB7478F16757703004664EC /* QuartzCore.framework */,
 				4D50199A16754A780031B9F8 /* ia_72x72_icon.png */,
 				4D50199816754A5B0031B9F8 /* ia_114x114_icon.png */,
 				4D50199616754A500031B9F8 /* ia_57x57_icon.png */,
@@ -190,6 +224,9 @@
 		4DCECFFA1675474000272F0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4DFEF4DF1675809C0069E734 /* Constants.h */,
+				4DB7478C1675748A004664EC /* UIButton+SSGradient.h */,
+				4DB7478D1675748A004664EC /* UIButton+SSGradient.m */,
 				4DCECFFB1675474000272F0B /* InnovationAwards-Info.plist */,
 				4DCECFFC1675474000272F0B /* InfoPlist.strings */,
 				4DCECFFF1675474000272F0B /* main.m */,
@@ -271,7 +308,8 @@
 				4D5019A716754D350031B9F8 /* ia12_app_callouts_3.png in Resources */,
 				4D5019A916754DEB0031B9F8 /* mainBackground@2x.png in Resources */,
 				4D5CD9CA1675567100ABC2FD /* headerBackground.png in Resources */,
-				4D5CD9CE167556FA00ABC2FD /* headerBackground@2x.png in Resources */,
+				4DB7475316756FA5004664EC /* ia12_app_callouts_4.png in Resources */,
+				4DB747561675733A004664EC /* headerBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +324,10 @@
 				4DCED0041675474100272F0B /* AppDelegate.m in Sources */,
 				4D501931167548130031B9F8 /* DetailViewController.m in Sources */,
 				4D501932167548130031B9F8 /* MasterViewController.m in Sources */,
+				4DB7478E1675748A004664EC /* UIButton+SSGradient.m in Sources */,
+				4DFEF4DD16757D500069E734 /* RegistrationViewController.m in Sources */,
+				4DFEF4E21675829A0069E734 /* MapViewController.m in Sources */,
+				4DFEF4E91675869F0069E734 /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
