@@ -31,6 +31,12 @@
 		4DB747561675733A004664EC /* headerBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB747551675733A004664EC /* headerBackground@2x.png */; };
 		4DB7478E1675748A004664EC /* UIButton+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7478D1675748A004664EC /* UIButton+SSGradient.m */; };
 		4DB7479016757703004664EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB7478F16757703004664EC /* QuartzCore.framework */; };
+		4DB8F88A1675D9050017CD64 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8F8841675D9050017CD64 /* arrow.png */; };
+		4DB8F88B1675D9050017CD64 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8F8851675D9050017CD64 /* arrow@2x.png */; };
+		4DB8F88C1675D9050017CD64 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8F8861675D9050017CD64 /* LICENSE */; };
+		4DB8F88D1675D9050017CD64 /* PullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8F8881675D9050017CD64 /* PullToRefreshView.m */; };
+		4DB8F88E1675D9050017CD64 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8F8891675D9050017CD64 /* README */; };
+		4DB8F8911675DAFC0017CD64 /* FacebookWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8F8901675DAFC0017CD64 /* FacebookWebViewController.m */; };
 		4DCECFF41675474000272F0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF31675474000272F0B /* UIKit.framework */; };
 		4DCECFF61675474000272F0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF51675474000272F0B /* Foundation.framework */; };
 		4DCECFF81675474000272F0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF71675474000272F0B /* CoreGraphics.framework */; };
@@ -273,6 +279,9 @@
 		4DFEF6F116759E050069E734 /* SZStatusImageLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF61416759E040069E734 /* SZStatusImageLabelView.xib */; };
 		4DFEF6F216759E050069E734 /* Socialize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF61516759E040069E734 /* Socialize.framework */; };
 		4DFEF6F416759E310069E734 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF6F316759E310069E734 /* MessageUI.framework */; };
+		4DFEF6FC1675C9E00069E734 /* IATwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */; };
+		4DFEF6FF1675CD060069E734 /* 210-twitterbird.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */; };
+		4DFEF7001675CD060069E734 /* 210-twitterbird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -302,6 +311,14 @@
 		4DB7478C1675748A004664EC /* UIButton+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSGradient.h"; sourceTree = "<group>"; };
 		4DB7478D1675748A004664EC /* UIButton+SSGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SSGradient.m"; sourceTree = "<group>"; };
 		4DB7478F16757703004664EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4DB8F8841675D9050017CD64 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4DB8F8851675D9050017CD64 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		4DB8F8861675D9050017CD64 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4DB8F8871675D9050017CD64 /* PullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshView.h; sourceTree = "<group>"; };
+		4DB8F8881675D9050017CD64 /* PullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshView.m; sourceTree = "<group>"; };
+		4DB8F8891675D9050017CD64 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4DB8F88F1675DAFC0017CD64 /* FacebookWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookWebViewController.h; path = InnovationAwards/Controllers/FacebookWebViewController.h; sourceTree = SOURCE_ROOT; };
+		4DB8F8901675DAFC0017CD64 /* FacebookWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookWebViewController.m; path = InnovationAwards/Controllers/FacebookWebViewController.m; sourceTree = SOURCE_ROOT; };
 		4DCECFEF1675474000272F0B /* InnovationAwards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnovationAwards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCECFF31675474000272F0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DCECFF51675474000272F0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -556,6 +573,10 @@
 		4DFEF61416759E040069E734 /* SZStatusImageLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZStatusImageLabelView.xib; sourceTree = "<group>"; };
 		4DFEF61516759E040069E734 /* Socialize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socialize.framework; sourceTree = "<group>"; };
 		4DFEF6F316759E310069E734 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4DFEF6FA1675C9E00069E734 /* IATwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATwitterViewController.h; sourceTree = "<group>"; };
+		4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATwitterViewController.m; sourceTree = "<group>"; };
+		4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "210-twitterbird.png"; sourceTree = "<group>"; };
+		4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "210-twitterbird@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,6 +601,8 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */,
+				4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */,
 				4DFEF53116759D210069E734 /* semifinalists.json */,
 				4DFEF53216759D210069E734 /* sponsors.json */,
 				4DFEF53316759D210069E734 /* winners.json */,
@@ -612,6 +635,8 @@
 				4DFEF5231675991E0069E734 /* AboutTableViewController.m */,
 				4DFEF4E01675829A0069E734 /* MapViewController.h */,
 				4DFEF4E11675829A0069E734 /* MapViewController.m */,
+				4DB8F88F1675DAFC0017CD64 /* FacebookWebViewController.h */,
+				4DB8F8901675DAFC0017CD64 /* FacebookWebViewController.m */,
 				4DFEF4DB16757D4F0069E734 /* RegistrationViewController.h */,
 				4DFEF4DC16757D4F0069E734 /* RegistrationViewController.m */,
 				4D50192F167548130031B9F8 /* MasterViewController.h */,
@@ -624,6 +649,8 @@
 				4DFEF52F16759B990069E734 /* SemiFinalistDetailViewController.m */,
 				4DFEF52B16759B230069E734 /* CategoryViewController.h */,
 				4DFEF52C16759B230069E734 /* CategoryViewController.m */,
+				4DFEF6FA1675C9E00069E734 /* IATwitterViewController.h */,
+				4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -642,6 +669,27 @@
 				4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4DB8F8811675D8E50017CD64 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8F8831675D9050017CD64 /* PullToRefresh */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		4DB8F8831675D9050017CD64 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8F8841675D9050017CD64 /* arrow.png */,
+				4DB8F8851675D9050017CD64 /* arrow@2x.png */,
+				4DB8F8861675D9050017CD64 /* LICENSE */,
+				4DB8F8871675D9050017CD64 /* PullToRefreshView.h */,
+				4DB8F8881675D9050017CD64 /* PullToRefreshView.m */,
+				4DB8F8891675D9050017CD64 /* README */,
+			);
+			path = PullToRefresh;
 			sourceTree = "<group>";
 		};
 		4DCECFE41675474000272F0B = {
@@ -682,6 +730,7 @@
 		4DCECFF91675474000272F0B /* InnovationAwards */ = {
 			isa = PBXGroup;
 			children = (
+				4DB8F8811675D8E50017CD64 /* Vendor */,
 				4D50192B167547E70031B9F8 /* Models */,
 				4D50192C167547E70031B9F8 /* Views */,
 				4D50192A167547DB0031B9F8 /* Controllers */,
@@ -1241,6 +1290,12 @@
 				4DFEF6EF16759E050069E734 /* SocializeTableViewController.xib in Resources */,
 				4DFEF6F016759E050069E734 /* SZBaseShareViewController.xib in Resources */,
 				4DFEF6F116759E050069E734 /* SZStatusImageLabelView.xib in Resources */,
+				4DFEF6FF1675CD060069E734 /* 210-twitterbird.png in Resources */,
+				4DFEF7001675CD060069E734 /* 210-twitterbird@2x.png in Resources */,
+				4DB8F88A1675D9050017CD64 /* arrow.png in Resources */,
+				4DB8F88B1675D9050017CD64 /* arrow@2x.png in Resources */,
+				4DB8F88C1675D9050017CD64 /* LICENSE in Resources */,
+				4DB8F88E1675D9050017CD64 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1262,6 +1317,9 @@
 				4DFEF52A167599790069E734 /* SponsorsViewController.m in Sources */,
 				4DFEF52D16759B240069E734 /* CategoryViewController.m in Sources */,
 				4DFEF53016759B990069E734 /* SemiFinalistDetailViewController.m in Sources */,
+				4DFEF6FC1675C9E00069E734 /* IATwitterViewController.m in Sources */,
+				4DB8F88D1675D9050017CD64 /* PullToRefreshView.m in Sources */,
+				4DB8F8911675DAFC0017CD64 /* FacebookWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

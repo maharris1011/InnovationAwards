@@ -1,3 +1,6 @@
 [submodule "Submodules/JSONKit"]
 	path = Submodules/JSONKit
 	url = https://github.com/johnezang/JSONKit.git
+[submodule "Submodules/PullToRefresh"]
+	path = Submodules/PullToRefresh
+	url = https://github.com/sonnyparlin/PullToRefresh.git
