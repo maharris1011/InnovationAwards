@@ -70,7 +70,7 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     NSString *fileName = [[NSBundle mainBundle] pathForResource:@"sponsors" ofType:@"json"];
     NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     _sponsorshipData = [jsonData objectFromJSONString];
-    NSLog(@"jsonData parsed = %@", _sponsorshipData);
+//    NSLog(@"jsonData parsed = %@", _sponsorshipData);
 
     // adjust the background view to match
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
@@ -114,7 +114,11 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SponsorCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
     // Configure the cell...
     NSArray *levelsArray = [self.sponsorshipData objectForKey:@"levels"];

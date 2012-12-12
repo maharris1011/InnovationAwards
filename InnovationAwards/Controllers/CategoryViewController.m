@@ -42,7 +42,7 @@
     NSString *fileName = [[NSBundle mainBundle] pathForResource:@"semifinalists" ofType:@"json"];
     NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     self.categories = [jsonData objectFromJSONString];
-    NSLog(@"jsonData parsed = %@", self.categories);
+//    NSLog(@"jsonData parsed = %@", self.categories);
     
     // adjust the background view to match
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
@@ -82,8 +82,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CategoryCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+
     // Configure the cell...
     NSArray *categories = [self.categories objectForKey:@"categories"];
     NSDictionary *category = [categories objectAtIndex:indexPath.section];
