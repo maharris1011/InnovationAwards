@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1D54351678503100626E21 /* 42-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D54331678503100626E21 /* 42-info.png */; };
+		4D1D54361678503100626E21 /* 42-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D54341678503100626E21 /* 42-info@2x.png */; };
+		4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */; };
+		4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */; };
 		4D501932167548130031B9F8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D501930167548130031B9F8 /* MasterViewController.m */; };
 		4D501936167548490031B9F8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D501933167548490031B9F8 /* Default.png */; };
 		4D501937167548490031B9F8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D501934167548490031B9F8 /* Default@2x.png */; };
@@ -289,6 +293,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D1D54331678503100626E21 /* 42-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info.png"; sourceTree = "<group>"; };
+		4D1D54341678503100626E21 /* 42-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info@2x.png"; sourceTree = "<group>"; };
+		4D26A3C31678469A006D43A2 /* UITableViewController+GradientHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+GradientHeaders.h"; sourceTree = "<group>"; };
+		4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+GradientHeaders.m"; sourceTree = "<group>"; };
+		4D26A3C7167846BF006D43A2 /* UIView+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSGradient.h"; sourceTree = "<group>"; };
+		4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSGradient.m"; sourceTree = "<group>"; };
 		4D50192F167548130031B9F8 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4D501930167548130031B9F8 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		4D501933167548490031B9F8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -612,6 +622,8 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D1D54331678503100626E21 /* 42-info.png */,
+				4D1D54341678503100626E21 /* 42-info@2x.png */,
 				4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */,
 				4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */,
 				4DFEF53116759D210069E734 /* semifinalists.json */,
@@ -758,6 +770,10 @@
 		4DCECFFA1675474000272F0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D26A3C7167846BF006D43A2 /* UIView+SSGradient.h */,
+				4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */,
+				4D26A3C31678469A006D43A2 /* UITableViewController+GradientHeaders.h */,
+				4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */,
 				4DFEF4DF1675809C0069E734 /* Constants.h */,
 				4DB7478C1675748A004664EC /* UIButton+SSGradient.h */,
 				4DB7478D1675748A004664EC /* UIButton+SSGradient.m */,
@@ -1322,6 +1338,8 @@
 				4DB8F88E1675D9050017CD64 /* README in Resources */,
 				4DF1DE9D1676011600CB2D9A /* README.md in Resources */,
 				4DF1DE9E1676011600CB2D9A /* release_notes.md in Resources */,
+				4D1D54351678503100626E21 /* 42-info.png in Resources */,
+				4D1D54361678503100626E21 /* 42-info@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1346,6 +1364,8 @@
 				4DFEF6FC1675C9E00069E734 /* IATwitterViewController.m in Sources */,
 				4DB8F88D1675D9050017CD64 /* PullToRefreshView.m in Sources */,
 				4DB8F8911675DAFC0017CD64 /* FacebookWebViewController.m in Sources */,
+				4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */,
+				4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1460,7 +1480,7 @@
 		4DCED01B1675474100272F0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sandlot Software, LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
@@ -1477,7 +1497,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7C43E141-A02F-4F9A-86A4-0BE92F4E3958";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
