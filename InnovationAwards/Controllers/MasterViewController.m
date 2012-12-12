@@ -125,29 +125,25 @@
 {
     [super viewDidLoad];
 
-	
-    // Do any additional setup after loading the view, typically from a nib.
-
-    [self.backgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackground.png"]]];
-
-    // adjust the "location view" to be on the bottom of the screen
-    NSInteger frameHeight = self.view.bounds.size.height;
-    NSInteger locationViewHeight = self.locationView.bounds.size.height;
-    [self.locationView setFrame:CGRectMake(0,frameHeight-locationViewHeight, 320, locationViewHeight)];
-    
+    // set the background image
+    UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    [self.view insertSubview:bgImageView atIndex:0];
     
     // add gradients to the "register now" button
-    CAGradientLayer *gradient = gradientWithColor(lightPurple, darkPurple);
+    CAGradientLayer *gradient = buttonGradientWithColor(lightPurple, darkPurple);
     [self.registerButton addGradient:gradient];
     self.registerButton.layer.borderColor = darkPurple.CGColor;
     self.registerButton.layer.borderWidth = 1;
-
-    gradient = gradientWithColor(lightPurple, darkPurple);
+    
+    gradient = buttonGradientWithColor(lightPurple, darkPurple);
     [self.directionsButton addGradient:gradient];
     self.directionsButton.layer.borderColor = darkPurple.CGColor;
     self.directionsButton.layer.borderWidth = 1;
 
-    // 1
+    // set up the images we're going to scroll through
     self.pageImages = [NSArray arrayWithObjects:
                        [UIImage imageNamed:@"ia12_app_callouts_1.png"],
                        [UIImage imageNamed:@"ia12_app_callouts_2.png"],
@@ -158,26 +154,39 @@
                             @"showSemifinalists",
                             @"showTwitter",
                             @"showFacebook",
-                            @"showAbout"
+                            @"showSponsors"
                             , nil];
     
     NSInteger pageCount = self.pageImages.count;
     
-    // 2
+    // set the initial page
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = pageCount;
     
-    // 3
+    // add each of the pages to the scrollview
     self.pageViews = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < pageCount; ++i) {
         [self.pageViews addObject:[NSNull null]];
     }
     
+    // set it so that we can transition to the next view when we tap on it.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     singleTapGestureRecognizer.numberOfTapsRequired = 1;
     singleTapGestureRecognizer.enabled = YES;
     singleTapGestureRecognizer.cancelsTouchesInView = NO;
     [self.scrollView addGestureRecognizer:singleTapGestureRecognizer];
+    
+    // move the buttons so they're just over top of the "location" frame
+    NSInteger buttonWidth = self.registerButton.frame.size.width;
+    NSInteger buttonHeight = self.registerButton.frame.size.height;
+    NSInteger buttonY = self.locationView.frame.origin.y - 25 - buttonHeight;
+        
+    CGRect registerButtonFrame = self.registerButton.frame;
+    CGRect directionsButtonFrame = self.directionsButton.frame;
+    
+
+    self.registerButton.frame = CGRectMake(registerButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
+    self.directionsButton.frame = CGRectMake(directionsButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
     
 }
 
@@ -185,9 +194,10 @@
 {
     [super viewWillAppear:animated];
     UINavigationBar *navBar = [[self navigationController] navigationBar];
-    navBar.tintColor = lightPurple;
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    [self.scrollView setFrame:CGRectMake(0, 66, 320, 146)];
     
     // 4
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
@@ -209,9 +219,6 @@
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     NSLog(@"doing segue %@", [segue identifier]);
     
-    if ([[segue identifier] isEqualToString:@"showTwitter"]) {
-        // show the twitter screen
-    }
 }
 
 - (IBAction)registerButtonWasPressed:(id)sender {

@@ -7,6 +7,7 @@
 //
 
 #import "SponsorsViewController.h"
+#import "UITableViewController+GradientHeaders.h"
 
 
 @interface SponsorsDataController : NSObject 
@@ -65,17 +66,18 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // load our data from the file on disk
     NSString *fileName = [[NSBundle mainBundle] pathForResource:@"sponsors" ofType:@"json"];
     NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     _sponsorshipData = [jsonData objectFromJSONString];
     NSLog(@"jsonData parsed = %@", _sponsorshipData);
-    
+
+    // adjust the background view to match
+    UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    self.tableView.backgroundView = bgImageView;
 
 }
 
@@ -104,6 +106,11 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     return sponsorCount;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor clearColor];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SponsorCell";
@@ -119,6 +126,8 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     cell.textLabel.text = [sponsor objectForKey:@"name"];
     cell.detailTextLabel.text = [sponsor objectForKey:@"sponsorship"];
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 
@@ -132,6 +141,8 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    return [self gradientHeaderViewForSection:section];
+    
     // now create the header label
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,320,22)];

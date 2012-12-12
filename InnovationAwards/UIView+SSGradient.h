@@ -1,5 +1,5 @@
 //
-//  UIButton+SSGradient.h
+//  UIView+SSGradient.h
 //  iSandlot
 //
 //  Created by Mark Harris on 11/18/12.
@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-CAGradientLayer *buttonGradientWithColor(UIColor *color2, UIColor *color1);
+CAGradientLayer *whiteGradient(void);
+CAGradientLayer *gradientWithColor(UIColor *color1, UIColor *color);
 
 
-@interface UIButton (SSGradient)
+@interface UIView (SSGradient)
 
 - (void)addGradient:(CAGradientLayer *)gradient;
 

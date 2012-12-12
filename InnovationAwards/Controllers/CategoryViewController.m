@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 TechColumbus. All rights reserved.
 //
 
+#import "UITableViewController+GradientHeaders.h"
 #import "CategoryViewController.h"
 #import "SemiFinalistDetailViewController.h"
 
@@ -42,6 +43,13 @@
     NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     self.categories = [jsonData objectFromJSONString];
     NSLog(@"jsonData parsed = %@", self.categories);
+    
+    // adjust the background view to match
+    UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    self.tableView.backgroundView = bgImageView;
 
 }
 
@@ -69,6 +77,8 @@
     return [nominees count];
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CategoryCell";
@@ -86,6 +96,7 @@
     return cell;
 }
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSArray *categories = [self.categories objectForKey:@"categories"];
@@ -97,6 +108,9 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    return [self gradientHeaderViewForSection:section];
+
+    
     // now create the header label
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,320,22)];
