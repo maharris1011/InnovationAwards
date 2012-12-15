@@ -20,6 +20,8 @@
 - (void)loadVisiblePages;
 - (void)loadPage:(NSInteger)page;
 - (void)purgePage:(NSInteger)page;
+- (void)handleImageTap:(UITapGestureRecognizer *)sender;
+- (void)handleLocationTap:(UITapGestureRecognizer *)sender;
 
 @end
 
@@ -55,12 +57,25 @@
     }
 }
 
-- (void)handleTap:(id)sender
+- (void)handleImageTap:(UITapGestureRecognizer *)sender
 {
     
-    // the array 'pageTransitions' has the names of the segues to go to
-    [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        // the array 'pageTransitions' has the names of the segues to go to
+        [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
+        
+    }
 }
+
+- (void)handleLocationTap:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        // if tap in the location view, get directions
+        [self performSegueWithIdentifier:@"showDirections" sender:self];
+    }
+}
+
 
 - (void)loadPage:(NSInteger)page {
     if (page < 0 || page >= self.pageImages.count) {
@@ -169,8 +184,8 @@
         [self.pageViews addObject:[NSNull null]];
     }
     
-    // set it so that we can transition to the next view when we tap on it.
-    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    // set the scrollview so that we can transition to the next view when we tap on it.
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
     singleTapGestureRecognizer.numberOfTapsRequired = 1;
     singleTapGestureRecognizer.enabled = YES;
     singleTapGestureRecognizer.cancelsTouchesInView = NO;
@@ -184,9 +199,15 @@
     CGRect registerButtonFrame = self.registerButton.frame;
     CGRect directionsButtonFrame = self.directionsButton.frame;
     
-
     self.registerButton.frame = CGRectMake(registerButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
     self.directionsButton.frame = CGRectMake(directionsButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
+    
+    // set up the location window so we can click & get directions
+    UITapGestureRecognizer *tapForDirections = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleLocationTap:)];
+    tapForDirections.numberOfTapsRequired = 1;
+    tapForDirections.enabled = YES;
+    tapForDirections.cancelsTouchesInView = NO;
+    [self.locationView addGestureRecognizer:tapForDirections];    
     
 }
 
