@@ -41,6 +41,7 @@
 		4DB8F88D1675D9050017CD64 /* PullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8F8881675D9050017CD64 /* PullToRefreshView.m */; };
 		4DB8F88E1675D9050017CD64 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8F8891675D9050017CD64 /* README */; };
 		4DB8F8911675DAFC0017CD64 /* FacebookWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8F8901675DAFC0017CD64 /* FacebookWebViewController.m */; };
+		4DCB57B1167E351C00254B98 /* SemifinalistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB57B0167E351C00254B98 /* SemifinalistListViewController.m */; };
 		4DCECFF41675474000272F0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF31675474000272F0B /* UIKit.framework */; };
 		4DCECFF61675474000272F0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF51675474000272F0B /* Foundation.framework */; };
 		4DCECFF81675474000272F0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCECFF71675474000272F0B /* CoreGraphics.framework */; };
@@ -333,6 +334,8 @@
 		4DB8F8891675D9050017CD64 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		4DB8F88F1675DAFC0017CD64 /* FacebookWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookWebViewController.h; path = InnovationAwards/Controllers/FacebookWebViewController.h; sourceTree = SOURCE_ROOT; };
 		4DB8F8901675DAFC0017CD64 /* FacebookWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookWebViewController.m; path = InnovationAwards/Controllers/FacebookWebViewController.m; sourceTree = SOURCE_ROOT; };
+		4DCB57AF167E351C00254B98 /* SemifinalistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemifinalistListViewController.h; sourceTree = "<group>"; };
+		4DCB57B0167E351C00254B98 /* SemifinalistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemifinalistListViewController.m; sourceTree = "<group>"; };
 		4DCECFEF1675474000272F0B /* InnovationAwards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnovationAwards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCECFF31675474000272F0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DCECFF51675474000272F0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -674,6 +677,8 @@
 				4DFEF52C16759B230069E734 /* CategoryViewController.m */,
 				4DFEF6FA1675C9E00069E734 /* IATwitterViewController.h */,
 				4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */,
+				4DCB57AF167E351C00254B98 /* SemifinalistListViewController.h */,
+				4DCB57B0167E351C00254B98 /* SemifinalistListViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1366,6 +1371,7 @@
 				4DB8F8911675DAFC0017CD64 /* FacebookWebViewController.m in Sources */,
 				4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */,
 				4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */,
+				4DCB57B1167E351C00254B98 /* SemifinalistListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
