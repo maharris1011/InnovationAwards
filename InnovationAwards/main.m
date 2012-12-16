@@ -12,7 +12,15 @@
 
 int main(int argc, char *argv[])
 {
+    int retval = 0;
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        @try {
+            retval =  UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Exception - %@",[exception description]);
+            exit(EXIT_FAILURE);
+        }
     }
+    return retval;
 }

@@ -144,7 +144,8 @@
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    CGRect deviceSize = [[UIScreen mainScreen] bounds];
+    [bgImageView setFrame:CGRectMake(0, 0, deviceSize.size.width, deviceSize.size.height)];
     
     [self.view insertSubview:bgImageView atIndex:0];
     

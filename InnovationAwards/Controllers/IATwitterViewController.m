@@ -7,12 +7,19 @@
 //
 
 #import "IATwitterViewController.h"
+#import "ASIHTTPRequest.h"
+#import "UIImage+Resize.h"
+#import "UITableViewController+GradientHeaders.h"
+#import "NSDate+Helper.h"
 
-@interface IATwitterViewController ()
+@interface IATwitterViewController () {
+    NSArray *_tweets;
+}
+
+@property (nonatomic, strong) NSArray *tweets;
 
 - (void)postToTwitter:(NSString *)text;
 
-@property (strong, nonatomic) NSArray *tweets;
 
 @end
 
@@ -21,6 +28,8 @@
 }
 
 @synthesize tweets = _tweets;
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -56,7 +65,7 @@
                                              selector:@selector(foregroundRefresh:)
                                                  name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
-
+    
     [self foregroundRefresh:nil];
 }
 
@@ -100,33 +109,37 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TweetCell";
+    static NSString *CellIdentifier = @"BetterTweetCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    @try {
-        
-        // Configure the cell...
-        NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
-        NSDictionary *user = [tweet objectForKey:@"user"];
-        
-        cell.textLabel.text = [tweet objectForKey:@"text"];
-        cell.textLabel.adjustsFontSizeToFitWidth = YES;
-        cell.textLabel.font = [UIFont systemFontOfSize:12];
-        cell.textLabel.numberOfLines = 4;
-        cell.detailTextLabel.text = [user objectForKey:@"name"];
-        
-//        NSURL *url = [NSURL URLWithString:[tweet objectForKey:@"profile_image_url"]];
-//        NSData *data = [NSData dataWithContentsOfURL:url];
-//        cell.imageView.image = [UIImage imageWithData:data];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    @catch (NSException *exception) {
-        NSLog(@"main: Caught %@: %@", [exception name], [exception  reason]);
-    }
+    // Configure the cell...
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+    NSDictionary *user = [tweet objectForKey:@"user"];
+
+    UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
+    UILabel *name = (UILabel*)[cell viewWithTag:1];
+    UILabel *tweetText = (UILabel*)[cell viewWithTag:2];
+    UILabel *sentOn = (UILabel*)[cell viewWithTag:3];
+    UILabel *userAt = (UILabel *)[cell viewWithTag:5];
+    
+    tweetText.text = [tweet objectForKey:@"text"];
+    tweetText.adjustsFontSizeToFitWidth = YES;
+    name.text = [user objectForKey:@"name"];
+    NSString *sentString = [tweet objectForKey:@"created_at"];
+    NSDate *sentDate = [NSDate dateFromString:sentString withFormat:@"EEE LLL d HH:mm:ss Z yyyy"];
+    sentOn.text = [NSString stringWithFormat:@"Sent On: %@", [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES]];
+    userAt.text = [NSString stringWithFormat:@"@%@", [user objectForKey:@"screen_name"]];
+    
+    NSString *url = [user objectForKey:@"profile_image_url"];
+    UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
+    profile.image = [profileThumb thumbnailImage:50 transparentBorder:1 cornerRadius:0 interpolationQuality:kCGInterpolationDefault];
+
+    UIView *bgView = [self gradientViewForCell:cell];
+    
+    [cell insertSubview:bgView atIndex:0];
     
     return cell;
 }
