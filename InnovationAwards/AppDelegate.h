@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+static NSDictionary *sharedCategoryData = nil;
+
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+// Implementation
+- (NSDictionary *)sharedCategoryData;
+
 
 @property (strong, nonatomic) UIWindow *window;
 

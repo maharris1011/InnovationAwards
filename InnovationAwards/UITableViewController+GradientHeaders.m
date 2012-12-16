@@ -50,4 +50,25 @@ CAGradientLayer *darkPurpleGradient(void)
     return headerView;
 }
 
+- (UIView *)gradientViewForCell:(UITableViewCell *)cell
+{
+    CGFloat width = CGRectGetWidth(cell.bounds);
+    CGFloat height = cell.bounds.size.height;
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0,0,width,height)] ;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)] ;
+    
+    // create the gradient for the background
+    [view addGradient:darkPurpleGradient()];
+    [backgroundView setOpaque:NO];
+    [backgroundView setAlpha:0.7];
+
+    // add our new views to this header & return it
+    [view addSubview:backgroundView];
+    view.layer.borderColor = darkPurple.CGColor;
+    view.layer.borderWidth = 1.0f;
+    [view setOpaque:NO];
+
+    return view;
+}
+
 @end

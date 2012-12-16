@@ -67,10 +67,11 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     [super viewDidLoad];
 
     // load our data from the file on disk
+    
+    
     NSString *fileName = [[NSBundle mainBundle] pathForResource:@"sponsors" ofType:@"json"];
     NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     _sponsorshipData = [jsonData objectFromJSONString];
-//    NSLog(@"jsonData parsed = %@", _sponsorshipData);
 
     // adjust the background view to match
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];

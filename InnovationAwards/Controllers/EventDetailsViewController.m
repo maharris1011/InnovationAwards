@@ -7,6 +7,7 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "UIButton+SSGradient.h"
 
 @interface EventDetailsViewController ()
 
@@ -27,11 +28,15 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // set the background image
+    UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    
+    self.tableView.backgroundView = bgImageView;
+    [self.buttonDone addGradient:buttonGradientWithColor(darkPurple, lightPurple)];
+
 
 }
 
@@ -41,17 +46,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    UINavigationBar *navBar = [[self navigationController] navigationBar];
+    UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
+    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+}
+
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
-        case 0:
-            return @"Innovation Awards";
-            break;
         case 1:
             return @"The Event";
             
         default:
-            return @"";
+            return nil;
             break;
     }
 }
@@ -73,4 +83,11 @@
     
 }
 
+- (IBAction)done:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+- (void)viewDidUnload {
+    [self setButtonDone:nil];
+    [super viewDidUnload];
+}
 @end

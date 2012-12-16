@@ -1,26 +1,43 @@
 //
-//  CategoryViewController.m
+//  SemifinalistListViewController.m
 //  InnovationAwards
 //
-//  Created by Mark Harris on 12/9/12.
+//  Created by Mark Harris on 12/16/12.
 //  Copyright (c) 2012 TechColumbus. All rights reserved.
 //
-
 #import "UITableViewController+GradientHeaders.h"
-#import "CategoryViewController.h"
-#import "AppDelegate.h"
 #import "SemifinalistListViewController.h"
+#import "SemiFinalistDetailViewController.h"
 
-@interface CategoryViewController () {
-    NSDictionary *_categories;
+@interface SemifinalistListViewController () {
+    NSDictionary *_category;
 }
 
-@property (nonatomic, strong) NSDictionary *categories;
 @end
 
-@implementation CategoryViewController
+@implementation SemifinalistListViewController
 
-@synthesize categories = _categories;
+@synthesize category = _category;
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showCategoryWeb"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        // find the right URL for the selected index
+        
+        NSString *url = [self.category objectForKey:@"URL"];
+        
+        SemiFinalistDetailViewController *detail = (SemiFinalistDetailViewController *)[segue destinationViewController];
+        detail.urlOfCategory = url;
+        detail.categoryName = [self.category objectForKey:@"category"];
+        NSArray *semifinalistList = [self.category objectForKey:@"semifinalists"];
+        detail.semifinalistName = [semifinalistList objectAtIndex:indexPath.row];
+    }
+    
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,10 +51,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    self.categories = [delegate sharedCategoryData];
-    
+
     // adjust the background view to match
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
@@ -57,35 +71,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // one section total
+    // one section for all semifinalists
     return 1;
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // one row per category
-    NSArray *categories = [self.categories objectForKey:@"categories"];
-    return [categories count];
+    // Return the number of rows in the section.
+    NSArray *nominees = [self.category objectForKey:@"semifinalists"];
+    return [nominees count];
 }
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CategoryCell";
+    static NSString *CellIdentifier = @"NomineeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-
-    // Configure the cell...
-    NSArray *categories = [self.categories objectForKey:@"categories"];
-    NSDictionary *category = [categories objectAtIndex:indexPath.row];
-    NSString *categoryName = [category objectForKey:@"category"];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", categoryName];
+    // Configure the cell...
+    NSArray *nominees = [self.category objectForKey:@"semifinalists"];
+    NSString *nominee = [nominees objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", nominee];
     cell.backgroundView = [self gradientViewForCell:cell];
     return cell;
 }
@@ -95,24 +105,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Navigation logic may go here. Create and push another view controller.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showSemifinalistList"])
-    {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-
-        // find the right URL for the selected index
-        NSArray *categories = [self.categories objectForKey:@"categories"];
-        NSDictionary *category = [categories objectAtIndex:indexPath.row];
-        SemifinalistListViewController *semifinalists = (SemifinalistListViewController *)[segue destinationViewController];
-        semifinalists.category = category;
-    }
-    
-}
-
-
 
 @end

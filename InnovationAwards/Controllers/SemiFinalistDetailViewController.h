@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *urlOfCategory;
 @property (nonatomic, strong) NSString *categoryName;
+@property (nonatomic, strong) NSString *semifinalistName;
 
 @property (nonatomic, strong) SZActionBar *actionBar;
 @property (nonatomic, strong) id<SZEntity> entity;

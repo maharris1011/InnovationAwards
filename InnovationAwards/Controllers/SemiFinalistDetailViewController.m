@@ -36,6 +36,8 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [self.webView loadRequest:request];
+    
+    [self.navigationItem setTitle:self.semifinalistName];
 }
 
 - (void)didReceiveMemoryWarning

@@ -145,6 +145,7 @@
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
     [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    
     [self.view insertSubview:bgImageView atIndex:0];
     
     // add gradients to the "register now" button

@@ -10,6 +10,18 @@
 
 @implementation AppDelegate
 
+- (NSDictionary *)sharedCategoryData
+{
+    if (sharedCategoryData == nil) {
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"semifinalists" ofType:@"json"];
+        NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
+        sharedCategoryData = [jsonData objectFromJSONString];
+
+    }
+    return sharedCategoryData;
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

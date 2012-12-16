@@ -12,5 +12,6 @@
 @interface UITableViewController (GradientHeaders)
 
 - (UIView *)gradientHeaderViewForSection:(NSInteger)section;
+- (UIView *)gradientViewForCell:(UITableViewCell *)cell;
 
 @end
