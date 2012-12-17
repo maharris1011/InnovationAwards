@@ -856,15 +856,6 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
-				4DB51D40167E9F4000A07437 /* Twitter.framework */,
-				4DCB57E6167E46F200254B98 /* MobileCoreServices.framework */,
-				4DCB57E4167E465300254B98 /* SystemConfiguration.framework */,
-				4DCB57E2167E45E400254B98 /* CFNetwork.framework */,
-				4DF1DEA01676013700CB2D9A /* libz.dylib */,
-				4DFEF6F316759E310069E734 /* MessageUI.framework */,
-				4DFEF4E5167584390069E734 /* MapKit.framework */,
-				4DFEF4E31675840A0069E734 /* CoreLocation.framework */,
-				4DB7478F16757703004664EC /* QuartzCore.framework */,
 				4D50199A16754A780031B9F8 /* ia_72x72_icon.png */,
 				4D50199816754A5B0031B9F8 /* ia_114x114_icon.png */,
 				4D50199616754A500031B9F8 /* ia_57x57_icon.png */,
@@ -885,6 +876,15 @@
 		4DCECFF21675474000272F0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DB51D40167E9F4000A07437 /* Twitter.framework */,
+				4DCB57E6167E46F200254B98 /* MobileCoreServices.framework */,
+				4DCB57E4167E465300254B98 /* SystemConfiguration.framework */,
+				4DCB57E2167E45E400254B98 /* CFNetwork.framework */,
+				4DF1DEA01676013700CB2D9A /* libz.dylib */,
+				4DFEF6F316759E310069E734 /* MessageUI.framework */,
+				4DFEF4E5167584390069E734 /* MapKit.framework */,
+				4DFEF4E31675840A0069E734 /* CoreLocation.framework */,
+				4DB7478F16757703004664EC /* QuartzCore.framework */,
 				4DFEF53716759E040069E734 /* Socialize.embeddedframework */,
 				4DCECFF31675474000272F0B /* UIKit.framework */,
 				4DCECFF51675474000272F0B /* Foundation.framework */,
@@ -1653,7 +1653,7 @@
 		4DCED01B1675474100272F0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sandlot Software, LLC";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
@@ -1671,7 +1671,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AD0C59C1-2836-4CD4-923A-B16A9EC0C93B";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
