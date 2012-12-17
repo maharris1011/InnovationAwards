@@ -90,7 +90,6 @@
             [dictionary setObject:result forKey:s];
         else
         {
-            NSLog(@"Unable to find %@, looking on the web", [self imagePathForKey:s]);
             [self asynchronousGetImageAtUrl:s onComplete:^(UIImage *image) {
                 [self setImage:image forKey:s];
             }];

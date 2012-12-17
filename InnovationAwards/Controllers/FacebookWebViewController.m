@@ -31,6 +31,7 @@
     NSString *szUrl = @"http://m.facebook.com/TechColumbusOhio";
     NSURL *URL = [NSURL URLWithString:szUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,4 +40,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)forwardPressed:(id)sender {
+    [self.webView goForward];
+}
+
+- (IBAction)backPressed:(id)sender {
+    [self.webView goBack];
+}
 @end

@@ -38,6 +38,7 @@
     [self.webView loadRequest:request];
     
     [self.navigationItem setTitle:self.semifinalistName];
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,9 +56,16 @@
         self.actionBar = [SZActionBarUtils showActionBarWithViewController:self entity:self.entity options:nil];
         
         SZShareOptions *shareOptions = [SZShareUtils userShareOptions];
-        shareOptions.dontShareLocation = YES;
+        shareOptions.dontShareLocation = NO;
         self.actionBar.shareOptions = shareOptions;
     }
 }
 
+- (IBAction)backPressed:(id)sender {
+    [self.webView goBack];
+}
+
+- (IBAction)forwardPressed:(id)sender {
+    [self.webView goForward];
+}
 @end

@@ -11,6 +11,8 @@
 #import "UIImage+Resize.h"
 #import "UITableViewController+GradientHeaders.h"
 #import "NSDate+Helper.h"
+#import "TweetDetailsViewController.h"
+#import <Twitter/Twitter.h>
 
 @interface IATwitterViewController () {
     NSArray *_tweets;
@@ -18,17 +20,31 @@
 
 @property (nonatomic, strong) NSArray *tweets;
 
-- (void)postToTwitter:(NSString *)text;
-
-
 @end
 
 @implementation IATwitterViewController {
     PullToRefreshView *pull;
+    TWTweetComposeViewController *_tweetView;
 }
 
 @synthesize tweets = _tweets;
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetails"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        // find the right URL for the selected index
+        NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+        TweetDetailsViewController *tweetDetails = (TweetDetailsViewController *)[segue destinationViewController];
+        
+        tweetDetails.tweet = tweet;
+        
+        
+    }
+    
+}
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -65,6 +81,26 @@
                                              selector:@selector(foregroundRefresh:)
                                                  name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
+    
+    _tweetView = [[TWTweetComposeViewController alloc] init];
+    
+    TWTweetComposeViewControllerCompletionHandler completionHandler =
+    ^(TWTweetComposeViewControllerResult result) {
+        switch (result)
+        {
+            case TWTweetComposeViewControllerResultCancelled:
+                NSLog(@"Twitter Result: canceled");
+                break;
+            case TWTweetComposeViewControllerResultDone:
+                NSLog(@"Twitter Result: sent");
+                break;
+            default:
+                NSLog(@"Twitter Result: default");
+                break;
+        }
+        [self dismissModalViewControllerAnimated:YES];
+    };
+    [_tweetView setCompletionHandler:completionHandler];
     
     [self foregroundRefresh:nil];
 }
@@ -130,12 +166,12 @@
     name.text = [user objectForKey:@"name"];
     NSString *sentString = [tweet objectForKey:@"created_at"];
     NSDate *sentDate = [NSDate dateFromString:sentString withFormat:@"EEE LLL d HH:mm:ss Z yyyy"];
-    sentOn.text = [NSString stringWithFormat:@"Sent On: %@", [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES]];
+    sentOn.text = [NSString stringWithFormat:@"Sent: %@", [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES]];
     userAt.text = [NSString stringWithFormat:@"@%@", [user objectForKey:@"screen_name"]];
     
     NSString *url = [user objectForKey:@"profile_image_url"];
     UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
-    profile.image = [profileThumb thumbnailImage:50 transparentBorder:1 cornerRadius:0 interpolationQuality:kCGInterpolationDefault];
+    profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:0 interpolationQuality:kCGInterpolationDefault];
 
     UIView *bgView = [self gradientViewForCell:cell];
     
@@ -164,11 +200,10 @@
                                      path:@"/1.1/search/tweets.json"
                                    params:dict
                                   success:^(NSDictionary * result){
-                                      NSLog(@"We succeeded");
                                       // we have a batch of tweets.  Put those
                                       // into the tweets array
                                       self.tweets = [result objectForKey:@"statuses"];
-                                      
+                                      NSLog(@"statuses returned: = %@", [result objectForKey:@"statuses"]);
                                       [self.tableView reloadData];
                                       [pull finishedLoading];
                                   }
@@ -185,29 +220,12 @@
     [self reloadFromTwitter];
 }
 
-- (void)postToTwitter:(NSString *)text
-{
-    NSString *withTag = [NSString stringWithFormat:@"%@ #ia12", text];
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:withTag forKey:@"status"];
-    
-    [SZTwitterUtils postWithViewController:self path:@"/1/statuses/update.json" params:params success:^(id result) {
-        NSLog(@"Posted to Twitter feed: %@", result);
-        
-    } failure:^(NSError *error) {
-        NSLog(@"Failed to post to Twitter feed: %@ / %@", [error localizedDescription], [error userInfo]);
-    }];
-    
-}
 
 - (void)showCommentComposer
 {
-    SZEntity *entity = [SZEntity entityWithKey:@"http://www.techcolumbusinnovationawards.com" name:@"IA2012"];
-    [SZCommentUtils showCommentComposerWithViewController:self entity:entity completion:^(id<SZComment> comment) {
-        NSLog(@"Created comment: %@", [comment text]);
-        [self postToTwitter:[comment text]];
-    } cancellation:^{
-        NSLog(@"Cancelled comment create");
-    }];
+    [_tweetView setInitialText:@"#ia12"];
+    [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
+    [self presentModalViewController:_tweetView animated:YES];
 }
 
 

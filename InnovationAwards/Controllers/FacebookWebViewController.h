@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FacebookWebViewController : UIViewController
+@interface FacebookWebViewController : UIViewController<UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
+- (IBAction)forwardPressed:(id)sender;
+- (IBAction)backPressed:(id)sender;
 
 @end
