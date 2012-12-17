@@ -31,6 +31,15 @@
     NSString *szUrl = @"http://m.facebook.com/TechColumbusOhio";
     NSURL *URL = [NSURL URLWithString:szUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.toolbarHidden = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     self.navigationController.toolbarHidden = NO;
 }
 

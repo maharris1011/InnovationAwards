@@ -203,7 +203,7 @@
                                       // we have a batch of tweets.  Put those
                                       // into the tweets array
                                       self.tweets = [result objectForKey:@"statuses"];
-                                      NSLog(@"statuses returned: = %@", [result objectForKey:@"statuses"]);
+                                     // NSLog(@"statuses returned: = %@", [result objectForKey:@"statuses"]);
                                       [self.tableView reloadData];
                                       [pull finishedLoading];
                                   }

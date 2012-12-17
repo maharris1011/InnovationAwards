@@ -18,6 +18,7 @@
 @property (nonatomic, strong) id<SZEntity> entity;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
+- (id)initWithEntity:(id<SocializeEntity>)entity;
 - (IBAction)backPressed:(id)sender;
 - (IBAction)forwardPressed:(id)sender;
 @end

@@ -209,7 +209,10 @@
     tapForDirections.numberOfTapsRequired = 1;
     tapForDirections.enabled = YES;
     tapForDirections.cancelsTouchesInView = NO;
-    [self.locationView addGestureRecognizer:tapForDirections];    
+    [self.locationView addGestureRecognizer:tapForDirections];
+    
+    // color the toolbar appropriately
+    [self.navigationController.toolbar setTintColor:[UIColor blackColor]];
     
 }
 
