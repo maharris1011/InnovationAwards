@@ -45,6 +45,7 @@
 		4DB51D4B167EB0F600A07437 /* 39-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D47167EB0F600A07437 /* 39-back@2x.png */; };
 		4DB51D4C167EB0F600A07437 /* 40-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D48167EB0F600A07437 /* 40-forward.png */; };
 		4DB51D4D167EB0F600A07437 /* 40-forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D49167EB0F600A07437 /* 40-forward@2x.png */; };
+		4DB51D4F167EDE9800A07437 /* companies.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D4E167EDE9800A07437 /* companies.json */; };
 		4DB7475316756FA5004664EC /* ia12_app_callouts_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */; };
 		4DB747561675733A004664EC /* headerBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB747551675733A004664EC /* headerBackground@2x.png */; };
 		4DB7478E1675748A004664EC /* UIButton+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7478D1675748A004664EC /* UIButton+SSGradient.m */; };
@@ -368,6 +369,7 @@
 		4DB51D47167EB0F600A07437 /* 39-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "39-back@2x.png"; sourceTree = "<group>"; };
 		4DB51D48167EB0F600A07437 /* 40-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40-forward.png"; sourceTree = "<group>"; };
 		4DB51D49167EB0F600A07437 /* 40-forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40-forward@2x.png"; sourceTree = "<group>"; };
+		4DB51D4E167EDE9800A07437 /* companies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = companies.json; sourceTree = "<group>"; };
 		4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_app_callouts_4.png; sourceTree = "<group>"; };
 		4DB747551675733A004664EC /* headerBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headerBackground@2x.png"; sourceTree = "<group>"; };
 		4DB7478C1675748A004664EC /* UIButton+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSGradient.h"; sourceTree = "<group>"; };
@@ -715,6 +717,7 @@
 				4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */,
 				4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */,
 				4DFEF53116759D210069E734 /* semifinalists.json */,
+				4DB51D4E167EDE9800A07437 /* companies.json */,
 				4DFEF53216759D210069E734 /* sponsors.json */,
 				4DFEF53316759D210069E734 /* winners.json */,
 				4D501949167548DA0031B9F8 /* TitilliumText25L 1wt.otf */,
@@ -1494,6 +1497,7 @@
 				4DB51D4B167EB0F600A07437 /* 39-back@2x.png in Resources */,
 				4DB51D4C167EB0F600A07437 /* 40-forward.png in Resources */,
 				4DB51D4D167EB0F600A07437 /* 40-forward@2x.png in Resources */,
+				4DB51D4F167EDE9800A07437 /* companies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

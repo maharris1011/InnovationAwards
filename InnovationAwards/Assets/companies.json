@@ -1,0 +1,30 @@
+{
+    "Accptd": {
+        "name": "Acceptd",
+        "company_facebook": "acceptd",
+        "company_twitter": "@acceptd",
+        "personal_twitter": "",
+        "personal_linkedin": "in/hunterdl"
+    },
+    "Acclaimd": {
+        "company": "Acclaimd",
+        "company_facebook": "Acclaimd",
+        "company_twitter": "@acclaimd",
+        "personal_twitter": "DerekFromCBUS",
+        "personal_linkedin": "in/derekbedwards"
+    },
+    "Sevenex": {
+        "company": "Sevenex",
+        "company_facebook": "The Sevenex Group",
+        "company_twitter": "",
+        "personal_twitter": "",
+        "personal_linkedin": "pub/tony-taylor/3b/9a9/461"
+    },
+    "Ohio Health": {
+        "company": "Ohio Health",
+        "company_facebook": "ohiohealth",
+        "company_twitter": "@OhioHealth",
+        "personal_twitter": "@KBraun5",
+        "personal_linkedin": "in/braunkelly"
+    }
+}
