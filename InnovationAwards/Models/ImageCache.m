@@ -91,7 +91,9 @@
         else
         {
             [self asynchronousGetImageAtUrl:s onComplete:^(UIImage *image) {
-                [self setImage:image forKey:s];
+                if (image != nil) {
+                    [self setImage:image forKey:s];
+                }
             }];
         }
     }
