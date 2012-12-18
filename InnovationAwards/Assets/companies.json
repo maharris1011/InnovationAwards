@@ -7,7 +7,7 @@
 	},
 	"Acclaimd":{
 	  "name":"Acclaimd",
-"	  "company_facebook":" Inc.",
+	  "company_facebook":" Inc.",
 	  "company_twitter":"@Acclaimd",
 	  "personal_linkedin":"DerekFromCBUS"
 	},
@@ -41,18 +41,6 @@
 	  "company_twitter":"@Battelle",
 	  "personal_linkedin":""
 	},
-	"Battelle":{
-	  "name":"Battelle",
-	  "company_facebook":"Battelle",
-	  "company_twitter":"@Battelle",
-	  "personal_linkedin":""
-	},
-	"Battelle":{
-	  "name":"Battelle",
-	  "company_facebook":"Battelle",
-	  "company_twitter":"@Battelle",
-	  "personal_linkedin":""
-	},
 	"Battelle for Kids":{
 	  "name":"Battelle for Kids",
 	  "company_facebook":"battelleforkidsorg",
@@ -70,12 +58,6 @@
 	  "company_facebook":"pages/Bookwithus/188327751278292",
 	  "company_twitter":"@bookwith_us",
 	  "personal_linkedin":"pub/brad-dunnington/0/777/b9b"
-	},
-	"Buckeye Interactive":{
-	  "name":"Buckeye Interactive",
-	  "company_facebook":"BuckeyeInteractive",
-	  "company_twitter":"@BuckeyeWebDev",
-	  "personal_linkedin":"in/BradGriffith"
 	},
 	"Buckeye Interactive":{
 	  "name":"Buckeye Interactive",
@@ -119,21 +101,9 @@
 	  "company_twitter":"@DataCenterBZ",
 	  "personal_linkedin":""
 	},
-	"Datacenter.bz":{
-	  "name":"Datacenter.bz",
-	  "company_facebook":"",
-	  "company_twitter":"@DataCenterBZ",
-	  "personal_linkedin":""
-	},
 	"Elytus Ltd.":{
 	  "name":"Elytus Ltd.",
 	  "company_facebook":"elytusltd",
-	  "company_twitter":"@elytusltd",
-	  "personal_linkedin":"in/matthewshollis"
-	},
-	"Elytus Ltd.":{
-	  "name":"Elytus Ltd.",
-	  "company_facebook":"https://elytusltd",
 	  "company_twitter":"@elytusltd",
 	  "personal_linkedin":"in/matthewshollis"
 	},
@@ -215,23 +185,11 @@
 	  "company_twitter":"@MailTamer",
 	  "personal_linkedin":"pub/ria-f/17/873/629"
 	},
-	"MailTamer":{
-	  "name":"MailTamer",
-	  "company_facebook":"MailTamer",
-	  "company_twitter":"@MailTamer",
-	  "personal_linkedin":"pub/ria-f/17/873/629"
-	},
 	"Manifest Solutions":{
 	  "name":"Manifest Solutions",
 	  "company_facebook":"ManifestCorp",
 	  "company_twitter":"@ManifestJobs",
 	  "personal_linkedin":""
-	},
-	"Manta":{
-	  "name":"Manta",
-	  "company_facebook":"mantacom?ref=hl",
-	  "company_twitter":"@Manta",
-	  "personal_linkedin":"pub/pamela-springer/3/271/7a2"
 	},
 	"Manta":{
 	  "name":"Manta",
@@ -269,12 +227,6 @@
 	  "company_twitter":"@OhioHealth",
 	  "personal_linkedin":"in/braunkelly"
 	},
-	"OhioHealth":{
-	  "name":"OhioHealth",
-	  "company_facebook":"ohiohealth",
-	  "company_twitter":"@OhioHealth",
-	  "personal_linkedin":"in/braunkelly"
-	},
 	"Perfect Practice":{
 	  "name":"Perfect Practice",
 	  "company_facebook":"perfectpracticeusa",
@@ -292,18 +244,6 @@
 	  "company_facebook":"quicksolutions",
 	  "company_twitter":"@quick_solutions",
 	  "personal_linkedin":"company/12662?trk=saber_s000001e_1000"
-	},
-	"Quick Solutions":{
-	  "name":"Quick Solutions",
-	  "company_facebook":" Inc. (QSI)",
-	  "company_twitter":"@quicksolutions",
-	  "personal_linkedin":"RubTheLamp"
-	},
-	"RealWeld Systems":{
-	  "name":"RealWeld Systems",
-	  "company_facebook":" Inc",
-	  "company_twitter":"@realweldsystems",
-	  "personal_linkedin":"billforquer"
 	},
 	"RealWeld Systems":{
 	  "name":"RealWeld Systems",
@@ -358,12 +298,6 @@
 	  "company_facebook":"ThirstRelief?fref=ts",
 	  "company_twitter":"@thirstrelief",
 	  "personal_linkedin":"pub/jim-davis-hicks/7/685/92b"
-	},
-	"Venueseen":{
-	  "name":"Venueseen",
-	  "company_facebook":"Venueseen",
-	  "company_twitter":"@venueseen",
-	  "personal_linkedin":"in/brianzuercher"
 	},
 	"Venueseen":{
 	  "name":"Venueseen",
