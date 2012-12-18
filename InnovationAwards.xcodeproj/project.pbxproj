@@ -34,7 +34,6 @@
 		4D736D5E167E4DAC00AB4171 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D59167E4DAB00AB4171 /* UIImage+Resize.m */; };
 		4D736D5F167E4DAC00AB4171 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D5B167E4DAB00AB4171 /* UIImage+RoundedCorner.m */; };
 		4D736D60167E4DAC00AB4171 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D5D167E4DAB00AB4171 /* UIImage+Alpha.m */; };
-		4D736D63167E4E7300AB4171 /* profile_default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D736D62167E4E7300AB4171 /* profile_default.jpg */; };
 		4D736D66167E568D00AB4171 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D65167E568D00AB4171 /* NSDate+Helper.m */; };
 		4D736D69167E578900AB4171 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D68167E578900AB4171 /* NSDate-Utilities.m */; };
 		4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */; };
@@ -355,7 +354,6 @@
 		4D736D5B167E4DAB00AB4171 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		4D736D5C167E4DAB00AB4171 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		4D736D5D167E4DAB00AB4171 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
-		4D736D62167E4E7300AB4171 /* profile_default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_default.jpg; sourceTree = "<group>"; };
 		4D736D64167E568D00AB4171 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		4D736D65167E568D00AB4171 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		4D736D67167E578900AB4171 /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
@@ -711,7 +709,6 @@
 				4DB51D49167EB0F600A07437 /* 40-forward@2x.png */,
 				4DB51D42167EACEF00A07437 /* 02-redo.png */,
 				4DB51D43167EACEF00A07437 /* 02-redo@2x.png */,
-				4D736D62167E4E7300AB4171 /* profile_default.jpg */,
 				4D1D54331678503100626E21 /* 42-info.png */,
 				4D1D54341678503100626E21 /* 42-info@2x.png */,
 				4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */,
@@ -1490,7 +1487,6 @@
 				4DF1DE9E1676011600CB2D9A /* release_notes.md in Resources */,
 				4D1D54351678503100626E21 /* 42-info.png in Resources */,
 				4D1D54361678503100626E21 /* 42-info@2x.png in Resources */,
-				4D736D63167E4E7300AB4171 /* profile_default.jpg in Resources */,
 				4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */,
 				4DB51D45167EACEF00A07437 /* 02-redo@2x.png in Resources */,
 				4DB51D4A167EB0F600A07437 /* 39-back.png in Resources */,
