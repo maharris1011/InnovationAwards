@@ -126,4 +126,5 @@
 - (IBAction)forwardPressed:(id)sender {
     [self.webView goForward];
 }
+
 @end

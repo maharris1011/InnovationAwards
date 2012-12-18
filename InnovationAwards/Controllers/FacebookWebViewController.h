@@ -13,5 +13,6 @@
 
 - (IBAction)forwardPressed:(id)sender;
 - (IBAction)backPressed:(id)sender;
+- (IBAction)peoplesChoiceVideoPressed:(id)sender;
 
 @end

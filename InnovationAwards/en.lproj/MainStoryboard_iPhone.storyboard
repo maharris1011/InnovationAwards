@@ -246,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="Cat-oC-Wtw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="-54" width="320" height="514"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                 <connections>
@@ -671,6 +671,12 @@ Columbus, OH 43215
                                 <action selector="forwardPressed:" destination="lZY-Lb-RaW" id="7Qd-QM-Ycz"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="SV8-QF-Jzc"/>
+                        <barButtonItem title="Peoples Choice Videos" id="4pZ-kg-y5J">
+                            <connections>
+                                <action selector="peoplesChoiceVideoPressed:" destination="lZY-Lb-RaW" id="wBc-SB-8qx"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="IA12 on Facebook" id="CTk-Tv-EI4">
                         <barButtonItem key="backBarButtonItem" title="Back" id="6hz-Wx-ans"/>
@@ -779,6 +785,7 @@ Columbus, OH 43215
             <relationships>
                 <relationship kind="action" name="backPressed:"/>
                 <relationship kind="action" name="forwardPressed:"/>
+                <relationship kind="action" name="peoplesChoiceVideoPressed:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

@@ -77,7 +77,7 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    [bgImageView setFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height)];
     self.tableView.backgroundView = bgImageView;
 
 }
@@ -129,7 +129,14 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     NSDictionary *sponsor = [sponsors objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [sponsor objectForKey:@"name"];
-    cell.detailTextLabel.text = [sponsor objectForKey:@"sponsorship"];
+    NSString *sponsorship = [sponsor objectForKey:@"sponsorship"];
+    if ([sponsorship length] == 0) {
+        cell.detailTextLabel.text = [sponsor objectForKey:@"url"];
+    }
+    else
+    {
+        cell.detailTextLabel.text = sponsorship;
+    }
     
     cell.backgroundColor = [UIColor clearColor];
     
@@ -169,13 +176,17 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // fire up the browser to show the URL of the sponsor
+    NSArray *levelsArray = [self.sponsorshipData objectForKey:@"levels"];
+    NSDictionary *level = [levelsArray objectAtIndex:indexPath.section];
+    NSArray *sponsors = [level objectForKey:@"sponsors"];
+    NSDictionary *sponsor = [sponsors objectAtIndex:indexPath.row];
+    NSString *urlString = [sponsor objectForKey:@"url"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    
+    
 }
 
 @end

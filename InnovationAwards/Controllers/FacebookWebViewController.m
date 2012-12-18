@@ -31,6 +31,7 @@
     NSString *szUrl = @"http://m.facebook.com/TechColumbusOhio";
     NSURL *URL = [NSURL URLWithString:szUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
+    [self.webView setFrame:CGRectMake(0, 0, 320, 480-20-44-44)];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -55,5 +56,10 @@
 
 - (IBAction)backPressed:(id)sender {
     [self.webView goBack];
+}
+
+- (IBAction)peoplesChoiceVideoPressed:(id)sender {
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://a.pgtb.me/t2Nvh8"]]];
+
 }
 @end

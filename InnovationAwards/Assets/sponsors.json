@@ -16,13 +16,13 @@
 			"sponsors":[
 			{
 				"name":"Ohio Health",
-				"url":"http://www.ohiohealth.org",
+				"url":"http://www.ohiohealth.com",
 				"logo":"",
 				"sponsorship":"Pre-Event Networking Reception Sponsor"
 			},
 			{
 				"name":"Bricker & Eckler",
-				"url": "",
+				"url": "http://www.bricker.com/home.aspx",
 				"logo":"",
 				"sponsorship":"Student Innovation Awards Sponsor"
 			}]
@@ -32,7 +32,7 @@
 			"sponsors":[
 			{
 				"name":"CAS",
-				"url":"http://www.cas.com",
+				"url":"http://www.cas.org",
 				"logo":"",
 				"sponsorship":""
 			},
@@ -50,10 +50,17 @@
 			},
 			{
 				"name":"Live! Technologies",
-				"url":"http://www.reallivepros.org",
+				"url":"http://www.reallivepros.com",
 				"logo":"",
 				"sponsorship":""
-			}]
+			},
+            {
+                "name":"Columbus C.E.O. Magazine",
+                "url":"http://www.columbusceo.com",
+                "logo":"",
+                "sponsorship":""
+            }
+            ]
 		},
 		{
 			"level":"Gold",
@@ -66,16 +73,44 @@
 			},
 			{
 				"name":"GBQ Partners",
-				"url":"",
+				"url":"http://www.gbq.com",
 				"logo":"",
 				"sponsorship":"Verification Sponsor"
 			},
 			{
 				"name":"Fathom",
-				"url":"",
+				"url":"http://www.fathomdelivers.com",
 				"logo":"",
 				"sponsorship":"Social Media Sponsor"
 			}]
-		}		
-     ]
+		},
+           {
+              "level":"Media",
+              "sponsors":[
+                {
+                "name":"The Columbus Dispatch",
+                "url":"http://www.dispatch.com",
+                "logo":"",
+                "sponsorship":""
+                },
+                {
+                "name":"Talktainment Radio",
+                "url":"http://www.talktainmentradio.com",
+                "logo":"",
+                "sponsorship":""
+                },
+                {
+                "name":"90.5 WCBO",
+                "url":"http://www.wcbe.org",
+                "logo":"",
+                "sponsorship":""
+                },
+                {
+                "name":"WBNS 10-TV",
+                "url":"http://www.10tv.com",
+                "logo":"",
+                "sponsorship":""
+                }]
+           }
+        ]
 }
