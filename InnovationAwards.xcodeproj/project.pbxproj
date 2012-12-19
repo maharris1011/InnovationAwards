@@ -44,7 +44,7 @@
 		4DB51D4B167EB0F600A07437 /* 39-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D47167EB0F600A07437 /* 39-back@2x.png */; };
 		4DB51D4C167EB0F600A07437 /* 40-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D48167EB0F600A07437 /* 40-forward.png */; };
 		4DB51D4D167EB0F600A07437 /* 40-forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D49167EB0F600A07437 /* 40-forward@2x.png */; };
-		4DB51D4F167EDE9800A07437 /* companies.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D4E167EDE9800A07437 /* companies.json */; };
+		4DB51D4F167EDE9800A07437 /* 2012_companies.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D4E167EDE9800A07437 /* 2012_companies.json */; };
 		4DB7475316756FA5004664EC /* ia12_app_callouts_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */; };
 		4DB747561675733A004664EC /* headerBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB747551675733A004664EC /* headerBackground@2x.png */; };
 		4DB7478E1675748A004664EC /* UIButton+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7478D1675748A004664EC /* UIButton+SSGradient.m */; };
@@ -77,6 +77,13 @@
 		4DCED0041675474100272F0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED0031675474100272F0B /* AppDelegate.m */; };
 		4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */; };
 		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
+		4DDF44FF168165AD00462096 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF44FE168165AD00462096 /* f_logo.png */; };
+		4DDF4502168165D000462096 /* LinkedIn_Logo60px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4500168165CF00462096 /* LinkedIn_Logo60px.png */; };
+		4DDF4503168165D000462096 /* twitter-bird-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4501168165CF00462096 /* twitter-bird-white-on-blue.png */; };
+		4DDF4508168169A700462096 /* 2011_semifinalists.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4504168169A700462096 /* 2011_semifinalists.json */; };
+		4DDF450A168169A700462096 /* twitter-bird-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4506168169A700462096 /* twitter-bird-16x16.png */; };
+		4DDF450B168169A700462096 /* twitter-bird-light-bgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */; };
+		4DDF450D16816A2100462096 /* 2011_semifinalist_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF450C16816A2100462096 /* 2011_semifinalist_detail.json */; };
 		4DF1DE9C1676011600CB2D9A /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF1DE981676011600CB2D9A /* libTestFlight.a */; };
 		4DF1DE9D1676011600CB2D9A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1DE991676011600CB2D9A /* README.md */; };
 		4DF1DE9E1676011600CB2D9A /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1DE9A1676011600CB2D9A /* release_notes.md */; };
@@ -90,9 +97,7 @@
 		4DFEF52A167599790069E734 /* SponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF529167599790069E734 /* SponsorsViewController.m */; };
 		4DFEF52D16759B240069E734 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF52C16759B230069E734 /* CategoryViewController.m */; };
 		4DFEF53016759B990069E734 /* SemiFinalistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF52F16759B990069E734 /* SemiFinalistDetailViewController.m */; };
-		4DFEF53416759D210069E734 /* semifinalists.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53116759D210069E734 /* semifinalists.json */; };
-		4DFEF53516759D210069E734 /* sponsors.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53216759D210069E734 /* sponsors.json */; };
-		4DFEF53616759D210069E734 /* winners.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53316759D210069E734 /* winners.json */; };
+		4DFEF53516759D210069E734 /* 2012_sponsors.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53216759D210069E734 /* 2012_sponsors.json */; };
 		4DFEF61616759E050069E734 /* _SZCommentsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53916759E040069E734 /* _SZCommentsListViewController.xib */; };
 		4DFEF61716759E050069E734 /* _SZComposeCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53A16759E040069E734 /* _SZComposeCommentViewController.xib */; };
 		4DFEF61816759E050069E734 /* _SZLinkDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF53B16759E040069E734 /* _SZLinkDialogViewController.xib */; };
@@ -367,7 +372,7 @@
 		4DB51D47167EB0F600A07437 /* 39-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "39-back@2x.png"; sourceTree = "<group>"; };
 		4DB51D48167EB0F600A07437 /* 40-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40-forward.png"; sourceTree = "<group>"; };
 		4DB51D49167EB0F600A07437 /* 40-forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40-forward@2x.png"; sourceTree = "<group>"; };
-		4DB51D4E167EDE9800A07437 /* companies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = companies.json; sourceTree = "<group>"; };
+		4DB51D4E167EDE9800A07437 /* 2012_companies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2012_companies.json; sourceTree = "<group>"; };
 		4DB7475216756FA5004664EC /* ia12_app_callouts_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_app_callouts_4.png; sourceTree = "<group>"; };
 		4DB747551675733A004664EC /* headerBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headerBackground@2x.png"; sourceTree = "<group>"; };
 		4DB7478C1675748A004664EC /* UIButton+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSGradient.h"; sourceTree = "<group>"; };
@@ -422,6 +427,13 @@
 		4DCED0031675474100272F0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DCED00C1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4DDF44FE168165AD00462096 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
+		4DDF4500168165CF00462096 /* LinkedIn_Logo60px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LinkedIn_Logo60px.png; sourceTree = "<group>"; };
+		4DDF4501168165CF00462096 /* twitter-bird-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-white-on-blue.png"; sourceTree = "<group>"; };
+		4DDF4504168169A700462096 /* 2011_semifinalists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2011_semifinalists.json; sourceTree = "<group>"; };
+		4DDF4506168169A700462096 /* twitter-bird-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-16x16.png"; sourceTree = "<group>"; };
+		4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
+		4DDF450C16816A2100462096 /* 2011_semifinalist_detail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2011_semifinalist_detail.json; sourceTree = "<group>"; };
 		4DF1DE981676011600CB2D9A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		4DF1DE991676011600CB2D9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4DF1DE9A1676011600CB2D9A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -444,9 +456,7 @@
 		4DFEF52C16759B230069E734 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		4DFEF52E16759B990069E734 /* SemiFinalistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemiFinalistDetailViewController.h; sourceTree = "<group>"; };
 		4DFEF52F16759B990069E734 /* SemiFinalistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemiFinalistDetailViewController.m; sourceTree = "<group>"; };
-		4DFEF53116759D210069E734 /* semifinalists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = semifinalists.json; sourceTree = "<group>"; };
-		4DFEF53216759D210069E734 /* sponsors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsors.json; sourceTree = "<group>"; };
-		4DFEF53316759D210069E734 /* winners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winners.json; sourceTree = "<group>"; };
+		4DFEF53216759D210069E734 /* 2012_sponsors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2012_sponsors.json; sourceTree = "<group>"; };
 		4DFEF53916759E040069E734 /* _SZCommentsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _SZCommentsListViewController.xib; sourceTree = "<group>"; };
 		4DFEF53A16759E040069E734 /* _SZComposeCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _SZComposeCommentViewController.xib; sourceTree = "<group>"; };
 		4DFEF53B16759E040069E734 /* _SZLinkDialogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _SZLinkDialogViewController.xib; sourceTree = "<group>"; };
@@ -703,6 +713,11 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4DDF4506168169A700462096 /* twitter-bird-16x16.png */,
+				4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */,
+				4DDF4500168165CF00462096 /* LinkedIn_Logo60px.png */,
+				4DDF4501168165CF00462096 /* twitter-bird-white-on-blue.png */,
+				4DDF44FE168165AD00462096 /* f_logo.png */,
 				4DB51D46167EB0F600A07437 /* 39-back.png */,
 				4DB51D47167EB0F600A07437 /* 39-back@2x.png */,
 				4DB51D48167EB0F600A07437 /* 40-forward.png */,
@@ -713,10 +728,10 @@
 				4D1D54341678503100626E21 /* 42-info@2x.png */,
 				4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */,
 				4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */,
-				4DFEF53116759D210069E734 /* semifinalists.json */,
-				4DB51D4E167EDE9800A07437 /* companies.json */,
-				4DFEF53216759D210069E734 /* sponsors.json */,
-				4DFEF53316759D210069E734 /* winners.json */,
+				4DDF4504168169A700462096 /* 2011_semifinalists.json */,
+				4DDF450C16816A2100462096 /* 2011_semifinalist_detail.json */,
+				4DB51D4E167EDE9800A07437 /* 2012_companies.json */,
+				4DFEF53216759D210069E734 /* 2012_sponsors.json */,
 				4D501949167548DA0031B9F8 /* TitilliumText25L 1wt.otf */,
 				4D50194A167548DA0031B9F8 /* TitilliumText25L 250wt.otf */,
 				4D50194B167548DA0031B9F8 /* TitilliumText25L 400wt.otf */,
@@ -1230,9 +1245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DFEF53416759D210069E734 /* semifinalists.json in Resources */,
-				4DFEF53516759D210069E734 /* sponsors.json in Resources */,
-				4DFEF53616759D210069E734 /* winners.json in Resources */,
+				4DFEF53516759D210069E734 /* 2012_sponsors.json in Resources */,
 				4DCECFFE1675474000272F0B /* InfoPlist.strings in Resources */,
 				4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */,
 				4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */,
@@ -1493,7 +1506,14 @@
 				4DB51D4B167EB0F600A07437 /* 39-back@2x.png in Resources */,
 				4DB51D4C167EB0F600A07437 /* 40-forward.png in Resources */,
 				4DB51D4D167EB0F600A07437 /* 40-forward@2x.png in Resources */,
-				4DB51D4F167EDE9800A07437 /* companies.json in Resources */,
+				4DB51D4F167EDE9800A07437 /* 2012_companies.json in Resources */,
+				4DDF44FF168165AD00462096 /* f_logo.png in Resources */,
+				4DDF4502168165D000462096 /* LinkedIn_Logo60px.png in Resources */,
+				4DDF4503168165D000462096 /* twitter-bird-white-on-blue.png in Resources */,
+				4DDF4508168169A700462096 /* 2011_semifinalists.json in Resources */,
+				4DDF450A168169A700462096 /* twitter-bird-16x16.png in Resources */,
+				4DDF450B168169A700462096 /* twitter-bird-light-bgs.png in Resources */,
+				4DDF450D16816A2100462096 /* 2011_semifinalist_detail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
