@@ -37,6 +37,7 @@
 		4D736D66167E568D00AB4171 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D65167E568D00AB4171 /* NSDate+Helper.m */; };
 		4D736D69167E578900AB4171 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D68167E578900AB4171 /* NSDate-Utilities.m */; };
 		4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */; };
+		4D8EFFAB1682ABD10077FC8C /* SemifinalistDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */; };
 		4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB51D40167E9F4000A07437 /* Twitter.framework */; };
 		4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D42167EACEF00A07437 /* 02-redo.png */; };
 		4DB51D45167EACEF00A07437 /* 02-redo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D43167EACEF00A07437 /* 02-redo@2x.png */; };
@@ -365,6 +366,8 @@
 		4D736D68167E578900AB4171 /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
 		4D736D6A167E5ED200AB4171 /* TweetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailsViewController.h; sourceTree = "<group>"; };
 		4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailsViewController.m; sourceTree = "<group>"; };
+		4D8EFFA91682ABD10077FC8C /* SemifinalistDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemifinalistDetailTableViewController.h; sourceTree = "<group>"; };
+		4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemifinalistDetailTableViewController.m; sourceTree = "<group>"; };
 		4DB51D40167E9F4000A07437 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4DB51D42167EACEF00A07437 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
 		4DB51D43167EACEF00A07437 /* 02-redo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo@2x.png"; sourceTree = "<group>"; };
@@ -758,7 +761,6 @@
 			isa = PBXGroup;
 			children = (
 				4DFEF5221675991E0069E734 /* AboutTableViewController.h */,
-				4DB8F8831675D9050017CD64 /* PullToRefresh */,
 				4DFEF5231675991E0069E734 /* AboutTableViewController.m */,
 				4DFEF4E01675829A0069E734 /* MapViewController.h */,
 				4DFEF4E11675829A0069E734 /* MapViewController.m */,
@@ -782,6 +784,8 @@
 				4DCB57B0167E351C00254B98 /* SemifinalistListViewController.m */,
 				4D736D6A167E5ED200AB4171 /* TweetDetailsViewController.h */,
 				4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */,
+				4D8EFFA91682ABD10077FC8C /* SemifinalistDetailTableViewController.h */,
+				4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -811,6 +815,7 @@
 				4D736D68167E578900AB4171 /* NSDate-Utilities.m */,
 				4D736D64167E568D00AB4171 /* NSDate+Helper.h */,
 				4D736D65167E568D00AB4171 /* NSDate+Helper.m */,
+				4DB8F8831675D9050017CD64 /* PullToRefresh */,
 				4DCB57DE167E459000254B98 /* Reachability */,
 				4DCB57C1167E425400254B98 /* ASIHTTPRequest */,
 				4DF1DE971676011600CB2D9A /* TestFlightSDK1-1 */,
@@ -828,8 +833,7 @@
 				4DB8F8881675D9050017CD64 /* PullToRefreshView.m */,
 				4DB8F8891675D9050017CD64 /* README */,
 			);
-			name = PullToRefresh;
-			path = ../PullToRefresh;
+			path = PullToRefresh;
 			sourceTree = "<group>";
 		};
 		4DCB57C1167E425400254B98 /* ASIHTTPRequest */ = {
@@ -1557,6 +1561,7 @@
 				4D736D66167E568D00AB4171 /* NSDate+Helper.m in Sources */,
 				4D736D69167E578900AB4171 /* NSDate-Utilities.m in Sources */,
 				4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */,
+				4D8EFFAB1682ABD10077FC8C /* SemifinalistDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
