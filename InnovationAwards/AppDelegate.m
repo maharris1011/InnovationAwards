@@ -13,13 +13,24 @@
 
 - (NSDictionary *)sharedCategoryData
 {
-    if (sharedCategoryData == nil) {
-        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"semifinalists" ofType:@"json"];
+    if (_categoryData == nil) {
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2011_semifinalists" ofType:@"json"];
         NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
-        sharedCategoryData = [jsonData objectFromJSONString];
+        _categoryData = [jsonData objectFromJSONString];
 
     }
-    return sharedCategoryData;
+    return _categoryData;
+}
+
+- (NSDictionary *)sharedCompanyData
+{
+    if (_companyData == nil) {
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_companies" ofType:@"json"];
+        NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
+        _companyData = [jsonData objectFromJSONString];
+        
+    }
+    return _companyData;
 }
 
 

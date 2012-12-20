@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-static NSDictionary *sharedCategoryData = nil;
 
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    NSDictionary *_companyData;
+    NSDictionary *_categoryData;
+}
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (nonatomic, readonly, strong) NSDictionary *sharedCategoryData;
+@property (nonatomic, readonly, strong) NSDictionary *sharedCompanyData;
 
 // Implementation
 - (NSDictionary *)sharedCategoryData;
+- (NSDictionary *)sharedCompanyData;
 
 
 @property (strong, nonatomic) UIWindow *window;

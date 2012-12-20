@@ -7,7 +7,7 @@
 //
 #import "UITableViewController+GradientHeaders.h"
 #import "SemifinalistListViewController.h"
-#import "SemiFinalistDetailViewController.h"
+#import "SemiFinalistDetailTableViewController.h"
 
 @interface SemifinalistListViewController () {
     NSDictionary *_category;
@@ -22,18 +22,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showCategoryWeb"])
+    if ([[segue identifier] isEqualToString:@"showSemifinalistDetail"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         // find the right URL for the selected index
         
-        NSString *url = [self.category objectForKey:@"URL"];
+
         
-        SemiFinalistDetailViewController *detail = (SemiFinalistDetailViewController *)[segue destinationViewController];
-        detail.urlOfCategory = url;
+        NSString *url = [self.category objectForKey:@"URL"];
+        SemifinalistDetailTableViewController *detail = (SemifinalistDetailTableViewController *)[segue destinationViewController];
+        
         detail.categoryName = [self.category objectForKey:@"category"];
         NSArray *semifinalistList = [self.category objectForKey:@"semifinalists"];
-        detail.semifinalistName = [semifinalistList objectAtIndex:indexPath.row];
+        NSString *semifinalistName = [semifinalistList objectAtIndex:indexPath.row];
+        
     }
     
 }

@@ -220,8 +220,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="091-Is-QqS" kind="push" identifier="showCategoryWeb" id="iMH-a3-wtZ"/>
-                                    <segue destination="Tn4-aw-5SO" kind="push" trigger="accessoryAction" id="ant-ld-tLK"/>
+                                    <segue destination="Tn4-aw-5SO" kind="push" identifier="showSemifinalistDetail" id="QRS-Ly-GZr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -243,11 +242,11 @@
             <objects>
                 <viewController id="091-Is-QqS" customClass="SemiFinalistDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3gI-hF-s4g">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="Cat-oC-Wtw">
-                                <rect key="frame" x="0.0" y="-54" width="320" height="514"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                 <connections>
@@ -279,12 +278,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6A-ec-PvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3301" y="99"/>
+            <point key="canvasLocation" x="3668" y="83"/>
         </scene>
-        <!--Table View Controller - BringShare-->
+        <!--Semifinalist Detail Table View Controller - BringShare-->
         <scene sceneID="tgG-R9-Rz9">
             <objects>
-                <tableViewController id="Tn4-aw-5SO" sceneMemberID="viewController">
+                <tableViewController id="Tn4-aw-5SO" customClass="SemifinalistDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zx2-dX-iZn">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,36 +292,29 @@
                         <sections>
                             <tableViewSection id="NRe-HS-sPa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="137" id="DtQ-Ct-tYH">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="138"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="DtQ-Ct-tYH">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="136"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BringShare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ec-nl-eFz">
                                                     <rect key="frame" x="20" y="36" width="260" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Outstanding Startup Business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.50000000000000011" id="zPy-dV-28J">
-                                                    <rect key="frame" x="20" y="17" width="260" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Justin Spring, Co-Founder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9vK-BH-1uv">
-                                                    <rect key="frame" x="20" y="84" width="260" height="21"/>
+                                                    <rect key="frame" x="20" y="69" width="260" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" id="JIm-JJ-p20">
-                                                    <rect key="frame" x="13" y="100" width="260" height="31"/>
+                                                    <rect key="frame" x="13" y="85" width="260" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
@@ -336,24 +328,31 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Outstanding Startup Business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UOb-8E-OxZ">
+                                                    <rect key="frame" x="20" y="20" width="260" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="226" id="tQg-8i-EvV">
-                                        <rect key="frame" x="0.0" y="148" width="320" height="226"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="241" id="tQg-8i-EvV">
+                                        <rect key="frame" x="0.0" y="128" width="320" height="241"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="225"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="7OI-xQ-MSF">
-                                                    <rect key="frame" x="20" y="1" width="260" height="204"/>
+                                                    <rect key="frame" x="20" y="1" width="260" height="219"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <mutableString key="text">BringShare is an Internet-based tool designed to help marketing professionals, entrepreneurs and businesses measure and evaluate their online marketing investments more efficiently and cost-effectively. It is unique because it compiles online marketing initiatives-website analytics, SEO, social media, email marketing, paid search-into a single, easy-to-comprehend dashboard. BringShare presents data in a way that makes it simple to identify which efforts provide the best return on investment, which approaches need to be modified, and initiatives that aren’t paying off.
-Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines and answers the challenges associated with generating and explaining marketing data reports. Because BringShare was created by experienced marketers for people leveraging online marketing strategies, there is a keen understanding of what data reports are critical versus data that is just nice to know. BringShare affords marketers to produce exceptional reports in a fraction of the time and expense it would take someone to create manually. In September 2011, BringShare became the first Ohio company invited to Silicon Valley to present at DEMO-the launchpad for emerging technologies.</mutableString>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <string key="text">BringShare is an Internet-based tool designed to help marketing professionals, entrepreneurs and businesses measure and evaluate their online marketing investments more efficiently and cost-effectively. It is unique because it compiles online marketing initiatives-website analytics, SEO, social media, email marketing, paid search-into a single, easy-to-comprehend dashboard. BringShare presents data in a way that makes it simple to identify which efforts provide the best return on investment, which approaches need to be modified, and initiatives that aren’t paying off.
+Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines and answers the challenges associated with generating and explaining marketing data reports. Because BringShare was created by experienced marketers for people leveraging online marketing strategies, there is a keen understanding of what data reports are critical versus data that is just nice to know. BringShare affords marketers to produce exceptional reports in a fraction of the time and expense it would take someone to create manually. In September 2011, BringShare became the first Ohio company invited to Silicon Valley to present at DEMO-the launchpad for emerging technologies.</string>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -363,7 +362,7 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="RGT-vY-lO5">
-                                        <rect key="frame" x="0.0" y="374" width="320" height="81"/>
+                                        <rect key="frame" x="0.0" y="369" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="79"/>
@@ -380,6 +379,9 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="followOnTwitterPressed:" destination="Tn4-aw-5SO" eventType="touchUpInside" id="VGQ-4i-93e"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ssC-uw-2Fd">
                                                     <rect key="frame" x="126" y="12" width="60" height="60"/>
@@ -392,6 +394,9 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="connectOnLinkedInPressed:" destination="Tn4-aw-5SO" eventType="touchUpInside" id="Utp-6J-n0z"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7V4-Jd-0Mk">
                                                     <rect key="frame" x="230" y="15" width="50" height="50"/>
@@ -404,6 +409,9 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeOnFacebookPressed:" destination="Tn4-aw-5SO" eventType="touchUpInside" id="ZB5-BP-rRC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -421,10 +429,20 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                         <barButtonItem key="backBarButtonItem" title="Back" id="iiP-UK-cfk"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <connections>
+                        <outlet property="categoryNameLabel" destination="UOb-8E-OxZ" id="BAI-My-2uk"/>
+                        <outlet property="companyNameLabel" destination="0ec-nl-eFz" id="3dW-Zk-Cet"/>
+                        <outlet property="companyUrlLabel" destination="JIm-JJ-p20" id="xf6-Ye-bza"/>
+                        <outlet property="facebookButton" destination="7V4-Jd-0Mk" id="Md2-Z1-ppE"/>
+                        <outlet property="linkedInButton" destination="ssC-uw-2Fd" id="k11-yj-19I"/>
+                        <outlet property="representativeNameLabel" destination="9vK-BH-1uv" id="HXB-h8-BAr"/>
+                        <outlet property="storyText" destination="7OI-xQ-MSF" id="YQE-cx-Mv7"/>
+                        <outlet property="twitterButton" destination="oHG-rL-yok" id="xvL-b1-06q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmH-gQ-Tg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3081" y="792"/>
+            <point key="canvasLocation" x="3131" y="99"/>
         </scene>
         <!--Sponsors View Controller - Sponsors-->
         <scene sceneID="pbQ-pA-VuZ">
