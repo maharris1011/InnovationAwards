@@ -284,11 +284,11 @@
         <scene sceneID="tgG-R9-Rz9">
             <objects>
                 <tableViewController id="Tn4-aw-5SO" customClass="SemifinalistDetailTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zx2-dX-iZn">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zx2-dX-iZn">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="separatorColor" red="0.78039222959999999" green="0.42352944609999998" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="NRe-HS-sPa">
                                 <cells>
@@ -361,8 +361,8 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="RGT-vY-lO5">
-                                        <rect key="frame" x="0.0" y="369" width="320" height="81"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="RGT-vY-lO5">
+                                        <rect key="frame" x="0.0" y="369" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="79"/>

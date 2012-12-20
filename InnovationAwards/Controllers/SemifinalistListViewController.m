@@ -8,6 +8,7 @@
 #import "UITableViewController+GradientHeaders.h"
 #import "SemifinalistListViewController.h"
 #import "SemiFinalistDetailTableViewController.h"
+#import "AppDelegate.h"
 
 @interface SemifinalistListViewController () {
     NSDictionary *_category;
@@ -27,14 +28,16 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         // find the right URL for the selected index
         
-
-        
-        NSString *url = [self.category objectForKey:@"URL"];
         SemifinalistDetailTableViewController *detail = (SemifinalistDetailTableViewController *)[segue destinationViewController];
         
         detail.categoryName = [self.category objectForKey:@"category"];
         NSArray *semifinalistList = [self.category objectForKey:@"semifinalists"];
         NSString *semifinalistName = [semifinalistList objectAtIndex:indexPath.row];
+        
+        AppDelegate *myapp = [[UIApplication sharedApplication] delegate];
+        NSDictionary *semifinalist_detail_object = [myapp sharedSemifinalistDetail];
+        NSDictionary *semifinalist_detail = [semifinalist_detail_object objectForKey:semifinalistName];
+        detail.semifinalistData = semifinalist_detail;
         
     }
     

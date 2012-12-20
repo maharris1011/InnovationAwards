@@ -22,15 +22,16 @@
     return _categoryData;
 }
 
-- (NSDictionary *)sharedCompanyData
+- (NSDictionary *)sharedSemifinalistDetail
 {
-    if (_companyData == nil) {
-        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_companies" ofType:@"json"];
+    
+    if (_semifinalistDetail == nil) {
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_semifinalist_detail_mock" ofType:@"json"];
         NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
-        _companyData = [jsonData objectFromJSONString];
+        _semifinalistDetail = [jsonData objectFromJSONString];
         
     }
-    return _companyData;
+    return _semifinalistDetail;
 }
 
 

@@ -1,0 +1,38 @@
+{
+	"Acceptd":{
+	  "name":"Acceptd",
+	  "company_facebook":"acceptd",
+	  "company_twitter":"@acceptd",
+	  "personal_linkedin":"in/hunterdl",
+      "story":"",
+      "rep_name":"",
+      "url":""
+	},
+	"Acclaimd":{
+	  "name":"Acclaimd",
+	  "company_facebook":" Inc.",
+	  "company_twitter":"@Acclaimd",
+	  "personal_linkedin":"DerekFromCBUS",
+        "story":"",
+        "rep_name":"",
+        "url":""
+	},
+	"Algorithm":{
+	  "name":"Algorithm",
+	  "company_facebook":" Inc.",
+	  "company_twitter":"@AlgorithmInc",
+	  "personal_linkedin":"roebuckr",
+        "story":"",
+        "rep_name":"",
+        "url":""
+    },	
+	"Whouter.com":{
+	  "name":"Whouter.com",
+	  "company_facebook":"",
+	  "company_twitter":"",
+	  "personal_linkedin":"",
+        "story":"",
+        "rep_name":"",
+        "url":""
+    }
+}

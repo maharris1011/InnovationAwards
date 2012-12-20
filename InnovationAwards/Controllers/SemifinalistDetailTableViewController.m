@@ -28,16 +28,18 @@
     [super viewDidLoad];
     // set the labels accordingly
     self.categoryNameLabel.text = self.categoryName;
-    self.companyNameLabel.text = [self.semifinalistData objectForKey:@"name"];
-    self.representativeNameLabel.text = [self.semifinalistData objectForKey:@"rep_name"];
-    self.companyNameLabel.text = [self.semifinalistData objectForKey:@"url"];
-    self.storyText.text = [self.semifinalistData objectForKey:@"story"];
-    
-    self.twitterButton.enabled = [self.semifinalistData objectForKey:@"company_twitter"] != nil;
-    self.facebookButton.enabled = [self.semifinalistData objectForKey:@"company_facebook"] != nil;
-    self.linkedInButton.enabled = [self.semifinalistData objectForKey:@"personal_linkedin"] != nil;
-    
-    
+    if (self.semifinalistData) {
+        NSLog(@"%@", self.semifinalistData);
+            
+        self.companyNameLabel.text = [self.semifinalistData objectForKey:@"name"];
+        self.representativeNameLabel.text = [self.semifinalistData objectForKey:@"rep_name"];
+        self.companyNameLabel.text = [self.semifinalistData objectForKey:@"url"];
+        self.storyText.text = [self.semifinalistData objectForKey:@"story"];
+        
+        self.twitterButton.enabled = [self.semifinalistData objectForKey:@"company_twitter"] != nil;
+        self.facebookButton.enabled = [self.semifinalistData objectForKey:@"company_facebook"] != nil;
+        self.linkedInButton.enabled = [self.semifinalistData objectForKey:@"personal_linkedin"] != nil;
+    }
     
 }
 
