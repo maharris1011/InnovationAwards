@@ -87,18 +87,6 @@
 		4DE40E5A1683F72100533212 /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E581683F72100533212 /* ia12_sponsors.png */; };
 		4DE40E5B1683F72100533212 /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E591683F72100533212 /* ia12_sponsors@2x.png */; };
 		4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */; };
-		4DE40E6A1683F7E100533212 /* ia_320x224_apple_calloutboxes_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5E1683F7E100533212 /* ia_320x224_apple_calloutboxes_1.png */; };
-		4DE40E6B1683F7E100533212 /* ia_320x224_apple_calloutboxes_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5F1683F7E100533212 /* ia_320x224_apple_calloutboxes_2.png */; };
-		4DE40E6C1683F7E100533212 /* ia_320x224_apple_calloutboxes_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E601683F7E100533212 /* ia_320x224_apple_calloutboxes_3.png */; };
-		4DE40E6D1683F7E100533212 /* ia_320x224_apple_calloutboxes_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E611683F7E100533212 /* ia_320x224_apple_calloutboxes_4.png */; };
-		4DE40E6E1683F7E100533212 /* ia_640x447_apple_calloutboxes_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E621683F7E100533212 /* ia_640x447_apple_calloutboxes_1.png */; };
-		4DE40E6F1683F7E100533212 /* ia_640x447_apple_calloutboxes_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E631683F7E100533212 /* ia_640x447_apple_calloutboxes_2.png */; };
-		4DE40E701683F7E100533212 /* ia_640x447_apple_calloutboxes_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E641683F7E100533212 /* ia_640x447_apple_calloutboxes_3.png */; };
-		4DE40E711683F7E100533212 /* ia_640x447_apple_calloutboxes_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E651683F7E100533212 /* ia_640x447_apple_calloutboxes_4.png */; };
-		4DE40E721683F7E100533212 /* ia_640x564_apple_calloutboxes_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E661683F7E100533212 /* ia_640x564_apple_calloutboxes_1.png */; };
-		4DE40E731683F7E100533212 /* ia_640x564_apple_calloutboxes_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E671683F7E100533212 /* ia_640x564_apple_calloutboxes_2.png */; };
-		4DE40E741683F7E100533212 /* ia_640x564_apple_calloutboxes_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E681683F7E100533212 /* ia_640x564_apple_calloutboxes_3.png */; };
-		4DE40E751683F7E100533212 /* ia_640x564_apple_calloutboxes_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E691683F7E100533212 /* ia_640x564_apple_calloutboxes_4.png */; };
 		4DE40E781683FA7600533212 /* ia12_app_callouts_5-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E761683FA7600533212 /* ia12_app_callouts_5-568h@2x.png */; };
 		4DE40E791683FA7600533212 /* ia12_app_callouts_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E771683FA7600533212 /* ia12_app_callouts_5@2x.png */; };
 		4DE40E861683FBE500533212 /* ia12_app_callouts_1-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E7A1683FBE500533212 /* ia12_app_callouts_1-568h@2x.png */; };
@@ -467,18 +455,6 @@
 		4DE40E581683F72100533212 /* ia12_sponsors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_sponsors.png; sourceTree = "<group>"; };
 		4DE40E591683F72100533212 /* ia12_sponsors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_sponsors@2x.png"; sourceTree = "<group>"; };
 		4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TechColumbus_Logo.jpg; sourceTree = "<group>"; };
-		4DE40E5E1683F7E100533212 /* ia_320x224_apple_calloutboxes_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_320x224_apple_calloutboxes_1.png; sourceTree = "<group>"; };
-		4DE40E5F1683F7E100533212 /* ia_320x224_apple_calloutboxes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_320x224_apple_calloutboxes_2.png; sourceTree = "<group>"; };
-		4DE40E601683F7E100533212 /* ia_320x224_apple_calloutboxes_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_320x224_apple_calloutboxes_3.png; sourceTree = "<group>"; };
-		4DE40E611683F7E100533212 /* ia_320x224_apple_calloutboxes_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_320x224_apple_calloutboxes_4.png; sourceTree = "<group>"; };
-		4DE40E621683F7E100533212 /* ia_640x447_apple_calloutboxes_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x447_apple_calloutboxes_1.png; sourceTree = "<group>"; };
-		4DE40E631683F7E100533212 /* ia_640x447_apple_calloutboxes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x447_apple_calloutboxes_2.png; sourceTree = "<group>"; };
-		4DE40E641683F7E100533212 /* ia_640x447_apple_calloutboxes_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x447_apple_calloutboxes_3.png; sourceTree = "<group>"; };
-		4DE40E651683F7E100533212 /* ia_640x447_apple_calloutboxes_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x447_apple_calloutboxes_4.png; sourceTree = "<group>"; };
-		4DE40E661683F7E100533212 /* ia_640x564_apple_calloutboxes_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x564_apple_calloutboxes_1.png; sourceTree = "<group>"; };
-		4DE40E671683F7E100533212 /* ia_640x564_apple_calloutboxes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x564_apple_calloutboxes_2.png; sourceTree = "<group>"; };
-		4DE40E681683F7E100533212 /* ia_640x564_apple_calloutboxes_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x564_apple_calloutboxes_3.png; sourceTree = "<group>"; };
-		4DE40E691683F7E100533212 /* ia_640x564_apple_calloutboxes_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_640x564_apple_calloutboxes_4.png; sourceTree = "<group>"; };
 		4DE40E761683FA7600533212 /* ia12_app_callouts_5-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_5-568h@2x.png"; sourceTree = "<group>"; };
 		4DE40E771683FA7600533212 /* ia12_app_callouts_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_5@2x.png"; sourceTree = "<group>"; };
 		4DE40E7A1683FBE500533212 /* ia12_app_callouts_1-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_1-568h@2x.png"; sourceTree = "<group>"; };
@@ -812,18 +788,6 @@
 				4DE40E831683FBE500533212 /* ia12_app_callouts_4-568h@2x.png */,
 				4DE40E841683FBE500533212 /* ia12_app_callouts_4.png */,
 				4DE40E851683FBE500533212 /* ia12_app_callouts_4@2x.png */,
-				4DE40E5E1683F7E100533212 /* ia_320x224_apple_calloutboxes_1.png */,
-				4DE40E5F1683F7E100533212 /* ia_320x224_apple_calloutboxes_2.png */,
-				4DE40E601683F7E100533212 /* ia_320x224_apple_calloutboxes_3.png */,
-				4DE40E611683F7E100533212 /* ia_320x224_apple_calloutboxes_4.png */,
-				4DE40E621683F7E100533212 /* ia_640x447_apple_calloutboxes_1.png */,
-				4DE40E631683F7E100533212 /* ia_640x447_apple_calloutboxes_2.png */,
-				4DE40E641683F7E100533212 /* ia_640x447_apple_calloutboxes_3.png */,
-				4DE40E651683F7E100533212 /* ia_640x447_apple_calloutboxes_4.png */,
-				4DE40E661683F7E100533212 /* ia_640x564_apple_calloutboxes_1.png */,
-				4DE40E671683F7E100533212 /* ia_640x564_apple_calloutboxes_2.png */,
-				4DE40E681683F7E100533212 /* ia_640x564_apple_calloutboxes_3.png */,
-				4DE40E691683F7E100533212 /* ia_640x564_apple_calloutboxes_4.png */,
 				4DE40E581683F72100533212 /* ia12_sponsors.png */,
 				4DE40E591683F72100533212 /* ia12_sponsors@2x.png */,
 				4D5CD9C91675567100ABC2FD /* headerBackground.png */,
@@ -1604,18 +1568,6 @@
 				4DE40E5A1683F72100533212 /* ia12_sponsors.png in Resources */,
 				4DE40E5B1683F72100533212 /* ia12_sponsors@2x.png in Resources */,
 				4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */,
-				4DE40E6A1683F7E100533212 /* ia_320x224_apple_calloutboxes_1.png in Resources */,
-				4DE40E6B1683F7E100533212 /* ia_320x224_apple_calloutboxes_2.png in Resources */,
-				4DE40E6C1683F7E100533212 /* ia_320x224_apple_calloutboxes_3.png in Resources */,
-				4DE40E6D1683F7E100533212 /* ia_320x224_apple_calloutboxes_4.png in Resources */,
-				4DE40E6E1683F7E100533212 /* ia_640x447_apple_calloutboxes_1.png in Resources */,
-				4DE40E6F1683F7E100533212 /* ia_640x447_apple_calloutboxes_2.png in Resources */,
-				4DE40E701683F7E100533212 /* ia_640x447_apple_calloutboxes_3.png in Resources */,
-				4DE40E711683F7E100533212 /* ia_640x447_apple_calloutboxes_4.png in Resources */,
-				4DE40E721683F7E100533212 /* ia_640x564_apple_calloutboxes_1.png in Resources */,
-				4DE40E731683F7E100533212 /* ia_640x564_apple_calloutboxes_2.png in Resources */,
-				4DE40E741683F7E100533212 /* ia_640x564_apple_calloutboxes_3.png in Resources */,
-				4DE40E751683F7E100533212 /* ia_640x564_apple_calloutboxes_4.png in Resources */,
 				4DE40E781683FA7600533212 /* ia12_app_callouts_5-568h@2x.png in Resources */,
 				4DE40E791683FA7600533212 /* ia12_app_callouts_5@2x.png in Resources */,
 				4DE40E861683FBE500533212 /* ia12_app_callouts_1-568h@2x.png in Resources */,
