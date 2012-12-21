@@ -14,7 +14,8 @@
 
 #define IA_Font @"TitilliumText25L"
 
-#define IA_headlineBold [UIFont fontWithName:IA_Font size:18];
+
+#define IA_headlineBold [UIFont systemFontOfSize:24];   // [UIFont fontWithName:IA_Font size:24];
 
 /*
 fontFamily:'TitilliumText25L',

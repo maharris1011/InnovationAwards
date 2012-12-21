@@ -21,7 +21,7 @@ CAGradientLayer *darkPurpleGradient(void)
 {
     UITableView *tableView = self.tableView;
     CGFloat width = CGRectGetWidth(tableView.bounds);
-    CGFloat height = [tableView sectionHeaderHeight];
+    CGFloat height = [self tableView:tableView heightForHeaderInSection:section];
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0,0,width,height)] ;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)] ;
     
@@ -29,6 +29,7 @@ CAGradientLayer *darkPurpleGradient(void)
     [headerView addGradient:darkPurpleGradient()];
     [backgroundView setOpaque:NO];
     [backgroundView setAlpha:0.7];
+    [headerView setAlpha:0.7];
     
     // create the label view
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,width,height)];

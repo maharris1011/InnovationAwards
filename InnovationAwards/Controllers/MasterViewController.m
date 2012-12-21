@@ -62,9 +62,14 @@
     
     if (sender.state == UIGestureRecognizerStateEnded) {
         
-        // the array 'pageTransitions' has the names of the segues to go to
-        [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
-        
+        if (self.pageControl.currentPage == 3) {
+            // linked in
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.linkedin.com/company/techcolumbus"]];
+        }
+        else {
+            // the array 'pageTransitions' has the names of the segues to go to
+            [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
+        }
     }
 }
 
@@ -165,14 +170,16 @@
                        [UIImage imageNamed:@"ia12_app_callouts_1.png"],
                        [UIImage imageNamed:@"ia12_app_callouts_2.png"],
                        [UIImage imageNamed:@"ia12_app_callouts_3.png"],
+                       [UIImage imageNamed:@"ia12_app_callouts_5.png"],
                        [UIImage imageNamed:@"ia12_app_callouts_4.png"],
                        nil];
     self.pageTransitions = [NSArray arrayWithObjects:
                             @"showSemifinalists",
                             @"showTwitter",
                             @"showFacebook",
-                            @"showSponsors"
-                            , nil];
+                            @"showLinkedIn",
+                            @"showSponsors",
+                            nil];
     
     NSInteger pageCount = self.pageImages.count;
     
@@ -223,7 +230,8 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     
-    [self.scrollView setFrame:CGRectMake(0, 66, 320, 146)];
+    [self.scrollView setFrame:CGRectMake(0, 15, 320, 224)];
+    [self.pageControl setFrame:CGRectMake(0, self.scrollView.frame.origin.y+self.scrollView.frame.size.height, 320, 36)];
     
     // 4
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
@@ -243,7 +251,6 @@
 {
     UINavigationBar *navBar = self.navigationController.navigationBar;
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    NSLog(@"doing segue %@", [segue identifier]);
     
 }
 

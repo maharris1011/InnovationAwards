@@ -31,7 +31,7 @@
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="hvV-p1-l0p">
                                 <rect key="frame" x="0.0" y="427" width="320" height="77"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="February 7, 2013  7pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uTb-4B-OHA">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="February 7, 2013" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uTb-4B-OHA">
                                         <rect key="frame" x="0.0" y="8" width="320" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,10 +83,10 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="aQx-Pw-oAc">
-                                <rect key="frame" x="0.0" y="219" width="320" height="36"/>
+                                <rect key="frame" x="0.0" y="247" width="320" height="36"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="F1R-cw-xWF">
-                                <rect key="frame" x="0.0" y="66" width="320" height="146"/>
+                                <rect key="frame" x="0.0" y="15" width="320" height="224"/>
                                 <connections>
                                     <outlet property="delegate" destination="UOi-q7-hxg" id="F84-29-mKu"/>
                                 </connections>
@@ -236,49 +236,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9G-rz-itv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2502" y="99"/>
-        </scene>
-        <!--Semi Finalist Detail View Controller-->
-        <scene sceneID="PrA-7T-Lmf">
-            <objects>
-                <viewController id="091-Is-QqS" customClass="SemiFinalistDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3gI-hF-s4g">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="Cat-oC-Wtw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="091-Is-QqS" id="cUr-hQ-e46"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem image="39-back.png" id="vH1-7E-Oz4">
-                            <connections>
-                                <action selector="backPressed:" destination="091-Is-QqS" id="c6S-VS-d1x"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem image="40-forward.png" id="PgK-PQ-6xw">
-                            <connections>
-                                <action selector="forwardPressed:" destination="091-Is-QqS" id="bWY-IB-ZHN"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="2Ow-GM-VCM">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="aNB-UD-YKO"/>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
-                    <connections>
-                        <outlet property="webView" destination="Cat-oC-Wtw" id="bvX-o2-Qh9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x6A-ec-PvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3668" y="83"/>
         </scene>
         <!--Semifinalist Detail Table View Controller - BringShare-->
         <scene sceneID="tgG-R9-Rz9">
@@ -448,30 +405,30 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
         <scene sceneID="pbQ-pA-VuZ">
             <objects>
                 <tableViewController id="fkB-4z-yVi" customClass="SponsorsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1E4-9e-e55">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" id="1E4-9e-e55">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="SponsorCell" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SponsorCell" textLabel="wSQ-Yf-HFo" detailTextLabel="fIQ-f2-eCb" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="3fJ-rm-gll">
-                                <rect key="frame" x="0.0" y="22" width="320" height="63"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="SponsorCell" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SponsorCell" textLabel="wSQ-Yf-HFo" detailTextLabel="fIQ-f2-eCb" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="3fJ-rm-gll">
+                                <rect key="frame" x="0.0" y="22" width="320" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wSQ-Yf-HFo">
-                                            <rect key="frame" x="10" y="11" width="38" height="22"/>
+                                            <rect key="frame" x="10" y="14" width="50" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                             <color key="textColor" red="0.9803922176361084" green="0.98823535442352295" blue="0.12156863510608673" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fIQ-f2-eCb">
-                                            <rect key="frame" x="10" y="33" width="47" height="18"/>
+                                            <rect key="frame" x="10" y="43" width="67" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.63921570777893066" green="0.90588241815567017" blue="0.066666670143604279" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -539,9 +496,9 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="KwI-vB-GYJ">
                                                     <rect key="frame" x="20" y="20" width="260" height="70"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Pre-event Reception: 5:00p - 6:15p
-Dinner &amp; Program: 6:30p - 8:30p
-Post-Event Reception: 8:30p - 9:30p</string>
+                                                    <string key="text">Pre-event Reception: 5:00p - 6:15pm
+Dinner &amp; Program: 6:30p - 8:30pm
+Post-Event Reception: 8:30p - 9:30pm</string>
                                                     <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -562,6 +519,7 @@ Post-Event Reception: 8:30p - 9:30p</string>
                                                     <rect key="frame" x="20" y="11" width="280" height="84"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Greater Columbus Convention Center
+Battelle Hall
 400 N. High St.
 Columbus, OH 43215
 (614) 827-2500</string>
@@ -936,6 +894,89 @@ Columbus, OH 43215
         <image name="f_logo.png" width="140" height="140"/>
         <image name="twitter-bird-white-on-blue.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="CategoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryViewController.h"/>
+        </class>
+        <class className="EventDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="buttonDone" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="FacebookWebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookWebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backPressed:"/>
+                <relationship kind="action" name="forwardPressed:"/>
+                <relationship kind="action" name="peoplesChoiceVideoPressed:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="IATwitterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IATwitterViewController.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="registerButtonWasPressed:"/>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="directionsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="RegistrationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SemifinalistDetailTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SemifinalistDetailTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="connectOnLinkedInPressed:"/>
+                <relationship kind="action" name="followOnTwitterPressed:"/>
+                <relationship kind="action" name="likeOnFacebookPressed:"/>
+                <relationship kind="outlet" name="categoryNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyUrlLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="linkedInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="representativeNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="storyText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SemifinalistListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SemifinalistListViewController.h"/>
+        </class>
+        <class className="SponsorsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SponsorsViewController.h"/>
+        </class>
+        <class className="TweetDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="composeButtonPressed:"/>
+                <relationship kind="action" name="replyButtonPressed:"/>
+                <relationship kind="action" name="retweetButtonPressed:"/>
+                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="senderName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="senderScreenName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweetSent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweetText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

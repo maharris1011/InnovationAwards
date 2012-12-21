@@ -12,5 +12,9 @@
 @interface MapViewController : UIViewController<MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, assign) CLLocationCoordinate2D conventionCenter;
+@property (nonatomic, assign) CLLocationCoordinate2D techColumbus;
+@property (nonatomic, assign) CLLocationCoordinate2D columbus;
+
 
 @end

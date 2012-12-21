@@ -143,6 +143,11 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 34;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSArray *levelsArray = [self.sponsorshipData objectForKey:@"levels"];
@@ -154,20 +159,6 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     return [self gradientHeaderViewForSection:section];
-    
-    // now create the header label
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,320,22)];
-    headerLabel.backgroundColor = [UIColor clearColor];
-//    headerLabel.font = IA_headlineBold;
-    headerLabel.shadowOffset = CGSizeMake(1, 1);
-    headerLabel.textColor = yellowText;
-    headerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.5];
-    
-    headerLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    [view addSubview:headerLabel];
-    return view;
-
 }
 
 
