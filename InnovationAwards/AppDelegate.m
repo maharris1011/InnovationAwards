@@ -14,7 +14,7 @@
 - (NSDictionary *)sharedCategoryData
 {
     if (_categoryData == nil) {
-        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2011_semifinalists" ofType:@"json"];
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_semifinalists" ofType:@"json"];
         NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
         _categoryData = [jsonData objectFromJSONString];
 

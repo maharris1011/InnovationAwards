@@ -241,11 +241,11 @@
         <scene sceneID="tgG-R9-Rz9">
             <objects>
                 <tableViewController id="Tn4-aw-5SO" customClass="SemifinalistDetailTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zx2-dX-iZn">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zx2-dX-iZn">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.78039222959999999" green="0.42352944609999998" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
                             <tableViewSection id="NRe-HS-sPa">
                                 <cells>
@@ -296,80 +296,90 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="241" id="tQg-8i-EvV">
-                                        <rect key="frame" x="0.0" y="128" width="320" height="241"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="75E-Lk-pdl" rowHeight="300" style="IBUITableViewCellStyleDefault" id="tQg-8i-EvV">
+                                        <rect key="frame" x="0.0" y="128" width="320" height="301"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="240"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="7OI-xQ-MSF">
-                                                    <rect key="frame" x="20" y="1" width="260" height="219"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">BringShare is an Internet-based tool designed to help marketing professionals, entrepreneurs and businesses measure and evaluate their online marketing investments more efficiently and cost-effectively. It is unique because it compiles online marketing initiatives-website analytics, SEO, social media, email marketing, paid search-into a single, easy-to-comprehend dashboard. BringShare presents data in a way that makes it simple to identify which efforts provide the best return on investment, which approaches need to be modified, and initiatives that aren’t paying off.
-Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines and answers the challenges associated with generating and explaining marketing data reports. Because BringShare was created by experienced marketers for people leveraging online marketing strategies, there is a keen understanding of what data reports are critical versus data that is just nice to know. BringShare affords marketers to produce exceptional reports in a fraction of the time and expense it would take someone to create manually. In September 2011, BringShare became the first Ohio company invited to Silicon Valley to present at DEMO-the launchpad for emerging technologies.</string>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="75E-Lk-pdl">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="299"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="RGT-vY-lO5">
-                                        <rect key="frame" x="0.0" y="369" width="320" height="80"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="PLe-DV-Jvl">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KnN-tU-KBd" imageView="8FN-4N-DFG" rowHeight="46" style="IBUITableViewCellStyleDefault" id="MGJ-jh-p1p">
+                                        <rect key="frame" x="0.0" y="449" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="79"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oHG-rL-yok">
-                                                    <rect key="frame" x="20" y="17" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                                    <state key="normal" image="twitter-bird-white-on-blue.png">
-                                                        <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="followOnTwitterPressed:" destination="Tn4-aw-5SO" eventType="touchUpInside" id="VGQ-4i-93e"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ssC-uw-2Fd">
-                                                    <rect key="frame" x="126" y="12" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <state key="normal" image="LinkedIn_Logo60px.png">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="connectOnLinkedInPressed:" destination="Tn4-aw-5SO" eventType="touchUpInside" id="Utp-6J-n0z"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7V4-Jd-0Mk">
-                                                    <rect key="frame" x="230" y="15" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <state key="normal" image="f_logo.png">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="likeOnFacebookPressed:" destination="Tn4-aw-5SO" eventType="touchUpInside" id="ZB5-BP-rRC"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Follow on Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KnN-tU-KBd">
+                                                    <rect key="frame" x="55" y="0.0" width="215" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="f_logo.png" id="8FN-4N-DFG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hKo-tN-bfg" imageView="fZH-4s-oCO" rowHeight="46" style="IBUITableViewCellStyleDefault" id="H1j-ii-ASH">
+                                        <rect key="frame" x="0.0" y="496" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Connect on LinkedIn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hKo-tN-bfg">
+                                                    <rect key="frame" x="64" y="0.0" width="206" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="LinkedIn_Logo60px.png" id="fZH-4s-oCO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ekg-mn-LRR" imageView="ul3-4Q-lWe" rowHeight="46" style="IBUITableViewCellStyleDefault" id="ZwN-qp-GYx">
+                                        <rect key="frame" x="0.0" y="542" width="320" height="47"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Follow on Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ekg-mn-LRR">
+                                                    <rect key="frame" x="55" y="0.0" width="215" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="twitter-bird-white-on-blue.png" id="ul3-4Q-lWe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -390,11 +400,8 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                         <outlet property="categoryNameLabel" destination="UOb-8E-OxZ" id="BAI-My-2uk"/>
                         <outlet property="companyNameLabel" destination="0ec-nl-eFz" id="3dW-Zk-Cet"/>
                         <outlet property="companyUrlLabel" destination="JIm-JJ-p20" id="xf6-Ye-bza"/>
-                        <outlet property="facebookButton" destination="7V4-Jd-0Mk" id="Md2-Z1-ppE"/>
-                        <outlet property="linkedInButton" destination="ssC-uw-2Fd" id="k11-yj-19I"/>
                         <outlet property="representativeNameLabel" destination="9vK-BH-1uv" id="HXB-h8-BAr"/>
-                        <outlet property="storyText" destination="7OI-xQ-MSF" id="YQE-cx-Mv7"/>
-                        <outlet property="twitterButton" destination="oHG-rL-yok" id="xvL-b1-06q"/>
+                        <outlet property="storyTextLabel" destination="75E-Lk-pdl" id="9j9-0D-bOV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmH-gQ-Tg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,9 +503,9 @@ Created by co-founders Danielle Walton and Justin Spring, BringShare streamlines
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="KwI-vB-GYJ">
                                                     <rect key="frame" x="20" y="20" width="260" height="70"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Pre-event Reception: 5:00p - 6:15pm
-Dinner &amp; Program: 6:30p - 8:30pm
-Post-Event Reception: 8:30p - 9:30pm</string>
+                                                    <string key="text">Pre-event Reception: 5:00pm-6:15pm
+Dinner &amp; Program: 6:30pm-8:30pm
+Post-Event Reception: 8:30p-9:30pm</string>
                                                     <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -944,17 +951,11 @@ Columbus, OH 43215
         <class className="SemifinalistDetailTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SemifinalistDetailTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="connectOnLinkedInPressed:"/>
-                <relationship kind="action" name="followOnTwitterPressed:"/>
-                <relationship kind="action" name="likeOnFacebookPressed:"/>
                 <relationship kind="outlet" name="categoryNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="companyUrlLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="linkedInButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="representativeNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="storyText" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="storyTextLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SemifinalistListViewController" superclassName="UITableViewController">

@@ -17,15 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *representativeNameLabel;
 @property (strong, nonatomic) IBOutlet UITextView *companyUrlLabel;
-@property (strong, nonatomic) IBOutlet UITextView *storyText;
+@property (strong, nonatomic) IBOutlet UILabel *storyTextLabel;
 
-- (IBAction)followOnTwitterPressed:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *twitterButton;
-
-- (IBAction)connectOnLinkedInPressed:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *linkedInButton;
-
-- (IBAction)likeOnFacebookPressed:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *facebookButton;
 
 @end
