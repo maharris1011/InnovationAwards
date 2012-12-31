@@ -31,7 +31,7 @@
     NSString *szUrl = @"http://m.facebook.com/TechColumbusOhio";
     NSURL *URL = [NSURL URLWithString:szUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
-    [self.webView setFrame:CGRectMake(0, 0, 320, 480-20-44-44)];
+    [self.webView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height-20-44-44)];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

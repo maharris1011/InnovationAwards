@@ -31,6 +31,7 @@
         SemifinalistDetailTableViewController *detail = (SemifinalistDetailTableViewController *)[segue destinationViewController];
         
         detail.categoryName = [self.category objectForKey:@"category"];
+        detail.categoryURL = [self.category objectForKey:@"URL"];
         NSArray *semifinalistList = [self.category objectForKey:@"semifinalists"];
         NSString *semifinalistName = [semifinalistList objectAtIndex:indexPath.row];
         
@@ -61,7 +62,7 @@
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     self.tableView.backgroundView = bgImageView;
 
 }

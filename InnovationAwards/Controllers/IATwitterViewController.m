@@ -64,7 +64,7 @@
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     self.tableView.backgroundView = bgImageView;
     
     // add buttons to the toolbar

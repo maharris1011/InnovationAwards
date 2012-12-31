@@ -9,10 +9,73 @@
 #import "SemifinalistDetailTableViewController.h"
 
 @interface SemifinalistDetailTableViewController ()
-
+- (void)setupSocializeEntity;
 @end
 
 @implementation SemifinalistDetailTableViewController
+@synthesize entity = _entity;
+@synthesize actionBar = _actionBar;
+
+- (void)setupSocializeEntity
+{
+    NSString *key = [NSString stringWithFormat:@"%@#%@", self.categoryURL, [self.semifinalistData objectForKey:@"name"]];
+    self.entity = [SZEntity entityWithKey:key name:[self.semifinalistData objectForKey:@"name"]];
+    
+    self.actionBar = [SZActionBarUtils showActionBarWithViewController:self entity:self.entity options:nil];
+    
+    SZShareOptions *shareOptions = [SZShareUtils userShareOptions];
+    shareOptions.dontShareLocation = NO;
+    self.actionBar.shareOptions = shareOptions;
+    NSString *title = [NSString stringWithFormat:@"%@", [self.semifinalistData objectForKey:@"name"]];
+    NSString *description = [NSString stringWithFormat:@"Nominated for IA12: %@ ", self.categoryName];
+    NSString *thumb = [NSString stringWithFormat:@"%@", [self.semifinalistData objectForKey:@"thumbnail"]];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            title, @"szsd_title",
+                            description, @"szsd_description",
+                            thumb, @"szsd_thumb",
+                            nil];
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
+    NSAssert(error == nil, @"Error writing json: %@", [error localizedDescription]);
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    self.entity.meta = jsonString;
+    
+    [SZEntityUtils addEntity:self.entity success:^(id<SZEntity> serverEntity) {
+        NSLog(@"Successfully updated entity meta: %@", [serverEntity meta]);
+    } failure:^(NSError *error) {
+        NSLog(@"Failure: %@", [error localizedDescription]);
+    }];
+    
+}
+
+
+- (void)initWithEntity:(id<SocializeEntity>)entity
+{
+    NSLog(@"Init with Entity Called with entity %@", entity);
+    // set up the instance data
+    // by parsing the entity key.  the entity is:
+    // http://www.techcolumbusinnovationawards.org/<category>.html#semifinalistname
+    NSLog(@"key = %@", [entity key]);
+    
+    NSURL *urlEntity = [NSURL URLWithString:[entity key]];
+    NSArray *urlPathComps = [urlEntity pathComponents];
+    NSInteger numComps = [urlPathComps count];
+    for (NSString *str in urlPathComps) {
+        NSLog(@"pathComps = %@", str);
+    }
+    
+    
+    // create the semifinalist data JSON object
+    _semifinalistData = [NSDictionary dictionaryWithObjectsAndKeys:@"test data", @"name", @"test url", @"url", @"test rep name", @"rep_name", @"test story", @"story", nil];
+    
+    _categoryName = @"Test Category";
+    _categoryURL = @"http://www.techcolumbusinnovationawards/test_category";
+}
+
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,6 +98,7 @@
         self.companyUrlLabel.text = [self.semifinalistData objectForKey:@"url"];
         self.storyTextLabel.text = [self.semifinalistData objectForKey:@"story"];
     }
+    [self setupSocializeEntity];
     
 }
 
@@ -42,6 +106,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload {
+    [self setCompanyNameLabel:nil];
+    [self setRepresentativeNameLabel:nil];
+    [self setCompanyUrlLabel:nil];
+    [self setCategoryNameLabel:nil];
+    [self setStoryTextLabel:nil];
+    [self setActionBar:nil];
+    [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (self.actionBar == nil) {
+        [self setupSocializeEntity];
+    }
 }
 
 
@@ -96,15 +177,6 @@
             [alert show];
         }
     }
-}
-
-- (void)viewDidUnload {
-    [self setCompanyNameLabel:nil];
-    [self setRepresentativeNameLabel:nil];
-    [self setCompanyUrlLabel:nil];
-    [self setCategoryNameLabel:nil];
-    [self setStoryTextLabel:nil];
-    [super viewDidUnload];
 }
 
 

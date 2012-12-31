@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SemiFinalistDetailViewController.h"
+#import "SemifinalistDetailTableViewController.h"
 
 @implementation AppDelegate
 
@@ -60,21 +60,23 @@
         [self handleNotification:userInfo];
     }
 
-#if 0
     // Specify a Socialize entity loader block
     [Socialize setEntityLoaderBlock:^(UINavigationController *navigationController, id<SocializeEntity>entity) {
         
+        SemifinalistDetailTableViewController *entityLoader = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"semifinalistDetailView"];
         
-        SemiFinalistDetailViewController *entityLoader = [[SemiFinalistDetailViewController alloc] initWithEntity:entity];
-        
-        if (navigationController == nil) {
-            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:entityLoader];
-            [self.window.rootViewController presentModalViewController:navigationController animated:YES];
-        } else {
+        [entityLoader initWithEntity:entity];
+
+        if (navigationController == nil)
+        {
+            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+            [navigationController pushViewController:entityLoader animated:YES];
+        }
+        else
+        {
             [navigationController pushViewController:entityLoader animated:YES];
         }
     }];
-#endif
     
     [TestFlight takeOff:@"dc1a72e99768cf81ea352cc2fea4338e_MTQwNTA1MjAxMi0xMS0xMCAxNzowMDo0MS43MzE5NTc"];
     

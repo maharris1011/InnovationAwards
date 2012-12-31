@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Socialize/Socialize.h>
 
 @interface SemifinalistDetailTableViewController : UITableViewController
 
+@property SZEntity *entity;
+@property (nonatomic, strong) SZActionBar *actionBar;
+
 @property NSDictionary *semifinalistData;
 @property NSString *categoryName;
+@property NSString *categoryURL;
 
 @property (strong, nonatomic) IBOutlet UILabel *categoryNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
@@ -19,5 +24,5 @@
 @property (strong, nonatomic) IBOutlet UITextView *companyUrlLabel;
 @property (strong, nonatomic) IBOutlet UILabel *storyTextLabel;
 
-
+- (void)initWithEntity:(id<SocializeEntity>)entity;
 @end

@@ -32,12 +32,10 @@
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, 1136)];
+    [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     
     self.tableView.backgroundView = bgImageView;
     [self.buttonDone addGradient:buttonGradientWithColor(darkPurple, lightPurple)];
-
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,16 +51,31 @@
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+}
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
+        case 0:
+            return @"About";
         case 1:
-            return @"The Event";
-            
+            return @"The Event";            
         default:
             return nil;
             break;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        // goto the ia 12 web site
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.org"]];
     }
 }
 

@@ -6,7 +6,8 @@
         "li":"in/hunterdl",
         "story":"The Wright Center of Innovation in Biomedical Imaging (WCI-BMI) is a non-profit research enterprise organized under The Ohio State University Research Foundation to create an innovative academia/Ohio industry interface to develop, validate and perform services using leading-edge imaging technologies. Since its initiation through funding under the Ohio Third Frontier framework, it has helped create multiple imaging technologies that have been successfully commercialized by Ohio-based companies. The WCI-BMI also serves as the lead organization of the Ohio Imaging Research and Innovation Network (OIRAIN) that has created a new service delivery solution enabling the capability of state-of-the-art positron emission tomography (PET) and computed tomography (CT) imaging, not only at The Ohio State University campus, but now available throughout the State of Ohio via mobile services. Within the qualification timeframe, the WCI-BMI teamed up with Battelle Health and Life Sciences (Columbus, OH), also a non-profit organization, as well as Medpace (Cincinnati, OH), a for-profit CRO, to perform innovative preclinical and clinical trials for Ohio companies using newly available imaging technology that is commercially developed and manufactured by Philips Healthcare in Cleveland, OH.",
         "rep_name":"Don Hunter, Founder & President",
-        "url":"http://www.getacceptd.com"
+        "url":"http://www.getacceptd.com",
+        "thumbnail":"http://www.techcolumbusinnovationawards.org/IA2011_EventProgram_WEBSITE-web-images/OTT_Acceptd_fmt.jpeg"
 	},
 	"Acclaimd, Inc.":{
 	  "name":"Acclaimd",
@@ -15,7 +16,7 @@
 	  "li":"DerekFromCBUS",
         "story":"This is a very small story about our friends at Acclaimd.  They have only a few lines on which to show their story.  It is a great story about a boy and a girl and a computer.",
         "rep_name":"Jon Doe",
-        "url":"http://www.getacclaimd.com"
+        "url":"http://www.acclaimd.com"
 	},
 	"Algorithm":{
 	  "name":"Algorithm",
