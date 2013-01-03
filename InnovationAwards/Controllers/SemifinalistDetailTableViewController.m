@@ -22,11 +22,30 @@
     NSString *key = [NSString stringWithFormat:@"%@#%@", self.categoryURL, self.semifinalistData.company];
     self.entity = [SZEntity entityWithKey:key name:self.semifinalistData.company];
     
-    self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:self.entity options:nil];
+    SZShareOptions *options = [SZShareUtils userShareOptions];
+    options.dontShareLocation = NO;
+    options.willAttemptPostingToSocialNetworkBlock = ^(SZSocialNetwork network, SZSocialNetworkPostData *postData)
+    {
+        NSString *displayName = [postData.entity displayName];
+        NSLog(@"[DEBUG!!!!] inside willAttemptPostingToSocialNetworkblock");
+        
+        if (network == SZSocialNetworkFacebook)
+        {
+            NSString *customStatus = [NSString stringWithFormat:@"%@ nominated for a TechColumbus Innovation Award.", displayName];
+            [postData.params setObject:customStatus forKey:@"message"];
+        }
+        if (network == SZSocialNetworkTwitter)
+        {
+            NSString *entityURL = [[postData.propagationInfo objectForKey:@"twitter"] objectForKey:@"entity_url"];
+            NSString *customStatus = [NSString stringWithFormat:@"%@ nominated for an Innovation Award %@", displayName, entityURL];
+            
+            [postData.params setObject:customStatus forKey:@"status"];
+        }
+    };
     
-    SZShareOptions *shareOptions = [SZShareUtils userShareOptions];
-    shareOptions.dontShareLocation = NO;
-    self.actionBar.shareOptions = shareOptions;
+    self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:self.entity options:options];
+    self.actionBar.shareOptions = options;
+
     NSString *title = self.semifinalistData.company;
     NSString *description = [NSString stringWithFormat:@"Nominated for IA12: %@ ", self.categoryName];
     NSString *thumb = self.semifinalistData.image_path;
@@ -61,12 +80,14 @@
 }
 
 
+
 - (void)initWithEntity:(id<SocializeEntity>)entity
 {
     // set up the instance data
     // by parsing the entity key.  the entity is:
     // http://www.techcolumbusinnovationawards.org/<category>.html#semifinalistname
     NSLog(@"key = %@", [entity key]);
+    NSLog(@"name = %@", [entity name]);
     
     // split the entity into URL and company
     NSArray *urlAndCompany = [[entity key] componentsSeparatedByString:@"#"];
