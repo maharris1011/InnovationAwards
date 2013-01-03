@@ -7,6 +7,8 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "UIImage+Resize.h"
+#import "UIImage+RoundedCorner.h"
 
 @interface EventDetailsViewController ()
 
@@ -34,12 +36,10 @@
     [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     
     self.tableView.backgroundView = bgImageView;
-
-    // Do any additional setup after loading the view.
-    self.versionCell.detailTextLabel.text = [NSString stringWithFormat:@"Version %@.%@",
-                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
-                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
     
+    UIImage *sponsorsImage = [UIImage imageNamed:@"ia12_sponsors.png"];
+    
+    self.sponsorsImageView.image = [sponsorsImage roundedCornerImage:15 borderSize:1];
 
 }
 
@@ -49,28 +49,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    UINavigationBar *navBar = [[self navigationController] navigationBar];
-    UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
-    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-}
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
-        case 0:
-            return @"About";
         case 1:
-            return @"The Event";
-        case 2:
-            return @"The App";
+            return @"The Future is Here";
         default:
             return nil;
     }
@@ -79,16 +64,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0 && indexPath.row == 1) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
         // goto the ia 12 web site
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.org"]];
-    }
-    else if (indexPath.section == 1 && indexPath.row == 1){
-        // go to the directions page
-        [self performSegueWithIdentifier:@"showDirections" sender:self];
-    }
-    else if (indexPath.section == 2 && indexPath.row == 1) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.isandlot.com"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbus.org"]];
     }
 }
 
@@ -109,12 +87,9 @@
     
 }
 
-- (IBAction)done:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
 
 - (void)viewDidUnload {
-    [self setVersionCell:nil];
+    [self setSponsorsImageView:nil];
     [super viewDidUnload];
 }
 @end

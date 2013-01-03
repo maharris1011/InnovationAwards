@@ -179,7 +179,7 @@
                             @"showTwitter",
                             @"showFacebook",
                             @"showLinkedIn",
-                            @"showSponsors",
+                            @"showEventDetails",
                             nil];
     
     NSInteger pageCount = self.pageImages.count;

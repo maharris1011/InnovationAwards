@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface EventDetailsViewController : UITableViewController
-- (IBAction)done:(id)sender;
-@property (strong, nonatomic) IBOutlet UITableViewCell *versionCell;
+@property (strong, nonatomic) IBOutlet UIImageView *sponsorsImageView;
 
 @end

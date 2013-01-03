@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AboutTableViewController : UITableViewController
+- (IBAction)done:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *versionCell;
 @end

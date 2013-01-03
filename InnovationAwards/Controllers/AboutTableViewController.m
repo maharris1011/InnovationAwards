@@ -34,6 +34,12 @@
     [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     
     self.tableView.backgroundView = bgImageView;
+    
+    // Do any additional setup after loading the view.
+    self.versionCell.detailTextLabel.text = [NSString stringWithFormat:@"Version %@.%@",
+                                             [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                                             [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+
 
 }
 
@@ -52,4 +58,50 @@
 
 // using static cells, so don't need any of the tableview delegate/datasource stuff
 
+- (void)viewDidUnload {
+    [self setVersionCell:nil];
+    [super viewDidUnload];
+}
+
+
+#pragma mark -- UITableViewDelegate methods
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        default:
+            return nil;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0 &&
+        (indexPath.row == 1 || indexPath.row == 2))
+    {
+        // goto the ia 12 web site
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.isandlot.com"]];
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    // now create the header label
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,320,22)];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.font = IA_headlineBold;
+    headerLabel.shadowOffset = CGSizeMake(1, 1);
+    headerLabel.textColor = yellowText;
+    headerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    
+    headerLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    [view addSubview:headerLabel];
+    return view;
+    
+}
+
+- (IBAction)done:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end
