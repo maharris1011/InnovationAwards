@@ -10,6 +10,6 @@
 
 @interface EventDetailsViewController : UITableViewController
 - (IBAction)done:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *buttonDone;
+@property (strong, nonatomic) IBOutlet UITableViewCell *versionCell;
 
 @end

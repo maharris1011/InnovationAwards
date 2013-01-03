@@ -7,7 +7,6 @@
 //
 
 #import "EventDetailsViewController.h"
-#import "UIButton+SSGradient.h"
 
 @interface EventDetailsViewController ()
 
@@ -35,7 +34,13 @@
     [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     
     self.tableView.backgroundView = bgImageView;
-    [self.buttonDone addGradient:buttonGradientWithColor(darkPurple, lightPurple)];
+
+    // Do any additional setup after loading the view.
+    self.versionCell.detailTextLabel.text = [NSString stringWithFormat:@"Version %@.%@",
+                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,19 +68,27 @@
         case 0:
             return @"About";
         case 1:
-            return @"The Event";            
+            return @"The Event";
+        case 2:
+            return @"The App";
         default:
             return nil;
-            break;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         // goto the ia 12 web site
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.org"]];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 1){
+        // go to the directions page
+        [self performSegueWithIdentifier:@"showDirections" sender:self];
+    }
+    else if (indexPath.section == 2 && indexPath.row == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.isandlot.com"]];
     }
 }
 
@@ -99,8 +112,9 @@
 - (IBAction)done:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
+
 - (void)viewDidUnload {
-    [self setButtonDone:nil];
+    [self setVersionCell:nil];
     [super viewDidUnload];
 }
 @end
