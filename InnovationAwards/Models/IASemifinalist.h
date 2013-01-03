@@ -21,5 +21,6 @@
 
 - (id)initWithFake:(int)n;
 - (id)initWithHTML:(TFHppleElement *)e;
+- (id)initWithDictionary:(NSDictionary *)d;
 
 @end

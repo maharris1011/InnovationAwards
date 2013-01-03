@@ -27,17 +27,27 @@
             IACategory *category = [[IACategory alloc] init];
             category.name = [dict objectForKey:@"category"];
             category.abbrev = [dict objectForKey:@"abbrev"];
-            category.semifinalists = nil; // [dict objectForKey:@"semifinalists"];
+            
+            NSMutableArray *semifinalists = [[NSMutableArray alloc] initWithCapacity:0];
+            NSArray *json_semifinalists = [dict objectForKey:@"semifinalists"];
+            for (NSDictionary *dict in json_semifinalists) {
+                // create a semifinalist
+                IASemifinalist *sf = [[IASemifinalist alloc] initWithDictionary:dict];
+                
+                // add them to the list
+                [semifinalists addObject:sf];
+            }
+
+            category.semifinalists = semifinalists;
         
             // add the category to our list
             [catlist addObject:category];
         }
         
-        _categories = [catlist mutableCopy];
+        _categories = catlist;
     }
     return _categories;
 }
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

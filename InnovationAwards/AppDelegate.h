@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, readonly, strong) NSArray *sharedCategories;
-
 @property (strong, nonatomic) UIWindow *window;
+
 
 @end

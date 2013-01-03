@@ -31,7 +31,7 @@
 
 -(NSArray *)semifinalists
 {
-    if (_semifinalists == nil)
+    if ([_semifinalists count] == 0)
     {
         // go to the web and retrieve our list of semifinalists
         NSMutableArray *semis = [[NSMutableArray alloc] initWithCapacity:0];
@@ -51,7 +51,7 @@
             }
         }
         
-        _semifinalists = [semis mutableCopy];
+        _semifinalists = semis;
     }
     return _semifinalists;
 }

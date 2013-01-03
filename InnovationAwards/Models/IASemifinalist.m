@@ -57,4 +57,20 @@
     return self;
 }
 
+- (id)initWithDictionary:(NSDictionary *)d
+{
+    if (self = [super init]) {
+        // initialize
+        _company = [d objectForKey:@"company"];
+        _contact = [d objectForKey:@"contact"];
+        _site_url = [d objectForKey:@"site_url"];
+        _bio     = [d objectForKey:@"bio"];
+        _linkedin = [d objectForKey:@"linkedIn"];
+        _facebook = [d objectForKey:@"facebook"];
+        _twitter = [d objectForKey:@"twitter"];
+        _image_path = [d objectForKey:@"img"];
+    }
+    return self;
+}
+
 @end

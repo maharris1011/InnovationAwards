@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "UIButton+SSGradient.h"
+#import "AppDelegate.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -260,5 +261,7 @@
 }
 
 - (IBAction)registerButtonWasPressed:(id)sender {
+    // do nothing -- handled in the segue
 }
+
 @end
