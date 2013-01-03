@@ -8,10 +8,11 @@
 #import "UITableViewController+GradientHeaders.h"
 #import "SemifinalistListViewController.h"
 #import "SemiFinalistDetailTableViewController.h"
+#import "IASemifinalist.h"
 #import "AppDelegate.h"
 
 @interface SemifinalistListViewController () {
-    NSDictionary *_category;
+    IACategory *_category;
 }
 
 @end
@@ -30,16 +31,11 @@
         
         SemifinalistDetailTableViewController *detail = (SemifinalistDetailTableViewController *)[segue destinationViewController];
         
-        detail.categoryName = [self.category objectForKey:@"category"];
-        detail.categoryURL = [self.category objectForKey:@"URL"];
-        NSArray *semifinalistList = [self.category objectForKey:@"semifinalists"];
-        NSString *semifinalistName = [semifinalistList objectAtIndex:indexPath.row];
-        
-        AppDelegate *myapp = [[UIApplication sharedApplication] delegate];
-        NSDictionary *semifinalist_detail_object = [myapp sharedSemifinalistDetail];
-        NSDictionary *semifinalist_detail = [semifinalist_detail_object objectForKey:semifinalistName];
-        detail.semifinalistData = semifinalist_detail;
-        
+        detail.categoryName = self.category.name;
+        detail.categoryURL = self.category.url;
+        NSArray *semifinalistList = [self.category semifinalists];
+        IASemifinalist *semifinalist = [semifinalistList objectAtIndex:indexPath.row];
+        detail.semifinalistData = semifinalist;
     }
     
 }
@@ -83,9 +79,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    NSArray *nominees = [self.category objectForKey:@"semifinalists"];
-    return [nominees count];
+    // one row per semifinalist
+    return [self.category.semifinalists count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,10 +93,8 @@
     }
     
     // Configure the cell...
-    NSArray *nominees = [self.category objectForKey:@"semifinalists"];
-    NSString *nominee = [nominees objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", nominee];
+    IASemifinalist *nominee = [[self.category semifinalists] objectAtIndex:indexPath.row];
+    cell.textLabel.text = nominee.company;
     cell.backgroundView = [self gradientViewForCell:cell];
     return cell;
 }

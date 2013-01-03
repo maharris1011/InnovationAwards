@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CategoryViewController : UITableViewController
+@property (nonatomic, strong) NSArray *categories;
 
 @end

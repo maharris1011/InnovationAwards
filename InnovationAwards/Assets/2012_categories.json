@@ -1,0 +1,67 @@
+[
+    {
+    "category":"Student Innovation Awards",
+    "abbrev":"SIA",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Startup Business",
+    "abbrev":"OSB",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Product (under 250)",
+    "abbrev":"OPS",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Product (over 250)",
+    "abbrev":"OPL",
+    "semifinalists":[]
+    },
+    {
+    "category":"Green Innovation",
+    "abbrev":"GRN",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Service (over 250)",
+    "abbrev":"OSL",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Service (under 250)",
+    "abbrev":"OSS",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Technology Team",
+    "abbrev":"OTT",
+    "semifinalists":[]
+    },
+    {
+    "category":"Innovation in Non-Profit Service Delivery",
+    "abbrev":"NPS",
+    "semifinalists":[]
+    },
+    {
+    "category":"Executive of the Year (over 250)",
+    "abbrev":"EYL",
+    "semifinalists":[]
+    },
+    {
+    "category":"Executive of the Year (under 250)",
+    "abbrev":"EYS",
+    "semifinalists":[]
+    },
+    {
+    "category":"Outstanding Woman in Technology",
+    "abbrev":"OWT",
+    "semifinalists":[]
+    },
+    {
+    "category":"Inventor of the Year",
+    "abbrev":"IOY",
+    "semifinalists":[]
+    }
+]

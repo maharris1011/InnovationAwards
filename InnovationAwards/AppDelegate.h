@@ -12,15 +12,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     NSDictionary *_semifinalistDetail;
     NSDictionary *_categoryData;
+    NSArray *_categories;
 }
 
-@property (nonatomic, readonly, strong) NSDictionary *sharedCategoryData;
-@property (nonatomic, readonly, strong) NSDictionary *sharedSemifinalistDetail;
-
-// Implementation
-- (NSDictionary *)sharedCategoryData;
-- (NSDictionary *)sharedSemifinalistDetail;
-
+@property (nonatomic, readonly, strong) NSArray *sharedCategories;
 
 @property (strong, nonatomic) UIWindow *window;
 

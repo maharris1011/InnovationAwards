@@ -69,7 +69,7 @@ static SponsorsDataController *sharedSponsorsDataController = nil;
     // load our data from the file on disk
     
     
-    NSString *fileName = [[NSBundle mainBundle] pathForResource:@"sponsors" ofType:@"json"];
+    NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_sponsors" ofType:@"json"];
     NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     _sponsorshipData = [jsonData objectFromJSONString];
 

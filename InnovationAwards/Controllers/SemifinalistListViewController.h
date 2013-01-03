@@ -8,9 +8,10 @@
 //  Shows a list of semifinalists for a given category
 
 #import <UIKit/UIKit.h>
+#import "IACategory.h"
 
 @interface SemifinalistListViewController : UITableViewController
 
-@property (nonatomic, strong) NSDictionary *category;
+@property (nonatomic, strong) IACategory *category;
 
 @end

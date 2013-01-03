@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Socialize/Socialize.h>
+#import "IACategory.h"
+#import "IASemifinalist.h"
 
 @interface SemifinalistDetailTableViewController : UITableViewController
 
 @property SZEntity *entity;
 @property (nonatomic, strong) SZActionBar *actionBar;
 
-@property NSDictionary *semifinalistData;
+@property IASemifinalist *semifinalistData;
 @property NSString *categoryName;
 @property NSString *categoryURL;
 

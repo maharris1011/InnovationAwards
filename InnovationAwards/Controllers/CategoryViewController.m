@@ -10,12 +10,11 @@
 #import "CategoryViewController.h"
 #import "AppDelegate.h"
 #import "SemifinalistListViewController.h"
+#import "IACategory.h"
 
 @interface CategoryViewController () {
-    NSDictionary *_categories;
+    NSArray *_categories;
 }
-
-@property (nonatomic, strong) NSDictionary *categories;
 @end
 
 @implementation CategoryViewController
@@ -36,7 +35,7 @@
     [super viewDidLoad];
  
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    self.categories = [delegate sharedCategoryData];
+    self.categories = [delegate sharedCategories];
     
     // adjust the background view to match
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
@@ -64,8 +63,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // one row per category
-    NSArray *categories = [self.categories objectForKey:@"categories"];
-    return [categories count];
+    return [self.categories count];
 }
 
 
@@ -80,11 +78,8 @@
     }
 
     // Configure the cell...
-    NSArray *categories = [self.categories objectForKey:@"categories"];
-    NSDictionary *category = [categories objectAtIndex:indexPath.row];
-    NSString *categoryName = [category objectForKey:@"category"];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", categoryName];
+    IACategory *category = [self.categories objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", category.name];
     cell.backgroundView = [self gradientViewForCell:cell];
     return cell;
 }
@@ -104,10 +99,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 
         // find the right URL for the selected index
-        NSArray *categories = [self.categories objectForKey:@"categories"];
-        NSDictionary *category = [categories objectAtIndex:indexPath.row];
-        SemifinalistListViewController *semifinalists = (SemifinalistListViewController *)[segue destinationViewController];
-        semifinalists.category = category;
+        IACategory *category = [self.categories objectAtIndex:indexPath.row];
+        SemifinalistListViewController *slvc = (SemifinalistListViewController *)[segue destinationViewController];
+        slvc.category = category;
     }
     
 }

@@ -8,31 +8,36 @@
 
 #import "AppDelegate.h"
 #import "SemifinalistDetailTableViewController.h"
+#import "IACategory.h"
 
 @implementation AppDelegate
 
-- (NSDictionary *)sharedCategoryData
+- (NSArray *)sharedCategories
 {
-    if (_categoryData == nil) {
-        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_semifinalists" ofType:@"json"];
+    if (_categories == nil)
+    {
+        NSMutableArray *catlist = [[NSMutableArray alloc] initWithCapacity:0];
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_categories" ofType:@"json"];
         NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
-        _categoryData = [jsonData objectFromJSONString];
-
-    }
-    return _categoryData;
-}
-
-- (NSDictionary *)sharedSemifinalistDetail
-{
-    
-    if (_semifinalistDetail == nil) {
-        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"2012_semifinalist_detail_mock" ofType:@"json"];
-        NSString *jsonData = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
-        _semifinalistDetail = [jsonData objectFromJSONString];
+        NSArray *categories_raw = [jsonData objectFromJSONString];
         
+        // create our list of category objects to use
+        for (NSDictionary *dict in categories_raw) {
+            // initialize a category object from the dictionary data
+            IACategory *category = [[IACategory alloc] init];
+            category.name = [dict objectForKey:@"category"];
+            category.abbrev = [dict objectForKey:@"abbrev"];
+            category.semifinalists = nil; // [dict objectForKey:@"semifinalists"];
+        
+            // add the category to our list
+            [catlist addObject:category];
+        }
+        
+        _categories = [catlist mutableCopy];
     }
-    return _semifinalistDetail;
+    return _categories;
 }
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
