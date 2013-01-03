@@ -154,6 +154,13 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    if (self.actionBar != nil) {
+        [self.actionBar setHidden:YES];
+    }
+}
+
 
 
 #pragma mark - Table view delegate
