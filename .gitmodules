@@ -4,3 +4,6 @@
 [submodule "Submodules/PullToRefresh"]
 	path = Submodules/PullToRefresh
 	url = https://github.com/sonnyparlin/PullToRefresh.git
+[submodule "Submodules/hpple"]
+	path = Submodules/hpple
+	url = https://github.com/topfunky/hpple.git
