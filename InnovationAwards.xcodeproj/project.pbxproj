@@ -52,6 +52,9 @@
 		4DA218801695424B00F2370A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4DA2187A1695424B00F2370A /* LICENSE */; };
 		4DA218811695424B00F2370A /* PullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2187C1695424B00F2370A /* PullToRefreshView.m */; };
 		4DA218821695424B00F2370A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4DA2187D1695424B00F2370A /* README */; };
+		4DA89BDE1695FB670067E3C5 /* 38-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDC1695FB670067E3C5 /* 38-house.png */; };
+		4DA89BDF1695FB670067E3C5 /* 38-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */; };
+		4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */; };
 		4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB51D40167E9F4000A07437 /* Twitter.framework */; };
 		4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D42167EACEF00A07437 /* 02-redo.png */; };
 		4DB51D45167EACEF00A07437 /* 02-redo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D43167EACEF00A07437 /* 02-redo@2x.png */; };
@@ -421,6 +424,9 @@
 		4DA2187B1695424B00F2370A /* PullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshView.h; sourceTree = "<group>"; };
 		4DA2187C1695424B00F2370A /* PullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshView.m; sourceTree = "<group>"; };
 		4DA2187D1695424B00F2370A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4DA89BDC1695FB670067E3C5 /* 38-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-house.png"; sourceTree = "<group>"; };
+		4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-house@2x.png"; sourceTree = "<group>"; };
+		4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sandlot-logo.png"; sourceTree = "<group>"; };
 		4DB51D40167E9F4000A07437 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4DB51D42167EACEF00A07437 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
 		4DB51D43167EACEF00A07437 /* 02-redo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo@2x.png"; sourceTree = "<group>"; };
@@ -764,6 +770,9 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */,
+				4DA89BDC1695FB670067E3C5 /* 38-house.png */,
+				4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */,
 				4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */,
 				4DDF4506168169A700462096 /* twitter-bird-16x16.png */,
 				4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */,
@@ -1620,6 +1629,9 @@
 				4DA218801695424B00F2370A /* LICENSE in Resources */,
 				4DA218821695424B00F2370A /* README in Resources */,
 				4DE6FEFA16954EA6004B37D5 /* 2012_categories.json in Resources */,
+				4DA89BDE1695FB670067E3C5 /* 38-house.png in Resources */,
+				4DA89BDF1695FB670067E3C5 /* 38-house@2x.png in Resources */,
+				4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
