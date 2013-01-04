@@ -2,14 +2,7 @@
     {
     "category":"Student Innovation Awards",
     "abbrev":"SIA",
-    "semifinalists":[{"img":"IA2011_EventProgram_WEBSITE-web-images/GRN_OwensCorning_fmt.jpeg",
-                     "company":"My Test",
-                     "contact":"hello there",
-                     "site_url":"http://www.google.com",
-                     "bio":"this is a bio that would knock aunt jackies socks off",
-                     "linkedIn":"http://www.linkedin.com/company/techcolumbus",
-                     "twitter":"http://twitter.com/techcolumbus",
-                     "facebook":"https://www.facebook.com/TechColumbusOhio"}]
+    "semifinalists":[]
     },
     {
     "category":"Outstanding Startup Business",

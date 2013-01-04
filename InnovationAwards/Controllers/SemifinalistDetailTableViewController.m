@@ -173,6 +173,7 @@
     if (self.actionBar == nil) {
         [self setupSocializeEntity];
     }
+    [self.actionBar setHidden:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

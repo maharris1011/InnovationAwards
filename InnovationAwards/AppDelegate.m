@@ -107,11 +107,7 @@
     
     NSLog(@"Push Notification tokenstring is %@",tokenString);
 
-#if DEBUG
-    [SZSmartAlertUtils registerDeviceToken:deviceToken development:YES];
-#else
     [SZSmartAlertUtils registerDeviceToken:deviceToken development:NO];
-#endif
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
