@@ -372,12 +372,6 @@
 		4D50199A16754A780031B9F8 /* ia_72x72_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_72x72_icon.png; sourceTree = "<group>"; };
 		4D5019A816754DEB0031B9F8 /* mainBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainBackground@2x.png"; sourceTree = "<group>"; };
 		4D5CD9C91675567100ABC2FD /* headerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackground.png; sourceTree = "<group>"; };
-		4D736D58167E4DAB00AB4171 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		4D736D59167E4DAB00AB4171 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
-		4D736D5A167E4DAB00AB4171 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
-		4D736D5B167E4DAB00AB4171 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
-		4D736D5C167E4DAB00AB4171 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
-		4D736D5D167E4DAB00AB4171 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		4D736D6A167E5ED200AB4171 /* TweetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailsViewController.h; sourceTree = "<group>"; };
 		4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailsViewController.m; sourceTree = "<group>"; };
 		4D8EFFA91682ABD10077FC8C /* SemifinalistDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemifinalistDetailTableViewController.h; sourceTree = "<group>"; };
@@ -1026,12 +1020,6 @@
 		4DCECFFA1675474000272F0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D736D58167E4DAB00AB4171 /* UIImage+Resize.h */,
-				4D736D59167E4DAB00AB4171 /* UIImage+Resize.m */,
-				4D736D5A167E4DAB00AB4171 /* UIImage+RoundedCorner.h */,
-				4D736D5B167E4DAB00AB4171 /* UIImage+RoundedCorner.m */,
-				4D736D5C167E4DAB00AB4171 /* UIImage+Alpha.h */,
-				4D736D5D167E4DAB00AB4171 /* UIImage+Alpha.m */,
 				4D26A3C7167846BF006D43A2 /* UIView+SSGradient.h */,
 				4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */,
 				4D26A3C31678469A006D43A2 /* UITableViewController+GradientHeaders.h */,
@@ -1777,6 +1765,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "InnovationAwards/InnovationAwards-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
