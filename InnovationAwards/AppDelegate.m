@@ -193,8 +193,7 @@
 }
 
 - (void)linkToFacebook {
-    [SZFacebookUtils setAppId:@"fb394489043966235"];
-//    [SZFacebookUtils setAppId:@"394489043966235"];
+    [SZFacebookUtils setAppId:@"394489043966235"];
 
 //    // These should come from your own facebook auth process
 //    NSString *existingToken = @"EXISTING_TOKEN";

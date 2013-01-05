@@ -244,6 +244,8 @@
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImages.count, pagesScrollViewSize.height);
 
+    NSLog(@"pagesScrollViewSize.height = %f", pagesScrollViewSize.height);
+    
     [self.pageControl setFrame:CGRectMake(0, 247, 320, 36)];
     
     // 5
