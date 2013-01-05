@@ -11,9 +11,48 @@
 
 @interface TweetDetailsViewController ()
 
+
 @end
 
 @implementation TweetDetailsViewController
+
+@synthesize screen_name = _screen_name;
+@synthesize user_name = _user_name;
+@synthesize text = _text;
+@synthesize sent_date = _sent_date;
+@synthesize created_date = _created_date;
+@synthesize profile_url = _profile_url;
+
+- (NSString *)screen_name
+{
+    NSDictionary *user = [self.tweet objectForKey:@"user"];
+    return [user objectForKey:@"screen_name"];
+}
+
+- (NSString *)user_name
+{
+    NSDictionary *user = [self.tweet objectForKey:@"user"];
+    return [user objectForKey:@"name"];
+}
+
+- (NSString *)text
+{
+    return [self.tweet objectForKey:@"text"];
+}
+
+- (NSString *)sent_date
+{
+    NSString *sentString = [self.tweet objectForKey:@"created_at"];
+    NSDate *sentDate = [NSDate dateFromString:sentString withFormat:@"EEE LLL d HH:mm:ss Z yyyy"];
+    return [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES];
+}
+
+- (NSString *)profile_url
+{
+    NSDictionary *user = [self.tweet objectForKey:@"user"];
+    NSString *url = [user objectForKey:@"profile_image_url"];
+    return url;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,26 +63,23 @@
     return self;
 }
 
+- (void)configureView
+{
+    
+    self.tweetTextView.text = self.text;
+    self.senderNameLabel.text = self.user_name;
+    self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.sent_date];
+    
+    self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.screen_name];
+    UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:self.profile_url];
+    self.profileImageView.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationDefault];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    NSDictionary *user = [self.tweet objectForKey:@"user"];
-
-    self.tweetText.text = [self.tweet objectForKey:@"text"];
-    self.senderName.text = [user objectForKey:@"name"];
-    
-    NSString *sentString = [self.tweet objectForKey:@"created_at"];
-    NSDate *sentDate = [NSDate dateFromString:sentString withFormat:@"EEE LLL d HH:mm:ss Z yyyy"];
-    self.tweetSent.text = [NSString stringWithFormat:@"Sent: %@", [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES]];
-    
-    self.senderScreenName.text = [NSString stringWithFormat:@"@%@", [user objectForKey:@"screen_name"]];
-    
-    NSString *url = [user objectForKey:@"profile_image_url"];
-    UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
-    self.profileImage.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:0 interpolationQuality:kCGInterpolationDefault];
-    
-    
     // set the background image
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
@@ -71,12 +107,14 @@
         [self dismissModalViewControllerAnimated:YES];
     };
     [_tweetView setCompletionHandler:completionHandler];
+    
 
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.toolbarHidden = NO;
+    [self configureView];
 }
 
 
@@ -88,22 +126,59 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*) indexPath
+{
+    if (indexPath.section == 0)
+    {
+        if (indexPath.row == 1)
+        {
+            // story path, calculate height of the story & resize everything
+            NSString *storyText = self.text;
+            UIFont *font = [UIFont systemFontOfSize:14.0];
+            CGSize initialSize = CGSizeMake(320-40, MAXFLOAT);
+            // -40 for cell padding
+            CGSize sz = [storyText sizeWithFont:font constrainedToSize:initialSize];
+            [self.tweetTextView setFrame:CGRectMake(10, 11, sz.width, sz.height+28)];
+            
+            // put the date "sent" time just below the tweet text
+            [self.tweetSentDateLabel setFrame:CGRectMake(20, self.tweetTextView.bounds.origin.y+self.tweetTextView.bounds.size.height+14, self.tweetSentDateLabel.bounds.size.width, self.tweetSentDateLabel.bounds.size.height)];
+            
+            return sz.height+74;
+        }
+        else
+        {
+            return 91;
+        }
+    }
+    else {
+        // otherwise, we have a "regular" cell
+        return 44;
+    }
+}
+
+
 - (void)viewDidUnload {
-    [self setProfileImage:nil];
-    [self setSenderName:nil];
-    [self setSenderScreenName:nil];
-    [self setTweetText:nil];
-    [self setTweetSent:nil];
+    [self setProfileImageView:nil];
+    [self setSenderNameLabel:nil];
+    [self setSenderScreenNameLabel:nil];
+    [self setTweetTextView:nil];
+    [self setTweetSentDateLabel:nil];
+    [self setTweetTextCell:nil];
     [super viewDidUnload];
 }
 
 - (IBAction)replyButtonPressed:(id)sender {
-    [_tweetView setInitialText:[NSString stringWithFormat:@"%@", self.senderScreenName.text]];
+    [_tweetView setInitialText:[NSString stringWithFormat:@"@%@", self.screen_name]];
     [self presentModalViewController:_tweetView animated:YES];
 }
 
 - (IBAction)retweetButtonPressed:(id)sender {
-    [_tweetView setInitialText:[NSString stringWithFormat:@"\"%@%@\"", self.senderScreenName.text, self.tweetText.text]];
+    
+    NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.screen_name, self.text];
+    
+    if ([_tweetView setInitialText:initialText] == NO) {
+        [_tweetView setInitialText:[initialText substringToIndex:120]];
+    }
     [self presentModalViewController:_tweetView animated:YES];
 }
 

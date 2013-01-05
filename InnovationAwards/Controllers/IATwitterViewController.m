@@ -67,12 +67,6 @@
     [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     self.tableView.backgroundView = bgImageView;
     
-    // add buttons to the toolbar
-    UIBarButtonItem *tweetButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showCommentComposer)];
-
-    [self setToolbarItems:[NSArray arrayWithObject:tweetButton]];
-    [self.navigationController.toolbar setTintColor:[UIColor blackColor]];
-    
     pull = [[PullToRefreshView alloc] initWithScrollView:(UIScrollView *) self.tableView];
     [pull setDelegate:self];
     [self.tableView addSubview:pull];
@@ -203,7 +197,7 @@
                                       // we have a batch of tweets.  Put those
                                       // into the tweets array
                                       self.tweets = [result objectForKey:@"statuses"];
-                                     // NSLog(@"statuses returned: = %@", [result objectForKey:@"statuses"]);
+
                                       [self.tableView reloadData];
                                       [pull finishedLoading];
                                   }
@@ -220,13 +214,10 @@
     [self reloadFromTwitter];
 }
 
-
-- (void)showCommentComposer
+- (IBAction)composeButtonPressed:(id)sender
 {
     [_tweetView setInitialText:@"#ia12"];
     [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
     [self presentModalViewController:_tweetView animated:YES];
 }
-
-
 @end

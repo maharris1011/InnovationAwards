@@ -583,11 +583,11 @@ Columbus, OH 43215
                                                     <rect key="frame" x="10" y="11" width="270" height="453"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <mutableString key="text">TechColumbus is the catalyst for technology-driven economic growth in Central Ohio. Our goal is to accelerate innovation, business growth, job creation, and prosperity in the 15-county region of Central Ohio. We work to create new companies, strengthen existing businesses, open doors to technology resources, and support the attraction and retention of technology-based businesses and talented people.
+                                                    <string key="text">TechColumbus is the catalyst for technology-driven economic growth in Central Ohio. Our goal is to accelerate innovation, business growth, job creation, and prosperity in the 15-county region of Central Ohio. We work to create new companies, strengthen existing businesses, open doors to technology resources, and support the attraction and retention of technology-based businesses and talented people.
 
 Our partners make it possible. The success of TechColumbus and the region is only possible when working side-by-side with our key partners across public, private, academic, and institutional organizations. Additionally, TechColumbus' TechStart program is predominately funded by the Ohio Third Frontier and a key factor in growing the innovation economy in Central Ohio. 
 
-www.TechColumbus.org</mutableString>
+www.TechColumbus.org</string>
                                                     <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -742,7 +742,7 @@ www.TechColumbus.org</mutableString>
             <objects>
                 <tableViewController id="3mW-lf-3TR" customClass="IATwitterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="166" sectionHeaderHeight="22" sectionFooterHeight="22" id="6DV-gX-PCq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
@@ -769,7 +769,7 @@ www.TechColumbus.org</mutableString>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" id="aSa-eR-8Hw">
-                                            <rect key="frame" x="20" y="11" width="48" height="48"/>
+                                            <rect key="frame" x="10" y="11" width="48" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="39X-5M-SzC">
@@ -799,9 +799,17 @@ www.TechColumbus.org</mutableString>
                             <outlet property="delegate" destination="3mW-lf-3TR" id="b3J-bm-pq4"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="compose" id="eNk-MN-Uvz">
+                            <connections>
+                                <action selector="composeButtonPressed:" destination="3mW-lf-3TR" id="ak8-EN-glQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="#ia12 on Twitter" id="Nbe-38-Tza">
                         <barButtonItem key="backBarButtonItem" title="Back" id="RNl-49-V1F"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oP-4e-Bgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -818,11 +826,11 @@ www.TechColumbus.org</mutableString>
                         <sections>
                             <tableViewSection id="nPk-jH-jwk">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="104" id="A3W-xX-bJl">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="105"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="91" id="A3W-xX-bJl">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="103"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Yd1-Q0-3ro">
@@ -848,7 +856,7 @@ www.TechColumbus.org</mutableString>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="226" id="P1r-MF-1nT">
-                                        <rect key="frame" x="0.0" y="115" width="320" height="227"/>
+                                        <rect key="frame" x="0.0" y="102" width="320" height="227"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="225"/>
@@ -883,19 +891,19 @@ www.TechColumbus.org</mutableString>
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem systemItem="reply" id="UG6-vl-mPx">
+                        <barButtonItem style="plain" systemItem="reply" id="UG6-vl-mPx">
                             <connections>
                                 <action selector="replyButtonPressed:" destination="g76-do-NOe" id="MEg-GP-fRz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="p96-Xc-suQ"/>
-                        <barButtonItem image="02-redo.png" id="w2p-6D-SYJ">
+                        <barButtonItem image="02-redo.png" style="plain" id="w2p-6D-SYJ">
                             <connections>
                                 <action selector="retweetButtonPressed:" destination="g76-do-NOe" id="IsX-op-cf3"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cTT-IY-dGW"/>
-                        <barButtonItem systemItem="compose" id="sgL-Dr-GLJ">
+                        <barButtonItem style="plain" systemItem="compose" id="sgL-Dr-GLJ">
                             <connections>
                                 <action selector="composeButtonPressed:" destination="g76-do-NOe" id="JyY-m5-its"/>
                             </connections>
@@ -906,11 +914,12 @@ www.TechColumbus.org</mutableString>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
-                        <outlet property="profileImage" destination="Yd1-Q0-3ro" id="3Bm-oF-Cyb"/>
-                        <outlet property="senderName" destination="ai0-tK-vqd" id="PRx-N0-dkc"/>
-                        <outlet property="senderScreenName" destination="rp5-4v-1Fc" id="2og-IZ-D4w"/>
-                        <outlet property="tweetSent" destination="VKG-zv-3Pi" id="d9T-J9-Cya"/>
-                        <outlet property="tweetText" destination="3pI-xR-DRY" id="tJq-Pr-OIX"/>
+                        <outlet property="profileImageView" destination="Yd1-Q0-3ro" id="Zyr-wQ-rOe"/>
+                        <outlet property="senderNameLabel" destination="ai0-tK-vqd" id="reb-nJ-OQu"/>
+                        <outlet property="senderScreenNameLabel" destination="rp5-4v-1Fc" id="nmy-3I-RLj"/>
+                        <outlet property="tweetSentDateLabel" destination="VKG-zv-3Pi" id="MFY-cC-veV"/>
+                        <outlet property="tweetTextCell" destination="P1r-MF-1nT" id="ZvP-fP-6LB"/>
+                        <outlet property="tweetTextView" destination="3pI-xR-DRY" id="52u-l8-NQj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gww-pN-U1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -937,12 +946,12 @@ www.TechColumbus.org</mutableString>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem image="39-back.png" id="OGf-uX-0MH">
+                        <barButtonItem image="39-back.png" style="plain" id="OGf-uX-0MH">
                             <connections>
                                 <action selector="backPressed:" destination="lZY-Lb-RaW" id="iD1-wT-Afp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem image="40-forward.png" id="T9A-gV-EYy">
+                        <barButtonItem image="40-forward.png" style="plain" id="T9A-gV-EYy">
                             <connections>
                                 <action selector="forwardPressed:" destination="lZY-Lb-RaW" id="7Qd-QM-Ycz"/>
                             </connections>
@@ -1081,6 +1090,9 @@ www.TechColumbus.org</mutableString>
         </class>
         <class className="IATwitterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IATwitterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="composeButtonPressed:"/>
+            </relationships>
         </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
@@ -1128,11 +1140,12 @@ www.TechColumbus.org</mutableString>
                 <relationship kind="action" name="composeButtonPressed:"/>
                 <relationship kind="action" name="replyButtonPressed:"/>
                 <relationship kind="action" name="retweetButtonPressed:"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="senderName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="senderScreenName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tweetSent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tweetText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="senderNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="senderScreenNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweetSentDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweetTextCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="tweetTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
     </classes>
@@ -1142,6 +1155,6 @@ www.TechColumbus.org</mutableString>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RHa-B8-z7h"/>
+        <segue reference="bmx-3d-GD3"/>
     </inferredMetricsTieBreakers>
 </document>

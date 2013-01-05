@@ -222,6 +222,7 @@
     // color the toolbar appropriately
     [self.navigationController.toolbar setTintColor:[UIColor blackColor]];
     
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -232,16 +233,18 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     UINavigationBar *navBar = [[self navigationController] navigationBar];
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-    
-    [self.scrollView setFrame:CGRectMake(0, 15, 320, 224)];
-    [self.pageControl setFrame:CGRectMake(0, self.scrollView.frame.origin.y+self.scrollView.frame.size.height, 320, 36)];
-    
+
+    NSLog(@"scrollView w= %f, h= %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+    NSLog(@"pageControl w= %f, h= %f", self.pageControl.frame.size.width, self.scrollView.frame.size.height);
     // 4
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImages.count, pagesScrollViewSize.height);
+
+    [self.pageControl setFrame:CGRectMake(0, 247, 320, 36)];
     
     // 5
     [self loadVisiblePages];

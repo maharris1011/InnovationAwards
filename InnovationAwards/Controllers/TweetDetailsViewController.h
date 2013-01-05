@@ -12,13 +12,22 @@
 @interface TweetDetailsViewController : UITableViewController {
     TWTweetComposeViewController *_tweetView;
 }
-@property (strong, nonatomic) IBOutlet UIImageView *profileImage;
-@property (strong, nonatomic) IBOutlet UILabel *senderName;
-@property (strong, nonatomic) IBOutlet UILabel *senderScreenName;
-@property (strong, nonatomic) IBOutlet UITextView *tweetText;
-@property (strong, nonatomic) IBOutlet UILabel *tweetSent;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UILabel *senderNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *senderScreenNameLabel;
+@property (strong, nonatomic) IBOutlet UITextView *tweetTextView;
+@property (strong, nonatomic) IBOutlet UILabel *tweetSentDateLabel;
+@property (strong, nonatomic) IBOutlet UITableViewCell *tweetTextCell;
 
 @property (strong, nonatomic) NSDictionary *tweet;
+
+@property (strong, nonatomic, readonly) NSString *screen_name;
+@property (strong, nonatomic, readonly) NSString *user_name;
+@property (strong, nonatomic, readonly) NSString *text;
+@property (strong, nonatomic, readonly) NSString *sent_date;
+@property (strong, nonatomic, readonly) NSString *created_date;
+@property (strong, nonatomic, readonly) NSString *profile_url;
+
 - (IBAction)replyButtonPressed:(id)sender;
 - (IBAction)retweetButtonPressed:(id)sender;
 - (IBAction)composeButtonPressed:(id)sender;

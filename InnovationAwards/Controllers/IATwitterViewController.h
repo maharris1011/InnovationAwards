@@ -11,4 +11,5 @@
 
 @interface IATwitterViewController : UITableViewController<PullToRefreshViewDelegate>
 
+- (IBAction)composeButtonPressed:(id)sender;
 @end
