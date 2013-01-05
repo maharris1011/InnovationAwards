@@ -63,10 +63,7 @@
         splitViewController.delegate = (id)navigationController.topViewController;
     }
     
-    [Socialize storeConsumerKey:@"2f3f47cd-14cb-40df-8d5e-136a5dd1cde7"];
-    [Socialize storeConsumerSecret:@"d4fa492e-a2bf-4865-bcbf-2276b626ac3b"];
-    [SZFacebookUtils setAppId:@"394489043966235"];
-    [SZTwitterUtils setConsumerKey:@"wzsvqTEIx7W8Jb5bHbAYBA" consumerSecret:@"gdAQS4XSmvdS3pdvY4iqHgGAkB5lcinboVJdJcFJI"];
+    [self setUpSocialize];
     
 
     // Handle Socialize notification at launch
@@ -75,23 +72,6 @@
         [self handleNotification:userInfo];
     }
 
-    // Specify a Socialize entity loader block
-    [Socialize setEntityLoaderBlock:^(UINavigationController *navigationController, id<SocializeEntity>entity) {
-        
-        SemifinalistDetailTableViewController *entityLoader = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"semifinalistDetailView"];
-        
-        [entityLoader initWithEntity:entity];
-
-        if (navigationController == nil)
-        {
-            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-            [navigationController pushViewController:entityLoader animated:YES];
-        }
-        else
-        {
-            [navigationController pushViewController:entityLoader animated:YES];
-        }
-    }];
     
     [TestFlight takeOff:@"dc1a72e99768cf81ea352cc2fea4338e_MTQwNTA1MjAxMi0xMS0xMCAxNzowMDo0MS43MzE5NTc"];
     
@@ -168,6 +148,63 @@
     
     // Handle Socialize notification at foreground
     [self handleNotification:userInfo];
+    
+}
+
+- (void)setUpSocialize {
+    [Socialize storeConsumerKey:@"2f3f47cd-14cb-40df-8d5e-136a5dd1cde7"];
+    [Socialize storeConsumerSecret:@"d4fa492e-a2bf-4865-bcbf-2276b626ac3b"];
+    
+    [self linkToFacebook];
+    [self linkToTwitter];
+    
+
+    // Specify a Socialize entity loader block
+    [Socialize setEntityLoaderBlock:^(UINavigationController *navigationController, id<SocializeEntity>entity) {
+        
+        SemifinalistDetailTableViewController *entityLoader = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"semifinalistDetailView"];
+        
+        [entityLoader initWithEntity:entity];
+        
+        if (navigationController == nil)
+        {
+            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+            [navigationController pushViewController:entityLoader animated:YES];
+        }
+        else
+        {
+            [navigationController pushViewController:entityLoader animated:YES];
+        }
+    }];
+}
+
+
+- (void)linkToTwitter {
+    [SZTwitterUtils setConsumerKey:@"wzsvqTEIx7W8Jb5bHbAYBA" consumerSecret:@"gdAQS4XSmvdS3pdvY4iqHgGAkB5lcinboVJdJcFJI"];
+    
+//    NSString *existingAccessToken = @"PREAUTHEDACCESSTOKEN";
+//    NSString *existingSecret = @"PREAUTHEDACCESSTOKENSECRET";
+//    
+//    [SZTwitterUtils linkWithAccessToken:existingAccessToken accessTokenSecret:existingSecret success:^(id<SocializeFullUser> user) {
+//        NSLog(@"Twitter Link Complete");
+//    } failure:^(NSError *error) {
+//        NSLog(@"Twitter Link failure: %@", [error localizedDescription]);
+//    }];
+}
+
+- (void)linkToFacebook {
+    [SZFacebookUtils setAppId:@"fb394489043966235"];
+//    [SZFacebookUtils setAppId:@"394489043966235"];
+
+//    // These should come from your own facebook auth process
+//    NSString *existingToken = @"EXISTING_TOKEN";
+//    NSDate *existingExpiration = [NSDate distantFuture];
+//    
+//    [SZFacebookUtils linkWithAccessToken:existingToken expirationDate:existingExpiration success:^(id<SocializeFullUser> user) {
+//        NSLog(@"Link successful");
+//    } failure:^(NSError *error) {
+//        NSLog(@"Link failed: %@", [error localizedDescription]);
+//    }];
 }
 
 

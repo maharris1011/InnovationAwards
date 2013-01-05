@@ -50,6 +50,12 @@
                 [semis addObject:sf];
             }
         }
+
+        if ([semis count] == 0) {
+            // if no one in the category, put a "placeholder" in
+            IASemifinalist *sf = [[IASemifinalist alloc] initWithFake:1];
+            [semis addObject:sf];
+        }
         
         _semifinalists = semis;
     }
@@ -58,7 +64,7 @@
 
 -(NSString *)url
 {
-    NSString *urlString = [NSString stringWithFormat:@"http://www.techcolumbusinnovationawards.org/2012_WSF_%@_test4.html", self.abbrev];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.techcolumbusinnovationawards.org/2012_WSF_%@.html", self.abbrev];
     return urlString;
 }
 

@@ -23,14 +23,14 @@
 - (id)initWithFake:(int)n
 {
     if (self = [super init]) {
-        _company = [NSString stringWithFormat:@"company %d", n];
-        _contact = [NSString stringWithFormat:@"contact %d", n];
-        _site_url = [NSString stringWithFormat:@"site_url %d", n];
-        _bio = [NSString stringWithFormat:@"bio %d", n];
-        _linkedin = [NSString stringWithFormat:@"linkedin %d", n];
-        _facebook = [NSString stringWithFormat:@"facebook %d", n];
-        _twitter = [NSString stringWithFormat:@"twitter %d", n];
-        _image_path = [NSString stringWithFormat:@"image_path %d", n];
+        _company = [NSString stringWithFormat:@"Coming Soon..."];
+        _contact = [NSString stringWithFormat:@""];
+        _site_url = [NSString stringWithFormat:@""];
+        _bio = [NSString stringWithFormat:@""];
+        _linkedin = [NSString stringWithFormat:@""];
+        _facebook = [NSString stringWithFormat:@""];
+        _twitter = [NSString stringWithFormat:@""];
+        _image_path = [NSString stringWithFormat:@""];
     }
     return self;
 }
