@@ -57,7 +57,12 @@
         }
     };
     
-    self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:entity options:options];
+    if (self.actionBar == nil) {
+        self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:entity options:options];
+    }
+    else {
+        self.actionBar.entity = entity;
+    }
     self.actionBar.shareOptions = options;
 
     // set up the sharing meta-data
