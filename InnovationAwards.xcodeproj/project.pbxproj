@@ -1781,6 +1781,7 @@
 		4DCED01A1675474100272F0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
@@ -1801,6 +1802,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
@@ -1830,7 +1832,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BAEF20B3-9490-454B-B11C-7439739021EA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FB8167F0-021E-4F17-8CCA-546F65A16E58";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
