@@ -11,6 +11,7 @@
 		4D1D54361678503100626E21 /* 42-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D54341678503100626E21 /* 42-info@2x.png */; };
 		4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */; };
 		4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */; };
+		4D426A6B16992FF500D96CC4 /* LinkedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */; };
 		4D501932167548130031B9F8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D501930167548130031B9F8 /* MasterViewController.m */; };
 		4D501936167548490031B9F8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D501933167548490031B9F8 /* Default.png */; };
 		4D501937167548490031B9F8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D501934167548490031B9F8 /* Default@2x.png */; };
@@ -354,6 +355,8 @@
 		4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+GradientHeaders.m"; sourceTree = "<group>"; };
 		4D26A3C7167846BF006D43A2 /* UIView+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSGradient.h"; sourceTree = "<group>"; };
 		4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSGradient.m"; sourceTree = "<group>"; };
+		4D426A6916992FF500D96CC4 /* LinkedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedInViewController.h; path = InnovationAwards/Controllers/LinkedInViewController.h; sourceTree = SOURCE_ROOT; };
+		4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinkedInViewController.m; path = InnovationAwards/Controllers/LinkedInViewController.m; sourceTree = SOURCE_ROOT; };
 		4D50192F167548130031B9F8 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4D501930167548130031B9F8 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		4D501933167548490031B9F8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -823,6 +826,8 @@
 		4D50192A167547DB0031B9F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D426A6916992FF500D96CC4 /* LinkedInViewController.h */,
+				4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */,
 				4DFEF5221675991E0069E734 /* AboutTableViewController.h */,
 				4DFEF5231675991E0069E734 /* AboutTableViewController.m */,
 				4DFEF4E01675829A0069E734 /* MapViewController.h */,
@@ -1669,6 +1674,7 @@
 				4DE6FEF516954AB2004B37D5 /* IACategory.m in Sources */,
 				4DE6FEF816954BF5004B37D5 /* IASemifinalist.m in Sources */,
 				4DC31D3416956DA600D106E1 /* TFHppleElement+IDSearch.m in Sources */,
+				4D426A6B16992FF500D96CC4 /* LinkedInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

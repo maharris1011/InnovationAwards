@@ -62,17 +62,9 @@
 
 - (void)handleImageTap:(UITapGestureRecognizer *)sender
 {
-    
     if (sender.state == UIGestureRecognizerStateEnded) {
-        
-        if (self.pageControl.currentPage == 3) {
-            // linked in
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.linkedin.com/company/techcolumbus"]];
-        }
-        else {
-            // the array 'pageTransitions' has the names of the segues to go to
-            [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
-        }
+        // the array 'pageTransitions' has the names of the segues to go to
+        [self performSegueWithIdentifier:[self.pageTransitions objectAtIndex:self.pageControl.currentPage]  sender:self];
     }
 }
 
@@ -279,7 +271,6 @@
 {
     UINavigationBar *navBar = self.navigationController.navigationBar;
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    
 }
 
 - (IBAction)registerButtonWasPressed:(id)sender {
