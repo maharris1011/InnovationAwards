@@ -82,7 +82,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     NSString *url = nil;
-    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]])
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]])
     {
         // open google maps
         url = [NSString stringWithFormat:@"comgooglemaps://?q=Greater+Columbus+Convention+Center&center=%f,%f", self.conventionCenter.latitude, self.conventionCenter.longitude];
