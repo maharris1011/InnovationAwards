@@ -197,29 +197,10 @@
 
 - (void)linkToTwitter {
     [SZTwitterUtils setConsumerKey:@"wzsvqTEIx7W8Jb5bHbAYBA" consumerSecret:@"gdAQS4XSmvdS3pdvY4iqHgGAkB5lcinboVJdJcFJI"];
-    
-//    NSString *existingAccessToken = @"PREAUTHEDACCESSTOKEN";
-//    NSString *existingSecret = @"PREAUTHEDACCESSTOKENSECRET";
-//    
-//    [SZTwitterUtils linkWithAccessToken:existingAccessToken accessTokenSecret:existingSecret success:^(id<SocializeFullUser> user) {
-//        NSLog(@"Twitter Link Complete");
-//    } failure:^(NSError *error) {
-//        NSLog(@"Twitter Link failure: %@", [error localizedDescription]);
-//    }];
 }
 
 - (void)linkToFacebook {
     [SZFacebookUtils setAppId:@"394489043966235"];
-
-//    // These should come from your own facebook auth process
-//    NSString *existingToken = @"EXISTING_TOKEN";
-//    NSDate *existingExpiration = [NSDate distantFuture];
-//    
-//    [SZFacebookUtils linkWithAccessToken:existingToken expirationDate:existingExpiration success:^(id<SocializeFullUser> user) {
-//        NSLog(@"Link successful");
-//    } failure:^(NSError *error) {
-//        NSLog(@"Link failed: %@", [error localizedDescription]);
-//    }];
 }
 
 
