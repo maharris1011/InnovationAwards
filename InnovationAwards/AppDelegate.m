@@ -159,21 +159,32 @@
     [self linkToTwitter];
     
 
-    // Specify a Socialize entity loader block
+    // Specify a Socialize entity loader block, for the HandleOpenURL message we
+    // get when a user clicks on an entity shared on the web.
     [Socialize setEntityLoaderBlock:^(UINavigationController *navigationController, id<SocializeEntity>entity) {
         
-        SemifinalistDetailTableViewController *entityLoader = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"semifinalistDetailView"];
-        
-        [entityLoader initWithEntity:entity];
-        
-        if (navigationController == nil)
-        {
-            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-            [navigationController pushViewController:entityLoader animated:YES];
+        IASemifinalist *sf = [IASemifinalist semifinalistFromEntity:entity];
+        IACategory *cat = [IACategory categoryFromEntity:entity];
+        if (!sf || !cat) {
+            // put up a popup saying "sorry, cant find them"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Houston, we have a problem" message:@"Sorry, we were unable to find that semifinalist." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+            [alert show];
         }
-        else
-        {
-            [navigationController pushViewController:entityLoader animated:YES];
+        else {
+            SemifinalistDetailTableViewController *sfDetailView = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"semifinalistDetailView"];
+            
+            sfDetailView.semifinalistData = sf;
+            sfDetailView.categoryName = cat.name;
+            sfDetailView.categoryURL = cat.url;
+            if (navigationController == nil)
+            {
+                UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+                [navigationController pushViewController:sfDetailView animated:YES];
+            }
+            else
+            {
+                [navigationController pushViewController:sfDetailView animated:YES];
+            }
         }
     }];
 }

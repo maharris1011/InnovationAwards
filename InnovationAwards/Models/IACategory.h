@@ -15,6 +15,6 @@
 @property (strong, nonatomic) NSString *abbrev;
 @property (strong, nonatomic) NSArray *semifinalists;
 
-
++ (IACategory *)categoryFromEntity:(id<SocializeEntity>)url;
 
 @end

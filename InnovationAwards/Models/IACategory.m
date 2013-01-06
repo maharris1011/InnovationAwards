@@ -9,6 +9,7 @@
 #import "IACategory.h"
 #import "IASemifinalist.h"
 #import "TFHpple.h"
+#import "AppDelegate.h"
 
 @implementation IACategory
 
@@ -27,6 +28,22 @@
         _semifinalists = nil;
     }
     return self;
+}
+
++ (IACategory *)categoryFromEntity:(id<SocializeEntity>)entity
+{
+    // find the semifinalist we're looking for
+    NSArray *urlAndCompany = [[entity key] componentsSeparatedByString:@"#"];
+    NSString *categoryURL = [urlAndCompany objectAtIndex:0];
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    for (IACategory *cat in [app sharedCategories])
+    {
+        if ([cat.url isEqualToString:categoryURL]) {
+            return cat;
+        }
+    }
+    return nil;
 }
 
 -(NSArray *)semifinalists

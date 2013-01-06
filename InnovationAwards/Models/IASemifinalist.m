@@ -5,8 +5,9 @@
 //  Created by Mark Harris on 1/3/13.
 //  Copyright (c) 2013 TechColumbus. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "IASemifinalist.h"
+#import "IACategory.h"
 #import "TFHppleElement+IDSearch.h"
 
 @implementation IASemifinalist
@@ -72,5 +73,36 @@
     }
     return self;
 }
+
++(IASemifinalist *)semifinalistFromEntity:(id<SocializeEntity>)entity
+{
+    // set up the instance data
+    // by parsing the entity key.  the entity is:
+    // http://www.techcolumbusinnovationawards.org/2012_WSF_CAT.html#semifinalistname
+    // where CAT is the 3-letter abbreviation for the category
+    
+    // first locate the category our semifinalist belongs to
+    IACategory *category = [IACategory categoryFromEntity:entity];
+
+    // find the semifinalist we're looking for
+    NSArray *urlAndCompany = [[entity key] componentsSeparatedByString:@"#"];
+    NSString *company = nil;
+    if ([urlAndCompany count] == 2) {
+        company = [urlAndCompany objectAtIndex:1];
+    }
+    
+    if (category)
+    {
+        for (IASemifinalist *sfi in category.semifinalists)
+        {
+            if ([sfi.company isEqualToString:company])
+            {
+                return sfi;
+            }
+        }
+    }
+    return nil;
+}
+
 
 @end

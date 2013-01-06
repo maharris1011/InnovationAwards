@@ -23,4 +23,5 @@
 - (id)initWithHTML:(TFHppleElement *)e;
 - (id)initWithDictionary:(NSDictionary *)d;
 
++(IASemifinalist *)semifinalistFromEntity:(id<SocializeEntity>)entity;
 @end

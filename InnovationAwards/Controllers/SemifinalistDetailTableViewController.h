@@ -13,18 +13,17 @@
 
 @interface SemifinalistDetailTableViewController : UITableViewController
 
-@property SZEntity *entity;
-@property (nonatomic, strong) SZActionBar *actionBar;
-
+// data properties
 @property IASemifinalist *semifinalistData;
 @property NSString *categoryName;
 @property NSString *categoryURL;
 
+// UI properties
+@property (nonatomic, strong) SZActionBar *actionBar;
 @property (strong, nonatomic) IBOutlet UILabel *categoryNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *representativeNameLabel;
 @property (strong, nonatomic) IBOutlet UITextView *companyUrlLabel;
 @property (strong, nonatomic) IBOutlet UILabel *storyTextLabel;
 
-- (void)initWithEntity:(id<SocializeEntity>)entity;
 @end

@@ -14,20 +14,18 @@
 @end
 
 @implementation SemifinalistDetailTableViewController
-@synthesize entity = _entity;
 @synthesize actionBar = _actionBar;
 
 - (void)setupSocializeEntity
 {
     NSString *key = [NSString stringWithFormat:@"%@#%@", self.categoryURL, self.semifinalistData.company];
-    self.entity = [SZEntity entityWithKey:key name:self.semifinalistData.company];
+    SZEntity *entity = [SZEntity entityWithKey:key name:self.semifinalistData.company];
     
     SZShareOptions *options = [SZShareUtils userShareOptions];
     options.dontShareLocation = NO;
     options.willAttemptPostingToSocialNetworkBlock = ^(SZSocialNetwork network, SZSocialNetworkPostData *postData)
     {
         NSString *displayName = [postData.entity displayName];
-        NSLog(@"[DEBUG!!!!] inside willAttemptPostingToSocialNetworkblock");
         
         if (network == SZSocialNetworkFacebook)
         {
@@ -37,17 +35,17 @@
         if (network == SZSocialNetworkTwitter)
         {
             NSString *entityURL = [[postData.propagationInfo objectForKey:@"twitter"] objectForKey:@"entity_url"];
-            NSString *customStatus = [NSString stringWithFormat:@"%@ nominated for an Innovation Award %@", displayName, entityURL];
+            NSString *customStatus = [NSString stringWithFormat:@"%@ is nominated for an Innovation Award %@", displayName, entityURL];
             
             [postData.params setObject:customStatus forKey:@"status"];
         }
     };
     
-    self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:self.entity options:options];
+    self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:entity options:options];
     self.actionBar.shareOptions = options;
 
     NSString *title = self.semifinalistData.company;
-    NSString *description = [NSString stringWithFormat:@"Nominated for IA12: %@ ", self.categoryName];
+    NSString *description = [NSString stringWithFormat:@"Check out Innovation Awards, the easiest way to participate in the 2012 Innovation Awards now and through the year"];
     NSString *thumb = self.semifinalistData.image_path;
     NSDictionary *params;
     if (thumb == nil) {
@@ -67,64 +65,19 @@
     
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
-    NSAssert(error == nil, @"Error writing json: %@", [error localizedDescription]);
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    self.entity.meta = jsonString;
+    if (!error)
+    {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        entity.meta = jsonString;
+    }
     
-    [SZEntityUtils addEntity:self.entity success:^(id<SZEntity> serverEntity) {
+    [SZEntityUtils addEntity:entity success:^(id<SZEntity> serverEntity) {
         NSLog(@"Successfully updated entity meta: %@", [serverEntity meta]);
     } failure:^(NSError *error) {
         NSLog(@"Failure: %@", [error localizedDescription]);
     }];
     
 }
-
-
-
-- (void)initWithEntity:(id<SocializeEntity>)entity
-{
-    // set up the instance data
-    // by parsing the entity key.  the entity is:
-    // http://www.techcolumbusinnovationawards.org/<category>.html#semifinalistname
-    NSLog(@"key = %@", [entity key]);
-    NSLog(@"name = %@", [entity name]);
-    
-    // split the entity into URL and company
-    NSArray *urlAndCompany = [[entity key] componentsSeparatedByString:@"#"];
-    NSString *url = [urlAndCompany objectAtIndex:0];
-    NSString *company = [urlAndCompany objectAtIndex:1];
-    
-    // find the semifinalist we're looking for
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-
-    // first locate the category
-    IACategory *category = nil;
-    for (IACategory *cat in [app sharedCategories])
-    {
-        if ([[cat url] isEqualToString:url]) {
-            category = cat;
-        }
-    }
-    
-    if (category)
-    {
-        _categoryURL = category.url;
-        _categoryName = category.name;
-
-        for (IASemifinalist *sfi in category.semifinalists)
-        {
-            if ([sfi.company isEqualToString:company])
-            {
-                _semifinalistData = sfi;
-            }
-        }
-            
-    }
-    
-}
-
-
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
