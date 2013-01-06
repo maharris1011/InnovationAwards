@@ -11,6 +11,10 @@
 		4D1D54361678503100626E21 /* 42-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D54341678503100626E21 /* 42-info@2x.png */; };
 		4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */; };
 		4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */; };
+		4D29BA8F169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D29BA8E169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg */; };
+		4D29BA93169A2FD800C1B5D2 /* TechColumbusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29BA92169A2FD800C1B5D2 /* TechColumbusTableViewController.m */; };
+		4D29BA96169A300A00C1B5D2 /* SponsorImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29BA95169A300A00C1B5D2 /* SponsorImageTableViewController.m */; };
+		4D29BA99169A307300C1B5D2 /* EventDetailsMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29BA98169A307300C1B5D2 /* EventDetailsMenuTableViewController.m */; };
 		4D426A6B16992FF500D96CC4 /* LinkedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */; };
 		4D426A71169933F000D96CC4 /* 03-arrow-north.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6D169933F000D96CC4 /* 03-arrow-north.png */; };
 		4D426A72169933F000D96CC4 /* 03-arrow-north@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */; };
@@ -359,6 +363,13 @@
 		4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+GradientHeaders.m"; sourceTree = "<group>"; };
 		4D26A3C7167846BF006D43A2 /* UIView+SSGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSGradient.h"; sourceTree = "<group>"; };
 		4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSGradient.m"; sourceTree = "<group>"; };
+		4D29BA8E169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IS04045_TechColumbusLogo_RGB_edit.jpg; sourceTree = "<group>"; };
+		4D29BA91169A2FD800C1B5D2 /* TechColumbusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechColumbusTableViewController.h; sourceTree = "<group>"; };
+		4D29BA92169A2FD800C1B5D2 /* TechColumbusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechColumbusTableViewController.m; sourceTree = "<group>"; };
+		4D29BA94169A300A00C1B5D2 /* SponsorImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorImageTableViewController.h; sourceTree = "<group>"; };
+		4D29BA95169A300A00C1B5D2 /* SponsorImageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorImageTableViewController.m; sourceTree = "<group>"; };
+		4D29BA97169A307300C1B5D2 /* EventDetailsMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsMenuTableViewController.h; sourceTree = "<group>"; };
+		4D29BA98169A307300C1B5D2 /* EventDetailsMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsMenuTableViewController.m; sourceTree = "<group>"; };
 		4D426A6916992FF500D96CC4 /* LinkedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedInViewController.h; path = InnovationAwards/Controllers/LinkedInViewController.h; sourceTree = SOURCE_ROOT; };
 		4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinkedInViewController.m; path = InnovationAwards/Controllers/LinkedInViewController.m; sourceTree = SOURCE_ROOT; };
 		4D426A6D169933F000D96CC4 /* 03-arrow-north.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-arrow-north.png"; sourceTree = "<group>"; };
@@ -775,6 +786,7 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D29BA8E169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg */,
 				4D426A6D169933F000D96CC4 /* 03-arrow-north.png */,
 				4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */,
 				4D426A6F169933F000D96CC4 /* 06-arrow-south.png */,
@@ -864,6 +876,12 @@
 				4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */,
 				4D8EFFA91682ABD10077FC8C /* SemifinalistDetailTableViewController.h */,
 				4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */,
+				4D29BA91169A2FD800C1B5D2 /* TechColumbusTableViewController.h */,
+				4D29BA92169A2FD800C1B5D2 /* TechColumbusTableViewController.m */,
+				4D29BA94169A300A00C1B5D2 /* SponsorImageTableViewController.h */,
+				4D29BA95169A300A00C1B5D2 /* SponsorImageTableViewController.m */,
+				4D29BA97169A307300C1B5D2 /* EventDetailsMenuTableViewController.h */,
+				4D29BA98169A307300C1B5D2 /* EventDetailsMenuTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1641,6 +1659,7 @@
 				4D426A72169933F000D96CC4 /* 03-arrow-north@2x.png in Resources */,
 				4D426A73169933F000D96CC4 /* 06-arrow-south.png in Resources */,
 				4D426A74169933F000D96CC4 /* 06-arrow-south@2x.png in Resources */,
+				4D29BA8F169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1691,6 +1710,9 @@
 				4DE6FEF816954BF5004B37D5 /* IASemifinalist.m in Sources */,
 				4DC31D3416956DA600D106E1 /* TFHppleElement+IDSearch.m in Sources */,
 				4D426A6B16992FF500D96CC4 /* LinkedInViewController.m in Sources */,
+				4D29BA93169A2FD800C1B5D2 /* TechColumbusTableViewController.m in Sources */,
+				4D29BA96169A300A00C1B5D2 /* SponsorImageTableViewController.m in Sources */,
+				4D29BA99169A307300C1B5D2 /* EventDetailsMenuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

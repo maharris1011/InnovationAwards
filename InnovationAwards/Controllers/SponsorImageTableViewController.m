@@ -1,20 +1,19 @@
 //
-//  EventDetailsViewController.m
+//  SponsorImageTableViewController.m
 //  InnovationAwards
 //
-//  Created by Mark Harris on 12/9/12.
-//  Copyright (c) 2012 TechColumbus. All rights reserved.
+//  Created by Mark Harris on 1/6/13.
+//  Copyright (c) 2013 TechColumbus. All rights reserved.
 //
 
-#import "EventDetailsViewController.h"
-#import "UIImage+Resize.h"
+#import "SponsorImageTableViewController.h"
 #import "UIImage+RoundedCorner.h"
 
-@interface EventDetailsViewController ()
+@interface SponsorImageTableViewController ()
 
 @end
 
-@implementation EventDetailsViewController
+@implementation SponsorImageTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,15 +28,15 @@
 {
     [super viewDidLoad];
 
-    // set the background image
+    // adjust the background view to match
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
-    
+    [bgImageView setFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height)];
     self.tableView.backgroundView = bgImageView;
     
-
+    UIImage *sponsorsImage = [UIImage imageNamed:@"ia12_sponsors.png"];
+    self.sponsorImageView.image = [sponsorsImage roundedCornerImage:15 borderSize:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,17 +45,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Table view delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 1 && indexPath.row == 0) {
-        // goto the ia 12 web site
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbus.org"]];
-    }
 }
 
 - (void)viewDidUnload {
-    [self setSponsorsImageView:nil];
+    [self setSponsorImageView:nil];
     [super viewDidUnload];
 }
 @end

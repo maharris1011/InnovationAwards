@@ -142,15 +142,15 @@
                         <segue destination="lZY-Lb-RaW" kind="push" identifier="showFacebook" id="8ud-hQ-2Gz"/>
                         <segue destination="3mW-lf-3TR" kind="push" identifier="showTwitter" id="d2j-2F-hve"/>
                         <segue destination="2io-lS-yvz" kind="push" identifier="showSemifinalists" id="hv8-bq-azI"/>
-                        <segue destination="qPl-Hj-mcE" kind="push" identifier="showEventDetails" id="VQv-oE-OVP"/>
                         <segue destination="ixa-bg-enq" kind="push" identifier="showLinkedIn" id="KDn-qk-L4H"/>
+                        <segue destination="VJO-Km-NjA" kind="push" identifier="showEventDetails" id="xRf-9n-IzP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziQ-XT-2Jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="504" y="64"/>
         </scene>
-        <!--Category View Controller - Categories-->
+        <!--Category View Controller - Award Categories-->
         <scene sceneID="QE8-V5-Dyu">
             <objects>
                 <tableViewController id="2io-lS-yvz" customClass="CategoryViewController" sceneMemberID="viewController">
@@ -167,10 +167,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hJ-hP-NdU">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hJ-hP-NdU">
                                             <rect key="frame" x="10" y="0.0" width="280" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.98039221759999995" green="0.98823535439999999" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -187,7 +187,7 @@
                             <outlet property="delegate" destination="2io-lS-yvz" id="Hr8-AZ-5vH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Categories" id="AZt-ZF-4F6">
+                    <navigationItem key="navigationItem" title="Award Categories" id="AZt-ZF-4F6">
                         <barButtonItem key="backBarButtonItem" title="Back" id="0ii-XO-F6m"/>
                     </navigationItem>
                 </tableViewController>
@@ -234,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="2595" y="-504"/>
         </scene>
-        <!--Semifinalist List View Controller - Semifinalists-->
+        <!--Semifinalist List View Controller - IA12 Semi-Finalists-->
         <scene sceneID="o7L-yE-WDM">
             <objects>
                 <tableViewController id="4D3-Kp-H7h" customClass="SemifinalistListViewController" sceneMemberID="viewController">
@@ -251,11 +251,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CCM-Ij-XvC">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CCM-Ij-XvC">
                                             <rect key="frame" x="10" y="0.0" width="280" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.98039221759999995" green="0.98823535439999999" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -272,7 +272,7 @@
                             <outlet property="delegate" destination="4D3-Kp-H7h" id="7HT-Vp-RIf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Semifinalists" id="aB8-iJ-xAY">
+                    <navigationItem key="navigationItem" title="IA12 Semi-Finalists" id="aB8-iJ-xAY">
                         <barButtonItem key="backBarButtonItem" title="Back" id="VjY-i4-aQt"/>
                     </navigationItem>
                 </tableViewController>
@@ -292,29 +292,29 @@
                         <sections>
                             <tableViewSection id="NRe-HS-sPa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="DtQ-Ct-tYH">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="118"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="183" id="DtQ-Ct-tYH">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="116"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BringShare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="0ec-nl-eFz">
-                                                    <rect key="frame" x="20" y="36" width="260" height="40"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BringShare" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ec-nl-eFz">
+                                                    <rect key="frame" x="20" y="40" width="260" height="73"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Justin Spring, Co-Founder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="9vK-BH-1uv">
-                                                    <rect key="frame" x="20" y="69" width="260" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Justin Spring, Co-Founder" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9vK-BH-1uv">
+                                                    <rect key="frame" x="20" y="93" width="260" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" id="JIm-JJ-p20">
-                                                    <rect key="frame" x="13" y="85" width="260" height="31"/>
+                                                    <rect key="frame" x="13" y="131" width="260" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
@@ -328,8 +328,8 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Outstanding Startup Business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UOb-8E-OxZ">
-                                                    <rect key="frame" x="20" y="20" width="260" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Outstanding Startup Business" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UOb-8E-OxZ">
+                                                    <rect key="frame" x="20" y="7" width="260" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
@@ -340,7 +340,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="75E-Lk-pdl" rowHeight="300" style="IBUITableViewCellStyleDefault" id="tQg-8i-EvV">
-                                        <rect key="frame" x="0.0" y="128" width="320" height="301"/>
+                                        <rect key="frame" x="0.0" y="194" width="320" height="301"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="299"/>
@@ -362,7 +362,7 @@
                             <tableViewSection id="PLe-DV-Jvl">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KnN-tU-KBd" imageView="8FN-4N-DFG" rowHeight="46" style="IBUITableViewCellStyleDefault" id="MGJ-jh-p1p">
-                                        <rect key="frame" x="0.0" y="449" width="320" height="47"/>
+                                        <rect key="frame" x="0.0" y="515" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="45"/>
@@ -384,7 +384,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hKo-tN-bfg" imageView="fZH-4s-oCO" rowHeight="46" style="IBUITableViewCellStyleDefault" id="H1j-ii-ASH">
-                                        <rect key="frame" x="0.0" y="496" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="562" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
@@ -406,7 +406,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ekg-mn-LRR" imageView="ul3-4Q-lWe" rowHeight="46" style="IBUITableViewCellStyleDefault" id="ZwN-qp-GYx">
-                                        <rect key="frame" x="0.0" y="542" width="320" height="47"/>
+                                        <rect key="frame" x="0.0" y="608" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
@@ -428,6 +428,9 @@
                                         </view>
                                     </tableViewCell>
                                 </cells>
+                            </tableViewSection>
+                            <tableViewSection id="ETl-WS-jfN">
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -465,7 +468,7 @@
             </objects>
             <point key="canvasLocation" x="3131" y="99"/>
         </scene>
-        <!--Sponsors View Controller - Sponsors-->
+        <!--Sponsors View Controller - IA12 Sponsors-->
         <scene sceneID="pbQ-pA-VuZ">
             <objects>
                 <tableViewController id="fkB-4z-yVi" customClass="SponsorsViewController" sceneMemberID="viewController">
@@ -507,13 +510,13 @@
                             <outlet property="delegate" destination="fkB-4z-yVi" id="zKj-1d-RFF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sponsors" id="vCp-9G-cFl">
+                    <navigationItem key="navigationItem" title="IA12 Sponsors" id="vCp-9G-cFl">
                         <barButtonItem key="backBarButtonItem" title="About" id="jWd-05-jee"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fci-Vt-8v6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="-1400"/>
+            <point key="canvasLocation" x="3028" y="-1669"/>
         </scene>
         <!--Event Details View Controller - IA12 Details-->
         <scene sceneID="IKg-Wl-xiP">
@@ -526,19 +529,21 @@
                         <sections>
                             <tableViewSection id="3u8-wA-kHh">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailsCell" rowHeight="351" id="Ul7-rZ-9mt">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="352"/>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailsCell" rowHeight="386" id="Ul7-rZ-9mt">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="387"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="350"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="385"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" id="GIs-JE-IFj">
-                                                    <rect key="frame" x="20" y="20" width="260" height="330"/>
+                                                    <rect key="frame" x="20" y="20" width="260" height="365"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
-                                                            <string key="content">On February 7, 2013, Central Ohio will gather to celebrate the 2012 TechColumbus Innovation Awards                  with the theme BEYOND CONVENTION – because it takes unconventional thinking, keen vision and dedicated execution to create life-changing innovative solutions. This will mark the 17th year that the region has come together to honor the individuals, teams and companies which, through their outstanding achievements, have transformed their businesses and been instrumental in creating the future of our regional economy. 
+                                                            <string key="content">On February 7, 2013, Central Ohio will gather to celebrate the 2012 TechColumbus Innovation Awards                  with the theme BEYOND CONVENTION – because it takes unconventional thinking, keen vision and dedicated execution to create life-changing innovative solutions. 
+
+This will mark the 17th year that the region has come together to honor the individuals, teams and companies which, through their outstanding achievements, have transformed their businesses and been instrumental in creating the future of our regional economy. 
 
 </string>
                                                             <attributes>
@@ -563,7 +568,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailsCell" rowHeight="111" id="tzg-0z-xWo">
-                                        <rect key="frame" x="0.0" y="362" width="320" height="111"/>
+                                        <rect key="frame" x="0.0" y="397" width="320" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="110"/>
@@ -592,7 +597,7 @@ Post-Event Reception: 8:30pm-9:30pm</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailsCell" rowHeight="132" id="z9Y-pB-6EC">
-                                        <rect key="frame" x="0.0" y="473" width="320" height="133"/>
+                                        <rect key="frame" x="0.0" y="508" width="320" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="131"/>
@@ -627,16 +632,57 @@ Columbus, OH 43215
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="qPl-Hj-mcE" id="i6D-SS-yjX"/>
+                            <outlet property="delegate" destination="qPl-Hj-mcE" id="M4P-4o-k49"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="IA12 Details" id="Fqn-hW-qg3">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="CTd-pW-Cho"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sponsorsImageView" destination="k35-dC-crG" id="6xf-4V-ANs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcF-gV-KHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063" y="-2045"/>
+        </scene>
+        <!--Tech Columbus Table View Controller-->
+        <scene sceneID="niX-pK-zZk">
+            <objects>
+                <tableViewController id="bqu-ra-LHc" customClass="TechColumbusTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7Nn-fR-ddu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
                             <tableViewSection headerTitle="The Future is Here" id="g9c-2b-wvM">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="465" id="nVP-EO-YFY">
-                                        <rect key="frame" x="0.0" y="652" width="320" height="467"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="2WA-ZD-Yf7">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="464"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Lkj-Vg-WKk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="IS04045_TechColumbusLogo_RGB_edit.jpg" id="fGt-Dg-BIz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="63"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="465" id="Fsv-M7-i4l">
+                                        <rect key="frame" x="0.0" y="111" width="320" height="466"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="464"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="6nd-29-GWq">
                                                     <rect key="frame" x="10" y="11" width="270" height="453"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -655,13 +701,82 @@ www.TechColumbus.org</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="jeF-uh-ji8">
+                            <tableViewSection id="JbB-mH-uYl">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailsCell" rowHeight="350" id="pBY-3p-rSZ">
-                                        <rect key="frame" x="0.0" y="1139" width="320" height="352"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="8fJ-uS-bEJ" rowHeight="96" style="IBUITableViewCellStyleDefault" id="pCA-n5-x99">
+                                        <rect key="frame" x="0.0" y="597" width="320" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="349"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8fJ-uS-bEJ">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="95"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <string key="text">1275 Kinnear Road,
+Columbus, OH 43221
+614-340-1833</string>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="94" id="85c-UL-esV">
+                                        <rect key="frame" x="0.0" y="694" width="320" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="8Lc-po-K8h">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">TechColumbus.org
+www.linkedin.com/company/techcolumbus
+www.twitter.com/techcolumbus
+www.facebook.com/TechColumbusOhio</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="bqu-ra-LHc" id="HEk-te-8Uf"/>
+                            <outlet property="delegate" destination="bqu-ra-LHc" id="QWo-T7-kAt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="N5X-mk-TZx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9l2-cd-UjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063" y="-1186"/>
+        </scene>
+        <!--Sponsor Image Table View Controller - IA12 Sponsors-->
+        <scene sceneID="AFc-t3-KrG">
+            <objects>
+                <tableViewController id="A7c-ij-y4j" customClass="SponsorImageTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2Eb-Eh-a5u">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="NPd-Di-Bxh">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="340" id="v2G-Ze-hjY">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="342"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="339"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ia12_sponsors.png" id="k35-dC-crG">
@@ -672,27 +787,25 @@ www.TechColumbus.org</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="fkB-4z-yVi" kind="push" identifier="showSponsors" id="Pgt-k7-akM"/>
+                                            <segue destination="fkB-4z-yVi" kind="push" identifier="showSponsors" id="6sG-h3-6Wk"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="qPl-Hj-mcE" id="i6D-SS-yjX"/>
-                            <outlet property="delegate" destination="qPl-Hj-mcE" id="M4P-4o-k49"/>
+                            <outlet property="dataSource" destination="A7c-ij-y4j" id="cPp-KN-fvu"/>
+                            <outlet property="delegate" destination="A7c-ij-y4j" id="ZOU-I2-qic"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="IA12 Details" id="Fqn-hW-qg3">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="CTd-pW-Cho"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="IA12 Sponsors" id="52t-tz-C5T"/>
                     <connections>
-                        <outlet property="sponsorsImageView" destination="k35-dC-crG" id="6xf-4V-ANs"/>
+                        <outlet property="sponsorImageView" destination="k35-dC-crG" id="cZl-fK-Cle"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xcF-gV-KHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWf-kU-9uP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688" y="-1400"/>
+            <point key="canvasLocation" x="2526" y="-1669"/>
         </scene>
         <!--About Table View Controller-->
         <scene sceneID="Rxn-NR-ODw">
@@ -704,27 +817,90 @@ www.TechColumbus.org</string>
                         <color key="backgroundColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
+                            <tableViewSection id="TT6-7S-Mwc">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="93" id="5TN-go-kDe">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="94"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="IS04045_TechColumbusLogo_RGB_edit.jpg" id="cLO-nN-NpJ">
+                                                    <rect key="frame" x="20" y="0.0" width="260" height="92"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="FqV-zp-1jD" rowHeight="96" style="IBUITableViewCellStyleDefault" id="T0B-SJ-DbS">
+                                        <rect key="frame" x="0.0" y="104" width="320" height="96"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FqV-zp-1jD">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="95"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <string key="text">1275 Kinnear Road,
+Columbus, OH 43221
+614-340-1833</string>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="94" id="3Qh-3Q-yZu">
+                                        <rect key="frame" x="0.0" y="200" width="320" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="afI-Lc-KpA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">TechColumbus.org
+www.linkedin.com/company/techcolumbus
+www.twitter.com/techcolumbus
+www.facebook.com/TechColumbusOhio</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Innovation Awards" id="1f4-U9-dy6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tfM-ar-Rqr" detailTextLabel="xVu-Xc-FHG" style="IBUITableViewCellStyleValue1" id="v6l-sO-Ycj">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tfM-ar-Rqr" detailTextLabel="xVu-Xc-FHG" style="IBUITableViewCellStyleValue2" id="v6l-sO-Ycj">
+                                        <rect key="frame" x="0.0" y="341" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tfM-ar-Rqr">
-                                                    <rect key="frame" x="10" y="11" width="63" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tfM-ar-Rqr">
+                                                    <rect key="frame" x="10" y="15" width="67" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xVu-Xc-FHG">
-                                                    <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xVu-Xc-FHG">
+                                                    <rect key="frame" x="83" y="12" width="41" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.63529413940000001" green="0.0" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -732,7 +908,7 @@ www.TechColumbus.org</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Tpo-5p-J0A" detailTextLabel="TeM-Yb-bo7" style="IBUITableViewCellStyleValue2" id="IwJ-DO-jlz">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="386" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -749,7 +925,6 @@ www.TechColumbus.org</string>
                                                     <rect key="frame" x="83" y="12" width="161" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -757,14 +932,14 @@ www.TechColumbus.org</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a9U-vb-wdz">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="430" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sandlot-logo.png" id="4fQ-y2-9ft">
-                                                    <rect key="frame" x="68" y="2" width="164" height="39"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sandlot-logo.png" id="4fQ-y2-9ft">
+                                                    <rect key="frame" x="74" y="4" width="153" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -773,16 +948,16 @@ www.TechColumbus.org</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="TT6-7S-Mwc">
+                            <tableViewSection id="ZTG-N6-f9k">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5TN-go-kDe">
-                                        <rect key="frame" x="0.0" y="200" width="320" height="46"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ga0-YG-JZB">
+                                        <rect key="frame" x="0.0" y="495" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mk1-2F-hVX">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0tR-uy-y9F">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -794,7 +969,7 @@ www.TechColumbus.org</string>
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="done:" destination="OiD-JH-7p2" eventType="touchUpInside" id="rOb-12-nFA"/>
+                                                        <action selector="done:" destination="OiD-JH-7p2" eventType="touchUpInside" id="LkP-ev-hjm"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -816,7 +991,92 @@ www.TechColumbus.org</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lR9-Sp-klv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="-1176"/>
+            <point key="canvasLocation" x="981" y="-1330"/>
+        </scene>
+        <!--Event Details Menu Table View Controller-->
+        <scene sceneID="fie-Kh-pbQ">
+            <objects>
+                <tableViewController id="VJO-Km-NjA" customClass="EventDetailsMenuTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uzv-ae-RGA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="d7e-k2-O3Y">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="97" id="Af4-dJ-h1F">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="96"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="IS04045_TechColumbusLogo_RGB_edit.jpg" id="qbE-uu-V1N">
+                                                    <rect key="frame" x="0.0" y="4" width="300" height="88"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="bqu-ra-LHc" kind="push" id="MUB-cq-5fL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NVU-zd-EUv" style="IBUITableViewCellStyleDefault" id="qLJ-2y-HEN">
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="About The Innovation Awards" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NVU-zd-EUv">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="qPl-Hj-mcE" kind="push" id="6bS-Jn-xHW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wIj-12-OKO" style="IBUITableViewCellStyleDefault" id="mqP-B1-6a5">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Sponsors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wIj-12-OKO">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="A7c-ij-y4j" kind="push" id="Q1N-dF-cTm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="VJO-Km-NjA" id="Q0d-bm-5sx"/>
+                            <outlet property="delegate" destination="VJO-Km-NjA" id="4pA-dZ-lj5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Z7c-FP-SfT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orr-lz-fiG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466" y="-1669"/>
         </scene>
         <!--Twitter View Controller - #ia12 on Twitter-->
         <scene sceneID="nVv-r6-sUA">
@@ -1129,7 +1389,7 @@ www.TechColumbus.org</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XgC-Mh-9IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="-1176"/>
+            <point key="canvasLocation" x="412" y="-1330"/>
         </scene>
     </scenes>
     <resources>
@@ -1138,6 +1398,7 @@ www.TechColumbus.org</string>
         <image name="06-arrow-south.png" width="16" height="19"/>
         <image name="39-back.png" width="16" height="16"/>
         <image name="40-forward.png" width="16" height="16"/>
+        <image name="IS04045_TechColumbusLogo_RGB_edit.jpg" width="328" height="158"/>
         <image name="LinkedIn_Logo60px.png" width="60" height="50"/>
         <image name="f_logo.png" width="140" height="140"/>
         <image name="ia12_sponsors.png" width="320" height="339"/>
@@ -1154,6 +1415,9 @@ www.TechColumbus.org</string>
         </class>
         <class className="CategoryViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryViewController.h"/>
+        </class>
+        <class className="EventDetailsMenuTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventDetailsMenuTableViewController.h"/>
         </class>
         <class className="EventDetailsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventDetailsViewController.h"/>
@@ -1223,8 +1487,17 @@ www.TechColumbus.org</string>
         <class className="SemifinalistListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SemifinalistListViewController.h"/>
         </class>
+        <class className="SponsorImageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SponsorImageTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sponsorImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
         <class className="SponsorsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SponsorsViewController.h"/>
+        </class>
+        <class className="TechColumbusTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TechColumbusTableViewController.h"/>
         </class>
         <class className="TweetDetailsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetDetailsViewController.h"/>
@@ -1247,6 +1520,6 @@ www.TechColumbus.org</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bmx-3d-GD3"/>
+        <segue reference="RHa-B8-z7h"/>
     </inferredMetricsTieBreakers>
 </document>

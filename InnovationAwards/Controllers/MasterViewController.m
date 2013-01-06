@@ -185,9 +185,7 @@
     self.pageViews = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < pageCount; ++i) {
         [self.pageViews addObject:[NSNull null]];
-    }
-    
-    
+    }   
     
     // color the toolbar appropriately
     [self.navigationController.toolbar setTintColor:[UIColor blackColor]];

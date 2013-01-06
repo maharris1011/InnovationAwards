@@ -36,7 +36,7 @@
     self.tableView.backgroundView = bgImageView;
     
     // Do any additional setup after loading the view.
-    self.versionCell.detailTextLabel.text = [NSString stringWithFormat:@"Version %@.%@",
+    self.versionCell.detailTextLabel.text = [NSString stringWithFormat:@"%@.%@",
                                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
                                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
 
@@ -76,8 +76,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0 &&
-        (indexPath.row == 1 || indexPath.row == 2))
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbus.org"]];
+        }
+        if (indexPath.row == 1) {
+            NSString *url = [NSString stringWithFormat:@"http://maps.apple.com/?daddr=1275+Kinnear+Road,+Columbus,+Ohio,+43221"];
+
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        }
+    }
+    if (indexPath.section == 1)
     {
         // goto the ia 12 web site
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.isandlot.com"]];
