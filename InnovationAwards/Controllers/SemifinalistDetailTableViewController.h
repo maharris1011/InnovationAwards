@@ -14,9 +14,8 @@
 @interface SemifinalistDetailTableViewController : UITableViewController
 
 // data properties
-@property IASemifinalist *semifinalistData;
-@property NSString *categoryName;
-@property NSString *categoryURL;
+@property IACategory *category;
+@property NSInteger semifinalist;
 
 // UI properties
 @property (nonatomic, strong) SZActionBar *actionBar;
@@ -26,4 +25,5 @@
 @property (strong, nonatomic) IBOutlet UITextView *companyUrlLabel;
 @property (strong, nonatomic) IBOutlet UILabel *storyTextLabel;
 
+- (IBAction)nextPrevPressed:(id)sender;
 @end

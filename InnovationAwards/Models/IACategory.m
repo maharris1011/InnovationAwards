@@ -46,6 +46,27 @@
     return nil;
 }
 
+-(IASemifinalist *)findSemifinalistWithCompany:(NSString *)company
+{
+    for (IASemifinalist *sf in self.semifinalists) {
+        if ([sf.company isEqualToString:company]) {
+            return sf;
+        }
+    }
+    return nil;
+}
+
+-(NSInteger)indexOfSemifinalistWithCompany:(NSString *)company
+{
+    for (NSInteger i = 0; i < [self.semifinalists count]; i++) {
+        IASemifinalist *sf = [self.semifinalists objectAtIndex:i];
+        if ([sf.company isEqualToString:company]) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 -(NSArray *)semifinalists
 {
     if ([_semifinalists count] == 0)

@@ -165,17 +165,16 @@
         
         IASemifinalist *sf = [IASemifinalist semifinalistFromEntity:entity];
         IACategory *cat = [IACategory categoryFromEntity:entity];
-        if (!sf || !cat) {
+        NSInteger index = [cat indexOfSemifinalistWithCompany:sf.company];
+        if (!sf || !cat || (index < 0)) {
             // put up a popup saying "sorry, cant find them"
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Houston, we have a problem" message:@"Sorry, we were unable to find that semifinalist." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
             [alert show];
         }
         else {
             SemifinalistDetailTableViewController *sfDetailView = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"semifinalistDetailView"];
-            
-            sfDetailView.semifinalistData = sf;
-            sfDetailView.categoryName = cat.name;
-            sfDetailView.categoryURL = cat.url;
+            sfDetailView.category = cat;
+            sfDetailView.semifinalist = index;
             if (navigationController == nil)
             {
                 UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;

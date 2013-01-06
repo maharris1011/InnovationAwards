@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IASemifinalist.h"
 
 @interface IACategory : NSObject
 
@@ -16,5 +17,8 @@
 @property (strong, nonatomic) NSArray *semifinalists;
 
 + (IACategory *)categoryFromEntity:(id<SocializeEntity>)url;
+
+-(IASemifinalist *) findSemifinalistWithCompany:(NSString *)company;
+-(NSInteger) indexOfSemifinalistWithCompany:(NSString *)company;
 
 @end

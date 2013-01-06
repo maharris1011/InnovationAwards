@@ -437,6 +437,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="BringShare" id="ntG-gi-sbt">
                         <barButtonItem key="backBarButtonItem" title="Back" id="iiP-UK-cfk"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Hc8-4A-EQ6">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" id="fpc-nB-Wuj">
+                                <rect key="frame" x="244" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="03-arrow-north.png"/>
+                                    <segment title="" image="06-arrow-south.png"/>
+                                </segments>
+                                <color key="tintColor" red="0.63529413938522339" green="0.0" blue="0.24313727021217346" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="nextPrevPressed:" destination="Tn4-aw-5SO" eventType="valueChanged" id="nXk-Gb-d4N"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
@@ -1120,6 +1134,8 @@ www.TechColumbus.org</string>
     </scenes>
     <resources>
         <image name="02-redo.png" width="30" height="26"/>
+        <image name="03-arrow-north.png" width="16" height="19"/>
+        <image name="06-arrow-south.png" width="16" height="19"/>
         <image name="39-back.png" width="16" height="16"/>
         <image name="40-forward.png" width="16" height="16"/>
         <image name="LinkedIn_Logo60px.png" width="60" height="50"/>
@@ -1196,6 +1212,7 @@ www.TechColumbus.org</string>
         <class className="SemifinalistDetailTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SemifinalistDetailTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="nextPrevPressed:"/>
                 <relationship kind="outlet" name="categoryNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="companyUrlLabel" candidateClass="UITextView"/>

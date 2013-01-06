@@ -12,6 +12,10 @@
 		4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */; };
 		4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */; };
 		4D426A6B16992FF500D96CC4 /* LinkedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */; };
+		4D426A71169933F000D96CC4 /* 03-arrow-north.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6D169933F000D96CC4 /* 03-arrow-north.png */; };
+		4D426A72169933F000D96CC4 /* 03-arrow-north@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */; };
+		4D426A73169933F000D96CC4 /* 06-arrow-south.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6F169933F000D96CC4 /* 06-arrow-south.png */; };
+		4D426A74169933F000D96CC4 /* 06-arrow-south@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A70169933F000D96CC4 /* 06-arrow-south@2x.png */; };
 		4D501932167548130031B9F8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D501930167548130031B9F8 /* MasterViewController.m */; };
 		4D501936167548490031B9F8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D501933167548490031B9F8 /* Default.png */; };
 		4D501937167548490031B9F8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D501934167548490031B9F8 /* Default@2x.png */; };
@@ -357,6 +361,10 @@
 		4D26A3C8167846BF006D43A2 /* UIView+SSGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSGradient.m"; sourceTree = "<group>"; };
 		4D426A6916992FF500D96CC4 /* LinkedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedInViewController.h; path = InnovationAwards/Controllers/LinkedInViewController.h; sourceTree = SOURCE_ROOT; };
 		4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinkedInViewController.m; path = InnovationAwards/Controllers/LinkedInViewController.m; sourceTree = SOURCE_ROOT; };
+		4D426A6D169933F000D96CC4 /* 03-arrow-north.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-arrow-north.png"; sourceTree = "<group>"; };
+		4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-arrow-north@2x.png"; sourceTree = "<group>"; };
+		4D426A6F169933F000D96CC4 /* 06-arrow-south.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-arrow-south.png"; sourceTree = "<group>"; };
+		4D426A70169933F000D96CC4 /* 06-arrow-south@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-arrow-south@2x.png"; sourceTree = "<group>"; };
 		4D50192F167548130031B9F8 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4D501930167548130031B9F8 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		4D501933167548490031B9F8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -767,6 +775,10 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D426A6D169933F000D96CC4 /* 03-arrow-north.png */,
+				4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */,
+				4D426A6F169933F000D96CC4 /* 06-arrow-south.png */,
+				4D426A70169933F000D96CC4 /* 06-arrow-south@2x.png */,
 				4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */,
 				4DA89BDC1695FB670067E3C5 /* 38-house.png */,
 				4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */,
@@ -1010,11 +1022,11 @@
 		4DCECFF91675474000272F0B /* InnovationAwards */ = {
 			isa = PBXGroup;
 			children = (
-				4DB8F8811675D8E50017CD64 /* Vendor */,
-				4D50192B167547E70031B9F8 /* Models */,
-				4D50192C167547E70031B9F8 /* Views */,
-				4D50192A167547DB0031B9F8 /* Controllers */,
 				4D501928167547D40031B9F8 /* Assets */,
+				4D50192A167547DB0031B9F8 /* Controllers */,
+				4D50192B167547E70031B9F8 /* Models */,
+				4DB8F8811675D8E50017CD64 /* Vendor */,
+				4D50192C167547E70031B9F8 /* Views */,
 				4DCED0021675474000272F0B /* AppDelegate.h */,
 				4DCED0031675474100272F0B /* AppDelegate.m */,
 				4DCECFFA1675474000272F0B /* Supporting Files */,
@@ -1625,6 +1637,10 @@
 				4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */,
 				4DD6D72E16960FA500E2927E /* ia12_sponsors.png in Resources */,
 				4DD6D72F16960FA500E2927E /* ia12_sponsors@2x.png in Resources */,
+				4D426A71169933F000D96CC4 /* 03-arrow-north.png in Resources */,
+				4D426A72169933F000D96CC4 /* 03-arrow-north@2x.png in Resources */,
+				4D426A73169933F000D96CC4 /* 06-arrow-south.png in Resources */,
+				4D426A74169933F000D96CC4 /* 06-arrow-south@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

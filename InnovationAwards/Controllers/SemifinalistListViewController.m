@@ -30,12 +30,8 @@
         // find the right URL for the selected index
         
         SemifinalistDetailTableViewController *detail = (SemifinalistDetailTableViewController *)[segue destinationViewController];
-        
-        detail.categoryName = self.category.name;
-        detail.categoryURL = self.category.url;
-        NSArray *semifinalistList = [self.category semifinalists];
-        IASemifinalist *semifinalist = [semifinalistList objectAtIndex:indexPath.row];
-        detail.semifinalistData = semifinalist;
+        detail.category = self.category;
+        detail.semifinalist = indexPath.row;
     }
     
 }
