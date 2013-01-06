@@ -108,13 +108,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.toolbarHidden = NO;
     [self.tableView reloadData];
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    self.navigationController.toolbarHidden = YES;
+//    self.navigationController.toolbarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning

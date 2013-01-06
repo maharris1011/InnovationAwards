@@ -34,13 +34,10 @@
     [self.webView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height-20-44-44)];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    self.navigationController.toolbarHidden = YES;
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = NO;
 }
 

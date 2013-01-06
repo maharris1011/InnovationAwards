@@ -73,7 +73,7 @@
     self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.screen_name];
     UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:self.profile_url];
     self.profileImageView.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationDefault];
-    
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewDidLoad
@@ -113,7 +113,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.toolbarHidden = NO;
     [self configureView];
 }
 

@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *directionsButton;
 
 - (IBAction)registerButtonWasPressed:(id)sender;
+- (IBAction)changePage:(id)sender;
 
 @end

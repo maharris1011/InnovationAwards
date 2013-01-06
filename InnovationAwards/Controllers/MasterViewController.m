@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *pageImages;
 @property (nonatomic, strong) NSArray *pageTransitions; // segues to other views
 @property (nonatomic, strong) NSMutableArray *pageViews;
+@property BOOL pageControlIsChangingPage;
 
 - (void)loadVisiblePages;
 - (void)loadPage:(NSInteger)page;
@@ -35,6 +36,7 @@
 @synthesize pageImages = _pageImages;
 @synthesize pageViews = _pageViews;
 @synthesize registerButton = _registerButton;
+@synthesize pageControlIsChangingPage;
 
 - (void)awakeFromNib
 {
@@ -96,6 +98,7 @@
         CGRect frame = self.scrollView.bounds;
         frame.origin.x = frame.size.width * page;
         frame.origin.y = 0.0f;
+        frame = CGRectInset(frame, 10.0f, 0.0f);
         
         // 3
         UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImages objectAtIndex:page]];
@@ -142,10 +145,8 @@
     [self loadVisiblePages];
 }
 
-- (void)viewDidLoad
+- (void)configureView
 {
-    [super viewDidLoad];
-
     // set the background image
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
@@ -165,7 +166,7 @@
     [self.directionsButton addGradient:gradient];
     self.directionsButton.layer.borderColor = darkPurple.CGColor;
     self.directionsButton.layer.borderWidth = 1;
-
+    
     // set up the images we're going to scroll through
     self.pageImages = [NSArray arrayWithObjects:
                        [UIImage imageNamed:@"ia12_app_callouts_1.png"],
@@ -194,39 +195,37 @@
         [self.pageViews addObject:[NSNull null]];
     }
     
+    
+    
+    // color the toolbar appropriately
+    [self.navigationController.toolbar setTintColor:[UIColor blackColor]];
+    
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
     // set the scrollview so that we can transition to the next view when we tap on it.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
     singleTapGestureRecognizer.numberOfTapsRequired = 1;
     singleTapGestureRecognizer.enabled = YES;
     singleTapGestureRecognizer.cancelsTouchesInView = NO;
     [self.scrollView addGestureRecognizer:singleTapGestureRecognizer];
-    
-    // move the buttons so they're just over top of the "location" frame
-    NSInteger buttonWidth = self.registerButton.frame.size.width;
-    NSInteger buttonHeight = self.registerButton.frame.size.height;
-    NSInteger buttonY = self.locationView.frame.origin.y - 25 - buttonHeight;
-        
-    CGRect registerButtonFrame = self.registerButton.frame;
-    CGRect directionsButtonFrame = self.directionsButton.frame;
-    
-    self.registerButton.frame = CGRectMake(registerButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
-    self.directionsButton.frame = CGRectMake(directionsButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
-    
+
     // set up the location window so we can click & get directions
     UITapGestureRecognizer *tapForDirections = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleLocationTap:)];
     tapForDirections.numberOfTapsRequired = 1;
     tapForDirections.enabled = YES;
     tapForDirections.cancelsTouchesInView = NO;
     [self.locationView addGestureRecognizer:tapForDirections];
-    
-    // color the toolbar appropriately
-    [self.navigationController.toolbar setTintColor:[UIColor blackColor]];
-    
-    
+
+    [self configureView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
 }
 
@@ -238,18 +237,36 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
 
-    NSLog(@"scrollView w= %f, h= %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    NSLog(@"pageControl w= %f, h= %f", self.pageControl.frame.size.width, self.scrollView.frame.size.height);
+    self.navigationController.toolbarHidden = YES;    
+    
     // 4
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImages.count, pagesScrollViewSize.height);
 
-    NSLog(@"pagesScrollViewSize.height = %f", pagesScrollViewSize.height);
-    
-    [self.pageControl setFrame:CGRectMake(0, 247, 320, 36)];
+    [self.pageControl setFrame:CGRectMake(0, pagesScrollViewSize.height, 320, 36)];
     
     // 5
     [self loadVisiblePages];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    // move the page control just below the clickable images
+    CGSize pagesScrollViewSize = self.scrollView.frame.size;
+    [self.pageControl setFrame:CGRectMake(0, pagesScrollViewSize.height, 320, 36)];
+    
+    // move the buttons to be midway between "location" and the bottom of the pageControl
+    NSInteger buttonWidth = self.registerButton.frame.size.width;
+    NSInteger buttonHeight = self.registerButton.frame.size.height;
+    NSInteger bottomOfPageControl = self.pageControl.frame.origin.y + self.pageControl.frame.size.height;
+    NSInteger buttonY = bottomOfPageControl + ((self.locationView.frame.origin.y - bottomOfPageControl - buttonHeight) / 2);
+    
+    CGRect registerButtonFrame = self.registerButton.frame;
+    CGRect directionsButtonFrame = self.directionsButton.frame;
+    
+    self.registerButton.frame = CGRectMake(registerButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
+    self.directionsButton.frame = CGRectMake(directionsButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -267,6 +284,20 @@
 
 - (IBAction)registerButtonWasPressed:(id)sender {
     // do nothing -- handled in the segue
+}
+
+
+#pragma mark PageViewControllerDelegate messages
+
+- (IBAction)changePage:(id)sender {
+    /*
+     *  Change the scroll view
+     */
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+    pageControlIsChangingPage = YES;
 }
 
 @end
