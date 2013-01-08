@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LinkedInViewController : UIViewController
+@interface LinkedInViewController : UIViewController<UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *actionButton;
+
 - (IBAction)forwardPressed:(id)sender;
 - (IBAction)backwardPressed:(id)sender;
+- (IBAction)actionButtonPressed:(id)sender;
 
 @end

@@ -20,6 +20,7 @@
 @synthesize conventionCenter = _conventionCenter;
 @synthesize techColumbus = _techColumbus;
 @synthesize columbus = _columbus;
+@synthesize mkpCC = _mkpCC;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,26 +40,19 @@
     self.techColumbus = CLLocationCoordinate2DMake(39.9981, -83.04161);
     self.columbus = CLLocationCoordinate2DMake(39.961100, -82.998900);
     
+    self.mkpCC = [[MKPointAnnotation alloc] init];
+    self.mkpCC.title = @"Innovation Awards - Convention Center";
+    self.mkpCC.subtitle = @"400 N. High St., Battelle Hall";
+    self.mkpCC.coordinate = self.conventionCenter;
     
-    MKPointAnnotation *mkp = [[MKPointAnnotation alloc] init];
-    mkp.title = @"TechColumbus";
-    mkp.subtitle = @"1275 Kinnear Rd.";
-    mkp.coordinate = self.techColumbus;
-    
-    MKPointAnnotation *mkpCC = [[MKPointAnnotation alloc] init];
-    mkpCC.title = @"Innovation Awards - Convention Center";
-    mkpCC.subtitle = @"400 N. High St., Battelle Hall";
-    mkpCC.coordinate = self.conventionCenter;
-    
-    [self.mapView addAnnotation:mkp];
-    [self.mapView addAnnotation:mkpCC];
+    [self.mapView addAnnotation:self.mkpCC];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.mapView setRegion:MKCoordinateRegionMake(self.columbus, MKCoordinateSpanMake(0.030f, 0.030f)) animated:YES];
-    
+    [self.mapView selectAnnotation:self.mkpCC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

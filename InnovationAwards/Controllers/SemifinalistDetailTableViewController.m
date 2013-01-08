@@ -57,10 +57,12 @@
         }
     };
     
-    if (self.actionBar == nil) {
+    if (self.actionBar == nil)
+    {
         self.actionBar = [SZActionBarUtils showActionBarWithViewController:self.parentViewController entity:entity options:options];
     }
-    else {
+    else
+    {
         self.actionBar.entity = entity;
     }
     self.actionBar.shareOptions = options;
@@ -119,7 +121,6 @@
 - (void)configureView
 {
     // set the labels accordingly
-    self.navigationItem.title = self.sfCurrent.company;
     
     // name label
     self.categoryNameLabel.text = self.category.name;
@@ -179,6 +180,7 @@
     
     if (url && [url length] > 0)
     {
+        NSLog(@"Detail Page opening url: %@", url);
         NSURL *urlToStart = [NSURL URLWithString:url];
         [[UIApplication sharedApplication] openURL:urlToStart];
     }
@@ -198,52 +200,93 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
     if (indexPath.section == 1)
     {
-        // social buttons
-        if (indexPath.row == 0)
+        NSString *url = nil;
+        switch (cell.tag)
         {
-            // facebook
-            [self openURLifAble:self.sfCurrent.facebook];
-        }
-        else if (indexPath.row == 1)
-        {
-            // linkedin
-            [self openURLifAble:self.sfCurrent.linkedin];
-        }
-        else if (indexPath.row == 2)
-        {
-            // twitter
-            [self openURLifAble:self.sfCurrent.twitter];
+            case 500:
+                url = self.sfCurrent.site_url;
+                break;
+            case 502:
+                url = self.sfCurrent.facebook;
+                break;
+            case 501:
+                url = self.sfCurrent.linkedin;
+                break;
+            case 503:
+                url = self.sfCurrent.twitter;
+                break;
+            default:
+                break;
         }
         
+        if (url)
+        {
+            [self openURLifAble:url];
+        }
     }
 }
 
 
+
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*) indexPath
 {
-    if (indexPath.section == 0)
+    if (indexPath.section == 0 && indexPath.row == 3)
     {
-        if (indexPath.row == 1)
+        // story path, calculate height of the story & resize everything
+        NSString *storyText = self.sfCurrent.bio;
+        UIFont *font = [UIFont systemFontOfSize:14.0];
+        CGSize initialSize = CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT); // -40 for cell padding
+        CGSize sz = [storyText sizeWithFont:font constrainedToSize:initialSize];
+        [self.storyTextLabel setFrame:CGRectMake(0, 0, sz.width, sz.height)];
+        return sz.height+40;
+    }
+    else if (indexPath.section == 0)
+    {
+        if (indexPath.row == 2)
         {
-            // story path, calculate height of the story & resize everything
-            NSString *storyText = self.sfCurrent.bio;
-            UIFont *font = [UIFont systemFontOfSize:14.0];
-            CGSize initialSize = CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT); // -40 for cell padding
-            CGSize sz = [storyText sizeWithFont:font constrainedToSize:initialSize];
-            [self.storyTextLabel setFrame:CGRectMake(0, 0, sz.width, sz.height)];
-            return sz.height+40;
-        }
-        else
-        {
-            return 117;
+            // "contact" row, could be empty
+            if (self.sfCurrent.contact == nil || [self.sfCurrent.contact length] == 0)
+            {
+                return 0;
+            }
         }
     }
-    else {
-        // otherwise, we have a "regular" cell
-        return 44;
+    else if (indexPath.section == 1)
+    {
+        if (indexPath.row == 0) {
+            // company link row
+            if (self.sfCurrent.site_url == nil || [self.sfCurrent.site_url length] == 0) {
+                return 0;
+            }
+        }
+        if (indexPath.row == 1) {
+            // linkedin row
+            if (self.sfCurrent.linkedin == nil) {
+                return 0;
+            }
+        }
+        if (indexPath.row == 2) {
+            // facebook
+            if (self.sfCurrent.facebook == nil) {
+                return 0;
+            }
+        }
+        if (indexPath.row == 3) {
+            // twitter
+            if (self.sfCurrent.twitter == nil) {
+                return 0;
+            }
+        }
+        
     }
+
+    // otherwise, we have a "regular" cell
+    // figure out how high it has to be to render the text
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 - (IBAction)nextPrevPressed:(id)sender {

@@ -16,5 +16,6 @@
 @property (nonatomic, assign) CLLocationCoordinate2D techColumbus;
 @property (nonatomic, assign) CLLocationCoordinate2D columbus;
 
+@property MKPointAnnotation *mkpCC;
 
 @end

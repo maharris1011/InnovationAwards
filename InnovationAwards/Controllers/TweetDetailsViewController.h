@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Twitter/Twitter.h>
 
-@interface TweetDetailsViewController : UITableViewController {
+@interface TweetDetailsViewController : UITableViewController<UIActionSheetDelegate> {
     TWTweetComposeViewController *_tweetView;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -27,9 +27,11 @@
 @property (strong, nonatomic, readonly) NSString *sent_date;
 @property (strong, nonatomic, readonly) NSString *created_date;
 @property (strong, nonatomic, readonly) NSString *profile_url;
+@property (strong, nonatomic, readonly) NSString *identifier;
 
 - (IBAction)replyButtonPressed:(id)sender;
 - (IBAction)retweetButtonPressed:(id)sender;
 - (IBAction)composeButtonPressed:(id)sender;
+- (IBAction)actionButtonPressed:(id)sender;
 
 @end

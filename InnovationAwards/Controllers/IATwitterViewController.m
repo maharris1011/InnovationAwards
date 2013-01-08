@@ -16,6 +16,8 @@
 
 @interface IATwitterViewController () {
     NSArray *_tweets;
+    NSString *_szUrl;
+    NSString *_szTwitterUrl;
 }
 
 @property (nonatomic, strong) NSArray *tweets;
@@ -28,6 +30,25 @@
 }
 
 @synthesize tweets = _tweets;
+
+#pragma mark -- utilities
+- (void)asynchronousGetImageAtUrl:(NSString *)url onComplete:(void(^)(UIImage *image))complete
+{
+    __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setCompletionBlock:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [UIImage imageWithData:[request responseData]];
+            
+            if (complete) {
+                complete(image);
+            }
+        });
+    }];
+    [request startAsynchronous];
+}
+
+
+#pragma mark -- UIViewController stuff
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -43,9 +64,7 @@
         
         
     }
-    
 }
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -66,6 +85,10 @@
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
     [bgImageView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     self.tableView.backgroundView = bgImageView;
+
+    // for when we "open from safari"
+    NSString *query = @"https://m.twitter.com/search?q=#ia12 include:retweets&src=typd";
+    _szUrl = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     pull = [[PullToRefreshView alloc] initWithScrollView:(UIScrollView *) self.tableView];
     [pull setDelegate:self];
@@ -149,7 +172,7 @@
     NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
     NSDictionary *user = [tweet objectForKey:@"user"];
 
-    UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
+    __block UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *tweetText = (UILabel*)[cell viewWithTag:2];
     UILabel *sentOn = (UILabel*)[cell viewWithTag:3];
@@ -163,9 +186,19 @@
     sentOn.text = [NSString stringWithFormat:@"Sent: %@", [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES]];
     userAt.text = [NSString stringWithFormat:@"@%@", [user objectForKey:@"screen_name"]];
     
-    NSString *url = [user objectForKey:@"profile_image_url"];
-    UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
-    profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:0 interpolationQuality:kCGInterpolationDefault];
+    __block NSString *url = [user objectForKey:@"profile_image_url"];
+    __block UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
+    // use default image for now
+    if (profileThumb == nil)
+    {        
+        // get the photo from the web
+        [self asynchronousGetImageAtUrl:url onComplete:^(UIImage *image) {
+            [[ImageCache sharedStore] setImage:image forKey:url];
+            profileThumb = image;
+            profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
+        }];
+    }
+    profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
 
     UIView *bgView = [self gradientViewForCell:cell];
     
@@ -188,7 +221,7 @@
 {
     // call out to Twitter
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"20", @"count",
-                          @"#ia12", @"q", @"recent", @"result_type", nil];
+                          @"#ia12 include:retweets", @"q", @"recent", @"result_type", nil];
     
     [SZTwitterUtils getWithViewController:self
                                      path:@"/1.1/search/tweets.json"
@@ -220,4 +253,31 @@
     [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
     [self presentModalViewController:_tweetView animated:YES];
 }
+
+- (IBAction)actionButtonPressed:(id)sender
+{
+    // show dialog for open in facebook app and open in safari
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open in Safari", nil];
+    as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [as showFromToolbar:self.navigationController.toolbar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [actionSheet cancelButtonIndex])
+    {
+        // 1 = open in safari
+        NSURL *url = [NSURL URLWithString:_szUrl];
+        
+        // check it's open-able and open it!
+        if ([[UIApplication sharedApplication] canOpenURL:url])
+        {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+
+}
+
+
+
 @end

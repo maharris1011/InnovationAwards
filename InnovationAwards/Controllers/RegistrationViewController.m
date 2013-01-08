@@ -29,10 +29,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.webView setFrame:CGRectMake(0, 44, 320, [UIScreen mainScreen].bounds.size.height-20-44)];
+
     NSURL *url = [NSURL URLWithString:@"https://secure.groundworkgroup.org/register/event/innovation"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
     [self.webView loadRequest:request];
+    
     
 }
 

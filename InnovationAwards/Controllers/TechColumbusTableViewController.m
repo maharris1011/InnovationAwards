@@ -48,21 +48,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         // goto the ia 12 web site
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbus.org"]];
     }
-}
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    switch (section) {
-        case 0:
-            return @"The Future Is Here";
-        default:
-            return nil;
+    
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        NSString *addrTechColumbus = [[NSString stringWithFormat:@"1275 Kinnear Rd., Columbus, OH 43221"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *url = nil;
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]])
+        {
+            // open google maps
+            url = [NSString stringWithFormat:@"comgooglemaps://?q=%@", addrTechColumbus];
+        }
+        else
+        {
+            // open maps in safari
+            url = [NSString stringWithFormat:@"http://maps.apple.com/?q=%@", addrTechColumbus];
+        }
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
 }
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {

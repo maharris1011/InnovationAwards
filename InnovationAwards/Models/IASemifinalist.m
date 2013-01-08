@@ -48,7 +48,7 @@
         _site_url = [[e firstChildWithId:@"sf_website"].attributes objectForKey:@"href"];
         
         
-        _bio = [[e firstChildWithId:@"sf_bio"] firstChild].content;
+        _bio = [[[e firstChildWithId:@"sf_bio"] firstChild].content substringFromIndex:2];
         _linkedin = [[e firstChildWithId:@"sf_linkedin"].attributes objectForKey:@"href"];
         _facebook = [[e firstChildWithId:@"sf_facebook"].attributes objectForKey:@"href"];
         _twitter = [[e firstChildWithId:@"sf_twitter"].attributes objectForKey:@"href"];

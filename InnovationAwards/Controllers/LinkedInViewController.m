@@ -8,7 +8,9 @@
 
 #import "LinkedInViewController.h"
 
-@interface LinkedInViewController ()
+@interface LinkedInViewController () {
+    NSString *_szUrl;
+}
 
 @end
 
@@ -26,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSURL *URL = [NSURL URLWithString:@"http://www.linkedin.com/company/techcolumbus"];
+    _szUrl = @"https://www.linkedin.com/groups?gid=39787";
+    NSURL *URL = [NSURL URLWithString:_szUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
 }
 
@@ -43,8 +46,10 @@
 
 - (void)viewDidUnload {
     [self setWebView:nil];
+    [self setActionButton:nil];
     [super viewDidUnload];
 }
+
 - (IBAction)forwardPressed:(id)sender {
     [self.webView goForward];
 }
@@ -59,4 +64,27 @@
     self.navigationController.toolbarHidden = NO;
 }
 
+- (IBAction)actionButtonPressed:(id)sender
+{
+    // show dialog for open in facebook app and open in safari
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open in Safari", @"Open LinkedIn", nil];
+    as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [as showFromToolbar:self.navigationController.toolbar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [actionSheet cancelButtonIndex])
+    {
+        // 1 = open in safari
+        // make a real URL
+        NSURL *url = [NSURL URLWithString:_szUrl];
+        
+        // check it's open-able and open it!
+        if ([[UIApplication sharedApplication] canOpenURL:url])
+        {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+}
 @end

@@ -218,21 +218,33 @@
                                 <action selector="backwardPressed:" destination="ixa-bg-enq" id="4XH-5I-JGL"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="XoK-8t-0hM"/>
                         <barButtonItem image="40-forward.png" style="plain" id="jyv-eF-D6b">
                             <connections>
                                 <action selector="forwardPressed:" destination="ixa-bg-enq" id="YwC-j4-zz3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="1fG-RV-GdZ"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="gwk-77-PTt"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="P9h-NV-e5z"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="pcb-CS-KmS"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="HYg-NL-l3p"/>
+                        <barButtonItem style="plain" systemItem="action" id="XYh-U4-AVK">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="ixa-bg-enq" id="5S2-nZ-4Du"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="IA12 on LinkedIn" id="SP6-5l-j15"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="actionButton" destination="XYh-U4-AVK" id="GYm-wd-MTv"/>
                         <outlet property="webView" destination="Nih-Wb-5kb" id="4du-9b-gGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0U-uB-UEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2595" y="-504"/>
+            <point key="canvasLocation" x="3626" y="148"/>
         </scene>
         <!--Semifinalist List View Controller - IA12 Semi-Finalists-->
         <scene sceneID="o7L-yE-WDM">
@@ -280,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="2502" y="99"/>
         </scene>
-        <!--Semifinalist Detail Table View Controller - BringShare-->
+        <!--Semifinalist Detail Table View Controller-->
         <scene sceneID="tgG-R9-Rz9">
             <objects>
                 <tableViewController storyboardIdentifier="semifinalistDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tn4-aw-5SO" customClass="SemifinalistDetailTableViewController" sceneMemberID="viewController">
@@ -288,65 +300,72 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="separatorColor" red="0.78039222959999999" green="0.42352944609999998" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="NRe-HS-sPa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="183" id="DtQ-Ct-tYH">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="184"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Dng-f7-Eau" style="IBUITableViewCellStyleDefault" id="9S2-PQ-3Hs">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="182"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BringShare" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ec-nl-eFz">
-                                                    <rect key="frame" x="20" y="40" width="260" height="73"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dng-f7-Eau">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.61176472900000001" green="0.0" blue="0.6549019814" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Justin Spring, Co-Founder" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9vK-BH-1uv">
-                                                    <rect key="frame" x="20" y="93" width="260" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="etj-k1-PN0" style="IBUITableViewCellStyleDefault" id="igh-sh-QVx">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Company" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="etj-k1-PN0">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" id="JIm-JJ-p20">
-                                                    <rect key="frame" x="13" y="131" width="260" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="http://www.bringshare.com">
-                                                            <attributes>
-                                                                <font key="NSFont" size="14" name="Helvetica"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Outstanding Startup Business" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UOb-8E-OxZ">
-                                                    <rect key="frame" x="20" y="7" width="260" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AMs-3B-IzX" style="IBUITableViewCellStyleDefault" id="1yf-Hb-TeG">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Team" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AMs-3B-IzX">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="75E-Lk-pdl" rowHeight="300" style="IBUITableViewCellStyleDefault" id="tQg-8i-EvV">
-                                        <rect key="frame" x="0.0" y="194" width="320" height="301"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="301"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="75E-Lk-pdl">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="75E-Lk-pdl">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="299"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -361,66 +380,92 @@
                             </tableViewSection>
                             <tableViewSection id="PLe-DV-Jvl">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KnN-tU-KBd" imageView="8FN-4N-DFG" rowHeight="46" style="IBUITableViewCellStyleDefault" id="MGJ-jh-p1p">
-                                        <rect key="frame" x="0.0" y="515" width="320" height="47"/>
+                                    <tableViewCell tag="500" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="Nay-1D-FBw">
+                                        <rect key="frame" x="0.0" y="464" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="45"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Follow on Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KnN-tU-KBd">
-                                                    <rect key="frame" x="55" y="0.0" width="215" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="f_logo.png" id="8FN-4N-DFG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="JIm-JJ-p20">
+                                                    <rect key="frame" x="0.0" y="10" width="286" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="http://www.bringshare.com">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hKo-tN-bfg" imageView="fZH-4s-oCO" rowHeight="46" style="IBUITableViewCellStyleDefault" id="H1j-ii-ASH">
-                                        <rect key="frame" x="0.0" y="562" width="320" height="46"/>
+                                    <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hKo-tN-bfg" imageView="fZH-4s-oCO" rowHeight="46" style="IBUITableViewCellStyleDefault" id="H1j-ii-ASH">
+                                        <rect key="frame" x="0.0" y="519" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Connect on LinkedIn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hKo-tN-bfg">
-                                                    <rect key="frame" x="64" y="0.0" width="206" height="45"/>
+                                                    <rect key="frame" x="54" y="0.0" width="216" height="45"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="LinkedIn_Logo60px.png" id="fZH-4s-oCO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="45"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="linkedinlogo.jpg" id="fZH-4s-oCO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ekg-mn-LRR" imageView="ul3-4Q-lWe" rowHeight="46" style="IBUITableViewCellStyleDefault" id="ZwN-qp-GYx">
-                                        <rect key="frame" x="0.0" y="608" width="320" height="47"/>
+                                    <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KnN-tU-KBd" imageView="8FN-4N-DFG" rowHeight="46" style="IBUITableViewCellStyleDefault" id="MGJ-jh-p1p">
+                                        <rect key="frame" x="0.0" y="565" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Follow on Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KnN-tU-KBd">
+                                                    <rect key="frame" x="54" y="0.0" width="216" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="facebooklogo.jpg" id="8FN-4N-DFG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell tag="503" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ekg-mn-LRR" imageView="ul3-4Q-lWe" rowHeight="46" style="IBUITableViewCellStyleDefault" id="ZwN-qp-GYx">
+                                        <rect key="frame" x="0.0" y="611" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Follow on Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ekg-mn-LRR">
-                                                    <rect key="frame" x="55" y="0.0" width="215" height="45"/>
+                                                    <rect key="frame" x="54" y="0.0" width="216" height="45"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="twitter-bird-white-on-blue.png" id="ul3-4Q-lWe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="twitterlogo.jpg" id="ul3-4Q-lWe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -438,7 +483,7 @@
                             <outlet property="delegate" destination="Tn4-aw-5SO" id="AUT-2i-hzn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BringShare" id="ntG-gi-sbt">
+                    <navigationItem key="navigationItem" id="ntG-gi-sbt">
                         <barButtonItem key="backBarButtonItem" title="Back" id="iiP-UK-cfk"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Hc8-4A-EQ6">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" id="fpc-nB-Wuj">
@@ -457,16 +502,16 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
-                        <outlet property="categoryNameLabel" destination="UOb-8E-OxZ" id="BAI-My-2uk"/>
-                        <outlet property="companyNameLabel" destination="0ec-nl-eFz" id="3dW-Zk-Cet"/>
-                        <outlet property="companyUrlLabel" destination="JIm-JJ-p20" id="xf6-Ye-bza"/>
-                        <outlet property="representativeNameLabel" destination="9vK-BH-1uv" id="HXB-h8-BAr"/>
+                        <outlet property="categoryNameLabel" destination="Dng-f7-Eau" id="tK8-xl-G0W"/>
+                        <outlet property="companyNameLabel" destination="etj-k1-PN0" id="vkI-0F-Ez1"/>
+                        <outlet property="companyUrlLabel" destination="JIm-JJ-p20" id="Qsa-d7-ODu"/>
+                        <outlet property="representativeNameLabel" destination="AMs-3B-IzX" id="T2F-sW-v9Z"/>
                         <outlet property="storyTextLabel" destination="75E-Lk-pdl" id="9j9-0D-bOV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmH-gQ-Tg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3131" y="99"/>
+            <point key="canvasLocation" x="3120" y="99"/>
         </scene>
         <!--Sponsors View Controller - IA12 Sponsors-->
         <scene sceneID="pbQ-pA-VuZ">
@@ -496,7 +541,7 @@
                                             <rect key="frame" x="10" y="43" width="67" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" red="0.63921570777893066" green="0.90588241815567017" blue="0.066666670143604279" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="textColor" red="0.98039221759999995" green="0.98823535439999999" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
@@ -657,11 +702,12 @@ Columbus, OH 43215
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="The Future is Here" id="g9c-2b-wvM">
+                            <tableViewSection id="g9c-2b-wvM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="2WA-ZD-Yf7">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="63"/>
@@ -675,15 +721,33 @@ Columbus, OH 43215
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="WZG-lV-Oa2" rowHeight="44" style="IBUITableViewCellStyleDefault" id="uBP-fG-oBZ">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="The Future is Here!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WZG-lV-Oa2">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="465" id="Fsv-M7-i4l">
-                                        <rect key="frame" x="0.0" y="111" width="320" height="466"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="466"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="464"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="6nd-29-GWq">
-                                                    <rect key="frame" x="10" y="11" width="270" height="453"/>
+                                                    <rect key="frame" x="10" y="0.0" width="270" height="453"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">TechColumbus is the catalyst for technology-driven economic growth in Central Ohio. Our goal is to accelerate innovation, business growth, job creation, and prosperity in the 15-county region of Central Ohio. We work to create new companies, strengthen existing businesses, open doors to technology resources, and support the attraction and retention of technology-based businesses and talented people.
@@ -691,7 +755,7 @@ Columbus, OH 43215
 Our partners make it possible. The success of TechColumbus and the region is only possible when working side-by-side with our key partners across public, private, academic, and institutional organizations. Additionally, TechColumbus' TechStart program is predominately funded by the Ohio Third Frontier and a key factor in growing the innovation economy in Central Ohio. 
 
 www.TechColumbus.org</string>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -704,7 +768,7 @@ www.TechColumbus.org</string>
                             <tableViewSection id="JbB-mH-uYl">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="8fJ-uS-bEJ" rowHeight="96" style="IBUITableViewCellStyleDefault" id="pCA-n5-x99">
-                                        <rect key="frame" x="0.0" y="597" width="320" height="97"/>
+                                        <rect key="frame" x="0.0" y="605" width="320" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="95"/>
@@ -717,7 +781,7 @@ www.TechColumbus.org</string>
 Columbus, OH 43221
 614-340-1833</string>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -725,7 +789,7 @@ Columbus, OH 43221
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="94" id="85c-UL-esV">
-                                        <rect key="frame" x="0.0" y="694" width="320" height="95"/>
+                                        <rect key="frame" x="0.0" y="702" width="320" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="93"/>
@@ -735,13 +799,13 @@ Columbus, OH 43221
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">TechColumbus.org
+                                                    <string key="text">www.techcolumbus.org
 www.linkedin.com/company/techcolumbus
 www.twitter.com/techcolumbus
 www.facebook.com/TechColumbusOhio</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1029,7 +1093,7 @@ www.facebook.com/TechColumbusOhio</string>
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="About The Innovation Awards" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NVU-zd-EUv">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Event Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NVU-zd-EUv">
                                                     <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
@@ -1050,7 +1114,7 @@ www.facebook.com/TechColumbusOhio</string>
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Sponsors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wIj-12-OKO">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Our Sponsors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wIj-12-OKO">
                                                     <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
@@ -1146,6 +1210,12 @@ www.facebook.com/TechColumbusOhio</string>
                                 <action selector="composeButtonPressed:" destination="3mW-lf-3TR" id="ak8-EN-glQ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mkj-7A-nTO"/>
+                        <barButtonItem style="plain" systemItem="action" id="89m-sA-AOt">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="3mW-lf-3TR" id="7Rb-0I-kdb"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="#ia12 on Twitter" id="Nbe-38-Tza">
                         <barButtonItem key="backBarButtonItem" title="Back" id="RNl-49-V1F"/>
@@ -1237,16 +1307,20 @@ www.facebook.com/TechColumbusOhio</string>
                                 <action selector="replyButtonPressed:" destination="g76-do-NOe" id="MEg-GP-fRz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="p96-Xc-suQ"/>
+                        <barButtonItem style="plain" systemItem="compose" id="sgL-Dr-GLJ">
+                            <connections>
+                                <action selector="composeButtonPressed:" destination="g76-do-NOe" id="JyY-m5-its"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem image="02-redo.png" style="plain" id="w2p-6D-SYJ">
                             <connections>
                                 <action selector="retweetButtonPressed:" destination="g76-do-NOe" id="IsX-op-cf3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cTT-IY-dGW"/>
-                        <barButtonItem style="plain" systemItem="compose" id="sgL-Dr-GLJ">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="p96-Xc-suQ"/>
+                        <barButtonItem style="plain" systemItem="action" id="ndS-P7-SBE">
                             <connections>
-                                <action selector="composeButtonPressed:" destination="g76-do-NOe" id="JyY-m5-its"/>
+                                <action selector="actionButtonPressed:" destination="g76-do-NOe" id="bdX-i6-iot"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -1265,7 +1339,7 @@ www.facebook.com/TechColumbusOhio</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gww-pN-U1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4149" y="-1330"/>
+            <point key="canvasLocation" x="4141" y="-1330"/>
         </scene>
         <!--Facebook Web View Controller - IA12 on Facebook-->
         <scene sceneID="OwH-Ok-yiu">
@@ -1292,15 +1366,27 @@ www.facebook.com/TechColumbusOhio</string>
                                 <action selector="backPressed:" destination="lZY-Lb-RaW" id="iD1-wT-Afp"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="0Db-sH-KWw"/>
                         <barButtonItem image="40-forward.png" style="plain" id="T9A-gV-EYy">
                             <connections>
                                 <action selector="forwardPressed:" destination="lZY-Lb-RaW" id="7Qd-QM-Ycz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="SV8-QF-Jzc"/>
+                        <barButtonItem style="plain" systemItem="refresh" id="A7h-3S-6dc">
+                            <connections>
+                                <action selector="refreshPressed:" destination="lZY-Lb-RaW" id="xvC-qg-7Js"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem title="Peoples Choice Videos" id="4pZ-kg-y5J">
                             <connections>
                                 <action selector="peoplesChoiceVideoPressed:" destination="lZY-Lb-RaW" id="wBc-SB-8qx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="3Je-d5-Dsb"/>
+                        <barButtonItem style="plain" systemItem="action" id="AMb-sy-lo9">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="lZY-Lb-RaW" id="twD-Np-Szf"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -1309,6 +1395,7 @@ www.facebook.com/TechColumbusOhio</string>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="actionButton" destination="AMb-sy-lo9" id="cYJ-TB-jx8"/>
                         <outlet property="webView" destination="mYP-TS-G9q" id="dVu-B2-wPS"/>
                     </connections>
                 </viewController>
@@ -1399,11 +1486,11 @@ www.facebook.com/TechColumbusOhio</string>
         <image name="39-back.png" width="16" height="16"/>
         <image name="40-forward.png" width="16" height="16"/>
         <image name="IS04045_TechColumbusLogo_RGB_edit.jpg" width="328" height="158"/>
-        <image name="LinkedIn_Logo60px.png" width="60" height="50"/>
-        <image name="f_logo.png" width="140" height="140"/>
+        <image name="facebooklogo.jpg" width="44" height="44"/>
         <image name="ia12_sponsors.png" width="320" height="339"/>
+        <image name="linkedinlogo.jpg" width="44" height="44"/>
         <image name="sandlot-logo.png" width="164" height="39"/>
-        <image name="twitter-bird-white-on-blue.png" width="300" height="300"/>
+        <image name="twitterlogo.jpg" width="44" height="44"/>
     </resources>
     <classes>
         <class className="AboutTableViewController" superclassName="UITableViewController">
@@ -1428,23 +1515,29 @@ www.facebook.com/TechColumbusOhio</string>
         <class className="FacebookWebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookWebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="actionButtonPressed:"/>
                 <relationship kind="action" name="backPressed:"/>
                 <relationship kind="action" name="forwardPressed:"/>
                 <relationship kind="action" name="peoplesChoiceVideoPressed:"/>
+                <relationship kind="action" name="refreshPressed:"/>
+                <relationship kind="outlet" name="actionButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="IATwitterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IATwitterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="actionButtonPressed:"/>
                 <relationship kind="action" name="composeButtonPressed:"/>
             </relationships>
         </class>
         <class className="LinkedInViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LinkedInViewController.h"/>
             <relationships>
+                <relationship kind="action" name="actionButtonPressed:"/>
                 <relationship kind="action" name="backwardPressed:"/>
                 <relationship kind="action" name="forwardPressed:"/>
+                <relationship kind="outlet" name="actionButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -1502,6 +1595,7 @@ www.facebook.com/TechColumbusOhio</string>
         <class className="TweetDetailsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetDetailsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="actionButtonPressed:"/>
                 <relationship kind="action" name="composeButtonPressed:"/>
                 <relationship kind="action" name="replyButtonPressed:"/>
                 <relationship kind="action" name="retweetButtonPressed:"/>

@@ -22,6 +22,7 @@
 @synthesize sent_date = _sent_date;
 @synthesize created_date = _created_date;
 @synthesize profile_url = _profile_url;
+@synthesize identifier = _identifier;
 
 - (NSString *)screen_name
 {
@@ -52,6 +53,11 @@
     NSDictionary *user = [self.tweet objectForKey:@"user"];
     NSString *url = [user objectForKey:@"profile_image_url"];
     return url;
+}
+
+- (NSString *)identifier
+{
+    return [self.tweet objectForKey:@"id_str"];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -187,4 +193,48 @@
     [self presentModalViewController:_tweetView animated:YES];
     
 }
+
+- (IBAction)actionButtonPressed:(id)sender
+{
+    // show dialog for open in facebook app and open in safari
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open in Safari", @"Open in Twitter", nil];
+    as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [as showFromToolbar:self.navigationController.toolbar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [actionSheet cancelButtonIndex])
+    {
+        NSString *szUrl = nil;
+        
+        switch (buttonIndex)
+        {
+            case 0:
+                // open twitter in safari
+                szUrl = [NSString stringWithFormat:@"mobile.twitter.com"];
+                break;
+                
+            case 1:
+                // open in Twitter
+                szUrl = [NSString stringWithFormat:@"twitter://status?id=%@", self.identifier];
+                break;
+                
+            default:
+                break;
+        }
+        
+        if (nil != szUrl) {
+            NSURL *url = [NSURL URLWithString:szUrl];
+            
+            // check it's open-able and open it!
+            if ([[UIApplication sharedApplication] canOpenURL:url])
+            {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }
+    }
+    
+}
+
 @end

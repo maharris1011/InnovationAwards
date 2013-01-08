@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FacebookWebViewController : UIViewController<UIWebViewDelegate>
+@interface FacebookWebViewController : UIViewController<UIWebViewDelegate, UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *actionButton;
 
 - (IBAction)forwardPressed:(id)sender;
 - (IBAction)backPressed:(id)sender;
 - (IBAction)peoplesChoiceVideoPressed:(id)sender;
+- (IBAction)actionButtonPressed:(id)sender;
+- (IBAction)refreshPressed:(id)sender;
 
 @end

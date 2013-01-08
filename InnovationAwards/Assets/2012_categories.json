@@ -5,12 +5,12 @@
     "semifinalists":[]
     },
     {
-    "category":"Outstanding Product (under 250)",
+    "category":"Outstanding Product (-250)",
     "abbrev":"OPS",
     "semifinalists":[]
     },
     {
-    "category":"Outstanding Product (over 250)",
+    "category":"Outstanding Product (+250)",
     "abbrev":"OPL",
     "semifinalists":[]
     },
@@ -20,12 +20,12 @@
     "semifinalists":[]
     },
     {
-    "category":"Outstanding Service (over 250)",
+    "category":"Outstanding Service (+250)",
     "abbrev":"OSL",
     "semifinalists":[]
     },
     {
-    "category":"Outstanding Service (under 250)",
+    "category":"Outstanding Service (-250)",
     "abbrev":"OSS",
     "semifinalists":[]
     },
@@ -40,12 +40,12 @@
     "semifinalists":[]
     },
     {
-    "category":"Executive of the Year (over 250)",
+    "category":"Executive of the Year (+250)",
     "abbrev":"EYL",
     "semifinalists":[]
     },
     {
-    "category":"Executive of the Year (under 250)",
+    "category":"Executive of the Year (-250)",
     "abbrev":"EYS",
     "semifinalists":[]
     },

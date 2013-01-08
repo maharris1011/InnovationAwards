@@ -15,6 +15,9 @@
 		4D29BA93169A2FD800C1B5D2 /* TechColumbusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29BA92169A2FD800C1B5D2 /* TechColumbusTableViewController.m */; };
 		4D29BA96169A300A00C1B5D2 /* SponsorImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29BA95169A300A00C1B5D2 /* SponsorImageTableViewController.m */; };
 		4D29BA99169A307300C1B5D2 /* EventDetailsMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29BA98169A307300C1B5D2 /* EventDetailsMenuTableViewController.m */; };
+		4D3CE6D9169BC0C900D2D60A /* facebooklogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CE6D6169BC0C900D2D60A /* facebooklogo.jpg */; };
+		4D3CE6DA169BC0C900D2D60A /* twitterlogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CE6D7169BC0C900D2D60A /* twitterlogo.jpg */; };
+		4D3CE6DB169BC0C900D2D60A /* linkedinlogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CE6D8169BC0C900D2D60A /* linkedinlogo.jpg */; };
 		4D426A6B16992FF500D96CC4 /* LinkedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */; };
 		4D426A71169933F000D96CC4 /* 03-arrow-north.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6D169933F000D96CC4 /* 03-arrow-north.png */; };
 		4D426A72169933F000D96CC4 /* 03-arrow-north@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */; };
@@ -370,6 +373,9 @@
 		4D29BA95169A300A00C1B5D2 /* SponsorImageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorImageTableViewController.m; sourceTree = "<group>"; };
 		4D29BA97169A307300C1B5D2 /* EventDetailsMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsMenuTableViewController.h; sourceTree = "<group>"; };
 		4D29BA98169A307300C1B5D2 /* EventDetailsMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsMenuTableViewController.m; sourceTree = "<group>"; };
+		4D3CE6D6169BC0C900D2D60A /* facebooklogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = facebooklogo.jpg; sourceTree = "<group>"; };
+		4D3CE6D7169BC0C900D2D60A /* twitterlogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twitterlogo.jpg; sourceTree = "<group>"; };
+		4D3CE6D8169BC0C900D2D60A /* linkedinlogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = linkedinlogo.jpg; sourceTree = "<group>"; };
 		4D426A6916992FF500D96CC4 /* LinkedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedInViewController.h; path = InnovationAwards/Controllers/LinkedInViewController.h; sourceTree = SOURCE_ROOT; };
 		4D426A6A16992FF500D96CC4 /* LinkedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinkedInViewController.m; path = InnovationAwards/Controllers/LinkedInViewController.m; sourceTree = SOURCE_ROOT; };
 		4D426A6D169933F000D96CC4 /* 03-arrow-north.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-arrow-north.png"; sourceTree = "<group>"; };
@@ -786,6 +792,9 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D3CE6D6169BC0C900D2D60A /* facebooklogo.jpg */,
+				4D3CE6D7169BC0C900D2D60A /* twitterlogo.jpg */,
+				4D3CE6D8169BC0C900D2D60A /* linkedinlogo.jpg */,
 				4D29BA8E169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg */,
 				4D426A6D169933F000D96CC4 /* 03-arrow-north.png */,
 				4D426A6E169933F000D96CC4 /* 03-arrow-north@2x.png */,
@@ -1660,6 +1669,9 @@
 				4D426A73169933F000D96CC4 /* 06-arrow-south.png in Resources */,
 				4D426A74169933F000D96CC4 /* 06-arrow-south@2x.png in Resources */,
 				4D29BA8F169A265000C1B5D2 /* IS04045_TechColumbusLogo_RGB_edit.jpg in Resources */,
+				4D3CE6D9169BC0C900D2D60A /* facebooklogo.jpg in Resources */,
+				4D3CE6DA169BC0C900D2D60A /* twitterlogo.jpg in Resources */,
+				4D3CE6DB169BC0C900D2D60A /* linkedinlogo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

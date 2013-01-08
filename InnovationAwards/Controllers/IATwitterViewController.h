@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PullToRefresh/PullToRefreshView.h"
 
-@interface IATwitterViewController : UITableViewController<PullToRefreshViewDelegate>
+@interface IATwitterViewController : UITableViewController<PullToRefreshViewDelegate, UIActionSheetDelegate>
 
 - (IBAction)composeButtonPressed:(id)sender;
+- (IBAction)actionButtonPressed:(id)sender;
+
 @end
