@@ -94,11 +94,6 @@
 		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
 		4DD6D72E16960FA500E2927E /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D72C16960FA500E2927E /* ia12_sponsors.png */; };
 		4DD6D72F16960FA500E2927E /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */; };
-		4DDF44FF168165AD00462096 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF44FE168165AD00462096 /* f_logo.png */; };
-		4DDF4502168165D000462096 /* LinkedIn_Logo60px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4500168165CF00462096 /* LinkedIn_Logo60px.png */; };
-		4DDF4503168165D000462096 /* twitter-bird-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4501168165CF00462096 /* twitter-bird-white-on-blue.png */; };
-		4DDF450A168169A700462096 /* twitter-bird-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4506168169A700462096 /* twitter-bird-16x16.png */; };
-		4DDF450B168169A700462096 /* twitter-bird-light-bgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */; };
 		4DE40E551683F6BC00533212 /* ia12_app_callouts_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E521683F6BC00533212 /* ia12_app_callouts_5.png */; };
 		4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */; };
 		4DE40E781683FA7600533212 /* ia12_app_callouts_5-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E761683FA7600533212 /* ia12_app_callouts_5-568h@2x.png */; };
@@ -355,8 +350,6 @@
 		4DFEF6F216759E050069E734 /* Socialize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF61516759E040069E734 /* Socialize.framework */; };
 		4DFEF6F416759E310069E734 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEF6F316759E310069E734 /* MessageUI.framework */; };
 		4DFEF6FC1675C9E00069E734 /* IATwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */; };
-		4DFEF6FF1675CD060069E734 /* 210-twitterbird.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */; };
-		4DFEF7001675CD060069E734 /* 210-twitterbird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -485,11 +478,6 @@
 		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		4DD6D72C16960FA500E2927E /* ia12_sponsors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_sponsors.png; sourceTree = "<group>"; };
 		4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_sponsors@2x.png"; sourceTree = "<group>"; };
-		4DDF44FE168165AD00462096 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
-		4DDF4500168165CF00462096 /* LinkedIn_Logo60px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LinkedIn_Logo60px.png; sourceTree = "<group>"; };
-		4DDF4501168165CF00462096 /* twitter-bird-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-white-on-blue.png"; sourceTree = "<group>"; };
-		4DDF4506168169A700462096 /* twitter-bird-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-16x16.png"; sourceTree = "<group>"; };
-		4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
 		4DE40E521683F6BC00533212 /* ia12_app_callouts_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_app_callouts_5.png; sourceTree = "<group>"; };
 		4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TechColumbus_Logo.jpg; sourceTree = "<group>"; };
 		4DE40E761683FA7600533212 /* ia12_app_callouts_5-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_5-568h@2x.png"; sourceTree = "<group>"; };
@@ -759,8 +747,6 @@
 		4DFEF6F316759E310069E734 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4DFEF6FA1675C9E00069E734 /* IATwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATwitterViewController.h; sourceTree = "<group>"; };
 		4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATwitterViewController.m; sourceTree = "<group>"; };
-		4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "210-twitterbird.png"; sourceTree = "<group>"; };
-		4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "210-twitterbird@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -804,11 +790,6 @@
 				4DA89BDC1695FB670067E3C5 /* 38-house.png */,
 				4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */,
 				4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */,
-				4DDF4506168169A700462096 /* twitter-bird-16x16.png */,
-				4DDF4507168169A700462096 /* twitter-bird-light-bgs.png */,
-				4DDF4500168165CF00462096 /* LinkedIn_Logo60px.png */,
-				4DDF4501168165CF00462096 /* twitter-bird-white-on-blue.png */,
-				4DDF44FE168165AD00462096 /* f_logo.png */,
 				4DB51D46167EB0F600A07437 /* 39-back.png */,
 				4DB51D47167EB0F600A07437 /* 39-back@2x.png */,
 				4DB51D48167EB0F600A07437 /* 40-forward.png */,
@@ -817,8 +798,6 @@
 				4DB51D43167EACEF00A07437 /* 02-redo@2x.png */,
 				4D1D54331678503100626E21 /* 42-info.png */,
 				4D1D54341678503100626E21 /* 42-info@2x.png */,
-				4DFEF6FD1675CD060069E734 /* 210-twitterbird.png */,
-				4DFEF6FE1675CD060069E734 /* 210-twitterbird@2x.png */,
 				4DE6FEF916954EA6004B37D5 /* 2012_categories.json */,
 				4DFEF53216759D210069E734 /* 2012_sponsors.json */,
 				4D501949167548DA0031B9F8 /* TitilliumText25L 1wt.otf */,
@@ -1621,8 +1600,6 @@
 				4DFEF6EF16759E050069E734 /* SocializeTableViewController.xib in Resources */,
 				4DFEF6F016759E050069E734 /* SZBaseShareViewController.xib in Resources */,
 				4DFEF6F116759E050069E734 /* SZStatusImageLabelView.xib in Resources */,
-				4DFEF6FF1675CD060069E734 /* 210-twitterbird.png in Resources */,
-				4DFEF7001675CD060069E734 /* 210-twitterbird@2x.png in Resources */,
 				4D1D54351678503100626E21 /* 42-info.png in Resources */,
 				4D1D54361678503100626E21 /* 42-info@2x.png in Resources */,
 				4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */,
@@ -1631,11 +1608,6 @@
 				4DB51D4B167EB0F600A07437 /* 39-back@2x.png in Resources */,
 				4DB51D4C167EB0F600A07437 /* 40-forward.png in Resources */,
 				4DB51D4D167EB0F600A07437 /* 40-forward@2x.png in Resources */,
-				4DDF44FF168165AD00462096 /* f_logo.png in Resources */,
-				4DDF4502168165D000462096 /* LinkedIn_Logo60px.png in Resources */,
-				4DDF4503168165D000462096 /* twitter-bird-white-on-blue.png in Resources */,
-				4DDF450A168169A700462096 /* twitter-bird-16x16.png in Resources */,
-				4DDF450B168169A700462096 /* twitter-bird-light-bgs.png in Resources */,
 				4DE40E551683F6BC00533212 /* ia12_app_callouts_5.png in Resources */,
 				4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */,
 				4DE40E781683FA7600533212 /* ia12_app_callouts_5-568h@2x.png in Resources */,

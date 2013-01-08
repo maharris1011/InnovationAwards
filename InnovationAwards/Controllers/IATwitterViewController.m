@@ -193,9 +193,11 @@
     {        
         // get the photo from the web
         [self asynchronousGetImageAtUrl:url onComplete:^(UIImage *image) {
-            [[ImageCache sharedStore] setImage:image forKey:url];
-            profileThumb = image;
-            profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
+            if (image != nil) {
+                [[ImageCache sharedStore] setImage:image forKey:url];
+                profileThumb = image;
+                profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
+            }
         }];
     }
     profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];

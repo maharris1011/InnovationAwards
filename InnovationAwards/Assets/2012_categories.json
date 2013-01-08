@@ -1,62 +1,62 @@
 [
-    {
-    "category":"Outstanding Startup Business",
-    "abbrev":"OSB",
-    "semifinalists":[]
-    },
-    {
-    "category":"Outstanding Product (-250)",
-    "abbrev":"OPS",
-    "semifinalists":[]
-    },
-    {
-    "category":"Outstanding Product (+250)",
-    "abbrev":"OPL",
-    "semifinalists":[]
-    },
-    {
-    "category":"Green Innovation",
-    "abbrev":"GRN",
-    "semifinalists":[]
-    },
-    {
-    "category":"Outstanding Service (+250)",
-    "abbrev":"OSL",
-    "semifinalists":[]
-    },
-    {
-    "category":"Outstanding Service (-250)",
-    "abbrev":"OSS",
-    "semifinalists":[]
-    },
-    {
-    "category":"Outstanding Technology Team",
-    "abbrev":"OTT",
-    "semifinalists":[]
-    },
-    {
-    "category":"Innovation in Non-Profit Service Delivery",
-    "abbrev":"NPS",
-    "semifinalists":[]
-    },
-    {
-    "category":"Executive of the Year (+250)",
-    "abbrev":"EYL",
-    "semifinalists":[]
-    },
-    {
-    "category":"Executive of the Year (-250)",
-    "abbrev":"EYS",
-    "semifinalists":[]
-    },
-    {
-    "category":"Outstanding Woman in Technology",
-    "abbrev":"OWT",
-    "semifinalists":[]
-    },
-    {
-    "category":"Inventor of the Year",
-    "abbrev":"IOY",
-    "semifinalists":[]
-    }
+ {
+ "category":"Innovation in Non-Profit Service Delivery",
+ "abbrev":"NPS",
+ "semifinalists":[]
+ },
+ {
+ "category":"Green Innovation",
+ "abbrev":"GRN",
+ "semifinalists":[]
+ },
+ {
+ "category":"Executive of the Year (-250)",
+ "abbrev":"EYS",
+ "semifinalists":[]
+ },
+ {
+ "category":"Executive of the Year (+250)",
+ "abbrev":"EYL",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Startup Business",
+ "abbrev":"OSB",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Service (-250)",
+ "abbrev":"OSS",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Service (+250)",
+ "abbrev":"OSL",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Woman in Technology",
+ "abbrev":"OWT",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Technology Team",
+ "abbrev":"OTT",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Product (-250)",
+ "abbrev":"OPS",
+ "semifinalists":[]
+ },
+ {
+ "category":"Outstanding Product (+250)",
+ "abbrev":"OPL",
+ "semifinalists":[]
+ },
+ {
+ "category":"Inventor of the Year",
+ "abbrev":"IOY",
+ "semifinalists":[]
+ }
 ]

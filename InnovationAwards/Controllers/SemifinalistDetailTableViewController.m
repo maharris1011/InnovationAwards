@@ -136,6 +136,10 @@
 {
     [super viewDidLoad];
     self.sfCurrent = [self.category.semifinalists objectAtIndex:self.semifinalist];
+    if (self.actionBar == nil) {
+        [self setupSocializeEntity];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,9 +161,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.actionBar == nil) {
-        [self setupSocializeEntity];
-    }
     [self.actionBar setHidden:NO];
     [self configureView];
 }
@@ -180,9 +181,16 @@
     
     if (url && [url length] > 0)
     {
-        NSLog(@"Detail Page opening url: %@", url);
         NSURL *urlToStart = [NSURL URLWithString:url];
-        [[UIApplication sharedApplication] openURL:urlToStart];
+        if ([[UIApplication sharedApplication] canOpenURL:urlToStart])
+        {
+            NSLog(@"Detail Page opening url: %@", url);
+            [[UIApplication sharedApplication] openURL:urlToStart];
+        }
+        else
+        {
+            NSLog(@"unable to open url: %@", url);
+        }
     }
     else
     {

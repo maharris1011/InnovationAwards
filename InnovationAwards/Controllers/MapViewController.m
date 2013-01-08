@@ -51,7 +51,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.mapView setRegion:MKCoordinateRegionMake(self.columbus, MKCoordinateSpanMake(0.030f, 0.030f)) animated:YES];
+    [self.mapView setRegion:MKCoordinateRegionMake(self.conventionCenter, MKCoordinateSpanMake(0.030f, 0.030f)) animated:YES];
     [self.mapView selectAnnotation:self.mkpCC animated:YES];
 }
 

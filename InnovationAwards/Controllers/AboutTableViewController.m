@@ -81,15 +81,22 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbus.org"]];
         }
         if (indexPath.row == 1) {
-            NSString *url = [NSString stringWithFormat:@"http://maps.apple.com/?daddr=1275+Kinnear+Road,+Columbus,+Ohio,+43221"];
+            NSString *url = [NSString stringWithFormat:@"http://maps.apple.com/?q=1275+Kinnear+Road,+Columbus,+Ohio,+43221"];
 
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
     }
     if (indexPath.section == 1)
     {
-        // goto the ia 12 web site
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.isandlot.com"]];
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]])
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/237563402993296"]];
+        }
+        else
+        {
+            // goto the ia 12 web site
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.facebook.com/Sandlot.Software"]];
+        }
     }
 }
 
