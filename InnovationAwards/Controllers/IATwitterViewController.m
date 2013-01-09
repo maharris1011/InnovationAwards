@@ -180,7 +180,7 @@
     NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
     NSDictionary *user = [tweet objectForKey:@"user"];
 
-    __block UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
+    UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *tweetText = (UILabel*)[cell viewWithTag:2];
     UILabel *sentOn = (UILabel*)[cell viewWithTag:3];
@@ -195,16 +195,15 @@
     userAt.text = [NSString stringWithFormat:@"@%@", [user objectForKey:@"screen_name"]];
     
     __block NSString *url = [user objectForKey:@"profile_image_url"];
-    __block UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
+    UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:url];
     // use default image for now
     if (profileThumb == nil)
     {        
         // get the photo from the web
         [self asynchronousGetImageAtUrl:url onComplete:^(UIImage *image) {
             if (image != nil) {
+                // stuff it in the cache for when we need it next
                 [[ImageCache sharedStore] setImage:image forKey:url];
-                profileThumb = image;
-                profile.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
             }
         }];
     }
