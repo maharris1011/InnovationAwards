@@ -103,7 +103,7 @@
 #if DEBUG
     [SZSmartAlertUtils registerDeviceToken:deviceToken development:YES];
 #else
-    [SZSmartAlertUtils registerDeviceToken:deviceToken development:NO];
+    [SZSmartAlertUtils registerDeviceToken:deviceToken development:NO];    
 #endif
 }
 
