@@ -1308,16 +1308,18 @@ www.facebook.com/TechColumbusOhio</string>
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="reply" id="UG6-vl-mPx">
-                            <connections>
-                                <action selector="replyButtonPressed:" destination="g76-do-NOe" id="MEg-GP-fRz"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="compose" id="sgL-Dr-GLJ">
                             <connections>
                                 <action selector="composeButtonPressed:" destination="g76-do-NOe" id="JyY-m5-its"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7zQ-iy-NuG"/>
+                        <barButtonItem style="plain" systemItem="reply" id="UG6-vl-mPx">
+                            <connections>
+                                <action selector="replyButtonPressed:" destination="g76-do-NOe" id="MEg-GP-fRz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7aK-4M-gy8"/>
                         <barButtonItem image="02-redo.png" style="plain" id="w2p-6D-SYJ">
                             <connections>
                                 <action selector="retweetButtonPressed:" destination="g76-do-NOe" id="IsX-op-cf3"/>
