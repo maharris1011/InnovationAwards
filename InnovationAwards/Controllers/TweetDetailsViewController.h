@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Twitter/Twitter.h>
+#import "Tweet.h"
 
 @interface TweetDetailsViewController : UITableViewController<UIActionSheetDelegate> {
     TWTweetComposeViewController *_tweetView;
@@ -19,15 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *tweetSentDateLabel;
 @property (strong, nonatomic) IBOutlet UITableViewCell *tweetTextCell;
 
-@property (strong, nonatomic) NSDictionary *tweet;
-
-@property (strong, nonatomic, readonly) NSString *screen_name;
-@property (strong, nonatomic, readonly) NSString *user_name;
-@property (strong, nonatomic, readonly) NSString *text;
-@property (strong, nonatomic, readonly) NSString *sent_date;
-@property (strong, nonatomic, readonly) NSString *created_date;
-@property (strong, nonatomic, readonly) NSString *profile_url;
-@property (strong, nonatomic, readonly) NSString *identifier;
+@property (strong, nonatomic) Tweet *tweet;
 
 - (IBAction)replyButtonPressed:(id)sender;
 - (IBAction)retweetButtonPressed:(id)sender;

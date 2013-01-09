@@ -16,6 +16,7 @@
 @synthesize text = _text;
 @synthesize screenName = _screenName;
 @synthesize createdAt = _createdAt;
+@synthesize identifier = _identifier;
 
 - (void)asynchronousGetImageAtUrl:(NSString *)url onComplete:(void(^)(UIImage *image))complete
 {
@@ -46,12 +47,15 @@
     {
         if (dictionary)
         {
-            self.name = [dictionary objectForKey:@"name"];
-            self.profileImageURL = [dictionary objectForKey:@"profile_image_url"];
+            NSDictionary *user = [dictionary objectForKey:@"user"];
+
+            self.name = [user objectForKey:@"name"];
+            self.profileImageURL = [user objectForKey:@"profile_image_url"];
             self.text = [dictionary objectForKey:@"text"];
-            self.screenName = [dictionary objectForKey:@"screen_name"];
+            self.screenName = [user objectForKey:@"screen_name"];
             NSString *createdAtString = [tweet objectForKey:@"created_at"];
             self.createdAt = [NSDate dateFromString:createdAtString withFormat:@"EEE LLL d HH:mm:ss Z yyyy"];
+            self.identifier = [dictionary objectForKey:@"id_str"];
         }
     }
     return self;

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, string) NSString *identifier;
 
 - initFromDictionary:(NSDictionary *)dictionary;
 

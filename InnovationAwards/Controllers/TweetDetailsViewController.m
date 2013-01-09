@@ -16,48 +16,11 @@
 
 @implementation TweetDetailsViewController
 
-@synthesize screen_name = _screen_name;
-@synthesize user_name = _user_name;
-@synthesize text = _text;
-@synthesize sent_date = _sent_date;
-@synthesize created_date = _created_date;
-@synthesize profile_url = _profile_url;
-@synthesize identifier = _identifier;
-
-- (NSString *)screen_name
-{
-    NSDictionary *user = [self.tweet objectForKey:@"user"];
-    return [user objectForKey:@"screen_name"];
-}
-
-- (NSString *)user_name
-{
-    NSDictionary *user = [self.tweet objectForKey:@"user"];
-    return [user objectForKey:@"name"];
-}
-
-- (NSString *)text
-{
-    return [self.tweet objectForKey:@"text"];
-}
+@synthesize tweet = _tweet;
 
 - (NSString *)sent_date
 {
-    NSString *sentString = [self.tweet objectForKey:@"created_at"];
-    NSDate *sentDate = [NSDate dateFromString:sentString withFormat:@"EEE LLL d HH:mm:ss Z yyyy"];
-    return [NSDate stringForDisplayFromDate:sentDate prefixed:YES alwaysDisplayTime:YES];
-}
-
-- (NSString *)profile_url
-{
-    NSDictionary *user = [self.tweet objectForKey:@"user"];
-    NSString *url = [user objectForKey:@"profile_image_url"];
-    return url;
-}
-
-- (NSString *)identifier
-{
-    return [self.tweet objectForKey:@"id_str"];
+    return [NSDate stringForDisplayFromDate:self.tweet.createdAt prefixed:YES alwaysDisplayTime:YES];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -72,13 +35,15 @@
 - (void)configureView
 {
     
-    self.tweetTextView.text = self.text;
-    self.senderNameLabel.text = self.user_name;
-    self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.sent_date];
+    self.tweetTextView.text = self.tweet.text;
+    self.senderNameLabel.text = self.tweet.name;
+    self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.tweet.createdAt];
     
-    self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.screen_name];
-    UIImage *profileThumb = [[ImageCache sharedStore] imageForKey:self.profile_url];
-    self.profileImageView.image = [profileThumb thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationDefault];
+    self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.screenName];
+    self.profileImageView.image = [self.tweet.profileImage thumbnailImage:48 
+                                                        transparentBorder:1 
+                                                             cornerRadius:5 
+                                                     interpolationQuality:kCGInterpolationDefault];
     self.navigationController.toolbarHidden = NO;
 }
 
@@ -90,8 +55,7 @@
     UIImage *bgImage = [UIImage imageNamed:@"mainBackground.png"];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bgImageView setFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height)];
-    
+    [bgImageView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     self.tableView.backgroundView = bgImageView;
     
     _tweetView = [[TWTweetComposeViewController alloc] init];
@@ -186,22 +150,25 @@
 
 #pragma mark -- UIActions
 
-- (IBAction)replyButtonPressed:(id)sender {
-    [_tweetView setInitialText:[NSString stringWithFormat:@"@%@", self.screen_name]];
+- (IBAction)replyButtonPressed:(id)sender 
+{
+    [_tweetView setInitialText:[NSString stringWithFormat:@"@%@", self.tweet.screenName]];
     [self presentModalViewController:_tweetView animated:YES];
 }
 
 - (IBAction)retweetButtonPressed:(id)sender {
     
-    NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.screen_name, self.text];
+    NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.screen_name, self.tweet.text];
     
-    if ([_tweetView setInitialText:initialText] == NO) {
-        [_tweetView setInitialText:[initialText substringToIndex:120]];
+    if ([_tweetView setInitialText:initialText] == NO) 
+    {
+        [_tweetView setInitialText:[initialText substringToIndex:MIN(120, [initialText length]]];
     }
     [self presentModalViewController:_tweetView animated:YES];
 }
 
-- (IBAction)composeButtonPressed:(id)sender {
+- (IBAction)composeButtonPressed:(id)sender 
+{
     [_tweetView setInitialText:@"#ia12"];
     [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
     [self presentModalViewController:_tweetView animated:YES];
@@ -211,7 +178,11 @@
 - (IBAction)actionButtonPressed:(id)sender
 {
     // show dialog for open in facebook app and open in safari
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open in Safari", @"Open in Twitter", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" 
+                                                    delegate:self 
+                                           cancelButtonTitle:@"Cancel" 
+                                      destructiveButtonTitle:nil 
+                                           otherButtonTitles:@"Open in Safari", @"Open in Twitter", nil];
     as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [as showFromToolbar:self.navigationController.toolbar];
 }
@@ -231,14 +202,15 @@
                 
             case 1:
                 // open in Twitter
-                szUrl = [NSString stringWithFormat:@"twitter://status?id=%@", self.identifier];
+                szUrl = [NSString stringWithFormat:@"twitter://status?id=%@", self.tweet.identifier];
                 break;
                 
             default:
                 break;
         }
         
-        if (nil != szUrl) {
+        if (nil != szUrl) 
+        {
             NSURL *url = [NSURL URLWithString:szUrl];
             
             // check it's open-able and open it!
