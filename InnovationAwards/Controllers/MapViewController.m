@@ -61,6 +61,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+}
+
+
 #pragma mark -- MKMapViewDelegate methods
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {

@@ -148,16 +148,24 @@
     
     [self.view insertSubview:bgImageView atIndex:0];
     
+    
     // add gradients to the "register now" button
     CAGradientLayer *gradient = buttonGradientWithColor(lightPurple, darkPurple);
     [self.registerButton addGradient:gradient];
     self.registerButton.layer.borderColor = darkPurple.CGColor;
     self.registerButton.layer.borderWidth = 1;
+    self.registerButton.titleLabel.font = [UIFont fontWithName:IA_Font600 size:15.0];
     
     gradient = buttonGradientWithColor(lightPurple, darkPurple);
     [self.directionsButton addGradient:gradient];
     self.directionsButton.layer.borderColor = darkPurple.CGColor;
     self.directionsButton.layer.borderWidth = 1;
+    self.directionsButton.titleLabel.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    
+    // set fonts
+    self.dateText.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.locationText.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.roomText.font = [UIFont fontWithName:IA_Font600 size:15.0];
     
     // set up the images we're going to scroll through
     self.pageImages = [NSArray arrayWithObjects:
@@ -256,7 +264,6 @@
     
     self.registerButton.frame = CGRectMake(registerButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
     self.directionsButton.frame = CGRectMake(directionsButtonFrame.origin.x, buttonY, buttonWidth, buttonHeight);
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -264,6 +271,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+}
+
+
+-(NSInteger)supportedInterfaceOrientations{
+    NSInteger mask = 0;
+    if ([self shouldAutorotateToInterfaceOrientation: UIInterfaceOrientationLandscapeRight])
+        mask |= UIInterfaceOrientationMaskLandscapeRight;
+    if ([self shouldAutorotateToInterfaceOrientation: UIInterfaceOrientationLandscapeLeft])
+        mask |= UIInterfaceOrientationMaskLandscapeLeft;
+    if ([self shouldAutorotateToInterfaceOrientation: UIInterfaceOrientationPortrait])
+        mask |= UIInterfaceOrientationMaskPortrait;
+    if ([self shouldAutorotateToInterfaceOrientation: UIInterfaceOrientationPortraitUpsideDown])
+        mask |= UIInterfaceOrientationMaskPortraitUpsideDown;
+    return mask;
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -289,4 +322,10 @@
     pageControlIsChangingPage = YES;
 }
 
+- (void)viewDidUnload {
+    [self setDateText:nil];
+    [self setLocationText:nil];
+    [self setRoomText:nil];
+    [super viewDidUnload];
+}
 @end

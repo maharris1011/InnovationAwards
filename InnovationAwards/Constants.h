@@ -12,7 +12,8 @@
 #define darkPurple SS_COLOR(104,0,112)
 #define yellowText SS_COLOR(255,249,0)
 
-#define IA_Font @"TitilliumText25L"
+#define IA_Font @"TitilliumText25L-400wt"
+#define IA_Font600 @"TitilliumText25L-800wt"
 
 
 #define IA_headlineBold [UIFont systemFontOfSize:24];   // [UIFont fontWithName:IA_Font size:24];

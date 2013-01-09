@@ -172,6 +172,20 @@
     [super viewDidUnload];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+}
+
+
+#pragma mark -- UIActions
+
 - (IBAction)replyButtonPressed:(id)sender {
     [_tweetView setInitialText:[NSString stringWithFormat:@"@%@", self.screen_name]];
     [self presentModalViewController:_tweetView animated:YES];

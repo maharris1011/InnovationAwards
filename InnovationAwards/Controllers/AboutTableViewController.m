@@ -7,6 +7,7 @@
 //
 
 #import "AboutTableViewController.h"
+#import "UIButton+SSGradient.h"
 
 @interface AboutTableViewController ()
 
@@ -48,6 +49,14 @@
     UINavigationBar *navBar = [[self navigationController] navigationBar];
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    CAGradientLayer *gradient = buttonGradientWithColor(lightPurple, darkPurple);
+    [self.doneButton addGradient:gradient];
+    self.doneButton.layer.borderColor = darkPurple.CGColor;
+    self.doneButton.layer.borderWidth = 1;
+    self.doneButton.layer.masksToBounds = YES;
+    self.doneButton.titleLabel.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.doneButton.titleLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +69,18 @@
 
 - (void)viewDidUnload {
     [self setVersionCell:nil];
+    [self setDoneButton:nil];
     [super viewDidUnload];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
 }
 
 

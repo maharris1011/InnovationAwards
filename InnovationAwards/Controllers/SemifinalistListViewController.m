@@ -65,6 +65,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -91,7 +103,9 @@
     // Configure the cell...
     IASemifinalist *nominee = [[self.category semifinalists] objectAtIndex:indexPath.row];
     cell.textLabel.text = nominee.company;
-    cell.backgroundView = [self gradientViewForCell:cell];
+    cell.textLabel.font = [UIFont fontWithName:IA_Font size:17];
+    cell.textLabel.textColor = [UIColor whiteColor];
+//    cell.backgroundView = [self gradientViewForCell:cell];
     return cell;
 }
 

@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UIButton *registerButton;
 @property (strong, nonatomic) IBOutlet UIButton *directionsButton;
+@property (strong, nonatomic) IBOutlet UILabel *dateText;
+@property (strong, nonatomic) IBOutlet UILabel *locationText;
+@property (strong, nonatomic) IBOutlet UILabel *roomText;
 
 - (IBAction)registerButtonWasPressed:(id)sender;
 - (IBAction)changePage:(id)sender;

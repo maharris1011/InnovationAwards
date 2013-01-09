@@ -33,12 +33,25 @@
     [super viewDidLoad];
     // refresh the web view
     _szUrl = @"http://m.facebook.com/TechColumbusOhio";
-    _szFBSchemeUrl = @"fb://profile/86633934712";
-    _szVideosUrl = @"http://a.pgtb.me/t2Nvh8";
+    _szFBSchemeUrl = @"fb://profile/86633934712"; // id of the TechColumbusOhio page
+    _szVideosUrl = @"http://a.pgtb.me/t2Nvh8";    // shortened URL
     
     NSURL *URL = [NSURL URLWithString:_szUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
-    [self.webView setFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height-20-44-44)];
+    [self.webView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-20-44-44)];
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait ||
+            interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -58,6 +71,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark -- UIActions
 - (IBAction)forwardPressed:(id)sender
 {
     [self.webView goForward];
@@ -78,16 +93,19 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_szVideosUrl]]];
 
 }
-
 - (IBAction)actionButtonPressed:(id)sender
 {
     // show dialog for open in facebook app and open in safari
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open in Safari", @"Open in Facebook", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:@"Open in Safari", @"Open in Facebook", nil];
+    
     as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [as showFromBarButtonItem:self.actionButton animated:YES];
 }
 
-
+#pragma mark -- UIActionSheet
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     NSString *szUrl = nil;

@@ -10,6 +10,7 @@
 
 @interface AboutTableViewController : UITableViewController
 - (IBAction)done:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *versionCell;
 @end

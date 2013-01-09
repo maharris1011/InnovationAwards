@@ -15,5 +15,6 @@
 - (IBAction)forwardPressed:(id)sender;
 - (IBAction)backwardPressed:(id)sender;
 - (IBAction)actionButtonPressed:(id)sender;
+- (IBAction)refreshPressed:(id)sender;
 
 @end

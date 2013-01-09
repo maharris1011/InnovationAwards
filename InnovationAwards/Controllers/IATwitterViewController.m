@@ -135,16 +135,24 @@
     self.navigationController.toolbarHidden = NO;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-//    self.navigationController.toolbarHidden = YES;
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+}
+
 
 #pragma mark - Table view data source
 
