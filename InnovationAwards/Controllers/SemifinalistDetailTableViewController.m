@@ -8,6 +8,7 @@
 
 #import "SemifinalistDetailTableViewController.h"
 #import "AppDelegate.h"
+#import "NSString+SocialMediaParsers.h"
 
 @interface SemifinalistDetailTableViewController ()
 @property IASemifinalist *sfCurrent;
@@ -176,32 +177,32 @@
 
 
 #pragma mark - Table view delegate
-- (void)openURLifAble:(NSString *)url
+- (void)openNativeURL:(NSString *)nativeURL orWebURL:(NSString *)webURL
 {
-    
-    if (url && [url length] > 0)
+    if ([nativeURL length] > 0)
     {
-        NSURL *urlToStart = [NSURL URLWithString:url];
-        if ([[UIApplication sharedApplication] canOpenURL:urlToStart])
+        NSURL *nativeURLObject = [NSURL URLWithString:nativeURL];
+        
+        if ([[UIApplication sharedApplication] canOpenURL:nativeURLObject])
         {
-            NSLog(@"Detail Page opening url: %@", url);
-            [[UIApplication sharedApplication] openURL:urlToStart];
+            NSLog(@"opening native url '%@'", nativeURL);
+            [[UIApplication sharedApplication] openURL:nativeURLObject];
         }
         else
         {
-            NSLog(@"unable to open url: %@", url);
+            if ([webURL length] > 0)
+            {
+                NSLog(@"Opening web url '%@'", webURL);
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webURL]];
+            }
         }
     }
-    else
+    else if ([webURL length] > 0)
     {
-        // alert that there's no link given
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Social Media Info"
-                                                        message:[NSString stringWithFormat:@"I'm sorry, we do not have that social media information for this semifinalist"]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        NSLog(@"Opening web url '%@'", webURL);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webURL]];
     }
+
 }
 
 
@@ -212,28 +213,22 @@
     
     if (indexPath.section == 1)
     {
-        NSString *url = nil;
-        switch (cell.tag)
+        if (cell.tag == 500) // company site
         {
-            case 500:
-                url = self.sfCurrent.site_url;
-                break;
-            case 502:
-                url = self.sfCurrent.facebook;
-                break;
-            case 501:
-                url = self.sfCurrent.linkedin;
-                break;
-            case 503:
-                url = self.sfCurrent.twitter;
-                break;
-            default:
-                break;
+            [self openNativeURL:nil orWebURL:self.sfCurrent.site_url];
         }
-        
-        if (url)
+        if (cell.tag == 502) // facebook
         {
-            [self openURLifAble:url];
+            // we would open in the fb app, but the fb protocol requires the fb ID of the profile, not screen name
+            [self openNativeURL:nil orWebURL:self.sfCurrent.facebook];
+        }
+        if (cell.tag == 501) // linkedIn
+        {
+            [self openNativeURL:nil orWebURL:self.sfCurrent.linkedin];
+        }
+        if (cell.tag == 503) // twitter
+        {
+            [self openNativeURL:[NSString twitterURLFromString:self.sfCurrent.twitter] orWebURL:self.sfCurrent.twitter];
         }
     }
 }
@@ -265,27 +260,35 @@
     }
     else if (indexPath.section == 1)
     {
-        if (indexPath.row == 0) {
+        if (indexPath.row == 0)
+        {
             // company link row
-            if (self.sfCurrent.site_url == nil || [self.sfCurrent.site_url length] == 0) {
+            if ([self.sfCurrent.site_url length] == 0)
+            {
                 return 0;
             }
         }
-        if (indexPath.row == 1) {
+        if (indexPath.row == 1)
+        {
             // linkedin row
-            if (self.sfCurrent.linkedin == nil) {
+            if ([self.sfCurrent.linkedin length] == 0)
+            {
                 return 0;
             }
         }
-        if (indexPath.row == 2) {
+        if (indexPath.row == 2)
+        {
             // facebook
-            if (self.sfCurrent.facebook == nil) {
+            if ([self.sfCurrent.facebook length] == 0)
+            {
                 return 0;
             }
         }
-        if (indexPath.row == 3) {
+        if (indexPath.row == 3)
+        {
             // twitter
-            if (self.sfCurrent.twitter == nil) {
+            if ([self.sfCurrent.twitter length] == 0)
+            {
                 return 0;
             }
         }

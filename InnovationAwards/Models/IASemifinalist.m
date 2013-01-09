@@ -54,6 +54,13 @@
         _twitter = [[e firstChildWithId:@"sf_twitter"].attributes objectForKey:@"href"];
         
         _image_path = [[e firstChildWithId:@"sf_photo"].attributes objectForKey:@"src"];
+        
+        // a whole bunch of data cleanup
+        NSRange r = [_facebook rangeOfString:@"fref=ts"];
+        if (r.location == NSNotFound) {
+            _facebook = [_facebook stringByAppendingString:@"?fref=ts"];
+        }
+        _facebook = [_facebook stringByReplacingOccurrencesOfString:@"/#!/" withString:@"/"];
     }
     return self;
 }
