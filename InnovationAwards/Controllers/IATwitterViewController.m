@@ -13,22 +13,24 @@
 #import "NSDate+Helper.h"
 #import "TweetDetailsViewController.h"
 #import "Tweet.h"
-#import <Twitter/Twitter.h>
+#import <Social/SLRequest.h>
 
 @interface IATwitterViewController () 
 
 @property (nonatomic, strong) NSArray *tweets;
+@property (nonatomic, strong) PullToRefreshView *pull;
 
 @end
 
 @implementation IATwitterViewController {
-    PullToRefreshView *pull;
+    PullToRefreshView *_pull;
     TWTweetComposeViewController *_tweetView;
     NSString *_szTwitterUrl;
     NSArray *_tweets;
 }
 
 @synthesize tweets = _tweets;
+@synthesize pull = _pull;
 
 #pragma mark -- UIViewController stuff
 
@@ -57,11 +59,11 @@
 - (void)viewDidUnload
 {
   // be kind to memory
-  _tweetView = nil;
-  _pull = nil;
-  [self setTweets:nil];
-  [super viewDidUnload];
-
+    _tweetView = nil;
+    [self setPull:nil];
+    [self setTweets:nil];
+    
+    [super viewDidUnload];
 }
 
 - (void)viewDidLoad
@@ -76,14 +78,14 @@
     self.tableView.backgroundView = bgImageView;
 
     // set up our pullToRefresh mechanism
-    pull = [[PullToRefreshView alloc] initWithScrollView:(UIScrollView *) self.tableView];
-    [pull setDelegate:self];
-    [self.tableView addSubview:pull];
+    _pull = [[PullToRefreshView alloc] initWithScrollView:(UIScrollView *) self.tableView];
+    [_pull setDelegate:self];
+    [self.tableView addSubview:_pull];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(foregroundRefresh:)
-                                                 name:UIApplicationWillEnterForegroundNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(foregroundRefresh:)
+//                                                 name:UIApplicationWillEnterForegroundNotification
+//                                               object:nil];
    
     // set up our communication with Twitter
     _tweetView = [[TWTweetComposeViewController alloc] init];
@@ -102,7 +104,7 @@
                 output = @"Tweet Sent!"; 
                 break;
             default:
-                NSLog("@unknown result from Twitter %@", result);
+                NSLog(@"@unknown result from Twitter %d", result );
                 break;
         }
         [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
@@ -115,13 +117,13 @@
 -(void)foregroundRefresh:(NSNotification *)notification
 {
     self.tableView.contentOffset = CGPointMake(0, -65);
-    [pull setState:PullToRefreshViewStateLoading];
+    [_pull setState:PullToRefreshViewStateLoading];
     [self reloadFromTwitter];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self foregroundRefresh];
+    [self foregroundRefresh:nil];
     self.navigationController.toolbarHidden = NO;
 }
 
@@ -177,8 +179,8 @@
    
     // set up the tableview cell
     tweetText.text = tweet.text;
-    name.text = tweetText.name;
-    sentOn.text = [NSString stringWithFormat:@"Sent: %@", [NSDate stringForDisplayFromDate:tweet.createdAt prefixed:YES alwaysDisplayTime:YES]];
+    name.text = tweet.name;
+    sentOn.text = [NSString stringWithFormat:@"Sent: %@", tweet.createdAtString];
     userAt.text = [NSString stringWithFormat:@"@%@", tweet.screenName];
     profile.image = [tweet.profileImage thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
     
@@ -201,47 +203,43 @@
 
 - (void)reloadFromTwitter
 {
-  // set up a TWRequest object
-  TWRequest *getRequest = [[TWRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.twitter.com/1.1/search/tweets.json"] 
-                                              parameters:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                                        @"20", @"count",
-                                                                        @"#ia12 include:retweets", @"q", 
-                                                                        @"recent", @"result_type", nil]
-                                           requestMethod:TWRequestMethodGET];
-  [getRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-        NSString *output;
-        
-        if ([urlResponse statusCode] == 200) 
-        {
-            // We should be getting back a JSON response of a dictionary of tweets called "statuses"
-            NSError *jsonParsingError = nil;
-            NSDictionary *tweetsDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&jsonParsingError];
-            NSArray *statuses = [tweetsDict objectForKey:@"statuses"];
-            
-            // put the statuses into our array
-            self.tweets = [[NSMutableArray alloc] initWithCapacity:0];
-            for (NSDictionary *status in statuses)
-            {
-                [self.tweets addObject:[[Tweet alloc] initFromDictionary:status];
-            }
-        }
-        else
-        {
-            NSLog(@"reloadFromTwitter got response: %@", urlResponse);
-            NSString *output = [NSString stringWithFormat:@"reloadFromTwitter: HTTP response status: %i", [urlResponse statusCode]];
-            [self performSelectorOnMainThread:@selector(displayText:) withObject:response waitUntilDone:NO]; 
-        }
+    [SZTwitterUtils getWithViewController:self path:@"/1.1/search/tweets.json"
+                                   params:[NSDictionary dictionaryWithObjectsAndKeys:                                                                                                                                                                                                                                              @"#ia12 include:retweets", @"q",                                                                                                                                                                                                                                              @"20", @"count",                                                                                                                                                                                                                                              @"recent", @"result_type", nil]
+                                  success:^(id result) {
+                                      // We should be getting back a JSON response of a dictionary of tweets called "statuses"
+                                      NSDictionary *tweetsDict = (NSDictionary *)result;
+                                      NSArray *statuses = [tweetsDict objectForKey:@"statuses"];
+                                      
+                                      // put the statuses into our array
+                                      NSMutableArray *newTweets = [[NSMutableArray alloc] initWithCapacity:0];
+                                      for (NSDictionary *status in statuses)
+                                      {
+                                          [newTweets addObject:[[Tweet alloc] initFromDictionary:status]];
+                                      }
+                                      self.tweets = newTweets;
+                                      
+                                      // update the UI
+                                      [self.tableView reloadData];
+                                      [_pull finishedLoading];
 
-        // update the UI
-        [self.tableView reloadData];
-        [pull finishedLoading];
-  }
+                                   } failure:^(NSError *error){
+                                       NSLog(@"reloadFromTwitter got response: %@", error.localizedDescription);
+                                       NSString *output = [NSString stringWithFormat:@"reloadFromTwitter: HTTP response status: %@", error.localizedDescription];
+                                       [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+
+                                       // update the UI
+                                       [self.tableView reloadData];
+                                       [_pull finishedLoading];
+
+                                   }];
 }
 
 - (void)pullToRefreshViewShouldRefresh:(PullToRefreshView *)view;
 {
     [self reloadFromTwitter];
 }
+
+#pragma mark -- UIActions
 
 - (IBAction)composeButtonPressed:(id)sender
 {
@@ -271,7 +269,7 @@
         {
             // use mobile site because it's nice
             NSString *query = @"https://m.twitter.com/search?q=#ia12 include:retweets&src=typd";
-            szTwitterWebUrl = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSString *szTwitterWebUrl = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
             // in all cases, we just load in safari, because we can't trust they have the app
             NSURL *url = [NSURL URLWithString:szTwitterWebUrl];
@@ -279,6 +277,16 @@
         } 
     }
 
+}
+
+- (void)displayText:(NSString *)output
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IA2012"
+                                                    message:output
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    [alert show];
 }
 
 @end

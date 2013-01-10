@@ -10,7 +10,6 @@
 
 @interface Tweet : NSObject
 {
-    NSMutableDictionary *dictionary;
 }
 
 @property (nonatomic, strong) UIImage *profileImage;
@@ -18,7 +17,9 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, strong) NSDate *createdAt;
-@property (nonatomic, string) NSString *identifier;
+@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong, readonly) NSString *createdAtString;
 
 - initFromDictionary:(NSDictionary *)dictionary;
 

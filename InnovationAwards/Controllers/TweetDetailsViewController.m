@@ -37,7 +37,7 @@
     
     self.tweetTextView.text = self.tweet.text;
     self.senderNameLabel.text = self.tweet.name;
-    self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.tweet.createdAt];
+    self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.tweet.createdAtString];
     
     self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.screenName];
     self.profileImageView.image = [self.tweet.profileImage thumbnailImage:48 
@@ -102,7 +102,7 @@
         if (indexPath.row == 1)
         {
             // story path, calculate height of the story & resize everything
-            NSString *storyText = self.text;
+            NSString *storyText = self.tweet.text;
             UIFont *font = [UIFont systemFontOfSize:14.0];
             CGSize initialSize = CGSizeMake(320-40, MAXFLOAT);
             // -40 for cell padding
@@ -158,11 +158,11 @@
 
 - (IBAction)retweetButtonPressed:(id)sender {
     
-    NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.screen_name, self.tweet.text];
+    NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.tweet.screenName, self.tweet.text];
     
     if ([_tweetView setInitialText:initialText] == NO) 
     {
-        [_tweetView setInitialText:[initialText substringToIndex:MIN(120, [initialText length]]];
+        [_tweetView setInitialText:[initialText substringToIndex:MIN(120, [initialText length])]];
     }
     [self presentModalViewController:_tweetView animated:YES];
 }
@@ -197,7 +197,7 @@
         {
             case 0:
                 // open twitter in safari
-                szUrl = [NSString stringWithFormat:@"mobile.twitter.com"];
+                szUrl = [NSString stringWithFormat:@"http://mobile.twitter.com"];
                 break;
                 
             case 1:

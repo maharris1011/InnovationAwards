@@ -10,6 +10,7 @@
 #import "SemiFinalistDetailTableViewController.h"
 #import "IASemifinalist.h"
 #import "AppDelegate.h"
+#import "UIImage+Resize.h"
 
 @interface SemifinalistListViewController () {
     IACategory *_category;
@@ -105,7 +106,7 @@
     cell.textLabel.text = nominee.company;
     cell.textLabel.font = [UIFont fontWithName:IA_Font size:17];
     cell.textLabel.textColor = [UIColor whiteColor];
-//    cell.backgroundView = [self gradientViewForCell:cell];
+    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ia_arrow.png"]];
     return cell;
 }
 

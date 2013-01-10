@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "SemifinalistListViewController.h"
 #import "IACategory.h"
+#import "UIImage+Resize.h"
 
 @interface CategoryViewController () {
     NSArray *_categories;
@@ -95,7 +96,7 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%@", category.name];
     cell.textLabel.font = [UIFont fontWithName:IA_Font size:17];
     cell.textLabel.textColor = [UIColor whiteColor];
-//    cell.backgroundView = [self gradientViewForCell:cell];
+    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ia_arrow.png"]];
     return cell;
 }
 

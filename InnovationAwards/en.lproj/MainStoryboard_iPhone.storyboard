@@ -1349,7 +1349,7 @@ www.facebook.com/TechColumbusOhio</string>
             </objects>
             <point key="canvasLocation" x="4141" y="-1330"/>
         </scene>
-        <!--Facebook Web View Controller - IA12 on Facebook-->
+        <!--Facebook Web View Controller - Facebook-->
         <scene sceneID="OwH-Ok-yiu">
             <objects>
                 <viewController id="lZY-Lb-RaW" customClass="FacebookWebViewController" sceneMemberID="viewController">
@@ -1393,9 +1393,9 @@ www.facebook.com/TechColumbusOhio</string>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="IA12 on Facebook" id="CTk-Tv-EI4">
+                    <navigationItem key="navigationItem" title="Facebook" id="CTk-Tv-EI4">
                         <barButtonItem key="backBarButtonItem" title="Back" id="6hz-Wx-ans"/>
-                        <barButtonItem key="rightBarButtonItem" title="Videos" id="4pZ-kg-y5J">
+                        <barButtonItem key="rightBarButtonItem" title="Video Contests" id="4pZ-kg-y5J">
                             <connections>
                                 <action selector="peoplesChoiceVideoPressed:" destination="lZY-Lb-RaW" id="wBc-SB-8qx"/>
                             </connections>

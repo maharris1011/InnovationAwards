@@ -57,6 +57,11 @@
 		4D6D0B4C169D1CC900094867 /* ia12_app_callouts_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D0B3D169D1CC900094867 /* ia12_app_callouts_5.png */; };
 		4D6D0B4D169D1CC900094867 /* ia12_app_callouts_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D0B3E169D1CC900094867 /* ia12_app_callouts_5@2x.png */; };
 		4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */; };
+		4D803899169E396600CAFD48 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D803898169E396600CAFD48 /* Tweet.m */; };
+		4D80389B169E462200CAFD48 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D80389A169E462200CAFD48 /* Social.framework */; };
+		4D80389D169E506C00CAFD48 /* twitter-bird-blue-on-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D80389C169E506C00CAFD48 /* twitter-bird-blue-on-white.png */; };
+		4D8038A0169E53AD00CAFD48 /* ia_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D80389E169E53AD00CAFD48 /* ia_arrow.png */; };
+		4D8038A1169E53AD00CAFD48 /* ia_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D80389F169E53AD00CAFD48 /* ia_arrow@2x.png */; };
 		4D8EFFAB1682ABD10077FC8C /* SemifinalistDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */; };
 		4DA2183D16953DAA00F2370A /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2182F16953DAA00F2370A /* NSDate-Utilities.m */; };
 		4DA2183E16953DAA00F2370A /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2183116953DAA00F2370A /* NSDate+Helper.m */; };
@@ -413,6 +418,12 @@
 		4D6D0B3E169D1CC900094867 /* ia12_app_callouts_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_5@2x.png"; sourceTree = "<group>"; };
 		4D736D6A167E5ED200AB4171 /* TweetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailsViewController.h; sourceTree = "<group>"; };
 		4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailsViewController.m; sourceTree = "<group>"; };
+		4D803897169E396600CAFD48 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		4D803898169E396600CAFD48 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		4D80389A169E462200CAFD48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4D80389C169E506C00CAFD48 /* twitter-bird-blue-on-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-bird-blue-on-white.png"; path = "../../../../../../Desktop/twitter-bird-blue-on-white.png"; sourceTree = "<group>"; };
+		4D80389E169E53AD00CAFD48 /* ia_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_arrow.png; sourceTree = "<group>"; };
+		4D80389F169E53AD00CAFD48 /* ia_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia_arrow@2x.png"; sourceTree = "<group>"; };
 		4D8EFFA91682ABD10077FC8C /* SemifinalistDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemifinalistDetailTableViewController.h; sourceTree = "<group>"; };
 		4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemifinalistDetailTableViewController.m; sourceTree = "<group>"; };
 		4DA2182E16953DAA00F2370A /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-Utilities.h"; path = "Vendor/NSDate-Utilities.h"; sourceTree = "<group>"; };
@@ -757,6 +768,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D80389B169E462200CAFD48 /* Social.framework in Frameworks */,
 				4DE6FEE616954762004B37D5 /* libxml2.2.dylib in Frameworks */,
 				4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */,
 				4DCB57E7167E46F200254B98 /* MobileCoreServices.framework in Frameworks */,
@@ -781,6 +793,9 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D80389E169E53AD00CAFD48 /* ia_arrow.png */,
+				4D80389F169E53AD00CAFD48 /* ia_arrow@2x.png */,
+				4D80389C169E506C00CAFD48 /* twitter-bird-blue-on-white.png */,
 				4D3CE6D6169BC0C900D2D60A /* facebooklogo.jpg */,
 				4D3CE6D7169BC0C900D2D60A /* twitterlogo.jpg */,
 				4D3CE6D8169BC0C900D2D60A /* linkedinlogo.jpg */,
@@ -880,6 +895,8 @@
 		4D50192B167547E70031B9F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D803897169E396600CAFD48 /* Tweet.h */,
+				4D803898169E396600CAFD48 /* Tweet.m */,
 				4DCB57BE167E41AC00254B98 /* ImageCache.h */,
 				4DCB57BF167E41AC00254B98 /* ImageCache.m */,
 				4DE6FEF316954AB2004B37D5 /* IACategory.h */,
@@ -990,6 +1007,7 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
+				4D80389A169E462200CAFD48 /* Social.framework */,
 				4D50199A16754A780031B9F8 /* ia_72x72_icon.png */,
 				4D50199816754A5B0031B9F8 /* ia_114x114_icon.png */,
 				4D50199616754A500031B9F8 /* ia_57x57_icon.png */,
@@ -1649,6 +1667,9 @@
 				4D6D0B4B169D1CC900094867 /* ia12_app_callouts_5-568h@2x.png in Resources */,
 				4D6D0B4C169D1CC900094867 /* ia12_app_callouts_5.png in Resources */,
 				4D6D0B4D169D1CC900094867 /* ia12_app_callouts_5@2x.png in Resources */,
+				4D80389D169E506C00CAFD48 /* twitter-bird-blue-on-white.png in Resources */,
+				4D8038A0169E53AD00CAFD48 /* ia_arrow.png in Resources */,
+				4D8038A1169E53AD00CAFD48 /* ia_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1703,6 +1724,7 @@
 				4D29BA96169A300A00C1B5D2 /* SponsorImageTableViewController.m in Sources */,
 				4D29BA99169A307300C1B5D2 /* EventDetailsMenuTableViewController.m in Sources */,
 				4D6D0B2E169D0ACD00094867 /* NSString+SocialMediaParsers.m in Sources */,
+				4D803899169E396600CAFD48 /* Tweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
