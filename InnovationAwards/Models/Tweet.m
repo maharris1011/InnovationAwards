@@ -13,7 +13,6 @@
 
 @implementation Tweet
 
-@synthesize originalProfileImage = _originalProfileImage;
 @synthesize profileImageURL = _profileImageURL;
 @synthesize text = _text;
 @synthesize screenName = _screenName;
@@ -21,34 +20,14 @@
 @synthesize identifier = _identifier;
 @synthesize name = _name;
 @synthesize createdAtString = _createdAtString;
-@synthesize normalProfileImage = _normalProfileImage;
 @synthesize normalProfileImageURL = _normalProfileImageURL;
 
 
-static UIImage *defaultImage = nil;
-
-- (UIImage *)getFromCacheImageNamed:(NSString *)key
-{
-    UIImage *image = defaultImage;
-    UIImage *profileImage = [[ImageCache sharedStore] imageForKey:self.profileImageURL];
-    
-    if (profileImage != nil)
-    {
-        image = profileImage;
-    }
-    
-    return image;
-}
 
 - (id)init {
     self = [super init];
     if (self)
     {
-        // custom initialization
-        if (defaultImage == nil)
-        {
-            defaultImage = [UIImage imageNamed:@"twitter-bird-blue-on-white.png"];
-        }
     }
     return self;
 }
@@ -76,33 +55,20 @@ static UIImage *defaultImage = nil;
 - (NSString *)normalProfileImageURL
 {
     // append "_normal" onto the profile url basename
-    NSString *imageURL = [self.profileImageURL stringByReplacingOccurrencesOfString:@".png" withString:@"_normal.png"];
-    return imageURL;
-}
-
-- (UIImage *)normalProfileImage
-{
-    // get that image
-    return [self getFromCacheImageNamed:self.normalProfileImageURL];
-}
-
-- (UIImage *)originalProfileImage
-{
-    UIImage *image = defaultImage;
-    if (self.profileImageURL)
+    if (_normalProfileImageURL == nil)
     {
-        image = [self getFromCacheImageNamed:self.profileImageURL];
+        NSRange r = [self.profileImageURL rangeOfString:@"_normal.png"];
+        if (r.location == NSNotFound)
+        {
+            _normalProfileImageURL = [self.profileImageURL stringByReplacingOccurrencesOfString:@".png" withString:@"_normal.png"];
+        }
+        else
+        {
+            _normalProfileImageURL = self.profileImageURL;
+        }
     }
-    return image;
-}
-
-- (void)setOriginalProfileImage:(UIImage *)i
-{
-    if (i != nil)
-    {
-        [[ImageCache sharedStore] setImage:i forKey:self.profileImageURL];
-    }
-    _originalProfileImage = i;
+    NSLog(@"%@'s picture: %@", self.name, _normalProfileImageURL);
+    return _normalProfileImageURL;
 }
 
 - (NSString *)createdAtString

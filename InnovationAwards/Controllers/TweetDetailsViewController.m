@@ -8,6 +8,7 @@
 #import "NSDate+Helper.h"
 #import "UIImage+Resize.h"
 #import "TweetDetailsViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface TweetDetailsViewController ()
 
@@ -40,10 +41,24 @@
     self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.tweet.createdAtString];
     
     self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.screenName];
-    self.profileImageView.image = [self.tweet.originalProfileImage thumbnailImage:48 
-                                                        transparentBorder:1 
-                                                             cornerRadius:5 
-                                                     interpolationQuality:kCGInterpolationDefault];
+
+    NSString *url = self.tweet.normalProfileImageURL;
+    __block UIActivityIndicatorView *activityIndicator = nil;
+    if (nil != url)
+    {
+        [self.profileImageView addSubview:activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+        activityIndicator.center = self.profileImageView.center;
+        [activityIndicator startAnimating];
+        
+        [self.profileImageView setImageWithURL:[NSURL URLWithString:url]
+                placeholderImage:[UIImage imageNamed:@"twitter-bird-blue-on-white.png"]
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
+         {
+             [activityIndicator removeFromSuperview];
+             activityIndicator = nil;
+         }];
+    }
+    
     self.navigationController.toolbarHidden = NO;
 }
 

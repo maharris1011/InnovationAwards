@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PullToRefresh/PullToRefreshView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface IATwitterViewController : UITableViewController<PullToRefreshViewDelegate, UIActionSheetDelegate>
 

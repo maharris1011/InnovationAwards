@@ -8,7 +8,6 @@
 
 #import "IATwitterViewController.h"
 #import "ASIHTTPRequest.h"
-#import "UIImage+Resize.h"
 #import "UIImage+RoundedCorner.h"
 #import "UITableViewController+GradientHeaders.h"
 #import "NSDate+Helper.h"
@@ -186,7 +185,23 @@
     name.text = tweet.name;
     sentOn.text = [NSString stringWithFormat:@"Sent: %@", tweet.createdAtString];
     userAt.text = [NSString stringWithFormat:@"@%@", tweet.screenName];
-    profile.image = [tweet.normalProfileImage roundedCornerImage:5 borderSize:1];
+    
+    NSString *url = tweet.normalProfileImageURL;
+    __block UIActivityIndicatorView *activityIndicator = nil;
+    if (nil != url)
+    {
+        [profile addSubview:activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+        activityIndicator.center = profile.center;
+        [activityIndicator startAnimating];
+        
+        [profile setImageWithURL:[NSURL URLWithString:url]
+                placeholderImage:[UIImage imageNamed:@"twitter-bird-blue-on-white.png"]
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
+                       {
+                           [activityIndicator removeFromSuperview];
+                           activityIndicator = nil;
+                       }];
+    }
     
     // set up the background
     UIView *bgView = [self gradientViewForCell:cell];

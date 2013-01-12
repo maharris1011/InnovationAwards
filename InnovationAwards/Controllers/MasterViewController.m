@@ -251,7 +251,7 @@
 {
     // move the page control just below the clickable images
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
-    [self.pageControl setFrame:CGRectMake(0, pagesScrollViewSize.height, 320, 36)];
+    [self.pageControl setFrame:CGRectMake(0, pagesScrollViewSize.height+10, 320, 36)];
     
     // move the buttons to be midway between "location" and the bottom of the pageControl
     NSInteger buttonWidth = self.registerButton.frame.size.width;

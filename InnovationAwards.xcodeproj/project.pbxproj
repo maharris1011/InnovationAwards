@@ -101,7 +101,6 @@
 		4DB8F8911675DAFC0017CD64 /* FacebookWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8F8901675DAFC0017CD64 /* FacebookWebViewController.m */; };
 		4DC31D3416956DA600D106E1 /* TFHppleElement+IDSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC31D3316956DA600D106E1 /* TFHppleElement+IDSearch.m */; };
 		4DCB57B1167E351C00254B98 /* SemifinalistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB57B0167E351C00254B98 /* SemifinalistListViewController.m */; };
-		4DCB57C0167E41AC00254B98 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB57BF167E41AC00254B98 /* ImageCache.m */; };
 		4DCB57E3167E45E500254B98 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCB57E2167E45E400254B98 /* CFNetwork.framework */; };
 		4DCB57E5167E465400254B98 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCB57E4167E465300254B98 /* SystemConfiguration.framework */; };
 		4DCB57E7167E46F200254B98 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCB57E6167E46F200254B98 /* MobileCoreServices.framework */; };
@@ -113,6 +112,8 @@
 		4DCED0041675474100272F0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED0031675474100272F0B /* AppDelegate.m */; };
 		4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */; };
 		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
+		4DD6867316A1EA060071007F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD6867216A1EA060071007F /* SDWebImage.framework */; };
+		4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD6867516A1EB440071007F /* ImageIO.framework */; };
 		4DD6D72E16960FA500E2927E /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D72C16960FA500E2927E /* ia12_sponsors.png */; };
 		4DD6D72F16960FA500E2927E /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */; };
 		4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */; };
@@ -488,8 +489,6 @@
 		4DC31D3316956DA600D106E1 /* TFHppleElement+IDSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TFHppleElement+IDSearch.m"; path = "Vendor/TFHppleElement+IDSearch.m"; sourceTree = "<group>"; };
 		4DCB57AF167E351C00254B98 /* SemifinalistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemifinalistListViewController.h; sourceTree = "<group>"; };
 		4DCB57B0167E351C00254B98 /* SemifinalistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemifinalistListViewController.m; sourceTree = "<group>"; };
-		4DCB57BE167E41AC00254B98 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
-		4DCB57BF167E41AC00254B98 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
 		4DCB57E2167E45E400254B98 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4DCB57E4167E465300254B98 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4DCB57E6167E46F200254B98 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -505,6 +504,8 @@
 		4DCED0031675474100272F0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DCED00C1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4DD6867216A1EA060071007F /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		4DD6867516A1EB440071007F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4DD6D72C16960FA500E2927E /* ia12_sponsors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_sponsors.png; sourceTree = "<group>"; };
 		4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_sponsors@2x.png"; sourceTree = "<group>"; };
 		4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TechColumbus_Logo.jpg; sourceTree = "<group>"; };
@@ -768,6 +769,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */,
 				4D80389B169E462200CAFD48 /* Social.framework in Frameworks */,
 				4DE6FEE616954762004B37D5 /* libxml2.2.dylib in Frameworks */,
 				4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */,
@@ -784,6 +786,7 @@
 				4DCECFF81675474000272F0B /* CoreGraphics.framework in Frameworks */,
 				4DFEF6F216759E050069E734 /* Socialize.framework in Frameworks */,
 				4DA2183F16953DAA00F2370A /* libTestFlight.a in Frameworks */,
+				4DD6867316A1EA060071007F /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,8 +900,6 @@
 			children = (
 				4D803897169E396600CAFD48 /* Tweet.h */,
 				4D803898169E396600CAFD48 /* Tweet.m */,
-				4DCB57BE167E41AC00254B98 /* ImageCache.h */,
-				4DCB57BF167E41AC00254B98 /* ImageCache.m */,
 				4DE6FEF316954AB2004B37D5 /* IACategory.h */,
 				4DE6FEF416954AB2004B37D5 /* IACategory.m */,
 				4DE6FEF616954BF5004B37D5 /* IASemifinalist.h */,
@@ -1007,6 +1008,7 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
+				4DD6867516A1EB440071007F /* ImageIO.framework */,
 				4D80389A169E462200CAFD48 /* Social.framework */,
 				4D50199A16754A780031B9F8 /* ia_72x72_icon.png */,
 				4D50199816754A5B0031B9F8 /* ia_114x114_icon.png */,
@@ -1028,6 +1030,7 @@
 		4DCECFF21675474000272F0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6867216A1EA060071007F /* SDWebImage.framework */,
 				4DE6FEE516954762004B37D5 /* libxml2.2.dylib */,
 				4DB51D40167E9F4000A07437 /* Twitter.framework */,
 				4DCB57E6167E46F200254B98 /* MobileCoreServices.framework */,
@@ -1695,7 +1698,6 @@
 				4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */,
 				4D26A3C9167846BF006D43A2 /* UIView+SSGradient.m in Sources */,
 				4DCB57B1167E351C00254B98 /* SemifinalistListViewController.m in Sources */,
-				4DCB57C0167E41AC00254B98 /* ImageCache.m in Sources */,
 				4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */,
 				4D8EFFAB1682ABD10077FC8C /* SemifinalistDetailTableViewController.m in Sources */,
 				4DA2183D16953DAA00F2370A /* NSDate-Utilities.m in Sources */,
@@ -1819,6 +1821,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";
@@ -1850,6 +1853,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";

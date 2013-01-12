@@ -12,8 +12,6 @@
 {
 }
 
-@property (nonatomic, strong) UIImage *originalProfileImage;
-@property (nonatomic, strong, readonly) UIImage *normalProfileImage;
 @property (nonatomic, strong, readonly) NSString *normalProfileImageURL;
 @property (nonatomic, strong) NSString *profileImageURL;
 @property (nonatomic, strong) NSString *text;
