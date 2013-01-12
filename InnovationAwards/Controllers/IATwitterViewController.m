@@ -9,6 +9,7 @@
 #import "IATwitterViewController.h"
 #import "ASIHTTPRequest.h"
 #import "UIImage+Resize.h"
+#import "UIImage+RoundedCorner.h"
 #import "UITableViewController+GradientHeaders.h"
 #import "NSDate+Helper.h"
 #import "TweetDetailsViewController.h"
@@ -24,7 +25,7 @@
 
 @implementation IATwitterViewController {
     PullToRefreshView *_pull;
-    TWTweetComposeViewController *_tweetView;
+    SLComposeViewController *_tweetView;
     NSString *_szTwitterUrl;
     NSArray *_tweets;
 }
@@ -56,9 +57,12 @@
     return self;
 }
 
+
 - (void)viewDidUnload
 {
   // be kind to memory
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     _tweetView = nil;
     [self setPull:nil];
     [self setTweets:nil];
@@ -82,34 +86,34 @@
     [_pull setDelegate:self];
     [self.tableView addSubview:_pull];
 
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(foregroundRefresh:)
-//                                                 name:UIApplicationWillEnterForegroundNotification
-//                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(foregroundRefresh:)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
    
     // set up our communication with Twitter
-    _tweetView = [[TWTweetComposeViewController alloc] init];
+    _tweetView = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    TWTweetComposeViewControllerCompletionHandler completionHandler =
-    ^(TWTweetComposeViewControllerResult result) {
-        NSString *output = @"Unknown Response from Twitter";
-        switch (result)
-        {
-            case TWTweetComposeViewControllerResultCancelled:
-                NSLog(@"Twitter Result: canceled");
-                output = @"Tweet Cancelled.";
-                break;
-            case TWTweetComposeViewControllerResultDone:
-                NSLog(@"Twitter Result: sent");
-                output = @"Tweet Sent!"; 
-                break;
-            default:
-                NSLog(@"@unknown result from Twitter %d", result );
-                break;
-        }
-        [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
-        [self dismissModalViewControllerAnimated:YES];
-    };
+    SLComposeViewControllerCompletionHandler __block completionHandler =
+        ^(SLComposeViewControllerResult result) {
+            [_tweetView dismissViewControllerAnimated:YES completion:nil];
+            NSString *output = @"Unknown Response from Twitter";
+            switch (result)
+            {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Twitter Result: canceled");
+                    output = @"Tweet Cancelled.";
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Twitter Result: sent");
+                    output = @"Tweet Sent!"; 
+                    break;
+                default:
+                    NSLog(@"@unknown result from Twitter %d", result );
+                    break;
+            }
+            [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+        };
 
     [_tweetView setCompletionHandler:completionHandler];
 }
@@ -182,7 +186,7 @@
     name.text = tweet.name;
     sentOn.text = [NSString stringWithFormat:@"Sent: %@", tweet.createdAtString];
     userAt.text = [NSString stringWithFormat:@"@%@", tweet.screenName];
-    profile.image = [tweet.normalProfileImage thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
+    profile.image = [tweet.normalProfileImage roundedCornerImage:5 borderSize:1];
     
     // set up the background
     UIView *bgView = [self gradientViewForCell:cell];
@@ -245,6 +249,7 @@
 {
     [_tweetView setInitialText:@"#ia12"];
     [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
+    
     [self presentModalViewController:_tweetView animated:YES];
 }
 

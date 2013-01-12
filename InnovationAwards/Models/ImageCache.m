@@ -90,11 +90,13 @@
             [dictionary setObject:result forKey:s];
         else
         {
-            [self asynchronousGetImageAtUrl:s onComplete:^(UIImage *image) {
-                if (image != nil) {
-                    [self setImage:image forKey:s];
-                }
-            }];
+            [self asynchronousGetImageAtUrl:s onComplete:^(UIImage *image)
+                {
+                    if (image != nil)
+                    {
+                        [self setImage:image forKey:s];
+                    }
+                }];
         }
     }
     return result;
