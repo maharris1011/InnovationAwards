@@ -40,7 +40,7 @@
     self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.tweet.createdAtString];
     
     self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.screenName];
-    self.profileImageView.image = [self.tweet.profileImage thumbnailImage:48 
+    self.profileImageView.image = [self.tweet.originalProfileImage thumbnailImage:48 
                                                         transparentBorder:1 
                                                              cornerRadius:5 
                                                      interpolationQuality:kCGInterpolationDefault];

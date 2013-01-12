@@ -13,7 +13,7 @@
 
 @implementation Tweet
 
-@synthesize profileImage = _profileImage;
+@synthesize originalProfileImage = _originalProfileImage;
 @synthesize profileImageURL = _profileImageURL;
 @synthesize text = _text;
 @synthesize screenName = _screenName;
@@ -21,18 +21,41 @@
 @synthesize identifier = _identifier;
 @synthesize name = _name;
 @synthesize createdAtString = _createdAtString;
+@synthesize normalProfileImage = _normalProfileImage;
+@synthesize normalProfileImageURL = _normalProfileImageURL;
+
+
+static UIImage *defaultImage = nil;
+
+- (UIImage *)getFromCacheImageNamed:(NSString *)key
+{
+    UIImage *image = defaultImage;
+    UIImage *profileImage = [[ImageCache sharedStore] imageForKey:self.profileImageURL];
+    
+    if (profileImage != nil)
+    {
+        image = profileImage;
+    }
+    
+    return image;
+}
 
 - (id)init {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         // custom initialization
+        if (defaultImage == nil)
+        {
+            defaultImage = [UIImage imageNamed:@"twitter-bird-blue-on-white.png"];
+        }
     }
     return self;
 }
 
 - (id)initFromDictionary:(NSDictionary *)dictionary
 {
-    if (self = [super init])
+    if (self = [self init])
     {
         if (dictionary)
         {
@@ -50,31 +73,36 @@
     return self;
 }
 
-
-- (UIImage *)profileImage
+- (NSString *)normalProfileImageURL
 {
+    // append "_normal" onto the profile url basename
+    NSString *imageURL = [self.profileImageURL stringByReplacingOccurrencesOfString:@".png" withString:@"_normal.png"];
+    return imageURL;
+}
+
+- (UIImage *)normalProfileImage
+{
+    // get that image
+    return [self getFromCacheImageNamed:self.normalProfileImageURL];
+}
+
+- (UIImage *)originalProfileImage
+{
+    UIImage *image = defaultImage;
     if (self.profileImageURL)
     {
-        return [[ImageCache sharedStore] imageForKey:self.profileImageURL];
+        image = [self getFromCacheImageNamed:self.profileImageURL];
     }
-    else
-    {
-        return [UIImage imageNamed:@"twitter-bird-blue-on-white.png"];
-    }
+    return image;
 }
 
-- (void)setProfileImage:(UIImage *)i
+- (void)setOriginalProfileImage:(UIImage *)i
 {
-    if (i != nil) {
+    if (i != nil)
+    {
         [[ImageCache sharedStore] setImage:i forKey:self.profileImageURL];
     }
-    _profileImage = i;
-}
-
-- (void)setProfileImageURL:(NSString *)profileImageURL
-{
-    // get the photo from the web
-    _profileImageURL = profileImageURL;
+    _originalProfileImage = i;
 }
 
 - (NSString *)createdAtString

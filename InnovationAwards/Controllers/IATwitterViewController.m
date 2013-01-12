@@ -182,7 +182,7 @@
     name.text = tweet.name;
     sentOn.text = [NSString stringWithFormat:@"Sent: %@", tweet.createdAtString];
     userAt.text = [NSString stringWithFormat:@"@%@", tweet.screenName];
-    profile.image = [tweet.profileImage thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
+    profile.image = [tweet.normalProfileImage thumbnailImage:48 transparentBorder:1 cornerRadius:5 interpolationQuality:kCGInterpolationHigh];
     
     // set up the background
     UIView *bgView = [self gradientViewForCell:cell];
