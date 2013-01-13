@@ -13,6 +13,7 @@
 }
 
 @property (nonatomic, strong, readonly) NSString *normalProfileImageURL;
+@property (nonatomic, strong, readonly) NSString *biggerProfileImageURL;
 @property (nonatomic, strong) NSString *profileImageURL;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *screenName;

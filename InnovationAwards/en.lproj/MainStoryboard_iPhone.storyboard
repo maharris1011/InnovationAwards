@@ -1251,18 +1251,18 @@ www.facebook.com/TechColumbusOhio</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Yd1-Q0-3ro">
-                                                    <rect key="frame" x="20" y="20" width="48" height="48"/>
+                                                    <rect key="frame" x="5" y="8" width="73" height="73"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ai0-tK-vqd">
-                                                    <rect key="frame" x="76" y="20" width="204" height="21"/>
+                                                    <rect key="frame" x="86" y="20" width="204" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Screen Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rp5-4v-1Fc">
-                                                    <rect key="frame" x="76" y="49" width="204" height="21"/>
+                                                    <rect key="frame" x="86" y="49" width="204" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.40784317260000003" green="0.0" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>

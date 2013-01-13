@@ -14,13 +14,14 @@
 @implementation Tweet
 
 @synthesize profileImageURL = _profileImageURL;
+@synthesize biggerProfileImageURL = _biggerProfileImageURL;
+@synthesize normalProfileImageURL = _normalProfileImageURL;
 @synthesize text = _text;
 @synthesize screenName = _screenName;
 @synthesize createdAt = _createdAt;
 @synthesize identifier = _identifier;
 @synthesize name = _name;
 @synthesize createdAtString = _createdAtString;
-@synthesize normalProfileImageURL = _normalProfileImageURL;
 
 
 
@@ -41,7 +42,7 @@
             NSDictionary *user = [dictionary objectForKey:@"user"];
 
             self.name = [user objectForKey:@"name"];
-            self.profileImageURL = [user objectForKey:@"profile_image_url"];
+            self.profileImageURL = [[user objectForKey:@"profile_image_url"] stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
             self.text = [dictionary objectForKey:@"text"];
             self.screenName = [user objectForKey:@"screen_name"];
             NSString *createdAtString = [dictionary objectForKey:@"created_at"];
@@ -52,22 +53,41 @@
     return self;
 }
 
+- (NSString *)twitterProfileImageOfType:(NSString *)type
+{
+    NSString *retval = nil;
+    
+    // append (type) onto the profile url basename
+    NSRange r = [self.profileImageURL rangeOfString:[type stringByAppendingPathExtension:@"png"]];
+    if (r.location == NSNotFound)
+    {
+        retval = [self.profileImageURL stringByReplacingOccurrencesOfString:@".png" withString:[NSString stringWithFormat:@"_%@.png", type]];
+    }
+    else
+    {
+        retval = self.profileImageURL;
+    }
+    NSLog(@"%@'s picture: %@", self.name, retval);
+    return retval;
+}
+
+- (NSString *)biggerProfileImageURL
+{
+    // append "_bigger" onto the profile url basename
+    if (_biggerProfileImageURL == nil)
+    {
+        return [self twitterProfileImageOfType:@"bigger"];
+    }
+    return _biggerProfileImageURL;
+}
+
 - (NSString *)normalProfileImageURL
 {
     // append "_normal" onto the profile url basename
     if (_normalProfileImageURL == nil)
     {
-        NSRange r = [self.profileImageURL rangeOfString:@"_normal.png"];
-        if (r.location == NSNotFound)
-        {
-            _normalProfileImageURL = [self.profileImageURL stringByReplacingOccurrencesOfString:@".png" withString:@"_normal.png"];
-        }
-        else
-        {
-            _normalProfileImageURL = self.profileImageURL;
-        }
+        return [self twitterProfileImageOfType:@"normal"];
     }
-    NSLog(@"%@'s picture: %@", self.name, _normalProfileImageURL);
     return _normalProfileImageURL;
 }
 

@@ -34,23 +34,21 @@
 }
 
 - (void)configureView
-{
-    
+{    
     self.tweetTextView.text = self.tweet.text;
     self.senderNameLabel.text = self.tweet.name;
     self.tweetSentDateLabel.text = [NSString stringWithFormat:@"Sent: %@", self.tweet.createdAtString];
     
     self.senderScreenNameLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.screenName];
 
-    NSString *url = self.tweet.normalProfileImageURL;
     __block UIActivityIndicatorView *activityIndicator = nil;
-    if (nil != url)
+    if (nil != self.tweet.biggerProfileImageURL)
     {
         [self.profileImageView addSubview:activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
         activityIndicator.center = self.profileImageView.center;
         [activityIndicator startAnimating];
         
-        [self.profileImageView setImageWithURL:[NSURL URLWithString:url]
+        [self.profileImageView setImageWithURL:[NSURL URLWithString:self.tweet.biggerProfileImageURL]
                 placeholderImage:[UIImage imageNamed:@"twitter-bird-blue-on-white.png"]
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
          {
@@ -72,26 +70,6 @@
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
     [bgImageView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     self.tableView.backgroundView = bgImageView;
-    
-    _tweetView = [[TWTweetComposeViewController alloc] init];
-    
-    TWTweetComposeViewControllerCompletionHandler completionHandler =
-    ^(TWTweetComposeViewControllerResult result) {
-        switch (result)
-        {
-            case TWTweetComposeViewControllerResultCancelled:
-                NSLog(@"Twitter Result: canceled");
-                break;
-            case TWTweetComposeViewControllerResultDone:
-                NSLog(@"Twitter Result: sent");
-                break;
-            default:
-                NSLog(@"Twitter Result: default");
-                break;
-        }
-        [self dismissModalViewControllerAnimated:YES];
-    };
-    [_tweetView setCompletionHandler:completionHandler];
     
 
 }
@@ -164,29 +142,40 @@
 
 
 #pragma mark -- UIActions
+- (SLComposeViewController *)createTweetSheet
+{
+    SLComposeViewController *tweetSheet = nil;
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    }
+    return tweetSheet;
+}
 
 - (IBAction)replyButtonPressed:(id)sender 
 {
-    [_tweetView setInitialText:[NSString stringWithFormat:@"@%@", self.tweet.screenName]];
-    [self presentModalViewController:_tweetView animated:YES];
+    SLComposeViewController *tweetSheet = [self createTweetSheet];
+    [tweetSheet setInitialText:[NSString stringWithFormat:@"@%@", self.tweet.screenName]];
+    [self presentModalViewController:tweetSheet animated:YES];
 }
 
 - (IBAction)retweetButtonPressed:(id)sender {
     
+    SLComposeViewController *tweetSheet = [self createTweetSheet];
     NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.tweet.screenName, self.tweet.text];
     
-    if ([_tweetView setInitialText:initialText] == NO) 
+    if ([tweetSheet setInitialText:initialText] == NO)
     {
-        [_tweetView setInitialText:[initialText substringToIndex:MIN(120, [initialText length])]];
+        [tweetSheet setInitialText:[initialText substringToIndex:MIN(120, [initialText length])]];
     }
-    [self presentModalViewController:_tweetView animated:YES];
+    [self presentModalViewController:tweetSheet animated:YES];
 }
 
 - (IBAction)composeButtonPressed:(id)sender 
 {
-    [_tweetView setInitialText:@"#ia12"];
-    [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
-    [self presentModalViewController:_tweetView animated:YES];
+    SLComposeViewController *tweetSheet = [self createTweetSheet];
+    [tweetSheet setInitialText:@"#ia12"];
+    [tweetSheet addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
+    [self presentModalViewController:tweetSheet animated:YES];
     
 }
 

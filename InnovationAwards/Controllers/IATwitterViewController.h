@@ -12,6 +12,9 @@
 
 @interface IATwitterViewController : UITableViewController<PullToRefreshViewDelegate, UIActionSheetDelegate>
 
+@property (nonatomic, strong) NSArray *tweets;
+@property (nonatomic, strong) PullToRefreshView *pull;
+
 - (IBAction)composeButtonPressed:(id)sender;
 - (IBAction)actionButtonPressed:(id)sender;
 

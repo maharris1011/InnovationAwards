@@ -11,7 +11,6 @@
 #import "Tweet.h"
 
 @interface TweetDetailsViewController : UITableViewController<UIActionSheetDelegate> {
-    TWTweetComposeViewController *_tweetView;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *senderNameLabel;

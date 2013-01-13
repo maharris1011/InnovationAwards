@@ -17,14 +17,11 @@
 
 @interface IATwitterViewController () 
 
-@property (nonatomic, strong) NSArray *tweets;
-@property (nonatomic, strong) PullToRefreshView *pull;
 
 @end
 
 @implementation IATwitterViewController {
     PullToRefreshView *_pull;
-    SLComposeViewController *_tweetView;
     NSString *_szTwitterUrl;
     NSArray *_tweets;
 }
@@ -60,9 +57,7 @@
 - (void)viewDidUnload
 {
   // be kind to memory
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    _tweetView = nil;
     [self setPull:nil];
     [self setTweets:nil];
     
@@ -85,36 +80,12 @@
     [_pull setDelegate:self];
     [self.tableView addSubview:_pull];
 
+    // always refresh when we come back to the view
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(foregroundRefresh:)
                                                  name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
    
-    // set up our communication with Twitter
-    _tweetView = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    
-    SLComposeViewControllerCompletionHandler __block completionHandler =
-        ^(SLComposeViewControllerResult result) {
-            [_tweetView dismissViewControllerAnimated:YES completion:nil];
-            NSString *output = @"Unknown Response from Twitter";
-            switch (result)
-            {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Twitter Result: canceled");
-                    output = @"Tweet Cancelled.";
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Twitter Result: sent");
-                    output = @"Tweet Sent!"; 
-                    break;
-                default:
-                    NSLog(@"@unknown result from Twitter %d", result );
-                    break;
-            }
-            [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
-        };
-
-    [_tweetView setCompletionHandler:completionHandler];
 }
 
 -(void)foregroundRefresh:(NSNotification *)notification
@@ -128,6 +99,11 @@
 {
     [self foregroundRefresh:nil];
     self.navigationController.toolbarHidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -174,7 +150,7 @@
     // Configure the cell...
     Tweet *tweet = [self.tweets objectAtIndex:indexPath.row];
 
-    UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
+    __block UIImageView *profile = (UIImageView*)[cell viewWithTag:4];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *tweetText = (UILabel*)[cell viewWithTag:2];
     UILabel *sentOn = (UILabel*)[cell viewWithTag:3];
@@ -186,15 +162,14 @@
     sentOn.text = [NSString stringWithFormat:@"Sent: %@", tweet.createdAtString];
     userAt.text = [NSString stringWithFormat:@"@%@", tweet.screenName];
     
-    NSString *url = tweet.normalProfileImageURL;
-    __block UIActivityIndicatorView *activityIndicator = nil;
-    if (nil != url)
+    if (nil != tweet.normalProfileImageURL)
     {
+        __block UIActivityIndicatorView *activityIndicator;
         [profile addSubview:activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
         activityIndicator.center = profile.center;
         [activityIndicator startAnimating];
         
-        [profile setImageWithURL:[NSURL URLWithString:url]
+        [profile setImageWithURL:[NSURL URLWithString:tweet.normalProfileImageURL]
                 placeholderImage:[UIImage imageNamed:@"twitter-bird-blue-on-white.png"]
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
                        {
@@ -260,12 +235,26 @@
 
 #pragma mark -- UIActions
 
+- (SLComposeViewController *)createTweetSheet
+{
+    SLComposeViewController *tweetSheet = nil;
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    }
+    return tweetSheet;
+}
+
 - (IBAction)composeButtonPressed:(id)sender
 {
-    [_tweetView setInitialText:@"#ia12"];
-    [_tweetView addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
-    
-    [self presentModalViewController:_tweetView animated:YES];
+    SLComposeViewController *slcvc = [self createTweetSheet];
+    if (slcvc != nil) {
+        // a little preconfiguration
+        [slcvc setInitialText:@"#ia12"];
+        [slcvc addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
+        
+        // show the sheet & get the tweet sent
+        [self presentModalViewController:slcvc animated:YES];
+    }
 }
 
 - (IBAction)actionButtonPressed:(id)sender
