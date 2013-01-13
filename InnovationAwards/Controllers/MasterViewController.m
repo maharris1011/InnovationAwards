@@ -97,8 +97,14 @@
         newPageView.contentMode = UIViewContentModeScaleAspectFit;
         newPageView.frame = frame;
         newPageView.tag = page;
-        
+        newPageView.layer.shadowColor = [UIColor blackColor].CGColor;
+        newPageView.layer.shadowOffset = CGSizeMake(1, 1);
+        newPageView.layer.shadowOpacity = .8;
+        newPageView.layer.shadowRadius = 10.0;
+        newPageView.layer.shouldRasterize = YES;
+        newPageView.clipsToBounds = NO;
         [self.scrollView addSubview:newPageView];
+    
         // 4
         [self.pageViews replaceObjectAtIndex:page withObject:newPageView];
     }
@@ -231,9 +237,8 @@
 {
     [super viewWillAppear:animated];
     
-    UINavigationBar *navBar = [[self navigationController] navigationBar];
-    UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
-    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    UIImage *headerBackground = [UIImage imageNamed:@"headerBackgroundRounded.png"];
+    [self.navigationController.navigationBar setBackgroundImage:headerBackground forBarMetrics:UIBarMetricsDefault] ;
 
     self.navigationController.toolbarHidden = YES;    
     
@@ -241,8 +246,6 @@
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImages.count, pagesScrollViewSize.height);
 
-    [self.pageControl setFrame:CGRectMake(0, pagesScrollViewSize.height, 320, 36)];
-    
     // 5
     [self loadVisiblePages];
 }

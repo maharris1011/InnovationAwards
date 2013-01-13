@@ -47,7 +47,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     UINavigationBar *navBar = [[self navigationController] navigationBar];
-    UIImage *backgroundImage = [UIImage imageNamed:@"headerBackground.png"];
+    UIImage *backgroundImage = [UIImage imageNamed:@"headerBackgroundRounded.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     
     CAGradientLayer *gradient = buttonGradientWithColor(lightPurple, darkPurple);
