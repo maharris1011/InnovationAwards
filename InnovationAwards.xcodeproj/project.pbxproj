@@ -88,6 +88,7 @@
 		4DA89BDE1695FB670067E3C5 /* 38-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDC1695FB670067E3C5 /* 38-house.png */; };
 		4DA89BDF1695FB670067E3C5 /* 38-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */; };
 		4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */; };
+		4DA9234A16A3514B00CE349F /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9234916A3513100CE349F /* libMBProgressHUD.a */; };
 		4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB51D40167E9F4000A07437 /* Twitter.framework */; };
 		4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D42167EACEF00A07437 /* 02-redo.png */; };
 		4DB51D45167EACEF00A07437 /* 02-redo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D43167EACEF00A07437 /* 02-redo@2x.png */; };
@@ -359,6 +360,16 @@
 		4DFEF6FC1675C9E00069E734 /* IATwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEF6FB1675C9E00069E734 /* IATwitterViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4DA9234816A3513100CE349F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D286A7491518C70F00E13FB8;
+			remoteInfo = MBProgressHUD;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4D1D54331678503100626E21 /* 42-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info.png"; sourceTree = "<group>"; };
 		4D1D54341678503100626E21 /* 42-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info@2x.png"; sourceTree = "<group>"; };
@@ -472,6 +483,7 @@
 		4DA89BDC1695FB670067E3C5 /* 38-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-house.png"; sourceTree = "<group>"; };
 		4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-house@2x.png"; sourceTree = "<group>"; };
 		4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sandlot-logo.png"; sourceTree = "<group>"; };
+		4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Submodules/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		4DB51D40167E9F4000A07437 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4DB51D42167EACEF00A07437 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
 		4DB51D43167EACEF00A07437 /* 02-redo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo@2x.png"; sourceTree = "<group>"; };
@@ -769,6 +781,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DA9234A16A3514B00CE349F /* libMBProgressHUD.a in Frameworks */,
 				4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */,
 				4D80389B169E462200CAFD48 /* Social.framework in Frameworks */,
 				4DE6FEE616954762004B37D5 /* libxml2.2.dylib in Frameworks */,
@@ -981,6 +994,14 @@
 			path = Vendor/PullToRefresh;
 			sourceTree = "<group>";
 		};
+		4DA9234216A3513100CE349F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DA9234916A3513100CE349F /* libMBProgressHUD.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4DB8F8811675D8E50017CD64 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1008,8 +1029,7 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
-				4DD6867516A1EB440071007F /* ImageIO.framework */,
-				4D80389A169E462200CAFD48 /* Social.framework */,
+				4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */,
 				4D50199A16754A780031B9F8 /* ia_72x72_icon.png */,
 				4D50199816754A5B0031B9F8 /* ia_114x114_icon.png */,
 				4D50199616754A500031B9F8 /* ia_57x57_icon.png */,
@@ -1030,6 +1050,8 @@
 		4DCECFF21675474000272F0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6867516A1EB440071007F /* ImageIO.framework */,
+				4D80389A169E462200CAFD48 /* Social.framework */,
 				4DD6867216A1EA060071007F /* SDWebImage.framework */,
 				4DE6FEE516954762004B37D5 /* libxml2.2.dylib */,
 				4DB51D40167E9F4000A07437 /* Twitter.framework */,
@@ -1373,12 +1395,28 @@
 			mainGroup = 4DCECFE41675474000272F0B;
 			productRefGroup = 4DCECFF01675474000272F0B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4DA9234216A3513100CE349F /* Products */;
+					ProjectRef = 4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4DCECFEE1675474000272F0B /* InnovationAwards */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4DA9234916A3513100CE349F /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = 4DA9234816A3513100CE349F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4DCECFED1675474000272F0B /* Resources */ = {

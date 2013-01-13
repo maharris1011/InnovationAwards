@@ -7,3 +7,6 @@
 [submodule "Submodules/hpple"]
 	path = Submodules/hpple
 	url = https://github.com/topfunky/hpple.git
+[submodule "Submodules/MBProgressHUD"]
+	path = Submodules/MBProgressHUD
+	url = https://github.com/jdg/MBProgressHUD.git

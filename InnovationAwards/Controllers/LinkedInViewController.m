@@ -9,7 +9,7 @@
 #import "LinkedInViewController.h"
 
 @interface LinkedInViewController () {
-    NSString *_szUrl;
+    NSString *_title;
 }
 
 @end
@@ -25,14 +25,26 @@
     return self;
 }
 
+- (void)configureView
+{
+    self.forward.enabled = self.webView.canGoForward;
+    self.back.enabled = self.webView.canGoBack;
+    self.refresh.enabled = !self.webView.loading;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _title = @"IA12 on LinkedIn";
     
+    // this is how we show progress
+    self.progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    self.progressHUD.labelText = @"Loading...";
+    [self.view addSubview:self.progressHUD];
+
     // this is the URL for the TechColumbus group
-    _szUrl = @"https://www.linkedin.com/groups?gid=39787";
-    NSURL *URL = [NSURL URLWithString:_szUrl];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
+    self.startingURL = @"https://www.linkedin.com/groups?gid=39787";
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.startingURL]]];
 }
 
 - (void)viewDidLayoutSubviews
@@ -49,6 +61,7 @@
 - (void)viewDidUnload {
     [self setWebView:nil];
     [self setActionButton:nil];
+    [self setProgressHUD:nil];
     [super viewDidUnload];
 }
 
@@ -56,6 +69,7 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = NO;
+    [self configureView];
 }
 
 - (BOOL)shouldAutorotate
@@ -73,6 +87,33 @@
 
 
 #pragma mark -- UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.navigationItem setTitle:@"Loading..."];
+    [self.progressHUD show:YES];
+    [self configureView];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.webView stringByEvaluatingJavaScriptFromString:@"window.scrollTo(0.0, 44.0);"];
+    [self.navigationItem setTitle:_title];
+    [self.progressHUD hide:YES];
+    [self configureView];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self.navigationItem setTitle:_title];
+    [self.progressHUD hide:YES];
+    [self configureView];
+}
+
 - (IBAction)forwardPressed:(id)sender {
     [self.webView goForward];
 }
@@ -103,7 +144,7 @@
         {
             // safari
             // make a real URL
-            NSURL *url = [NSURL URLWithString:_szUrl];
+            NSURL *url = [NSURL URLWithString:self.startingURL];
             [[UIApplication sharedApplication] openURL:url];
             
         }

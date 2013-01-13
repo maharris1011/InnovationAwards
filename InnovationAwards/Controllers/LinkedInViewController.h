@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface LinkedInViewController : UIViewController<UIActionSheetDelegate>
+@interface LinkedInViewController : UIViewController<UIActionSheetDelegate, UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *actionButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *back;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *forward;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *refresh;
+@property (strong, nonatomic) MBProgressHUD *progressHUD;
+@property (strong, nonatomic) NSString *startingURL;
 
 - (IBAction)forwardPressed:(id)sender;
 - (IBAction)backwardPressed:(id)sender;

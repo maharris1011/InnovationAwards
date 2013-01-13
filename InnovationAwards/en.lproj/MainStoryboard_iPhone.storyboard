@@ -211,6 +211,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ixa-bg-enq" id="RPF-jZ-ddX"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -244,6 +247,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
                         <outlet property="actionButton" destination="XYh-U4-AVK" id="GYm-wd-MTv"/>
+                        <outlet property="back" destination="Op5-FK-vfq" id="OmQ-tC-IYq"/>
+                        <outlet property="forward" destination="jyv-eF-D6b" id="QND-KS-guH"/>
+                        <outlet property="refresh" destination="Vku-YR-HEf" id="Ali-YM-3Ta"/>
                         <outlet property="webView" destination="Nih-Wb-5kb" id="4du-9b-gGY"/>
                     </connections>
                 </viewController>
@@ -1404,6 +1410,10 @@ www.facebook.com/TechColumbusOhio</string>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
                         <outlet property="actionButton" destination="AMb-sy-lo9" id="cYJ-TB-jx8"/>
+                        <outlet property="back" destination="OGf-uX-0MH" id="PIJ-fI-7N5"/>
+                        <outlet property="forward" destination="T9A-gV-EYy" id="fUV-Td-6Hd"/>
+                        <outlet property="refresh" destination="A7h-3S-6dc" id="EXJ-Ze-QrN"/>
+                        <outlet property="videosButton" destination="4pZ-kg-y5J" id="u7T-DM-K54"/>
                         <outlet property="webView" destination="mYP-TS-G9q" id="dVu-B2-wPS"/>
                     </connections>
                 </viewController>
@@ -1530,6 +1540,10 @@ www.facebook.com/TechColumbusOhio</string>
                 <relationship kind="action" name="peoplesChoiceVideoPressed:"/>
                 <relationship kind="action" name="refreshPressed:"/>
                 <relationship kind="outlet" name="actionButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="videosButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -1548,6 +1562,9 @@ www.facebook.com/TechColumbusOhio</string>
                 <relationship kind="action" name="forwardPressed:"/>
                 <relationship kind="action" name="refreshPressed:"/>
                 <relationship kind="outlet" name="actionButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
