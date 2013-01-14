@@ -129,15 +129,26 @@
     [super viewDidUnload];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (BOOL)shouldAutorotate
+
+-(NSInteger)supportedInterfaceOrientations
 {
-    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
 }
 
 

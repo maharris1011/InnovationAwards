@@ -34,6 +34,9 @@
     bgImageView.contentMode = UIViewContentModeScaleAspectFill;
     [bgImageView setFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height)];
     self.tableView.backgroundView = bgImageView;
+    
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,17 +45,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (BOOL)shouldAutorotate
+
+-(NSInteger)supportedInterfaceOrientations
 {
-    return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
+    return UIInterfaceOrientationMaskPortrait;
 }
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
 
 #pragma mark - Table view delegate
 

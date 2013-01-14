@@ -65,12 +65,29 @@
             interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+-(NSInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = NO;
     [self configureView];
+}
+
+- (void)viewWillLayoutSubviews
+{
+	// Do any additional setup after loading the view.
+    [self.webView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
 }
 
 - (void)didReceiveMemoryWarning

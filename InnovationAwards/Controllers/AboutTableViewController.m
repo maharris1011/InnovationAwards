@@ -50,6 +50,19 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"headerBackgroundRounded.png"];
     [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     
+}
+
+- (void)viewDidLayoutSubviews
+{
+    // done button
+    NSInteger width = 550;
+    if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation))
+    {
+        width = 300;
+    }
+    
+    [self.doneButton setFrame:CGRectMake(0, 0, width, 45)];
+    
     CAGradientLayer *gradient = buttonGradientWithColor(lightPurple, darkPurple);
     [self.doneButton addGradient:gradient];
     self.doneButton.layer.borderColor = darkPurple.CGColor;
@@ -83,6 +96,10 @@
     return [self shouldAutorotateToInterfaceOrientation:self.interfaceOrientation];
 }
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 #pragma mark -- UITableViewDelegate methods
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -120,21 +137,22 @@
     }
 }
 
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    // now create the header label
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,320,22)];
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.font = IA_headlineBold;
-    headerLabel.shadowOffset = CGSizeMake(1, 1);
-    headerLabel.textColor = yellowText;
-    headerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.5];
     
-    headerLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    [view addSubview:headerLabel];
-    return view;
-    
+        // now create the header label
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 22)];
+        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,[UIScreen mainScreen].bounds.size.width,22)];
+        headerLabel.backgroundColor = [UIColor clearColor];
+        headerLabel.font = IA_headlineBold;
+        headerLabel.shadowOffset = CGSizeMake(1, 1);
+        headerLabel.textColor = yellowText;
+        headerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+        
+        headerLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+        [view addSubview:headerLabel];
+        return view;
 }
 
 - (IBAction)done:(id)sender {

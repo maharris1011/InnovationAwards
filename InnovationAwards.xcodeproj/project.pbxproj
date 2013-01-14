@@ -42,6 +42,7 @@
 		4D5CD9CA1675567100ABC2FD /* headerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5CD9C91675567100ABC2FD /* headerBackground.png */; };
 		4D6B2B0316A36CAD002987C1 /* headerBackgroundRounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B2B0216A36CAD002987C1 /* headerBackgroundRounded.png */; };
 		4D6B2B0516A36EC3002987C1 /* headerBackgroundRounded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B2B0416A36EC3002987C1 /* headerBackgroundRounded@2x.png */; };
+		4D6B2B0816A37991002987C1 /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B2B0716A37991002987C1 /* MyNavigationViewController.m */; };
 		4D6D0B2E169D0ACD00094867 /* NSString+SocialMediaParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D0B2D169D0ACD00094867 /* NSString+SocialMediaParsers.m */; };
 		4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */; };
 		4D803899169E396600CAFD48 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D803898169E396600CAFD48 /* Tweet.m */; };
@@ -415,6 +416,8 @@
 		4D5CD9C91675567100ABC2FD /* headerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackground.png; sourceTree = "<group>"; };
 		4D6B2B0216A36CAD002987C1 /* headerBackgroundRounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackgroundRounded.png; sourceTree = "<group>"; };
 		4D6B2B0416A36EC3002987C1 /* headerBackgroundRounded@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headerBackgroundRounded@2x.png"; sourceTree = "<group>"; };
+		4D6B2B0616A37991002987C1 /* MyNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationViewController.h; sourceTree = "<group>"; };
+		4D6B2B0716A37991002987C1 /* MyNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationViewController.m; sourceTree = "<group>"; };
 		4D6D0B2C169D0ACD00094867 /* NSString+SocialMediaParsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SocialMediaParsers.h"; sourceTree = "<group>"; };
 		4D6D0B2D169D0ACD00094867 /* NSString+SocialMediaParsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SocialMediaParsers.m"; sourceTree = "<group>"; };
 		4D736D6A167E5ED200AB4171 /* TweetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailsViewController.h; sourceTree = "<group>"; };
@@ -910,6 +913,8 @@
 				4D29BA95169A300A00C1B5D2 /* SponsorImageTableViewController.m */,
 				4D29BA97169A307300C1B5D2 /* EventDetailsMenuTableViewController.h */,
 				4D29BA98169A307300C1B5D2 /* EventDetailsMenuTableViewController.m */,
+				4D6B2B0616A37991002987C1 /* MyNavigationViewController.h */,
+				4D6B2B0716A37991002987C1 /* MyNavigationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1773,6 +1778,7 @@
 				4D29BA99169A307300C1B5D2 /* EventDetailsMenuTableViewController.m in Sources */,
 				4D6D0B2E169D0ACD00094867 /* NSString+SocialMediaParsers.m in Sources */,
 				4D803899169E396600CAFD48 /* Tweet.m in Sources */,
+				4D6B2B0816A37991002987C1 /* MyNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

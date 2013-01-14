@@ -47,9 +47,10 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.startingURL]]];
 }
 
-- (void)viewDidLayoutSubviews
+- (void)viewWillLayoutSubviews
 {
-    [self.webView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-20-44-44)];
+	// Do any additional setup after loading the view.
+    [self.webView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +84,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait ||
             interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
             interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+-(NSInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
 }
 
 

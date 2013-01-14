@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface RegistrationViewController : UIViewController
+
+@interface RegistrationViewController : UIViewController<UIWebViewDelegate>
+@property (strong, nonatomic) MBProgressHUD *progressHUD;
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @end
