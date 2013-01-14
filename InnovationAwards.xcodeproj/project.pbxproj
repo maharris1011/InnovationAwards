@@ -43,6 +43,7 @@
 		4D6B2B0316A36CAD002987C1 /* headerBackgroundRounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B2B0216A36CAD002987C1 /* headerBackgroundRounded.png */; };
 		4D6B2B0516A36EC3002987C1 /* headerBackgroundRounded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B2B0416A36EC3002987C1 /* headerBackgroundRounded@2x.png */; };
 		4D6B2B0816A37991002987C1 /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B2B0716A37991002987C1 /* MyNavigationViewController.m */; };
+		4D6B2B0B16A3C002002987C1 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9234916A3513100CE349F /* libMBProgressHUD.a */; };
 		4D6D0B2E169D0ACD00094867 /* NSString+SocialMediaParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D0B2D169D0ACD00094867 /* NSString+SocialMediaParsers.m */; };
 		4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */; };
 		4D803899169E396600CAFD48 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D803898169E396600CAFD48 /* Tweet.m */; };
@@ -91,7 +92,6 @@
 		4DA89BDE1695FB670067E3C5 /* 38-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDC1695FB670067E3C5 /* 38-house.png */; };
 		4DA89BDF1695FB670067E3C5 /* 38-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */; };
 		4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */; };
-		4DA9234A16A3514B00CE349F /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9234916A3513100CE349F /* libMBProgressHUD.a */; };
 		4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB51D40167E9F4000A07437 /* Twitter.framework */; };
 		4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D42167EACEF00A07437 /* 02-redo.png */; };
 		4DB51D45167EACEF00A07437 /* 02-redo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D43167EACEF00A07437 /* 02-redo@2x.png */; };
@@ -364,6 +364,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4D6B2B0916A389DE002987C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D286A7481518C70F00E13FB8;
+			remoteInfo = MBProgressHUD;
+		};
 		4DA9234816A3513100CE349F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */;
@@ -788,7 +795,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DA9234A16A3514B00CE349F /* libMBProgressHUD.a in Frameworks */,
+				4D6B2B0B16A3C002002987C1 /* libMBProgressHUD.a in Frameworks */,
 				4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */,
 				4D80389B169E462200CAFD48 /* Social.framework in Frameworks */,
 				4DE6FEE616954762004B37D5 /* libxml2.2.dylib in Frameworks */,
@@ -1381,6 +1388,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4D6B2B0A16A389DE002987C1 /* PBXTargetDependency */,
 			);
 			name = InnovationAwards;
 			productName = InnovationAwards;
@@ -1784,6 +1792,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4D6B2B0A16A389DE002987C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBProgressHUD;
+			targetProxy = 4D6B2B0916A389DE002987C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4DCECFFC1675474000272F0B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1874,11 +1890,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Submodules/MBProgressHUD\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SRCROOT)/Submodules/**",
+				);
 				INFOPLIST_FILE = "InnovationAwards/InnovationAwards-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1906,10 +1926,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Socialize.embeddedframework\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Submodules/MBProgressHUD\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InnovationAwards/InnovationAwards-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SRCROOT)/Submodules/**",
+				);
 				INFOPLIST_FILE = "InnovationAwards/InnovationAwards-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
