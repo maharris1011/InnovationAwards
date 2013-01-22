@@ -9,6 +9,8 @@
 #import "UIImage+Resize.h"
 #import "TweetDetailsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <Social/Social.h>
+#import <Twitter/Twitter.h>
 
 @interface TweetDetailsViewController ()
 
@@ -49,7 +51,7 @@
         [activityIndicator startAnimating];
         
         [self.profileImageView setImageWithURL:[NSURL URLWithString:self.tweet.biggerProfileImageURL]
-                placeholderImage:[UIImage imageNamed:@"twitter-bird-blue-on-white.png"]
+                placeholderImage:[UIImage imageNamed:@"twitter-bird-white-on-blue.png"]
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
          {
              [activityIndicator removeFromSuperview];
@@ -153,41 +155,50 @@
 
 
 #pragma mark -- UIActions
-- (SLComposeViewController *)createTweetSheet
+- (id)createTweetSheet
 {
-    SLComposeViewController *tweetSheet = nil;
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    if ([SLComposeViewController class])
+    {
+        SLComposeViewController *tweetSheet = nil;
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+        {
+            tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        }
+        return tweetSheet;
     }
-    return tweetSheet;
+    else
+    {
+        TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
+        return tweetSheet;
+    }
+    return nil;
 }
 
-- (IBAction)replyButtonPressed:(id)sender 
+- (IBAction)replyButtonPressed:(id)sender
 {
-    SLComposeViewController *tweetSheet = [self createTweetSheet];
+    id tweetSheet = [self createTweetSheet];
     [tweetSheet setInitialText:[NSString stringWithFormat:@"@%@", self.tweet.screenName]];
     [self presentModalViewController:tweetSheet animated:YES];
 }
 
-- (IBAction)retweetButtonPressed:(id)sender {
-    
-    SLComposeViewController *tweetSheet = [self createTweetSheet];
-    NSString *initialText = [NSString stringWithFormat:@"%@ %@",self.tweet.screenName, self.tweet.text];
+- (IBAction)retweetButtonPressed:(id)sender
+{
+    id tweetSheet = [self createTweetSheet];
+    NSString *initialText = [NSString stringWithFormat:@"RT:@%@ %@",self.tweet.screenName, self.tweet.text];
     
     if ([tweetSheet setInitialText:initialText] == NO)
     {
-        [tweetSheet setInitialText:[initialText substringToIndex:MIN(120, [initialText length])]];
+        [tweetSheet setInitialText:[initialText substringToIndex:MIN(139-(5+self.tweet.screenName.length), [initialText length])]];
     }
     [self presentModalViewController:tweetSheet animated:YES];
 }
 
-- (IBAction)composeButtonPressed:(id)sender 
+- (IBAction)composeButtonPressed:(id)sender
 {
-    SLComposeViewController *tweetSheet = [self createTweetSheet];
+    id tweetSheet = [self createTweetSheet];
     [tweetSheet setInitialText:@"#ia12"];
     [tweetSheet addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
     [self presentModalViewController:tweetSheet animated:YES];
-    
 }
 
 - (IBAction)actionButtonPressed:(id)sender

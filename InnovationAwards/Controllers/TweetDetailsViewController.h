@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Twitter/Twitter.h>
 #import "Tweet.h"
 
 @interface TweetDetailsViewController : UITableViewController<UIActionSheetDelegate> {

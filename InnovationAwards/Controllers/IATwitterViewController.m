@@ -14,6 +14,8 @@
 #import "TweetDetailsViewController.h"
 #import "Tweet.h"
 #import <Social/SLRequest.h>
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
 
 @interface IATwitterViewController () 
 
@@ -180,7 +182,7 @@
         [activityIndicator startAnimating];
         
         [profile setImageWithURL:[NSURL URLWithString:tweet.normalProfileImageURL]
-                placeholderImage:[UIImage imageNamed:@"twitter-bird-blue-on-white.png"]
+                placeholderImage:[UIImage imageNamed:@"twitter-bird-white-on-blue.png"]
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
                        {
                            [activityIndicator removeFromSuperview];
@@ -205,10 +207,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)reloadFromTwitter
+- (void)getRecentTweets:(ACAccount *)twitterAccount
 {
     [SZTwitterUtils getWithViewController:self path:@"/1.1/search/tweets.json"
-                                   params:[NSDictionary dictionaryWithObjectsAndKeys:                                                                                                                                                                                                                                              @"#ia12 include:retweets", @"q",                                                                                                                                                                                                                                              @"20", @"count",                                                                                                                                                                                                                                              @"recent", @"result_type", nil]
+                                   params:[NSDictionary dictionaryWithObjectsAndKeys:                                                                                                                                                                                                                                              [@"#ia12 include:retweets" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], @"q",                                                                                                                                                                                                                                              @"40", @"count",                                                                                                                                                                                                                                              @"recent", @"result_type", nil]
                                   success:^(id result) {
                                       // We should be getting back a JSON response of a dictionary of tweets called "statuses"
                                       NSDictionary *tweetsDict = (NSDictionary *)result;
@@ -225,17 +227,23 @@
                                       // update the UI
                                       [self.tableView reloadData];
                                       [_pull finishedLoading];
+                                      
+                                  } failure:^(NSError *error){
+                                      NSLog(@"reloadFromTwitter got response: %@", error.localizedDescription);
+                                      NSString *output = [NSString stringWithFormat:@"reloadFromTwitter: HTTP response status: %@", error.localizedDescription];
+                                      [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+                                      
+                                      // update the UI
+                                      [self.tableView reloadData];
+                                      [_pull finishedLoading];
+                                      
+                                  }];
+    
+}
 
-                                   } failure:^(NSError *error){
-                                       NSLog(@"reloadFromTwitter got response: %@", error.localizedDescription);
-                                       NSString *output = [NSString stringWithFormat:@"reloadFromTwitter: HTTP response status: %@", error.localizedDescription];
-                                       [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
-
-                                       // update the UI
-                                       [self.tableView reloadData];
-                                       [_pull finishedLoading];
-
-                                   }];
+- (void)reloadFromTwitter
+{
+    [self getRecentTweets:nil];
 }
 
 - (void)pullToRefreshViewShouldRefresh:(PullToRefreshView *)view;
@@ -245,25 +253,69 @@
 
 #pragma mark -- UIActions
 
-- (SLComposeViewController *)createTweetSheet
+- (id)createTweetSheet
 {
-    SLComposeViewController *tweetSheet = nil;
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    if ([SLComposeViewController class])
+    {
+        SLComposeViewController *tweetSheet = nil;
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+        {
+            tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        }
+        return tweetSheet;
     }
-    return tweetSheet;
+    else
+    {
+        TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
+        return tweetSheet;
+    }
+    return nil;
 }
 
 - (IBAction)composeButtonPressed:(id)sender
 {
-    SLComposeViewController *slcvc = [self createTweetSheet];
-    if (slcvc != nil) {
+    id slcvc = [self createTweetSheet];
+    if (slcvc != nil)
+    {
+        SLComposeViewController *sheet = (SLComposeViewController *)slcvc;
         // a little preconfiguration
-        [slcvc setInitialText:@"#ia12"];
-        [slcvc addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
+        [sheet setInitialText:@"#ia12"];
+        [sheet addURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.com"]];
         
         // show the sheet & get the tweet sent
-        [self presentModalViewController:slcvc animated:YES];
+        [self presentModalViewController:sheet animated:YES];
+    }
+    else
+    {
+        // use the socialize calls
+        id<SZEntity> entity = [SZEntity entityWithKey:@"http://www.techcolumbusinnovationawards.com" name:@"IA12 Twitter"];
+
+        [SZCommentUtils showCommentComposerWithViewController:self
+                                                       entity:entity
+                                                   completion:^(id<SZComment> comment) {
+            SZShareOptions *options = [SZShareUtils userShareOptions];
+            options.dontShareLocation = YES;
+            options.willAttemptPostingToSocialNetworkBlock = ^(SZSocialNetwork network, SZSocialNetworkPostData *postData) {
+                if (network == SZSocialNetworkTwitter)
+                {
+                    NSString *customStatus = [NSString stringWithFormat:@"%@ #ia12", [comment text]];
+                    
+                    [postData.params setObject:customStatus forKey:@"status"];
+                }
+            };
+            [SZShareUtils shareViaSocialNetworksWithEntity:entity
+                                                  networks:SZSocialNetworkTwitter
+                                                   options:options
+                                                   success:^(id<SocializeShare> share) {
+                                                       NSLog(@"shared %@ successfully", share);
+                                                   }
+                                                   failure:^(NSError *error) {
+                                                       NSLog(@"composeButtonPressed: Error: %@", error.localizedDescription);
+                                                   }];
+        }
+                                                 cancellation:^{
+            NSLog(@"Cancelled comment create");
+        }];
     }
 }
 
@@ -288,10 +340,9 @@
         {
             // use mobile site because it's nice
             NSString *query = @"https://m.twitter.com/search?q=#ia12 include:retweets&src=typd";
-            NSString *szTwitterWebUrl = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
             // in all cases, we just load in safari, because we can't trust they have the app
-            NSURL *url = [NSURL URLWithString:szTwitterWebUrl];
+            NSURL *url = [NSURL URLWithString:[query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
             [[UIApplication sharedApplication] openURL:url];
         } 
     }

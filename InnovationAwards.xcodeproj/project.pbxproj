@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0ECEBC16AE387500AEC7E6 /* twitter-bird-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0ECEBB16AE387500AEC7E6 /* twitter-bird-white-on-blue.png */; };
+		4D0ECEBE16AE55E800AEC7E6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0ECEBD16AE55E800AEC7E6 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4D1D54351678503100626E21 /* 42-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D54331678503100626E21 /* 42-info.png */; };
 		4D1D54361678503100626E21 /* 42-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D54341678503100626E21 /* 42-info@2x.png */; };
 		4D26A3C51678469B006D43A2 /* UITableViewController+GradientHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26A3C41678469A006D43A2 /* UITableViewController+GradientHeaders.m */; };
@@ -47,8 +49,7 @@
 		4D6D0B2E169D0ACD00094867 /* NSString+SocialMediaParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D0B2D169D0ACD00094867 /* NSString+SocialMediaParsers.m */; };
 		4D736D6C167E5ED200AB4171 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D736D6B167E5ED200AB4171 /* TweetDetailsViewController.m */; };
 		4D803899169E396600CAFD48 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D803898169E396600CAFD48 /* Tweet.m */; };
-		4D80389B169E462200CAFD48 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D80389A169E462200CAFD48 /* Social.framework */; };
-		4D80389D169E506C00CAFD48 /* twitter-bird-blue-on-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D80389C169E506C00CAFD48 /* twitter-bird-blue-on-white.png */; };
+		4D80389B169E462200CAFD48 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D80389A169E462200CAFD48 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4D8038A0169E53AD00CAFD48 /* ia_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D80389E169E53AD00CAFD48 /* ia_arrow.png */; };
 		4D8038A1169E53AD00CAFD48 /* ia_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D80389F169E53AD00CAFD48 /* ia_arrow@2x.png */; };
 		4D8038B1169E5B3600CAFD48 /* ia12_app_callouts_1-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038A2169E5B3600CAFD48 /* ia12_app_callouts_1-568h@2x.png */; };
@@ -92,7 +93,7 @@
 		4DA89BDE1695FB670067E3C5 /* 38-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDC1695FB670067E3C5 /* 38-house.png */; };
 		4DA89BDF1695FB670067E3C5 /* 38-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BDD1695FB670067E3C5 /* 38-house@2x.png */; };
 		4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA89BE01695FDA10067E3C5 /* sandlot-logo.png */; };
-		4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB51D40167E9F4000A07437 /* Twitter.framework */; };
+		4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB51D40167E9F4000A07437 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4DB51D44167EACEF00A07437 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D42167EACEF00A07437 /* 02-redo.png */; };
 		4DB51D45167EACEF00A07437 /* 02-redo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D43167EACEF00A07437 /* 02-redo@2x.png */; };
 		4DB51D4A167EB0F600A07437 /* 39-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB51D46167EB0F600A07437 /* 39-back.png */; };
@@ -381,6 +382,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0ECEBB16AE387500AEC7E6 /* twitter-bird-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-white-on-blue.png"; sourceTree = "<group>"; };
+		4D0ECEBD16AE55E800AEC7E6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4D1D54331678503100626E21 /* 42-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info.png"; sourceTree = "<group>"; };
 		4D1D54341678503100626E21 /* 42-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info@2x.png"; sourceTree = "<group>"; };
 		4D26A3C31678469A006D43A2 /* UITableViewController+GradientHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+GradientHeaders.h"; sourceTree = "<group>"; };
@@ -432,7 +435,6 @@
 		4D803897169E396600CAFD48 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		4D803898169E396600CAFD48 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		4D80389A169E462200CAFD48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		4D80389C169E506C00CAFD48 /* twitter-bird-blue-on-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-bird-blue-on-white.png"; path = "../../../../../../Desktop/twitter-bird-blue-on-white.png"; sourceTree = "<group>"; };
 		4D80389E169E53AD00CAFD48 /* ia_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia_arrow.png; sourceTree = "<group>"; };
 		4D80389F169E53AD00CAFD48 /* ia_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia_arrow@2x.png"; sourceTree = "<group>"; };
 		4D8038A2169E5B3600CAFD48 /* ia12_app_callouts_1-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_1-568h@2x.png"; sourceTree = "<group>"; };
@@ -795,11 +797,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0ECEBE16AE55E800AEC7E6 /* Accounts.framework in Frameworks */,
+				4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */,
 				4D6B2B0B16A3C002002987C1 /* libMBProgressHUD.a in Frameworks */,
 				4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */,
 				4D80389B169E462200CAFD48 /* Social.framework in Frameworks */,
 				4DE6FEE616954762004B37D5 /* libxml2.2.dylib in Frameworks */,
-				4DB51D41167E9F4000A07437 /* Twitter.framework in Frameworks */,
 				4DCB57E7167E46F200254B98 /* MobileCoreServices.framework in Frameworks */,
 				4DCB57E5167E465400254B98 /* SystemConfiguration.framework in Frameworks */,
 				4DCB57E3167E45E500254B98 /* CFNetwork.framework in Frameworks */,
@@ -823,11 +826,11 @@
 		4D501928167547D40031B9F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D0ECEBB16AE387500AEC7E6 /* twitter-bird-white-on-blue.png */,
 				4D6B2B0416A36EC3002987C1 /* headerBackgroundRounded@2x.png */,
 				4D6B2B0216A36CAD002987C1 /* headerBackgroundRounded.png */,
 				4D80389E169E53AD00CAFD48 /* ia_arrow.png */,
 				4D80389F169E53AD00CAFD48 /* ia_arrow@2x.png */,
-				4D80389C169E506C00CAFD48 /* twitter-bird-blue-on-white.png */,
 				4D3CE6D6169BC0C900D2D60A /* facebooklogo.jpg */,
 				4D3CE6D7169BC0C900D2D60A /* twitterlogo.jpg */,
 				4D3CE6D8169BC0C900D2D60A /* linkedinlogo.jpg */,
@@ -1047,6 +1050,7 @@
 		4DCECFE41675474000272F0B = {
 			isa = PBXGroup;
 			children = (
+				4D0ECEBD16AE55E800AEC7E6 /* Accounts.framework */,
 				4DA9234116A3513100CE349F /* MBProgressHUD.xcodeproj */,
 				4D50199A16754A780031B9F8 /* ia_72x72_icon.png */,
 				4D50199816754A5B0031B9F8 /* ia_114x114_icon.png */,
@@ -1712,7 +1716,6 @@
 				4D3CE6D9169BC0C900D2D60A /* facebooklogo.jpg in Resources */,
 				4D3CE6DA169BC0C900D2D60A /* twitterlogo.jpg in Resources */,
 				4D3CE6DB169BC0C900D2D60A /* linkedinlogo.jpg in Resources */,
-				4D80389D169E506C00CAFD48 /* twitter-bird-blue-on-white.png in Resources */,
 				4D8038A0169E53AD00CAFD48 /* ia_arrow.png in Resources */,
 				4D8038A1169E53AD00CAFD48 /* ia_arrow@2x.png in Resources */,
 				4D8038B1169E5B3600CAFD48 /* ia12_app_callouts_1-568h@2x.png in Resources */,
@@ -1732,6 +1735,7 @@
 				4D8038BF169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png in Resources */,
 				4D6B2B0316A36CAD002987C1 /* headerBackgroundRounded.png in Resources */,
 				4D6B2B0516A36EC3002987C1 /* headerBackgroundRounded@2x.png in Resources */,
+				4D0ECEBC16AE387500AEC7E6 /* twitter-bird-white-on-blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
