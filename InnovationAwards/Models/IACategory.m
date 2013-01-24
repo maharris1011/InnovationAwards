@@ -77,7 +77,8 @@
         NSURL *cat_url = [NSURL URLWithString:self.url];
         NSData *htmlData = [NSData dataWithContentsOfURL:cat_url];
         
-        if (htmlData != nil) {
+        if (htmlData != nil)
+        {
             TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
             NSArray *sfNodes = [parser searchWithXPathQuery:@"//div[@class='post-author-info']"];
             for (TFHppleElement *element in sfNodes)
@@ -87,12 +88,20 @@
                 
                 [semis addObject:sf];
             }
+            
+            // pick out the winner from the page
+            NSArray *sfWinners = [parser searchWithXPathQuery:@"//div[@class='post-author-winner-info']"];
+            for (TFHppleElement *winner in sfWinners) {
+                IASemifinalist *sf = [[IASemifinalist alloc] initWithHTML:winner];
+                sf.isWinner = TRUE;
+                [semis addObject:sf];
+            }
         }
-
+        
         if ([semis count] == 0) {
             // if no one in the category, put a "placeholder" in
             IASemifinalist *sf = [[IASemifinalist alloc] initWithFake:1];
-            [semis addObject:sf];
+            [semis addObject:[[IASemifinalist alloc] initWithFake:1]];
         }
         
         _semifinalists = semis;

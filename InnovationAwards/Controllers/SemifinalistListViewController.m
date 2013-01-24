@@ -107,6 +107,7 @@
     cell.textLabel.font = [UIFont fontWithName:IA_Font size:17];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ia_arrow.png"]];
+    
     return cell;
 }
 

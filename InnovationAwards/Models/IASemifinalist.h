@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *facebook;
 @property (nonatomic, strong) NSString *twitter;
 @property (nonatomic, strong) NSString *image_path;
+@property (nonatomic, assign) BOOL      isWinner;
 
 - (id)initWithFake:(int)n;
 - (id)initWithHTML:(TFHppleElement *)e;

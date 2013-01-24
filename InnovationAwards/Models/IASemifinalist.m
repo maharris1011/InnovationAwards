@@ -20,6 +20,7 @@
 @synthesize facebook = _facebook;
 @synthesize twitter = _twitter;
 @synthesize image_path = _image_path;
+@synthesize isWinner = _isWinner;
 
 - (id)initWithFake:(int)n
 {
@@ -32,6 +33,7 @@
         _facebook = [NSString stringWithFormat:@""];
         _twitter = [NSString stringWithFormat:@""];
         _image_path = [NSString stringWithFormat:@""];
+        _isWinner = FALSE;
     }
     return self;
 }
@@ -46,7 +48,6 @@
         
         _contact = [[e firstChildWithId:@"sf_contact"] firstChild].content;
         _site_url = [[e firstChildWithId:@"sf_website"].attributes objectForKey:@"href"];
-        
         
         _bio = [[[e firstChildWithId:@"sf_bio"] firstChild].content substringFromIndex:2];
         _linkedin = [[e firstChildWithId:@"sf_linkedin"].attributes objectForKey:@"href"];
