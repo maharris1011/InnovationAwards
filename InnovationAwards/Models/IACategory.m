@@ -80,27 +80,33 @@
         if (htmlData != nil)
         {
             TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
-            NSArray *sfNodes = [parser searchWithXPathQuery:@"//div[@class='post-author-info']"];
-            for (TFHppleElement *element in sfNodes)
+
+            NSArray *semifinalistNode = [parser searchWithXPathQuery:@"//div[@class='post-author-info']"];
+            for (TFHppleElement *element in semifinalistNode)
             {
-                // reach in & grab out semifinalist information
-                IASemifinalist *sf = [[IASemifinalist alloc] initWithHTML:element];
-                
-                [semis addObject:sf];
+                TFHppleElement *winnerNode = [element firstChildWithClassName:@"post-author-winner-info"];
+                if (winnerNode == nil)
+                {
+                    // we have a regular semifinalist
+                    // reach in & grab out semifinalist information
+                    IASemifinalist *sf = [[IASemifinalist alloc] initWithHTML:element];
+                    [semis addObject:sf];
+                }
+                else
+                {
+                    // we have a winner of the category, so we parse the
+                    // div with class post-author-winner-info as if it wer
+                    // a regular semifinalist
+                    IASemifinalist *sf = [[IASemifinalist alloc] initWithHTML:winnerNode];
+                    sf.isWinner = YES;
+                    [semis addObject:sf];
+                }
             }
             
-            // pick out the winner from the page
-            NSArray *sfWinners = [parser searchWithXPathQuery:@"//div[@class='post-author-winner-info']"];
-            for (TFHppleElement *winner in sfWinners) {
-                IASemifinalist *sf = [[IASemifinalist alloc] initWithHTML:winner];
-                sf.isWinner = TRUE;
-                [semis addObject:sf];
-            }
         }
         
         if ([semis count] == 0) {
             // if no one in the category, put a "placeholder" in
-            IASemifinalist *sf = [[IASemifinalist alloc] initWithFake:1];
             [semis addObject:[[IASemifinalist alloc] initWithFake:1]];
         }
         

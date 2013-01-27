@@ -54,7 +54,13 @@
         _facebook = [[e firstChildWithId:@"sf_facebook"].attributes objectForKey:@"href"];
         _twitter = [[e firstChildWithId:@"sf_twitter"].attributes objectForKey:@"href"];
         
-        _image_path = [[e firstChildWithId:@"sf_photo"].attributes objectForKey:@"src"];
+        NSString *imagePath = [[e firstChildWithId:@"sf_photo"].attributes objectForKey:@"src"];
+        if (nil != imagePath) {
+            _image_path = [NSString stringWithFormat:@"http://www.techcolumbusinnovationawards.org/%@", imagePath];
+        }
+        else {
+            _image_path = nil;
+        }
         
         // a whole bunch of data cleanup
         NSRange r = [_facebook rangeOfString:@"fref=ts"];

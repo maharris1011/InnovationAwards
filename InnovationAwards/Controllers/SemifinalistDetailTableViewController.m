@@ -124,13 +124,32 @@
     // set the labels accordingly
     
     // name label
-    self.categoryNameLabel.text = self.category.name;
+    if (self.sfCurrent.isWinner)
+    {
+        self.categoryNameLabel.text = [NSString stringWithFormat:@"%@ Winner", self.category.name];
+    }
+    else
+    {
+        self.categoryNameLabel.text = self.category.name;
+    }
     self.companyNameLabel.text = self.sfCurrent.company;
     self.representativeNameLabel.text = self.sfCurrent.contact;
     self.companyUrlLabel.text = self.sfCurrent.site_url;
 
     // story row
     self.storyTextLabel.text = self.sfCurrent.bio;
+    
+    // the winner gets his picture shown & seen as the winner
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    if (self.sfCurrent.isWinner)
+    {
+        cell.imageView.image = [UIImage imageNamed:@"star.png"];
+    }
+    else
+    {
+        cell.imageView.image = nil;
+    }
+    
 }
 
 - (void)viewDidLoad

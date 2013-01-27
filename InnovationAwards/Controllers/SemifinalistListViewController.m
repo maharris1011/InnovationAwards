@@ -11,6 +11,7 @@
 #import "IASemifinalist.h"
 #import "AppDelegate.h"
 #import "UIImage+Resize.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SemifinalistListViewController () {
     IACategory *_category;
@@ -108,6 +109,10 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ia_arrow.png"]];
     
+    if (nominee.isWinner)
+    {
+        cell.imageView.image = [UIImage imageNamed:@"star.png"];
+    }
     return cell;
 }
 
