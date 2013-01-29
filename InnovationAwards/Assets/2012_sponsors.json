@@ -25,7 +25,13 @@
 				"url": "http://www.bricker.com/home.aspx",
 				"logo":"",
 				"sponsorship":"Student Innovation Awards Sponsor"
-			}]
+			},
+            {
+                "name":"Wexner Medical Center",
+                "url":"http://medicalcenter.osu.edu/Pages/index.aspx",
+                "logo":"",
+                "sponsorship":"VIP Reception Sponsor"
+            }]
 		},
 		{
 			"level":"Platinum",
@@ -77,6 +83,24 @@
 				"logo":"",
 				"sponsorship":"Verification Sponsor"
 			},
+             {
+                "name":"OSU Office of Research",
+             "url":"http://www.research.osu.edu",
+             "logo":"",
+             "sponsorship":"Flash Drive Sponsor"
+             },
+             {
+                "name":"Business First",
+             "url":"http://www.bizjournals.com/columbus",
+             "logo":"",
+             "sponsorship":"Media Sponsor"
+             },
+             {
+                "name":"One Point Of Contact",
+             "url":"http://www.opoc.us",
+             "logo":"",
+             "sponsorship":"Event Sponsor"
+             },
 			{
 				"name":"Fathom",
 				"url":"http://www.fathomdelivers.com",

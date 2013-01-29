@@ -78,6 +78,8 @@
 		4D8038BD169E5B3600CAFD48 /* ia12_app_callouts_5-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038AE169E5B3600CAFD48 /* ia12_app_callouts_5-568h@2x.png */; };
 		4D8038BE169E5B3600CAFD48 /* ia12_app_callouts_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038AF169E5B3600CAFD48 /* ia12_app_callouts_5.png */; };
 		4D8038BF169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038B0169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png */; };
+		4D81A4E816B76C7C00BFC935 /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D81A4E616B76C7C00BFC935 /* ia12_sponsors.png */; };
+		4D81A4E916B76C7C00BFC935 /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D81A4E716B76C7C00BFC935 /* ia12_sponsors@2x.png */; };
 		4D8EFFAB1682ABD10077FC8C /* SemifinalistDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */; };
 		4DA2183D16953DAA00F2370A /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2182F16953DAA00F2370A /* NSDate-Utilities.m */; };
 		4DA2183E16953DAA00F2370A /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2183116953DAA00F2370A /* NSDate+Helper.m */; };
@@ -130,8 +132,6 @@
 		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
 		4DD6867316A1EA060071007F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD6867216A1EA060071007F /* SDWebImage.framework */; };
 		4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD6867516A1EB440071007F /* ImageIO.framework */; };
-		4DD6D72E16960FA500E2927E /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D72C16960FA500E2927E /* ia12_sponsors.png */; };
-		4DD6D72F16960FA500E2927E /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */; };
 		4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */; };
 		4DE6FEE216954724004B37D5 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6FEDD16954724004B37D5 /* TFHpple.m */; };
 		4DE6FEE316954724004B37D5 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6FEDF16954724004B37D5 /* TFHppleElement.m */; };
@@ -474,6 +474,8 @@
 		4D8038AE169E5B3600CAFD48 /* ia12_app_callouts_5-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_5-568h@2x.png"; sourceTree = "<group>"; };
 		4D8038AF169E5B3600CAFD48 /* ia12_app_callouts_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_app_callouts_5.png; sourceTree = "<group>"; };
 		4D8038B0169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_app_callouts_5@2x.png"; sourceTree = "<group>"; };
+		4D81A4E616B76C7C00BFC935 /* ia12_sponsors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_sponsors.png; sourceTree = "<group>"; };
+		4D81A4E716B76C7C00BFC935 /* ia12_sponsors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_sponsors@2x.png"; sourceTree = "<group>"; };
 		4D8EFFA91682ABD10077FC8C /* SemifinalistDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemifinalistDetailTableViewController.h; sourceTree = "<group>"; };
 		4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemifinalistDetailTableViewController.m; sourceTree = "<group>"; };
 		4DA2182E16953DAA00F2370A /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-Utilities.h"; path = "Vendor/NSDate-Utilities.h"; sourceTree = "<group>"; };
@@ -556,8 +558,6 @@
 		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		4DD6867216A1EA060071007F /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		4DD6867516A1EB440071007F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		4DD6D72C16960FA500E2927E /* ia12_sponsors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ia12_sponsors.png; sourceTree = "<group>"; };
-		4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ia12_sponsors@2x.png"; sourceTree = "<group>"; };
 		4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TechColumbus_Logo.jpg; sourceTree = "<group>"; };
 		4DE6FEDC169546F5004B37D5 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		4DE6FEDD16954724004B37D5 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
@@ -901,14 +901,14 @@
 				4D8038AE169E5B3600CAFD48 /* ia12_app_callouts_5-568h@2x.png */,
 				4D8038AF169E5B3600CAFD48 /* ia12_app_callouts_5.png */,
 				4D8038B0169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png */,
+				4D81A4E616B76C7C00BFC935 /* ia12_sponsors.png */,
+				4D81A4E716B76C7C00BFC935 /* ia12_sponsors@2x.png */,
 				4D501949167548DA0031B9F8 /* TitilliumText25L 1wt.otf */,
 				4D50194A167548DA0031B9F8 /* TitilliumText25L 250wt.otf */,
 				4D50194B167548DA0031B9F8 /* TitilliumText25L 400wt.otf */,
 				4D50194C167548DA0031B9F8 /* TitilliumText25L 600wt.otf */,
 				4D50194D167548DA0031B9F8 /* TitilliumText25L 800wt.otf */,
 				4D50194E167548DA0031B9F8 /* TitilliumText25L 999wt.otf */,
-				4DD6D72C16960FA500E2927E /* ia12_sponsors.png */,
-				4DD6D72D16960FA500E2927E /* ia12_sponsors@2x.png */,
 				4D5CD9C91675567100ABC2FD /* headerBackground.png */,
 				4DB747551675733A004664EC /* headerBackground@2x.png */,
 				4D501943167548A90031B9F8 /* mainBackground.png */,
@@ -1739,8 +1739,6 @@
 				4DA89BDE1695FB670067E3C5 /* 38-house.png in Resources */,
 				4DA89BDF1695FB670067E3C5 /* 38-house@2x.png in Resources */,
 				4DA89BE11695FDA10067E3C5 /* sandlot-logo.png in Resources */,
-				4DD6D72E16960FA500E2927E /* ia12_sponsors.png in Resources */,
-				4DD6D72F16960FA500E2927E /* ia12_sponsors@2x.png in Resources */,
 				4D426A71169933F000D96CC4 /* 03-arrow-north.png in Resources */,
 				4D426A72169933F000D96CC4 /* 03-arrow-north@2x.png in Resources */,
 				4D426A73169933F000D96CC4 /* 06-arrow-south.png in Resources */,
@@ -1780,6 +1778,8 @@
 				4D5D1AE416B0E0F00004AD46 /* up@2x.png in Resources */,
 				4D7F43F116B4D59600114CEA /* star.png in Resources */,
 				4D7F43F216B4D59600114CEA /* star@2x.png in Resources */,
+				4D81A4E816B76C7C00BFC935 /* ia12_sponsors.png in Resources */,
+				4D81A4E916B76C7C00BFC935 /* ia12_sponsors@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
