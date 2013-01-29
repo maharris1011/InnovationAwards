@@ -78,8 +78,8 @@
 		4D8038BD169E5B3600CAFD48 /* ia12_app_callouts_5-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038AE169E5B3600CAFD48 /* ia12_app_callouts_5-568h@2x.png */; };
 		4D8038BE169E5B3600CAFD48 /* ia12_app_callouts_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038AF169E5B3600CAFD48 /* ia12_app_callouts_5.png */; };
 		4D8038BF169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8038B0169E5B3600CAFD48 /* ia12_app_callouts_5@2x.png */; };
-		4D81A4E816B76C7C00BFC935 /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D81A4E616B76C7C00BFC935 /* ia12_sponsors.png */; };
-		4D81A4E916B76C7C00BFC935 /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D81A4E716B76C7C00BFC935 /* ia12_sponsors@2x.png */; };
+		4D81A4EA16B77A2E00BFC935 /* ia12_sponsors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D81A4E616B76C7C00BFC935 /* ia12_sponsors.png */; };
+		4D81A4EB16B77A2E00BFC935 /* ia12_sponsors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D81A4E716B76C7C00BFC935 /* ia12_sponsors@2x.png */; };
 		4D8EFFAB1682ABD10077FC8C /* SemifinalistDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EFFAA1682ABD10077FC8C /* SemifinalistDetailTableViewController.m */; };
 		4DA2183D16953DAA00F2370A /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2182F16953DAA00F2370A /* NSDate-Utilities.m */; };
 		4DA2183E16953DAA00F2370A /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2183116953DAA00F2370A /* NSDate+Helper.m */; };
@@ -1479,6 +1479,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D81A4EA16B77A2E00BFC935 /* ia12_sponsors.png in Resources */,
+				4D81A4EB16B77A2E00BFC935 /* ia12_sponsors@2x.png in Resources */,
 				4DFEF53516759D210069E734 /* 2012_sponsors.json in Resources */,
 				4DCECFFE1675474000272F0B /* InfoPlist.strings in Resources */,
 				4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -1778,8 +1780,6 @@
 				4D5D1AE416B0E0F00004AD46 /* up@2x.png in Resources */,
 				4D7F43F116B4D59600114CEA /* star.png in Resources */,
 				4D7F43F216B4D59600114CEA /* star@2x.png in Resources */,
-				4D81A4E816B76C7C00BFC935 /* ia12_sponsors.png in Resources */,
-				4D81A4E916B76C7C00BFC935 /* ia12_sponsors@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
