@@ -84,7 +84,7 @@
       UITextAttributeTextShadowColor,
       [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
       UITextAttributeTextShadowOffset,
-      [UIFont fontWithName:IA_Font600 size:0.0],
+      [UIFont fontWithName:IA_Font800 size:0.0],
       UITextAttributeFont,
       nil]];
     

@@ -315,7 +315,7 @@
                         <sections>
                             <tableViewSection id="NRe-HS-sPa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Dng-f7-Eau" style="IBUITableViewCellStyleDefault" id="9S2-PQ-3Hs">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Dng-f7-Eau" style="IBUITableViewCellStyleDefault" id="9S2-PQ-3Hs">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -325,7 +325,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dng-f7-Eau">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" red="0.61176472900000001" green="0.0" blue="0.6549019814" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
@@ -333,8 +333,30 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="etj-k1-PN0" style="IBUITableViewCellStyleDefault" id="igh-sh-QVx">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IJg-pS-k3Q" imageView="eaG-5r-Xxp" rowHeight="49" style="IBUITableViewCellStyleDefault" id="OVh-FG-qa8">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="49"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="2012 Award Winner" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJg-pS-k3Q">
+                                                    <rect key="frame" x="56" y="0.0" width="234" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="star.png" id="eaG-5r-Xxp">
+                                                    <rect key="frame" x="2" y="2" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="etj-k1-PN0" style="IBUITableViewCellStyleDefault" id="igh-sh-QVx">
+                                        <rect key="frame" x="0.0" y="104" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -351,14 +373,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AMs-3B-IzX" style="IBUITableViewCellStyleDefault" id="1yf-Hb-TeG">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AMs-3B-IzX" style="IBUITableViewCellStyleDefault" id="1yf-Hb-TeG">
+                                        <rect key="frame" x="0.0" y="148" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Team" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AMs-3B-IzX">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Contact" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AMs-3B-IzX">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -369,8 +391,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="75E-Lk-pdl" rowHeight="300" style="IBUITableViewCellStyleDefault" id="tQg-8i-EvV">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="301"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="75E-Lk-pdl" rowHeight="300" style="IBUITableViewCellStyleDefault" id="tQg-8i-EvV">
+                                        <rect key="frame" x="0.0" y="192" width="320" height="301"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="299"/>
@@ -391,14 +413,14 @@
                             </tableViewSection>
                             <tableViewSection id="PLe-DV-Jvl">
                                 <cells>
-                                    <tableViewCell tag="500" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="Nay-1D-FBw">
-                                        <rect key="frame" x="0.0" y="464" width="320" height="55"/>
+                                    <tableViewCell tag="500" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="Nay-1D-FBw">
+                                        <rect key="frame" x="0.0" y="513" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="http://www.bringshare.com" id="JIm-JJ-p20">
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="http://www.companylink.com" id="JIm-JJ-p20">
                                                     <rect key="frame" x="0.0" y="10" width="286" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -410,8 +432,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hKo-tN-bfg" imageView="fZH-4s-oCO" rowHeight="46" style="IBUITableViewCellStyleDefault" id="H1j-ii-ASH">
-                                        <rect key="frame" x="0.0" y="519" width="320" height="46"/>
+                                    <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hKo-tN-bfg" imageView="fZH-4s-oCO" rowHeight="46" style="IBUITableViewCellStyleDefault" id="H1j-ii-ASH">
+                                        <rect key="frame" x="0.0" y="568" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
@@ -432,8 +454,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KnN-tU-KBd" imageView="8FN-4N-DFG" rowHeight="46" style="IBUITableViewCellStyleDefault" id="MGJ-jh-p1p">
-                                        <rect key="frame" x="0.0" y="565" width="320" height="46"/>
+                                    <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KnN-tU-KBd" imageView="8FN-4N-DFG" rowHeight="46" style="IBUITableViewCellStyleDefault" id="MGJ-jh-p1p">
+                                        <rect key="frame" x="0.0" y="614" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
@@ -454,8 +476,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell tag="503" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ekg-mn-LRR" imageView="ul3-4Q-lWe" rowHeight="46" style="IBUITableViewCellStyleDefault" id="ZwN-qp-GYx">
-                                        <rect key="frame" x="0.0" y="611" width="320" height="47"/>
+                                    <tableViewCell clipsSubviews="YES" tag="503" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ekg-mn-LRR" imageView="ul3-4Q-lWe" rowHeight="46" style="IBUITableViewCellStyleDefault" id="ZwN-qp-GYx">
+                                        <rect key="frame" x="0.0" y="660" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="45"/>
@@ -506,6 +528,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="awardWinnerLabel" destination="IJg-pS-k3Q" id="cy7-fU-ji8"/>
                         <outlet property="categoryNameLabel" destination="Dng-f7-Eau" id="tK8-xl-G0W"/>
                         <outlet property="companyNameLabel" destination="etj-k1-PN0" id="vkI-0F-Ez1"/>
                         <outlet property="companyUrlLabel" destination="JIm-JJ-p20" id="Qsa-d7-ODu"/>
@@ -1500,11 +1523,12 @@ www.facebook.com/TechColumbusOhio</string>
         <image name="IS04045_TechColumbusLogo_RGB_edit.jpg" width="328" height="158"/>
         <image name="down.png" width="17" height="16"/>
         <image name="facebooklogo.jpg" width="44" height="44"/>
-        <image name="ia12_sponsors.png" width="320" height="339"/>
+        <image name="ia12_sponsors.png" width="320" height="351"/>
         <image name="left.png" width="20" height="20"/>
         <image name="linkedinlogo.jpg" width="44" height="44"/>
         <image name="right.png" width="20" height="20"/>
         <image name="sandlot-logo.png" width="164" height="39"/>
+        <image name="star.png" width="44" height="44"/>
         <image name="twitterlogo.jpg" width="44" height="44"/>
         <image name="up.png" width="17" height="16"/>
     </resources>

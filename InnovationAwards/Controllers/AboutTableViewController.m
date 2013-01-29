@@ -68,7 +68,7 @@
     self.doneButton.layer.borderColor = darkPurple.CGColor;
     self.doneButton.layer.borderWidth = 1;
     self.doneButton.layer.masksToBounds = YES;
-    self.doneButton.titleLabel.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.doneButton.titleLabel.font = [UIFont fontWithName:IA_Font800 size:15.0];
     self.doneButton.titleLabel.textColor = [UIColor whiteColor];
 }
 

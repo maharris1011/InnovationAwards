@@ -14,7 +14,7 @@
 #define redTint SS_COLOR(162,0,62)
 
 #define IA_Font @"TitilliumText25L-400wt"
-#define IA_Font600 @"TitilliumText25L-800wt"
+#define IA_Font800 @"TitilliumText25L-800wt"
 
 
 #define IA_headlineBold [UIFont systemFontOfSize:24];   // [UIFont fontWithName:IA_Font size:24];

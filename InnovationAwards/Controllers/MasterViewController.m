@@ -160,18 +160,18 @@
     [self.registerButton addGradient:gradient];
     self.registerButton.layer.borderColor = darkPurple.CGColor;
     self.registerButton.layer.borderWidth = 1;
-    self.registerButton.titleLabel.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.registerButton.titleLabel.font = [UIFont fontWithName:IA_Font800 size:15.0];
     
     gradient = buttonGradientWithColor(lightPurple, darkPurple);
     [self.directionsButton addGradient:gradient];
     self.directionsButton.layer.borderColor = darkPurple.CGColor;
     self.directionsButton.layer.borderWidth = 1;
-    self.directionsButton.titleLabel.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.directionsButton.titleLabel.font = [UIFont fontWithName:IA_Font800 size:15.0];
     
     // set fonts
-    self.dateText.font = [UIFont fontWithName:IA_Font600 size:15.0];
-    self.locationText.font = [UIFont fontWithName:IA_Font600 size:15.0];
-    self.roomText.font = [UIFont fontWithName:IA_Font600 size:15.0];
+    self.dateText.font = [UIFont fontWithName:IA_Font800 size:15.0];
+    self.locationText.font = [UIFont fontWithName:IA_Font800 size:15.0];
+    self.roomText.font = [UIFont fontWithName:IA_Font800 size:15.0];
     
     // set up the images we're going to scroll through
     self.pageImages = [NSArray arrayWithObjects:

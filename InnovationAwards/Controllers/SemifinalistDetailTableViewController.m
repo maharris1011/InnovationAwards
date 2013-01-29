@@ -122,16 +122,17 @@
 - (void)configureView
 {
     // set the labels accordingly
+    UIFont *normalFont = [UIFont fontWithName:IA_Font size:15];
+    UIFont *boldFont = [UIFont fontWithName:IA_Font800 size:17];
+    
+    self.categoryNameLabel.font = [UIFont fontWithName:IA_Font800 size:15];
+    self.companyNameLabel.font = boldFont;
+    self.representativeNameLabel.font = normalFont;
+    self.storyTextLabel.font = normalFont;
+    self.awardWinnerLabel.font = [UIFont fontWithName:IA_Font800 size:20];
     
     // name label
-    if (self.sfCurrent.isWinner)
-    {
-        self.categoryNameLabel.text = [NSString stringWithFormat:@"%@ Winner", self.category.name];
-    }
-    else
-    {
-        self.categoryNameLabel.text = self.category.name;
-    }
+    self.categoryNameLabel.text = self.category.name;
     self.companyNameLabel.text = self.sfCurrent.company;
     self.representativeNameLabel.text = self.sfCurrent.contact;
     self.companyUrlLabel.text = self.sfCurrent.site_url;
@@ -140,14 +141,17 @@
     self.storyTextLabel.text = self.sfCurrent.bio;
     
     // the winner gets his picture shown & seen as the winner
+    // semifinalists have this hidden
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     if (self.sfCurrent.isWinner)
     {
-        cell.imageView.image = [UIImage imageNamed:@"star.png"];
+        [cell.textLabel setHidden:NO];
+        [cell.imageView setHidden:NO];
     }
     else
     {
-        cell.imageView.image = nil;
+        [cell.textLabel setHidden:YES];
+        [cell.imageView setHidden:YES];
     }
     
 }
@@ -175,6 +179,7 @@
     [self setCategoryNameLabel:nil];
     [self setStoryTextLabel:nil];
     [self setActionBar:nil];
+    [self setAwardWinnerLabel:nil];
     [super viewDidUnload];
 }
 
@@ -278,25 +283,48 @@
 
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*) indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 3)
+    const int ROW_CATEGORY = 0;
+    const int ROW_AWARD = 1;
+    const int ROW_COMPANY = 2;
+    const int ROW_CONTACT = 3;
+    const int ROW_BIO = 4;
+    
+    if (indexPath.section == 0)
     {
-        // story path, calculate height of the story & resize everything
-        NSString *storyText = self.sfCurrent.bio;
-        UIFont *font = [UIFont systemFontOfSize:14.0];
-        CGSize initialSize = CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT); // -40 for cell padding
-        CGSize sz = [storyText sizeWithFont:font constrainedToSize:initialSize];
-        [self.storyTextLabel setFrame:CGRectMake(0, 0, sz.width, sz.height)];
-        return sz.height+40;
-    }
-    else if (indexPath.section == 0)
-    {
-        if (indexPath.row == 2)
+        if (indexPath.row == ROW_BIO)
+        {
+            // story path, calculate height of the story & resize everything
+            NSString *storyText = self.sfCurrent.bio;
+            UIFont *font = [UIFont systemFontOfSize:14.0];
+            CGSize initialSize = CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT); // -40 for cell padding
+            CGSize sz = [storyText sizeWithFont:font constrainedToSize:initialSize];
+            [self.storyTextLabel setFrame:CGRectMake(0, 0, sz.width, sz.height)];
+            return sz.height+40;
+        }
+        if (indexPath.row == ROW_CONTACT)
         {
             // "contact" row, could be empty
-            if (self.sfCurrent.contact == nil || [self.sfCurrent.contact length] == 0)
+            if (self.sfCurrent.contact == nil ||
+                [self.sfCurrent.contact length] == 0)
             {
                 return 0;
             }
+        }
+        if (indexPath.row == ROW_AWARD)
+        {
+            // if not winner, make 0, else default
+            if (self.sfCurrent.isWinner == NO)
+            {
+                return 0;
+            }
+            else
+            {
+                return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+            }
+        }
+        if (indexPath.row == ROW_CATEGORY || indexPath.row == ROW_COMPANY)
+        {
+            return [super tableView:tableView heightForRowAtIndexPath:indexPath];
         }
     }
     else if (indexPath.section == 1)

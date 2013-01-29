@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *representativeNameLabel;
 @property (strong, nonatomic) IBOutlet UITextView *companyUrlLabel;
 @property (strong, nonatomic) IBOutlet UILabel *storyTextLabel;
+@property (strong, nonatomic) IBOutlet UILabel *awardWinnerLabel;
 
 - (IBAction)nextPrevPressed:(id)sender;
 @end
