@@ -143,16 +143,8 @@
     // the winner gets his picture shown & seen as the winner
     // semifinalists have this hidden
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    if (self.sfCurrent.isWinner)
-    {
-        [cell.textLabel setHidden:NO];
-        [cell.imageView setHidden:NO];
-    }
-    else
-    {
-        [cell.textLabel setHidden:YES];
-        [cell.imageView setHidden:YES];
-    }
+    [cell.textLabel setHidden:NO];
+    [cell.imageView setHidden:NO];
     
 }
 
