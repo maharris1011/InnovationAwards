@@ -128,8 +128,7 @@
 		4DCECFFE1675474000272F0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DCECFFC1675474000272F0B /* InfoPlist.strings */; };
 		4DCED0001675474000272F0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCECFFF1675474000272F0B /* main.m */; };
 		4DCED0041675474100272F0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED0031675474100272F0B /* AppDelegate.m */; };
-		4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */; };
-		4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */; };
+		4DCED00D1675474100272F0B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCED00B1675474100272F0B /* MainStoryboard.storyboard */; };
 		4DD6867316A1EA060071007F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD6867216A1EA060071007F /* SDWebImage.framework */; };
 		4DD6867616A1EB440071007F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD6867516A1EB440071007F /* ImageIO.framework */; };
 		4DE40E5D1683F76E00533212 /* TechColumbus_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */; };
@@ -554,8 +553,7 @@
 		4DCED0011675474000272F0B /* InnovationAwards-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InnovationAwards-Prefix.pch"; sourceTree = "<group>"; };
 		4DCED0021675474000272F0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4DCED0031675474100272F0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4DCED00C1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		4DCED00F1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4DCED00C1675474100272F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4DD6867216A1EA060071007F /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		4DD6867516A1EB440071007F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4DE40E5C1683F76E00533212 /* TechColumbus_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TechColumbus_Logo.jpg; sourceTree = "<group>"; };
@@ -978,8 +976,7 @@
 		4D50192C167547E70031B9F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */,
-				4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */,
+				4DCED00B1675474100272F0B /* MainStoryboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1483,8 +1480,7 @@
 				4D81A4EB16B77A2E00BFC935 /* ia12_sponsors@2x.png in Resources */,
 				4DFEF53516759D210069E734 /* 2012_sponsors.json in Resources */,
 				4DCECFFE1675474000272F0B /* InfoPlist.strings in Resources */,
-				4DCED00D1675474100272F0B /* MainStoryboard_iPhone.storyboard in Resources */,
-				4DCED0101675474100272F0B /* MainStoryboard_iPad.storyboard in Resources */,
+				4DCED00D1675474100272F0B /* MainStoryboard.storyboard in Resources */,
 				4D501936167548490031B9F8 /* Default.png in Resources */,
 				4D501937167548490031B9F8 /* Default@2x.png in Resources */,
 				4D501938167548490031B9F8 /* Default-568h@2x.png in Resources */,
@@ -1857,21 +1853,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4DCED00B1675474100272F0B /* MainStoryboard_iPhone.storyboard */ = {
+		4DCED00B1675474100272F0B /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4DCED00C1675474100272F0B /* en */,
 			);
-			name = MainStoryboard_iPhone.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		4DCED00E1675474100272F0B /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DCED00F1675474100272F0B /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
+			name = MainStoryboard.storyboard;
 			path = ..;
 			sourceTree = "<group>";
 		};

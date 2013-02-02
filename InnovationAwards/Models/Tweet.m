@@ -67,7 +67,7 @@
     {
         retval = self.profileImageURL;
     }
-    NSLog(@"%@'s picture: %@", self.name, retval);
+//    NSLog(@"%@'s picture: %@", self.name, retval);
     return retval;
 }
 
