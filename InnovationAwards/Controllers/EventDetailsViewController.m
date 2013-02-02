@@ -50,9 +50,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         // goto the ia 12 web site
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbus.org"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.techcolumbusinnovationawards.org"]];
     }
 }
 
