@@ -107,11 +107,18 @@
     cell.textLabel.text = nominee.company;
     cell.textLabel.font = [UIFont fontWithName:IA_Font size:17];
     cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.text = nominee.contact;
+    cell.detailTextLabel.font = [UIFont fontWithName:IA_Font size:14];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ia_arrow.png"]];
     
     if (nominee.isWinner)
     {
         cell.imageView.image = [UIImage imageNamed:@"star.png"];
+    }
+    else
+    {
+        cell.imageView.image = nil;
     }
     return cell;
 }
