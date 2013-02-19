@@ -13,6 +13,7 @@
 @implementation IASemifinalist
 
 @synthesize company = _company;
+@synthesize company_url_safe = _company_url_safe;
 @synthesize contact = _contact;
 @synthesize site_url = _site_url;
 @synthesize bio  = _bio;
@@ -21,6 +22,13 @@
 @synthesize twitter = _twitter;
 @synthesize image_path = _image_path;
 @synthesize isWinner = _isWinner;
+
+
+- (NSString *)company_url_safe
+{
+    NSString *str = [self.company stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return str;
+}
 
 - (id)initWithFake:(int)n
 {
@@ -56,7 +64,6 @@
             // parse out the text of each child of the bio element
             if (nil != child.content)
             {
-                NSLog(@"content = %@", child.content);
                 if ([_bio isEqualToString:@""]) {
                     _bio = [NSString stringWithFormat:@"%@", [child.content stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\r\n"]]];
                 }
@@ -112,21 +119,20 @@
     
     // first locate the category our semifinalist belongs to
     IACategory *category = [IACategory categoryFromEntity:entity];
-
-    // find the semifinalist we're looking for
-    NSArray *urlAndCompany = [[entity key] componentsSeparatedByString:@"#"];
-    NSString *company = nil;
-    if ([urlAndCompany count] == 2) {
-        company = [urlAndCompany objectAtIndex:1];
-    }
     
-    if (category)
-    {
-        for (IASemifinalist *sfi in category.semifinalists)
-        {
-            if ([sfi.company isEqualToString:company])
-            {
-                return sfi;
+    if (nil != category) {
+        NSLog(@"looking in category %@", category.name);
+        // find the semifinalist we're looking for
+        NSArray *urlAndCompany = [[entity key] componentsSeparatedByString:@"#"];
+        NSString *company = nil;
+        if ([urlAndCompany count] == 2) {
+            company = [[urlAndCompany objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSLog(@"looking for semifinalist %@", company);
+        
+            for (IASemifinalist *sfi in category.semifinalists) {
+                if ([sfi.company isEqualToString:company]) {
+                    return sfi;
+                }
             }
         }
     }

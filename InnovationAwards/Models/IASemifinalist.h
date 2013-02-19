@@ -11,6 +11,7 @@
 
 @interface IASemifinalist : NSObject
 @property (nonatomic, strong) NSString *company;
+@property (nonatomic, readonly) NSString *company_url_safe;
 @property (nonatomic, strong) NSString *contact;
 @property (nonatomic, strong) NSString *site_url;
 @property (nonatomic, strong) NSString *bio;

@@ -35,7 +35,7 @@
 
 - (void)setupSocializeEntity
 {
-    NSString *key = [NSString stringWithFormat:@"%@#%@", self.category.url, self.sfCurrent.company];
+    NSString *key = [NSString stringWithFormat:@"%@#%@", self.category.url, self.sfCurrent.company_url_safe];
     SZEntity *entity = [SZEntity entityWithKey:key name:self.sfCurrent.company];
     
     SZShareOptions *options = [SZShareUtils userShareOptions];

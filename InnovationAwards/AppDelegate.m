@@ -190,8 +190,9 @@
         IACategory *cat = [IACategory categoryFromEntity:entity];
         NSInteger index = [cat indexOfSemifinalistWithCompany:sf.company];
         if (!sf || !cat || (index < 0)) {
+            NSLog(@"sf = %@, cat = %@, index = %d", sf, cat, index);
             // put up a popup saying "sorry, cant find them"
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Houston, we have a problem" message:@"Sorry, we were unable to find that semifinalist." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unknown Semifinalist" message:[NSString stringWithFormat:@"Sorry, we were unable to find the semifinalist %@.", sf.company] delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [alert show];
         }
         else {
