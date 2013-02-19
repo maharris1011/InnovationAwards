@@ -235,7 +235,7 @@
                 break;
         }
         
-        if (nil != szUrl) 
+        if (nil != szUrl)
         {
             NSURL *url = [NSURL URLWithString:szUrl];
             

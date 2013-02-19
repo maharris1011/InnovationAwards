@@ -49,7 +49,22 @@
         _contact = [[e firstChildWithId:@"sf_contact"] firstChild].content;
         _site_url = [[e firstChildWithId:@"sf_website"].attributes objectForKey:@"href"];
         
-        _bio = [[[e firstChildWithId:@"sf_bio"] firstChild].content substringFromIndex:2];
+        // peel out the content of each child of the <p id="sf_bio"> tag
+        // have to do this to overcome the bug where we don't get enough text from the page
+        _bio = @"";
+        for (TFHppleElement *child in [e firstChildWithId:@"sf_bio"].children) {
+            // parse out the text of each child of the bio element
+            if (nil != child.content)
+            {
+                NSLog(@"content = %@", child.content);
+                if ([_bio isEqualToString:@""]) {
+                    _bio = [NSString stringWithFormat:@"%@", [child.content stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\r\n"]]];
+                }
+                else {
+                    _bio = [_bio stringByAppendingString:child.content];
+                }
+            }
+        }
         _linkedin = [[e firstChildWithId:@"sf_linkedin"].attributes objectForKey:@"href"];
         _facebook = [[e firstChildWithId:@"sf_facebook"].attributes objectForKey:@"href"];
         _twitter = [[e firstChildWithId:@"sf_twitter"].attributes objectForKey:@"href"];

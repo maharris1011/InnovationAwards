@@ -287,11 +287,11 @@
         {
             // story path, calculate height of the story & resize everything
             NSString *storyText = self.sfCurrent.bio;
-            UIFont *font = [UIFont systemFontOfSize:14.0];
+            UIFont *font = [UIFont fontWithName:IA_Font size:15.0];
             CGSize initialSize = CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT); // -40 for cell padding
             CGSize sz = [storyText sizeWithFont:font constrainedToSize:initialSize];
             [self.storyTextLabel setFrame:CGRectMake(0, 0, sz.width, sz.height)];
-            return sz.height+40;
+            return sz.height+20;
         }
         if (indexPath.row == ROW_CONTACT)
         {
